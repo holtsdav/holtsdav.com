@@ -1,0 +1,30 @@
+---
+import SocialLinks from './SocialLinks.astro';
+
+const isHome = Astro.url.pathname === '/';
+
+const navigation = [
+	{ label: 'Projekte', href: isHome ? '#projects' : '/#projects' },
+	{ label: 'Über mich', href: isHome ? '#about' : '/#about' },
+	{ label: 'Kontakt', href: isHome ? '#contact' : '/#contact' },
+];
+---
+
+<header class="site-header">
+	<div class="shell header-inner">
+		<a class="wordmark" href="/" aria-label="holtsdav – Startseite">
+			holtsdav
+		</a>
+
+		<div class="header-actions">
+			<nav aria-label="Hauptnavigation">
+				<ul class="nav-list">
+					{navigation.map((item) => (
+						<li><a href={item.href}>{item.label}</a></li>
+					))}
+				</ul>
+			</nav>
+			<SocialLinks class="header-socials" />
+		</div>
+	</div>
+</header>
