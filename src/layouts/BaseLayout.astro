@@ -1,0 +1,38 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+	robots?: string;
+}
+
+const { title, description, robots } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#090a0f" />
+		<meta name="color-scheme" content="dark" />
+		<meta name="description" content={description} />
+		{robots && <meta name="robots" content={robots} />}
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/png" href="/holtsdav-logo.png" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+		<div class="site-shell">
+			<Header />
+			<main id="main-content">
+				<slot />
+			</main>
+			<Footer />
+		</div>
+	</body>
+</html>

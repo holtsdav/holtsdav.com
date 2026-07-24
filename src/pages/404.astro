@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+	title="Seite nicht gefunden | holtsdav"
+	description="Die gesuchte Seite wurde nicht gefunden."
+	robots="noindex, follow"
+>
+	<section class="not-found-page shell" aria-labelledby="not-found-title">
+		<div class="not-found-content">
+			<h1 id="not-found-title">Seite nicht gefunden</h1>
+			<p>Die gesuchte Seite existiert nicht oder wurde verschoben.</p>
+			<a class="button button-primary" href="/">Zur Startseite</a>
+		</div>
+	</section>
+</BaseLayout>
