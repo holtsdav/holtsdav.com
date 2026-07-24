@@ -1,17 +1,165 @@
 ---
-import '../styles/global.css';
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import heroLogo from '../assets/holtsdav-logo.png';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class="text-3xl font-bold underline">Tailwind CSS 4 is working</h1>
-	</body>
-</html>
+<BaseLayout
+	title="holtsdav | Apps und Software von David Holtschke"
+	description="David Holtschke entwickelt und veröffentlicht unter holtsdav eigene Apps und digitale Softwareprodukte. Entdecke Glassdays Countdown und kommende Projekte."
+>
+	<section class="hero shell" aria-labelledby="hero-title">
+		<div class="hero-content">
+			<p class="hero-eyebrow">DAVID HOLTSCHKE · SOFTWAREENTWICKLER AUS MÜNCHEN</p>
+			<h1 id="hero-title">holtsdav</h1>
+			<p class="hero-subheading">Apps und Software, die im Alltag helfen.</p>
+			<p class="hero-description">
+				Ich bin David Holtschke. Unter holtsdav entwickle und veröffentliche ich
+				eigene Apps und digitale Produkte – mit einem Fokus auf klare Gestaltung,
+				zuverlässige Funktionen und eine gute Nutzererfahrung.
+			</p>
+			<div class="hero-buttons">
+				<a class="button button-primary" href="#projects">Projekte ansehen</a>
+				<a class="button button-secondary" href="mailto:contact@holtsdav.com">Kontakt aufnehmen</a>
+			</div>
+			<SocialLinks class="hero-socials" />
+		</div>
+
+		<div class="hero-visual" aria-hidden="true">
+			<div class="hero-glow"></div>
+			<Image
+				class="hero-logo"
+				src={heroLogo}
+				alt=""
+				widths={[180, 210, 240]}
+				sizes="(max-width: 900px) 210px, 240px"
+			/>
+			<div class="hero-visual-wordmark">holtsdav</div>
+		</div>
+	</section>
+
+	<section class="section shell" id="projects" aria-labelledby="projects-title">
+		<header class="section-header">
+			<h2 id="projects-title">Ausgewählte Projekte</h2>
+			<p>Eigene Apps und Softwareprojekte, die von der ersten Idee bis zur Veröffentlichung unter holtsdav entstehen.</p>
+		</header>
+
+		<div class="projects-list">
+			<article class="project-card project-glassdays">
+				<div class="project-art" aria-hidden="true">
+					<div class="project-art-glow"></div>
+					<p>Glassdays</p>
+					<span>Countdown</span>
+				</div>
+				<div class="project-content">
+					<p class="status-badge">Im App Store</p>
+					<h3>Glassdays Countdown</h3>
+					<p>Glassdays ist eine moderne Countdown-App für iPhone, iPad und Mac. Erstelle Countdowns für Geburtstage, Reisen, Jahrestage und andere wichtige Momente. Widgets, Erinnerungen, Wiederholungen und Sammlungen helfen dabei, den Überblick zu behalten.</p>
+					<ul class="tech-list" aria-label="Technologien und Funktionen">
+						<li>iOS</li>
+						<li>SwiftUI</li>
+						<li>Widgets</li>
+						<li>In-App-Käufe</li>
+					</ul>
+					<a
+						class="button app-store-button"
+						href="https://apps.apple.com/de/app/glassdays-countdown/id6785538729"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<svg viewBox="0 0 24 24" aria-hidden="true">
+							<path fill="currentColor" d="M16.7 12.8c0-2.5 2.1-3.7 2.2-3.8a4.8 4.8 0 0 0-3.8-2c-1.6-.2-3.1 1-3.9 1s-2-1-3.3-1c-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.3 2.5 1.3-.1 1.8-.8 3.5-.8 1.6 0 2.1.8 3.5.8s2.4-1.2 3.2-2.5a11 11 0 0 0 1.5-3.1 4.4 4.4 0 0 1-2.3-3.8ZM14 5.3A4.4 4.4 0 0 0 15 2a4.5 4.5 0 0 0-3 1.6 4.2 4.2 0 0 0-1.1 3.2A3.7 3.7 0 0 0 14 5.3Z" />
+						</svg>
+						Im App Store ansehen
+					</a>
+				</div>
+			</article>
+
+			<article class="project-card project-mute">
+				<div class="project-art" aria-hidden="true">
+					<div class="mute-symbol">
+						<span></span>
+					</div>
+					<p>Mute on<br />Location</p>
+				</div>
+				<div class="project-content">
+					<p class="status-badge">In Entwicklung</p>
+					<h3>Mute on Location</h3>
+					<p>Mute on Location ist eine kommende Mac-App, die das automatische Stummschalten abhängig vom Standort unterstützt. Sie ist für Orte wie Arbeit, Schule, Bibliothek oder andere ruhige Umgebungen gedacht.</p>
+					<ul class="tech-list" aria-label="Technologien und Funktionen">
+						<li>macOS</li>
+						<li>SwiftUI</li>
+						<li>Standort</li>
+						<li>Automation</li>
+					</ul>
+					<p class="coming-soon">Coming soon</p>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<section class="section about-section" id="about" aria-labelledby="about-title">
+		<div class="shell">
+			<header class="section-header">
+				<h2 id="about-title">Hinter holtsdav</h2>
+			</header>
+
+			<div class="about-layout">
+				<div class="about-copy">
+					<p>Ich bin David Holtschke, Softwareentwickler aus München und Auszubildender zum Fachinformatiker für Anwendungsentwicklung. Neben meiner Ausbildung entwickle und veröffentliche ich eigene Apps und kleinere Softwareprodukte.</p>
+					<p>Mein derzeitiger Schwerpunkt liegt auf iOS, SwiftUI und klar gestalteten Benutzeroberflächen. Dabei begleite ich Projekte von der ersten Idee über Design und Entwicklung bis zur Veröffentlichung und anschließenden Weiterentwicklung.</p>
+				</div>
+				<div class="focus-areas">
+					<article>
+						<h3>iOS &amp; SwiftUI</h3>
+						<p>Native Apps für Apple-Plattformen.</p>
+					</article>
+					<article>
+						<h3>Produktentwicklung</h3>
+						<p>Von der Idee bis zur Veröffentlichung.</p>
+					</article>
+					<article>
+						<h3>UI &amp; Nutzererfahrung</h3>
+						<p>Klare Oberflächen und verständliche Abläufe.</p>
+					</article>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section shell" aria-labelledby="activity-title">
+		<header class="section-header">
+			<h2 id="activity-title">Was unter holtsdav entsteht</h2>
+			<p>Unter holtsdav entwickle ich eigene mobile Anwendungen und digitale Produkte. Dazu gehören Konzeption, Entwicklung, Veröffentlichung und die laufende Weiterentwicklung der Software.</p>
+		</header>
+
+		<div class="activity-grid">
+			<article>
+				<h3>Mobile Apps</h3>
+				<p>Konzeption, Entwicklung und Veröffentlichung eigener Anwendungen für Apple-Plattformen.</p>
+			</article>
+			<article>
+				<h3>Digitale Produkte</h3>
+				<p>Kleine Softwareprodukte und Werkzeuge, die konkrete Aufgaben vereinfachen oder automatisieren.</p>
+			</article>
+			<article>
+				<h3>Weiterentwicklung</h3>
+				<p>Pflege, Updates und optionale Pro-Funktionen für bereits veröffentlichte Anwendungen.</p>
+			</article>
+		</div>
+	</section>
+
+	<section class="section shell" id="contact" aria-labelledby="contact-title">
+		<div class="contact-panel">
+			<div class="contact-copy">
+				<h2 id="contact-title">Interesse an meiner Arbeit?</h2>
+				<p>Du hast eine Frage zu meinen Apps, möchtest Feedback geben oder dich zu meiner Arbeit austauschen? Schreib mir direkt per E-Mail oder finde mich auf GitHub, LinkedIn und X.</p>
+			</div>
+			<div class="contact-actions">
+				<a class="button contact-button" href="mailto:contact@holtsdav.com">contact@holtsdav.com</a>
+				<SocialLinks class="contact-socials" />
+			</div>
+		</div>
+	</section>
+</BaseLayout>

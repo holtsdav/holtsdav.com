@@ -1,0 +1,43 @@
+---
+interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={['social-links', className]}>
+	<a
+		href="https://github.com/holtsdav"
+		target="_blank"
+		rel="noreferrer"
+		aria-label="David Holtschke auf GitHub"
+		title="GitHub"
+	>
+		<svg viewBox="0 0 24 24" aria-hidden="true">
+			<path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
+		</svg>
+	</a>
+	<a
+		href="https://www.linkedin.com/in/david-holtschke"
+		target="_blank"
+		rel="noreferrer"
+		aria-label="David Holtschke auf LinkedIn"
+		title="LinkedIn"
+	>
+		<svg viewBox="0 0 24 24" aria-hidden="true">
+			<path fill="currentColor" d="M20.5 3H3.5A.5.5 0 0 0 3 3.5v17a.5.5 0 0 0 .5.5h17a.5.5 0 0 0 .5-.5v-17a.5.5 0 0 0-.5-.5ZM8.3 18.3H5.6V9.7h2.7v8.6ZM7 8.5a1.6 1.6 0 1 1 0-3.1 1.6 1.6 0 0 1 0 3.1Zm11.3 9.8h-2.7v-4.2c0-1 0-2.3-1.4-2.3s-1.6 1.1-1.6 2.2v4.3H9.9V9.7h2.6v1.2c.4-.7 1.3-1.5 2.6-1.5 2.8 0 3.3 1.8 3.3 4.2v4.7Z" />
+		</svg>
+	</a>
+	<a
+		href="https://x.com/holtsdav"
+		target="_blank"
+		rel="noreferrer"
+		aria-label="David Holtschke auf X"
+		title="X"
+	>
+		<svg viewBox="0 0 24 24" aria-hidden="true">
+			<path fill="currentColor" d="M18.2 2.3h3.4l-7.3 8.3 8.5 11.1h-6.7L11 15l-5.9 6.7H1.7l7.7-8.8L1.2 2.3h6.9l4.7 6.2 5.4-6.2Zm-1.1 17.5H19L7.1 4.1H5.2l11.9 15.7Z" />
+		</svg>
+	</a>
+</div>
