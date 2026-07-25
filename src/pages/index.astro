@@ -1,8 +1,7 @@
 ---
-import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialLinks from '../components/SocialLinks.astro';
-import heroLogo from '../assets/holtsdav-logo.png';
+import ParticleWordmark from '../components/ParticleWordmark.astro';
 ---
 
 <BaseLayout
@@ -13,7 +12,7 @@ import heroLogo from '../assets/holtsdav-logo.png';
 	<section class="hero shell" aria-labelledby="hero-title">
 		<div class="hero-content">
 			<p class="hero-eyebrow">DAVID HOLTSCHKE · SOFTWAREENTWICKLER AUS MÜNCHEN</p>
-			<h1 id="hero-title">holtsdav</h1>
+			<ParticleWordmark />
 			<p class="hero-subheading">Apps und Software, die im Alltag helfen.</p>
 			<p class="hero-description">
 				Ich bin David Holtschke. Unter holtsdav entwickle und veröffentliche ich
@@ -25,18 +24,6 @@ import heroLogo from '../assets/holtsdav-logo.png';
 				<a class="button button-secondary" href="mailto:contact@holtsdav.com">Kontakt aufnehmen</a>
 			</div>
 			<SocialLinks class="hero-socials" />
-		</div>
-
-		<div class="hero-visual" aria-hidden="true">
-			<div class="hero-glow"></div>
-			<Image
-				class="hero-logo"
-				src={heroLogo}
-				alt=""
-				widths={[180, 210, 240]}
-				sizes="(max-width: 900px) 210px, 240px"
-			/>
-			<div class="hero-visual-wordmark">holtsdav</div>
 		</div>
 	</section>
 
