@@ -1,0 +1,76 @@
+<particle-wordmark class="particle-wordmark">
+	<h1 id="hero-title" aria-label="holtsdav – David Holtschke">
+		<span class="holts-segment">holts</span><span class="dav-segment">dav</span>
+	</h1>
+	<canvas aria-hidden="true"></canvas>
+</particle-wordmark>
+
+<script src="../scripts/particle-wordmark.ts"></script>
+
+<style>
+	.particle-wordmark {
+		position: relative;
+		display: block;
+		width: clamp(320px, 78vw, 1050px);
+		max-width: 100%;
+		height: clamp(220px, 22vw, 290px);
+		margin-inline: auto;
+		overflow: hidden;
+	}
+
+	h1,
+	canvas {
+		position: absolute;
+		inset: 0;
+	}
+
+	h1 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		white-space: nowrap;
+		transition: opacity 260ms ease;
+	}
+
+	.holts-segment {
+		color: #c8d2ff;
+	}
+
+	.dav-segment {
+		color: #5a6cff;
+	}
+
+	canvas {
+		display: block;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		touch-action: pan-y;
+		transition: opacity 320ms ease;
+	}
+
+	.particle-wordmark[data-particle-ready="true"] h1 {
+		opacity: 0;
+	}
+
+	.particle-wordmark[data-particle-ready="true"] canvas {
+		opacity: 1;
+	}
+
+	@media (max-width: 760px) {
+		.particle-wordmark {
+			width: 100%;
+			height: clamp(145px, 43vw, 210px);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		h1 {
+			opacity: 1 !important;
+		}
+
+		canvas {
+			display: none;
+		}
+	}
+</style>
