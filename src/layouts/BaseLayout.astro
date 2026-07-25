@@ -7,9 +7,13 @@ interface Props {
 	title: string;
 	description: string;
 	robots?: string;
+	canonical?: string | URL;
 }
 
-const { title, description, robots } = Astro.props;
+const { title, description, robots, canonical } = Astro.props;
+const canonicalURL = canonical
+	? new URL(canonical, Astro.site ?? 'https://holtsdav.com')
+	: undefined;
 ---
 
 <!doctype html>
@@ -21,6 +25,7 @@ const { title, description, robots } = Astro.props;
 		<meta name="color-scheme" content="dark" />
 		<meta name="description" content={description} />
 		{robots && <meta name="robots" content={robots} />}
+		{canonicalURL && <link rel="canonical" href={canonicalURL} />}
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/png" href="/holtsdav-logo.png" />
 		<title>{title}</title>
