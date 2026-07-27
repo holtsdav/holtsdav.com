@@ -1,0 +1,93 @@
+---
+import AppPrivacyLayout from '../../../../components/AppPrivacyLayout.astro';
+
+const languages = [
+	{ label: 'Deutsch', href: '/apps/glassdays-countdown/privacy/', lang: 'de' },
+	{ label: 'English', href: '/apps/glassdays-countdown/privacy/en/', lang: 'en' },
+	{ label: 'Español', href: '/apps/glassdays-countdown/privacy/es/', lang: 'es' },
+];
+---
+
+<AppPrivacyLayout
+	title="Política de privacidad de Glassdays"
+	description="Política de privacidad de la aplicación Glassdays Countdown."
+	canonical="https://holtsdav.com/apps/glassdays-countdown/privacy/es/"
+	lang="es"
+	productName="Glassdays Countdown"
+	productHref="/apps/glassdays-countdown/"
+	updated="Última actualización: 17 de julio de 2026"
+	{languages}
+>
+	<p>Glassdays está diseñada para mantener el contenido de tus cuentas regresivas en tu dispositivo. La app utiliza análisis de uso anónimos centrados en la privacidad y un servicio de validación de compras, como se describe a continuación. Glassdays no utiliza publicidad, seguimiento entre aplicaciones, informes de fallos ni un sistema de cuentas gestionado por el desarrollador.</p>
+
+	<section>
+		<h2>Datos almacenados en el dispositivo</h2>
+		<p>Glassdays almacena cuentas regresivas, carpetas, preferencias de notificación, preferencias de visualización, imágenes seleccionadas y datos de widgets localmente en tu dispositivo y en el contenedor de grupo de aplicaciones compartido para que la aplicación y el widget puedan mostrar tus cuentas regresivas.</p>
+		<p>Si eliges una foto de tu biblioteca de fotos, la imagen seleccionada se almacena localmente para los fondos de las cuentas regresivas o carpetas. Glassdays no sube las imágenes seleccionadas de tu biblioteca de fotos al desarrollador.</p>
+	</section>
+
+	<section>
+		<h2>Sincronización opcional con iCloud</h2>
+		<p>Glassdays Pro puede sincronizar opcionalmente tus cuentas regresivas, carpetas, imágenes seleccionadas y ajustes relacionados mediante tu cuenta privada de iCloud con Apple CloudKit. Así tendrás la misma información disponible en tus dispositivos Apple. El desarrollador no opera un sistema de cuentas ni usa estos datos para análisis, publicidad o seguimiento.</p>
+		<p>Puedes desactivar la sincronización con iCloud en cualquier momento desde Ajustes de Glassdays. Puedes eliminar cuentas regresivas o carpetas individuales dentro de la app, y al eliminar la app se borran sus datos locales. Los datos de iCloud se gestionan a través de tu cuenta de Apple y el servicio CloudKit de Apple.</p>
+	</section>
+
+	<section>
+		<h2>Acceso al calendario</h2>
+		<p>Si eliges «Añadir al calendario de Apple», Glassdays solicita acceso al calendario y crea, actualiza o elimina los eventos que selecciones. El título, la fecha, la repetición y la zona horaria elegida se envían al calendario de tu dispositivo. Puedes revocar el acceso en cualquier momento desde Ajustes de iOS.</p>
+	</section>
+
+	<section>
+		<h2>Análisis de uso anónimos</h2>
+		<p>Glassdays utiliza TelemetryDeck para saber si la app se utiliza y qué puntos de acceso a Pro resultan útiles. TelemetryDeck recibe un identificador de instalación anónimo generado al azar; eventos de instalación y sesión; un evento cuando se muestra la pantalla de Glassdays Pro; y una etiqueta de origen fija que indica desde dónde se abrió esa pantalla. Las marcas de tiempo de los eventos se redondean a la hora. También pueden incluirse metadatos estándar de la app y el dispositivo, como la versión de la app y del sistema operativo, el modelo del dispositivo, el idioma, la región y las características de la pantalla.</p>
+		<p>Glassdays no envía a TelemetryDeck títulos de cuentas regresivas, nombres de carpetas, información del calendario, búsquedas de imágenes, identificadores de transacciones, direcciones de correo electrónico ni otro contenido de texto libre. Puedes desactivar futuras recopilaciones de TelemetryDeck en cualquier momento mediante «Compartir análisis anónimos», dentro de «Privacidad y aspectos legales» en Ajustes de Glassdays. Desactivarlo no elimina eventos ya enviados ni afecta a las compras, su validación o su restauración mediante StoreKit y RevenueCat.</p>
+	</section>
+
+	<section>
+		<h2>Compras y RevenueCat</h2>
+		<p>Apple StoreKit procesa las compras de Glassdays Pro. Glassdays también utiliza RevenueCat para validar, conciliar, restaurar y generar informes de compras. RevenueCat recibe un identificador de cliente anónimo generado por su SDK, información de recibos y transacciones proporcionada por Apple y el historial de compras necesario para la validación, el análisis y la restauración. Glassdays no envía análisis de uso ni de la pantalla Pro a RevenueCat.</p>
+		<p>El procesamiento de compras de RevenueCat es independiente de la preferencia de análisis de TelemetryDeck. Desactivar «Compartir análisis anónimos» no impide que StoreKit o RevenueCat procesen la información de compra necesaria para proporcionar Glassdays Pro y restaurar compras anteriores.</p>
+	</section>
+
+	<section>
+		<h2>Funciones de red</h2>
+		<p>Glassdays utiliza solicitudes de red para estas funciones:</p>
+		<ul>
+			<li>Ajustes preestablecidos de colecciones: la aplicación descarga datos de la galería e imágenes preestablecidas relacionadas desde el repositorio CountdownJSON del desarrollador alojado en GitHub.</li>
+			<li>Búsqueda en Unsplash: cuando buscas en Unsplash, tu consulta pasa por el proxy Cloudflare Worker del desarrollador hasta la API de Unsplash. El proxy procesa la consulta únicamente en tiempo real para devolver resultados; el desarrollador no recopila, almacena, registra ni conserva la consulta, la dirección IP, los encabezados de la solicitud ni otros datos personales. Las URL de imágenes se cargan directamente desde el CDN de Unsplash. Al elegir una foto de Unsplash, Glassdays informa ese evento de descarga a Unsplash y muestra atribución enlazada tanto al fotógrafo como a Unsplash.</li>
+			<li>Correo electrónico de soporte opcional: si envías comentarios o un informe de errores, el proveedor de correo envía el contenido del correo a la dirección de soporte del desarrollador.</li>
+		</ul>
+		<p>El desarrollador no utiliza estas solicitudes para publicidad o seguimiento. Los servicios de terceros pueden procesar información de red estándar, como la dirección IP, metadatos del dispositivo/navegador/red, registros del servidor y el contenido de las solicitudes que se les envían, bajo sus propias políticas de privacidad.</p>
+	</section>
+
+	<section>
+		<h2>Notificaciones</h2>
+		<p>Glassdays programa notificaciones locales en tu dispositivo. Los ajustes de notificación y las compensaciones se almacenan localmente. El desarrollador no recibe el contenido de las notificaciones.</p>
+	</section>
+
+	<section>
+		<h2>Widgets</h2>
+		<p>Los widgets de cuenta regresiva leen los datos de la cuenta regresiva desde el almacenamiento local compartido del grupo de aplicaciones. El widget no envía datos de la cuenta regresiva al desarrollador.</p>
+	</section>
+
+	<section>
+		<h2>Seguimiento</h2>
+		<p>Glassdays no te rastrea a través de aplicaciones o sitios web y no utiliza el identificador de publicidad.</p>
+	</section>
+
+	<section>
+		<h2>Contacto</h2>
+		<p>Si te pones en contacto con el desarrollador para obtener soporte, el desarrollador recibe la información que decidas incluir en tu mensaje.</p>
+	</section>
+
+	<section>
+		<h2>Conservación y tus opciones</h2>
+		<p>Glassdays conserva los datos locales hasta que los elimines en la app o elimines la app. Los correos de soporte se conservan solo durante el tiempo razonablemente necesario para responder y resolver tu solicitud. Puedes dejar de usar las funciones de red, las notificaciones, el acceso al calendario y la sincronización con iCloud en cualquier momento desde Glassdays o Ajustes de iOS.</p>
+		<p>Para preguntas sobre privacidad o para solicitar la eliminación de información incluida en un mensaje de soporte, escribe a <a href="mailto:8-kapsel-guertel@icloud.com">8-kapsel-guertel@icloud.com</a>.</p>
+	</section>
+
+	<section>
+		<h2>Servicios de terceros</h2>
+		<p>Los servicios de Apple, Cloudflare, Unsplash, GitHub y tu proveedor de correo tienen sus propias prácticas de privacidad. El tratamiento que hagan de la información se rige por sus respectivas políticas. Consulta también la <a href="https://telemetrydeck.com/privacy/" target="_blank" rel="noreferrer">Política de privacidad de TelemetryDeck</a> y la <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noreferrer">Política de privacidad de RevenueCat</a>.</p>
+	</section>
+</AppPrivacyLayout>
