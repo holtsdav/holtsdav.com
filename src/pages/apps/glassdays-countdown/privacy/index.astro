@@ -1,0 +1,93 @@
+---
+import AppPrivacyLayout from '../../../../components/AppPrivacyLayout.astro';
+
+const languages = [
+	{ label: 'Deutsch', href: '/apps/glassdays-countdown/privacy/', lang: 'de' },
+	{ label: 'English', href: '/apps/glassdays-countdown/privacy/en/', lang: 'en' },
+	{ label: 'Español', href: '/apps/glassdays-countdown/privacy/es/', lang: 'es' },
+];
+---
+
+<AppPrivacyLayout
+	title="Glassdays Datenschutzerklärung"
+	description="Datenschutzerklärung für die Glassdays Countdown App."
+	canonical="https://holtsdav.com/apps/glassdays-countdown/privacy/"
+	lang="de"
+	productName="Glassdays Countdown"
+	productHref="/apps/glassdays-countdown/"
+	updated="Zuletzt aktualisiert: 17. Juli 2026"
+	{languages}
+>
+	<p>Glassdays wurde so entwickelt, dass Ihre Countdown-Inhalte auf Ihrem Gerät verbleiben. Die App verwendet datenschutzfreundliche, anonyme Nutzungsanalysen und einen Dienst zur Kaufvalidierung, wie unten beschrieben. Glassdays verwendet keine Werbung, kein appübergreifendes Tracking, keine Absturzberichte und kein vom Entwickler betriebenes Benutzerkontensystem.</p>
+
+	<section>
+		<h2>Auf dem Gerät gespeicherte Daten</h2>
+		<p>Glassdays speichert Countdowns, Ordner, Benachrichtigungseinstellungen, Anzeigeeinstellungen, ausgewählte Bilder und Widget-Daten lokal auf Ihrem Gerät und im gemeinsamen App-Gruppen-Container der App, damit die App und das Widget Ihre Countdowns anzeigen können.</p>
+		<p>Wenn Sie ein Foto aus Ihrer Fotomediathek auswählen, wird das ausgewählte Bild lokal für Countdown- oder Ordnerhintergründe gespeichert. Glassdays lädt Ihre ausgewählten Bilder aus der Fotomediathek nicht zum Entwickler hoch.</p>
+	</section>
+
+	<section>
+		<h2>Optionale iCloud-Synchronisierung</h2>
+		<p>Mit Glassdays Pro können Sie Countdowns, Ordner, ausgewählte Bilder und zugehörige Einstellungen optional über Ihren privaten iCloud-Account mit Apple CloudKit synchronisieren. So stehen dieselben Informationen auf Ihren Apple-Geräten bereit. Der Entwickler betreibt kein Benutzerkontensystem und verwendet diese Daten nicht für Analysen, Werbung oder Tracking.</p>
+		<p>Sie können die iCloud-Synchronisierung jederzeit in den Glassdays-Einstellungen deaktivieren. Einzelne Countdowns und Ordner lassen sich in der App löschen; beim Entfernen der App werden ihre lokalen Daten gelöscht. iCloud-Daten werden über Ihren Apple-Account und Apples CloudKit-Dienst verarbeitet.</p>
+	</section>
+
+	<section>
+		<h2>Kalenderzugriff</h2>
+		<p>Wenn Sie „Zum Apple-Kalender hinzufügen“ wählen, fragt Glassdays nach Kalenderzugriff und erstellt, aktualisiert oder entfernt die von Ihnen gewählten Kalenderereignisse. Titel, Datum, Wiederholung und gewählte Zeitzone werden an den Kalender auf Ihrem Gerät übergeben. Sie können den Zugriff jederzeit in den iOS-Einstellungen widerrufen.</p>
+	</section>
+
+	<section>
+		<h2>Anonyme Nutzungsanalyse</h2>
+		<p>Glassdays verwendet TelemetryDeck, um zu verstehen, ob die App genutzt wird und welche Pro-Einstiegspunkte hilfreich sind. TelemetryDeck erhält eine zufällig erzeugte, anonyme Installationskennung, Installations- und Sitzungsereignisse, ein Ereignis beim Anzeigen der Glassdays-Pro-Ansicht sowie eine feste Quellenbezeichnung, die beschreibt, von wo diese Ansicht geöffnet wurde. Ereigniszeitstempel werden auf die Stunde gerundet. Außerdem können standardmäßige App- und Gerätemetadaten wie App-Version, Betriebssystemversion, Gerätemodell, Sprache, Region und Bildschirmeigenschaften enthalten sein.</p>
+		<p>Glassdays sendet keine Countdown-Titel, Ordnernamen, Kalenderinformationen, Bildsuchen, Transaktionskennungen, E-Mail-Adressen oder andere frei formulierte Inhalte an TelemetryDeck. Sie können die zukünftige TelemetryDeck-Erfassung jederzeit mit „Anonyme Analysedaten teilen“ unter „Datenschutz &amp; Rechtliches“ in den Glassdays-Einstellungen deaktivieren. Dadurch werden bereits übermittelte Ereignisse nicht gelöscht und Käufe, Kaufvalidierung oder Wiederherstellung über StoreKit und RevenueCat nicht beeinflusst.</p>
+	</section>
+
+	<section>
+		<h2>Käufe und RevenueCat</h2>
+		<p>Apple StoreKit verarbeitet Käufe von Glassdays Pro. Glassdays verwendet außerdem RevenueCat, um Käufe zu validieren, abzugleichen, wiederherzustellen und auszuwerten. RevenueCat erhält eine vom SDK erzeugte anonyme Kundenkennung, von Apple bereitgestellte Beleg- und Transaktionsinformationen sowie die für Validierung, Analyse und Wiederherstellung benötigte Kaufhistorie. Glassdays sendet keine Nutzungs- oder Pro-Ansichtsanalysen an RevenueCat.</p>
+		<p>Die Kaufverarbeitung durch RevenueCat ist von der TelemetryDeck-Analyseeinstellung unabhängig. Das Deaktivieren von „Anonyme Analysedaten teilen“ hindert StoreKit oder RevenueCat nicht daran, Kaufinformationen zu verarbeiten, die für Glassdays Pro und die Wiederherstellung früherer Käufe benötigt werden.</p>
+	</section>
+
+	<section>
+		<h2>Netzwerkfunktionen</h2>
+		<p>Glassdays verwendet Netzwerkanfragen für diese Funktionen:</p>
+		<ul>
+			<li>Sammlungen-Voreinstellungen: Die App lädt Galerie-Daten und zugehörige voreingestellte Bilder aus dem auf GitHub gehosteten CountdownJSON-Repository des Entwicklers herunter.</li>
+			<li>Unsplash-Suche: Wenn Sie Unsplash durchsuchen, wird Ihre Suchanfrage über den Cloudflare-Worker-Proxy des Entwicklers an die Unsplash-API weitergeleitet. Der Proxy verarbeitet die Anfrage nur in Echtzeit, um Ergebnisse zurückzugeben; der Entwickler erhebt, speichert, protokolliert oder bewahrt weder die Suchanfrage noch die IP-Adresse, Anfrage-Header oder andere personenbezogene Daten auf. Bild-URLs werden direkt über das CDN von Unsplash geladen. Wenn Sie ein Unsplash-Foto auswählen, meldet Glassdays dieses Download-Ereignis an Unsplash und zeigt verlinkte Urheber- sowie Unsplash-Quellenangaben.</li>
+			<li>Optionale Support-E-Mail: Wenn Sie Feedback oder einen Fehlerbericht senden, wird der Inhalt der E-Mail von Ihrem E-Mail-Anbieter an die Support-Adresse des Entwicklers gesendet.</li>
+		</ul>
+		<p>Der Entwickler verwendet diese Anfragen nicht für Werbung oder Tracking. Drittanbieter-Dienste können standardmäßige Netzwerkinformationen wie IP-Adresse, Geräte-/Browser-/Netzwerk-Metadaten, Server-Protokolle und den Inhalt der an sie gesendeten Anfragen gemäß ihren eigenen Datenschutzrichtlinien verarbeiten.</p>
+	</section>
+
+	<section>
+		<h2>Benachrichtigungen</h2>
+		<p>Glassdays plant lokale Benachrichtigungen auf Ihrem Gerät. Benachrichtigungseinstellungen und -offsets werden lokal gespeichert. Der Entwickler erhält keine Benachrichtigungsinhalte.</p>
+	</section>
+
+	<section>
+		<h2>Widgets</h2>
+		<p>Countdown-Widgets lesen Countdown-Daten aus dem gemeinsamen lokalen App-Gruppenspeicher. Das Widget sendet keine Countdown-Daten an den Entwickler.</p>
+	</section>
+
+	<section>
+		<h2>Tracking</h2>
+		<p>Glassdays verfolgt Sie nicht über Apps oder Websites hinweg und verwendet keine Werbe-Identifikationsnummer.</p>
+	</section>
+
+	<section>
+		<h2>Kontakt</h2>
+		<p>Wenn Sie den Entwickler für Support kontaktieren, erhält der Entwickler die Informationen, die Sie in Ihrer Nachricht angeben.</p>
+	</section>
+
+	<section>
+		<h2>Speicherdauer und Ihre Wahlmöglichkeiten</h2>
+		<p>Glassdays bewahrt lokale App-Daten auf, bis Sie sie in der App löschen oder die App entfernen. Support-E-Mails werden nur so lange gespeichert, wie es zur Bearbeitung und Klärung Ihrer Anfrage angemessen erforderlich ist. Optionale Netzwerkfunktionen, Benachrichtigungen, Kalenderzugriff und iCloud-Synchronisierung können Sie jederzeit über Glassdays oder die iOS-Einstellungen deaktivieren.</p>
+		<p>Bei Fragen zum Datenschutz oder einem Löschwunsch zu einer Support-Nachricht schreiben Sie an <a href="mailto:8-kapsel-guertel@icloud.com">8-kapsel-guertel@icloud.com</a>.</p>
+	</section>
+
+	<section>
+		<h2>Drittanbieter-Dienste</h2>
+		<p>Apple-Dienste, Cloudflare, Unsplash, GitHub und Ihr E-Mail-Anbieter haben eigene Datenschutzpraktiken. Für deren Verarbeitung gelten die jeweiligen Datenschutzrichtlinien. Siehe auch die <a href="https://telemetrydeck.com/privacy/" target="_blank" rel="noreferrer">Datenschutzerklärung von TelemetryDeck</a> und die <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noreferrer">Datenschutzerklärung von RevenueCat</a>.</p>
+	</section>
+</AppPrivacyLayout>

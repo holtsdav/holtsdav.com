@@ -8,22 +8,32 @@ interface Props {
 	description: string;
 	robots?: string;
 	canonical?: string | URL;
+	lang?: string;
 }
 
-const { title, description, robots, canonical } = Astro.props;
+const { title, description, robots, canonical, lang = 'de' } = Astro.props;
 const canonicalURL = canonical
 	? new URL(canonical, Astro.site ?? 'https://holtsdav.com')
 	: undefined;
 ---
 
 <!doctype html>
-<html lang="de">
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#090a0f" />
 		<meta name="color-scheme" content="dark" />
 		<meta name="description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="de_DE" />
+		<meta property="og:site_name" content="holtsdav" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		{canonicalURL && <meta property="og:url" content={canonicalURL} />}
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
 		{robots && <meta name="robots" content={robots} />}
 		{canonicalURL && <link rel="canonical" href={canonicalURL} />}
 		<meta name="generator" content={Astro.generator} />

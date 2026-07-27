@@ -5,7 +5,7 @@ const TEXT_B = 'David Holtschke';
 const FONT_STACK =
 	'-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif';
 const SAMPLE_WIDTH = 1400;
-const SAMPLE_HEIGHT = 360;
+const SAMPLE_HEIGHT = 560;
 const HOLD_DURATION_MS = 3500;
 const MORPH_DURATION_MS = 1600;
 const CYCLE_DURATION_MS = HOLD_DURATION_MS * 2 + MORPH_DURATION_MS * 2;
@@ -17,6 +17,7 @@ const vertexShader = /* glsl */ `
 	attribute float aColorGroup;
 	attribute float aSeed;
 	attribute float aSize;
+	attribute float aFlow;
 
 	uniform float uTime;
 	uniform float uMorph;
@@ -32,7 +33,29 @@ const vertexShader = /* glsl */ `
 	varying vec3 vColor;
 
 	void main() {
-		vec2 base = mix(aTargetA.xy, aTargetB.xy, uMorph) * uCanvasWidth;
+		float stagger = (aSeed - 0.5) * 0.16;
+		float localMorph = smoothstep(0.0, 1.0, clamp(uMorph + stagger, 0.0, 1.0));
+		vec2 from = aTargetA.xy * uCanvasWidth;
+		vec2 to = aTargetB.xy * uCanvasWidth;
+		vec2 travel = to - from;
+		float travelLength = length(travel);
+		vec2 travelDirection = travelLength > 0.001
+			? travel / travelLength
+			: vec2(1.0, 0.0);
+		vec2 travelNormal = vec2(-travelDirection.y, travelDirection.x);
+		float transitionEnvelope = sin(localMorph * 3.14159265);
+		float flowWave = sin(
+			localMorph * 6.2831853 +
+			aFlow * 6.2831853 +
+			from.x * 0.012
+		);
+		vec2 transitionFlow =
+			travelNormal * flowWave * min(18.0, 3.5 + travelLength * 0.075) *
+			transitionEnvelope;
+		transitionFlow += travelDirection *
+			sin(localMorph * 3.14159265 + aFlow * 4.0) *
+			2.5 * transitionEnvelope;
+		vec2 base = mix(from, to, localMorph) + transitionFlow;
 
 		float idlePhase = uTime * (0.11 + aSeed * 0.045) + aSeed * 6.2831853;
 		vec2 idle = vec2(
@@ -119,6 +142,7 @@ type MorphParticleData = {
 	colorGroups: Float32Array;
 	seeds: Float32Array;
 	sizes: Float32Array;
+	flows: Float32Array;
 	count: number;
 	tier: ResponsiveTier;
 };
@@ -136,19 +160,19 @@ function createRandom(seed: number) {
 }
 
 function getResponsiveTier(width: number): ResponsiveTier {
-	if (width < 520) return 'mobile';
+	if (width <= 520) return 'mobile';
 	if (width < 820) return 'tablet';
 	return 'desktop';
 }
 
 function getParticleCount(tier: ResponsiveTier) {
-	if (tier === 'mobile') return 7000;
-	if (tier === 'tablet') return 12000;
-	return 16000;
+	if (tier === 'mobile') return 11000;
+	if (tier === 'tablet') return 14500;
+	return 18000;
 }
 
-function getTracking(text: string, fontSize: number) {
-	return fontSize * (text === TEXT_A ? -0.065 : -0.035);
+function getTracking(_text: string, fontSize: number) {
+	return fontSize * -0.035;
 }
 
 function measureTrackedText(
@@ -165,9 +189,13 @@ function measureTrackedText(
 	);
 }
 
-function findFontSize(context: CanvasRenderingContext2D, text: string) {
+function findFontSize(
+	context: CanvasRenderingContext2D,
+	text: string,
+	maximumWidthRatio = 0.9,
+) {
 	const maximumFontSize = SAMPLE_HEIGHT * 0.82;
-	const maximumWidth = SAMPLE_WIDTH * 0.9;
+	const maximumWidth = SAMPLE_WIDTH * maximumWidthRatio;
 	let low = 48;
 	let high = maximumFontSize;
 
@@ -204,6 +232,26 @@ function drawTrackedText(
 	}
 
 	return splitX;
+}
+
+function drawCenteredTrackedLine(
+	context: CanvasRenderingContext2D,
+	text: string,
+	fontSize: number,
+	y: number,
+) {
+	context.font = `800 ${fontSize}px ${FONT_STACK}`;
+	const tracking = getTracking(text, fontSize);
+	const widths = Array.from(text, (character) => context.measureText(character).width);
+	const totalWidth =
+		widths.reduce((total, width) => total + width, 0) +
+		tracking * (text.length - 1);
+	let x = (SAMPLE_WIDTH - totalWidth) / 2;
+
+	for (let index = 0; index < text.length; index += 1) {
+		context.fillText(text[index], x, y);
+		x += widths[index] + tracking;
+	}
 }
 
 function interleaveBits(value: number) {
@@ -244,11 +292,37 @@ function sampleTextMask(
 	context.fillStyle = '#ffffff';
 	context.textAlign = 'left';
 	context.textBaseline = 'middle';
-	const splitX = drawTrackedText(context, text, findFontSize(context, text));
+	const isMobileName = text === TEXT_B && tier === 'mobile';
+	let splitX = SAMPLE_WIDTH / 2;
+
+	if (isMobileName) {
+		const lineFontSize = Math.min(
+			findFontSize(context, 'Holtschke', 0.98),
+			SAMPLE_HEIGHT * 0.55,
+		);
+		drawCenteredTrackedLine(
+			context,
+			'David',
+			lineFontSize,
+			SAMPLE_HEIGHT * 0.25,
+		);
+		drawCenteredTrackedLine(
+			context,
+			'Holtschke',
+			lineFontSize,
+			SAMPLE_HEIGHT * 0.75,
+		);
+	} else {
+		splitX = drawTrackedText(
+			context,
+			text,
+			findFontSize(context, text, tier === 'mobile' ? 0.98 : 0.9),
+		);
+	}
 	const firstSegmentColorGroup = text === TEXT_A ? 0 : 1;
 
 	const image = context.getImageData(0, 0, SAMPLE_WIDTH, SAMPLE_HEIGHT);
-	const sampleStep = tier === 'mobile' ? 3 : 2;
+	const sampleStep = 2;
 	const jitterAmount = sampleStep * 0.18;
 	const random = createRandom(randomSeed);
 	const points: SpatialPoint[] = [];
@@ -266,7 +340,11 @@ function sampleTextMask(
 				y: jitteredY,
 				order: mortonOrder(jitteredX, jitteredY),
 				colorGroup:
-					jitteredX < splitX
+					isMobileName
+						? jitteredY < SAMPLE_HEIGHT / 2
+							? 1
+							: 0
+						: jitteredX < splitX
 						? firstSegmentColorGroup
 						: 1 - firstSegmentColorGroup,
 			});
@@ -403,12 +481,14 @@ function createMorphParticleData(width: number): MorphParticleData | null {
 	const random = createRandom(0x6d6f7270);
 	const seeds = new Float32Array(matchedTargets.count);
 	const sizes = new Float32Array(matchedTargets.count);
+	const flows = new Float32Array(matchedTargets.count);
 	const isMobile = tier === 'mobile';
 
 	for (let index = 0; index < matchedTargets.count; index += 1) {
 		const seed = random();
 		seeds[index] = seed;
-		sizes[index] = isMobile ? 1.05 + seed * 0.35 : 1.15 + seed * 0.45;
+		sizes[index] = isMobile ? 0.72 + seed * 0.28 : 0.82 + seed * 0.34;
+		flows[index] = random();
 	}
 
 	return {
@@ -417,6 +497,7 @@ function createMorphParticleData(width: number): MorphParticleData | null {
 		colorGroups: matchedTargets.colorGroups,
 		seeds,
 		sizes,
+		flows,
 		count: matchedTargets.count,
 		tier,
 	};
@@ -433,6 +514,7 @@ function createGeometry(data: MorphParticleData) {
 	);
 	geometry.setAttribute('aSeed', new THREE.BufferAttribute(data.seeds, 1));
 	geometry.setAttribute('aSize', new THREE.BufferAttribute(data.sizes, 1));
+	geometry.setAttribute('aFlow', new THREE.BufferAttribute(data.flows, 1));
 	return geometry;
 }
 
@@ -461,6 +543,8 @@ function initializeWordmark(root: HTMLElement) {
 
 	const initialParticleData = createMorphParticleData(root.clientWidth);
 	if (!initialParticleData) return;
+	root.dataset.nameLayout =
+		initialParticleData.tier === 'mobile' ? 'split' : 'single';
 
 	let renderer: THREE.WebGLRenderer;
 	try {
@@ -540,6 +624,8 @@ function initializeWordmark(root: HTMLElement) {
 		points.geometry = geometry;
 		lastGeometryWidth = width;
 		lastGeometryHeight = height;
+		root.dataset.nameLayout =
+			nextParticleData.tier === 'mobile' ? 'split' : 'single';
 		previousGeometry.dispose();
 	};
 
@@ -567,7 +653,7 @@ function initializeWordmark(root: HTMLElement) {
 		const tier = getResponsiveTier(width);
 		const pixelRatio = Math.min(
 			window.devicePixelRatio || 1,
-			tier === 'mobile' ? 1.35 : 1.5,
+			tier === 'mobile' ? 2 : 1.75,
 		);
 
 		renderer.setPixelRatio(pixelRatio);

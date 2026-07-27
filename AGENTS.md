@@ -1,22 +1,33 @@
+# holtsdav.com
+
+## Project
+
+This repository contains the Astro website for https://holtsdav.com.
+
+The site is David Holtschke's developer portfolio and presents Glassdays Countdown, Mute on Location and future software projects.
+
+The visible website language is German.
+
+## Stack
+
+- Astro
+- TypeScript
+- Tailwind CSS 4
+- custom CSS
+- Three.js for the particle wordmark
+- static Cloudflare Pages deployment
+- npm
+
+Keep the website statically buildable. Do not add a frontend framework, backend, database, CMS or server-side rendering unless explicitly requested.
+
 ## Development
 
-When starting the dev server, use background mode:
+Use the Node.js version from `.nvmrc`.
 
-```
-astro dev --background
-```
+Commands:
 
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
-
-## Documentation
-
-Full documentation: https://docs.astro.build
-
-Consult these guides before working on related tasks:
-
-- [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
-- [Working with Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Using React, Vue, Svelte, or other framework components](https://docs.astro.build/en/guides/framework-components/)
-- [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
-- [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
-- [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+```bash
+npm run dev
+npm run check
+npm run build
+npm run preview
