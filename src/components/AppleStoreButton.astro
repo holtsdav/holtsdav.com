@@ -7,7 +7,7 @@ interface Props {
 
 const {
 	href,
-	label = 'Laden im App Store',
+	label = 'Download on the App Store',
 	class: className,
 } = Astro.props;
 ---
@@ -17,7 +17,7 @@ const {
 	href={href}
 	target="_blank"
 	rel="noreferrer"
-	aria-label={`${label} (öffnet den App Store)`}
+	aria-label={`${label} (opens the App Store)`}
 >
 	<svg viewBox="0 0 24 24" aria-hidden="true">
 		<path

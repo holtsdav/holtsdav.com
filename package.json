@@ -6,6 +6,11 @@
     "node": ">=24 <25"
   },
   "scripts": {
+    "check": "tsc --noEmit && npm run contact:types && tsc -p workers/contact/tsconfig.json",
+    "test:contact": "node --test workers/contact/contact.test.mjs",
+    "contact:types": "wrangler types --config workers/contact/wrangler.jsonc workers/contact/worker-configuration.d.ts --env-interface ContactEnv",
+    "contact:dev": "wrangler dev --config workers/contact/wrangler.jsonc",
+    "contact:deploy": "wrangler deploy --config workers/contact/wrangler.jsonc",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -20,7 +25,9 @@
   "private": true,
   "packageManager": "npm@11.16.0",
   "devDependencies": {
+    "@types/node": "^24.13.3",
     "@types/three": "^0.185.1",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "wrangler": "^4.129.0"
   }
 }

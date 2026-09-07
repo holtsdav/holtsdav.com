@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-07T13:34:05.607499+00:00",
+  "title": "Design System: holtsdav.com",
+  "extensions": {
+    "colorMeta": {
+      "page": {
+        "role": "neutral",
+        "displayName": "Page",
+        "tonalRamp": [
+          "oklch(15.00% 0.00673 270.47)",
+          "oklch(26.43% 0.00673 270.47)",
+          "oklch(37.86% 0.00673 270.47)",
+          "oklch(49.29% 0.00673 270.47)",
+          "oklch(60.71% 0.00673 270.47)",
+          "oklch(72.14% 0.00673 270.47)",
+          "oklch(83.57% 0.00673 270.47)",
+          "oklch(95.00% 0.00673 270.47)"
+        ],
+        "description": "Generated preview ramp; only the source token is normative."
+      },
+      "elevated": {
+        "role": "neutral",
+        "displayName": "Elevated",
+        "tonalRamp": [
+          "oklch(15.00% 0.01264 270.66)",
+          "oklch(26.43% 0.01264 270.66)",
+          "oklch(37.86% 0.01264 270.66)",
+          "oklch(49.29% 0.01264 270.66)",
+          "oklch(60.71% 0.01264 270.66)",
+          "oklch(72.14% 0.01264 270.66)",
+          "oklch(83.57% 0.01264 270.66)",
+          "oklch(95.00% 0.01264 270.66)"
+        ],
+        "description": "Generated preview ramp; only the source token is normative."
+      },
+      "primary": {
+        "role": "neutral",
+        "displayName": "Primary",
+        "tonalRamp": [
+          "oklch(15.00% 0.00453 258.32)",
+          "oklch(26.43% 0.00453 258.32)",
+          "oklch(37.86% 0.00453 258.32)",
+          "oklch(49.29% 0.00453 258.32)",
+          "oklch(60.71% 0.00453 258.32)",
+          "oklch(72.14% 0.00453 258.32)",
+          "oklch(83.57% 0.00453 258.32)",
+          "oklch(95.00% 0.00453 258.32)"
+        ],
+        "description": "Generated preview ramp; only the source token is normative."
+      },
+      "secondary": {
+        "role": "neutral",
+        "displayName": "Secondary",
+        "tonalRamp": [
+          "oklch(15.00% 0.01332 266.68)",
+          "oklch(26.43% 0.01332 266.68)",
+          "oklch(37.86% 0.01332 266.68)",
+          "oklch(49.29% 0.01332 266.68)",
+          "oklch(60.71% 0.01332 266.68)",
+          "oklch(72.14% 0.01332 266.68)",
+          "oklch(83.57% 0.01332 266.68)",
+          "oklch(95.00% 0.01332 266.68)"
+        ],
+        "description": "Generated preview ramp; only the source token is normative."
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Accent",
+        "tonalRamp": [
+          "oklch(15.00% 0.13584 274.72)",
+          "oklch(26.43% 0.13584 274.72)",
+          "oklch(37.86% 0.13584 274.72)",
+          "oklch(49.29% 0.13584 274.72)",
+          "oklch(60.71% 0.13584 274.72)",
+          "oklch(72.14% 0.13584 274.72)",
+          "oklch(83.57% 0.13584 274.72)",
+          "oklch(95.00% 0.13584 274.72)"
+        ],
+        "description": "Generated preview ramp; only the source token is normative."
+      }
+    },
+    "typographyMeta": {
+      "body": {
+        "displayName": "Body",
+        "purpose": "Shared body copy."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "control-transition",
+        "value": "160ms ease",
+        "purpose": "Shared and contact control state changes."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile-shell",
+        "value": "760px"
+      },
+      {
+        "name": "contact-field-stack",
+        "value": "460px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Shared portfolio action.",
+      "html": "<a class=\"ds-button ds-button-primary\" href=\"#\">View project</a>",
+      "css": ".ds-button {\n\tdisplay: inline-flex;\n\talign-items: center;\n\tjustify-content: center;\n\tmin-height: 50px;\n\tpadding: 13px 20px;\n\tborder-radius: 12px;\n\tfont-size: 16px;\n\tfont-weight: 700;\n\tline-height: 1.3;\n\ttransition: transform 160ms ease, background 160ms ease, border-color 160ms ease;\n}\n.ds-button:hover {\n\ttransform: translateY(-2px);\n}\n.ds-button-primary {\n\tbackground: var(--color-accent);\n\tcolor: #090a0d;\n}\n.ds-button-primary:hover {\n\tbackground: #a7b3ff;\n}\n.ds-button {font-family:var(--font-sans, Arial, Helvetica, sans-serif);text-decoration:none;}\n.ds-button:focus-visible {outline:3px solid var(--color-accent,#91a2ff);outline-offset:4px;}"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "description": "Shared portfolio action.",
+      "html": "<a class=\"ds-button ds-button-secondary\" href=\"#\">View project</a>",
+      "css": ".ds-button {\n\tdisplay: inline-flex;\n\talign-items: center;\n\tjustify-content: center;\n\tmin-height: 50px;\n\tpadding: 13px 20px;\n\tborder-radius: 12px;\n\tfont-size: 16px;\n\tfont-weight: 700;\n\tline-height: 1.3;\n\ttransition: transform 160ms ease, background 160ms ease, border-color 160ms ease;\n}\n.ds-button:hover {\n\ttransform: translateY(-2px);\n}\n.ds-button-secondary {\n\tborder: 1px solid rgba(255, 255, 255, 0.18);\n\tbackground: rgba(255, 255, 255, 0.04);\n\tcolor: var(--color-primary);\n}\n.ds-button-secondary:hover {\n\tborder-color: rgba(255, 255, 255, 0.32);\n\tbackground: rgba(255, 255, 255, 0.07);\n}\n.ds-button {font-family:var(--font-sans, Arial, Helvetica, sans-serif);text-decoration:none;}\n.ds-button:focus-visible {outline:3px solid var(--color-accent,#91a2ff);outline-offset:4px;}"
+    },
+    {
+      "name": "Contact submit",
+      "kind": "button",
+      "refersTo": "contact-submit",
+      "description": "Form action with pending disabled state.",
+      "html": "<button class=\"ds-submit\">Send message</button>",
+      "css": ".ds-submit { display: inline-flex; align-items: center; justify-content: center; gap: 12px; justify-self: start; min-height: 48px; padding: 12px 20px; border: 0; border-radius: 10px; background: var(--color-accent); color: var(--color-page); font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 160ms ease; }\n.ds-submit:hover:enabled { background: #b5c0ff; }\n.ds-submit:disabled { opacity: 0.55; cursor: not-allowed; }\n.ds-submit { width: 100%; }\n.ds-submit {font-family:var(--font-sans, Arial, Helvetica, sans-serif);}\n.ds-submit:focus-visible {outline:3px solid var(--color-accent,#91a2ff);outline-offset:4px;}"
+    },
+    {
+      "name": "Contact field",
+      "kind": "input",
+      "refersTo": "contact-input",
+      "description": "Labeled text field and invalid state.",
+      "html": "<label class=\"ds-label\" for=\"ds-name\">Name</label><input class=\"ds-input\" id=\"ds-name\" autocomplete=\"name\" required>",
+      "css": ".ds-label {display:block;margin-bottom:8px;font-size:15px;font-weight:700;color:var(--color-primary,#f5f7fa);font-family:var(--font-sans, Arial, Helvetica, sans-serif);}\n.ds-input, .ds-textarea { width: 100%; min-width: 0; padding: 12px 14px; border: 1px solid #555c6f; border-radius: 10px; background: var(--color-elevated); color: var(--color-primary); font: inherit; font-size: 16px; line-height: 1.5; caret-color: var(--color-accent); }\n.ds-input[aria-invalid=\"true\"], .ds-textarea[aria-invalid=\"true\"] { border-color: #ffb4bd; }\n.ds-input {font-family:var(--font-sans, Arial, Helvetica, sans-serif);}\n.ds-input:focus-visible {outline:3px solid var(--color-accent,#91a2ff);outline-offset:3px;}"
+    },
+    {
+      "name": "Footer navigation",
+      "kind": "nav",
+      "description": "Contact and legal links in the shared footer.",
+      "html": "<nav class=\"ds-footer\" aria-label=\"Contact and legal information\"><a href=\"/contact/\">Contact</a><a href=\"/impressum/\">Legal Notice (Impressum)</a><a href=\"/privacy/\">Privacy Policy</a></nav>",
+      "css": ".ds-footer {\n\tdisplay: flex;\n\twidth: 100%;\n\tmin-height: 52px;\n\talign-items: center;\n\tgap: 16px;\n\tborder-top: 1px solid rgba(255, 255, 255, 0.08);\n}\n.ds-footer a {\n\tcolor: var(--color-secondary);\n\tfont-size: 14px;\n\tfont-weight: 600;\n\ttransition: color 160ms ease;\n}\n.ds-footer a:hover {\n\tcolor: var(--color-primary);\n}\n.ds-footer {\n\t\tflex-wrap: wrap;\n\t\tjustify-content: center;\n\t\tpadding-block: 12px;\n\t}\n.ds-footer {font-family:var(--font-sans, Arial, Helvetica, sans-serif);flex-wrap:wrap;} .ds-footer a {text-decoration:none;} .ds-footer a:focus-visible {outline:3px solid var(--color-accent,#91a2ff);outline-offset:4px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "",
+    "overview": "The existing portfolio uses a near-black canvas, pale text, and a blue accent. Contact inherits this restrained shell and keeps the email link and form easy to find.\n\nThis is a code-based record of the incumbent global styles and contact addition, not a new brand direction or visual approval. Browser screenshot verification was unavailable.",
+    "keyCharacteristics": [
+      "Dark tonal surfaces and pale readable text.",
+      "Blue links and primary actions.",
+      "Rounded controls with visible keyboard focus."
+    ],
+    "rules": [
+      {
+        "name": "The Shared Palette Rule",
+        "body": "Reuse the global color variables for the shell and contact controls.",
+        "section": "colors"
+      },
+      {
+        "name": "The Visible Feedback Rule",
+        "body": "Keep validation and delivery status adjacent to the form, and preserve entered content when submission fails.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do reuse the shared palette, header, and footer.",
+      "Do keep form labels visible and feedback beside the form.",
+      "Do respect the existing reduced-motion override."
+    ],
+    "donts": [
+      "Don't turn contact into a promotional landing page.",
+      "Don't treat page-specific measurements as universal layout tokens."
+    ]
+  }
+}

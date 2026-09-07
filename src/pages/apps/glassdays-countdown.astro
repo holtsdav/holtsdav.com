@@ -1,41 +1,43 @@
 ---
 import AppLanding from '../../components/AppLanding.astro';
+import glassdaysIcon from '../../../Assets/app-icons/glassdays.png';
+import glassdaysPreview from '../../../Assets/Glassdays.gif';
 ---
 
 <AppLanding
-	name="Glassdays Countdown"
+	name="Glassdays"
 	slug="glassdays-countdown"
-	icon="/app-icons/glassdays.png"
-	status="Im App Store"
-	kicker="Momente, die zählen"
-	headline="Persönliche Countdowns für wichtige Momente."
-	description="Glassdays macht aus den Momenten, die dir wichtig sind, persönliche und visuelle Countdowns – von der lange geplanten Reise bis zum Geburtstag, den du nie vergessen möchtest."
+	icon={glassdaysIcon}
+	status="Available on the App Store"
+	kicker="Moments that matter"
+	headline="Personal countdowns for the moments that matter."
+	description="Glassdays turns the moments you care about into personal, visual countdowns—from a long-awaited trip to the birthday you never want to forget."
 	accent="#d7d4dd"
 	features={[
 		{
 			number: '01',
-			title: 'Persönlich gestalten',
-			description: 'Gib jedem Moment ein eigenes Emoji und Foto, pinne, was dir besonders wichtig ist, und organisiere deine Countdowns in schönen Sammlungen.',
+			title: 'Make it personal',
+			description: 'Give every moment its own emoji and photo, pin what matters most, and organize your countdowns into beautiful collections.',
 		},
 		{
 			number: '02',
-			title: 'Termine im Blick behalten',
-			description: 'Sieh deine nächsten Termine in Widgets, erstelle jährliche Wiederholungen und erhalte optionale Erinnerungen, wenn ein Moment näher rückt.',
+			title: 'Keep dates in view',
+			description: 'See upcoming dates in widgets, create annual repeats, and get optional reminders as each moment gets closer.',
 		},
 		{
 			number: '03',
-			title: 'Ohne Benutzerkonto',
-			description: 'Deine Countdowns bleiben auf deinem Gerät. Glassdays Pro ergänzt unter anderem iCloud-Synchronisierung, Kalenderintegration und eigene Widgets.',
+			title: 'No account required',
+			description: 'Your countdowns stay on your device. Glassdays Pro adds features including iCloud sync, calendar integration, and custom widgets.',
 		},
 	]}
-	closingHeadline="Deine nächsten Momente auf einen Blick."
-	closingDescription="Glassdays ist kostenlos für iPhone und iPad erhältlich. Glassdays Pro kann mit einem einmaligen Kauf freigeschaltet werden."
-	primaryLabel="Laden im App Store"
+	closingHeadline="Your next moments at a glance."
+	closingDescription="Glassdays is free for iPhone and iPad. Glassdays Pro can be unlocked with a one-time purchase."
+	primaryLabel="Download on the App Store"
 	primaryHref="https://apps.apple.com/de/app/glassdays-countdown/id6785538729"
-	privacyHref="/apps/glassdays-countdown/privacy/"
-	mediaSrc="/Glassdays.gif"
-	mediaAlt="Glassdays Countdown in Benutzung: persönliche Countdowns und Sammlungen werden auf einem Apple-Gerät gezeigt"
+	privacyHref="/privacy/glassdays/"
+	mediaSrc={glassdaysPreview}
+	mediaAlt="Glassdays in use, showing personal countdowns and collections on an Apple device"
 	mediaWidth={800}
 	mediaHeight={600}
-	mediaCaption="Glassdays Countdown · App-Vorschau"
+	mediaCaption="Glassdays · App preview"
 />

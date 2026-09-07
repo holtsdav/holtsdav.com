@@ -4,9 +4,9 @@
 
 This repository contains the Astro website for https://holtsdav.com.
 
-The site is David Holtschke's developer portfolio and presents Glassdays Countdown, Mute on Location and future software projects.
+The site is David Holtschke's developer portfolio and presents software projects.
 
-The visible website language is German.
+The visible website language is English.
 
 ## Stack
 
@@ -18,7 +18,6 @@ The visible website language is German.
 - static Cloudflare Pages deployment
 - npm
 
-Keep the website statically buildable. Do not add a frontend framework, backend, database, CMS or server-side rendering unless explicitly requested.
 
 ## Development
 

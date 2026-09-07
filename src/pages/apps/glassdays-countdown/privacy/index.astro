@@ -6,16 +6,18 @@ const languages = [
 	{ label: 'English', href: '/apps/glassdays-countdown/privacy/en/', lang: 'en' },
 	{ label: 'Español', href: '/apps/glassdays-countdown/privacy/es/', lang: 'es' },
 ];
+
+return Astro.redirect('/privacy/glassdays/de/', 301);
 ---
 
 <AppPrivacyLayout
 	title="Glassdays Datenschutzerklärung"
-	description="Datenschutzerklärung für die Glassdays Countdown App."
+	description="Datenschutzerklärung für die Glassdays App."
 	canonical="https://holtsdav.com/apps/glassdays-countdown/privacy/"
 	lang="de"
-	productName="Glassdays Countdown"
+	productName="Glassdays"
 	productHref="/apps/glassdays-countdown/"
-	updated="Zuletzt aktualisiert: 17. Juli 2026"
+	updated="Zuletzt aktualisiert: 7. September 2026"
 	{languages}
 >
 	<p>Glassdays wurde so entwickelt, dass Ihre Countdown-Inhalte auf Ihrem Gerät verbleiben. Die App verwendet datenschutzfreundliche, anonyme Nutzungsanalysen und einen Dienst zur Kaufvalidierung, wie unten beschrieben. Glassdays verwendet keine Werbung, kein appübergreifendes Tracking, keine Absturzberichte und kein vom Entwickler betriebenes Benutzerkontensystem.</p>
@@ -83,7 +85,7 @@ const languages = [
 	<section>
 		<h2>Speicherdauer und Ihre Wahlmöglichkeiten</h2>
 		<p>Glassdays bewahrt lokale App-Daten auf, bis Sie sie in der App löschen oder die App entfernen. Support-E-Mails werden nur so lange gespeichert, wie es zur Bearbeitung und Klärung Ihrer Anfrage angemessen erforderlich ist. Optionale Netzwerkfunktionen, Benachrichtigungen, Kalenderzugriff und iCloud-Synchronisierung können Sie jederzeit über Glassdays oder die iOS-Einstellungen deaktivieren.</p>
-		<p>Bei Fragen zum Datenschutz oder einem Löschwunsch zu einer Support-Nachricht schreiben Sie an <a href="mailto:8-kapsel-guertel@icloud.com">8-kapsel-guertel@icloud.com</a>.</p>
+		<p>Bei Fragen zum Datenschutz oder einem Löschwunsch zu einer Support-Nachricht schreiben Sie an <a href="mailto:contact@holtsdav.com">contact@holtsdav.com</a>.</p>
 	</section>
 
 	<section>
