@@ -1,0 +1,195 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AppleStoreButton from './AppleStoreButton.astro';
+import ServiceButton from './ServiceButton.astro';
+
+interface Feature {
+	number: string;
+	title: string;
+	description: string;
+}
+
+interface Props {
+	name: string;
+	slug: string;
+	icon: string;
+	status: string;
+	kicker: string;
+	headline: string;
+	description: string;
+	accent: string;
+	features: Feature[];
+	closingHeadline: string;
+	closingDescription: string;
+	primaryLabel?: string;
+	primaryHref?: string;
+	secondaryLabel?: string;
+	secondaryHref?: string;
+	privacyHref?: string;
+	mediaSrc?: string;
+	mediaAlt?: string;
+	mediaWidth?: number;
+	mediaHeight?: number;
+	mediaCaption?: string;
+}
+
+const {
+	name,
+	slug,
+	icon,
+	status,
+	kicker,
+	headline,
+	description,
+	accent,
+	features,
+	closingHeadline,
+	closingDescription,
+	primaryLabel,
+	primaryHref,
+	secondaryLabel,
+	secondaryHref,
+	privacyHref,
+	mediaSrc,
+	mediaAlt,
+	mediaWidth,
+	mediaHeight,
+	mediaCaption,
+} = Astro.props;
+
+const canonical = `https://holtsdav.com/apps/${slug}/`;
+const isAppStoreLink = primaryHref?.includes('apps.apple.com') ?? false;
+const isItchLink = primaryHref?.includes('itch.io') ?? false;
+const isGitHubSecondaryLink = secondaryHref?.includes('github.com') ?? false;
+---
+
+<BaseLayout
+	title={`${name} | holtsdav`}
+	description={description}
+	canonical={canonical}
+>
+	<article class={`app-landing app-theme-${slug}`} style={`--app-accent: ${accent}`}>
+		<section class="app-product-hero">
+			<div class="app-product-glow" aria-hidden="true"></div>
+
+			<div class="app-product-intro shell">
+				<div class="app-product-icon">
+					<Image src={icon} alt={`${name} App-Icon`} width={512} height={512} />
+				</div>
+				<p class="app-kicker">{kicker}</p>
+				<h1>{name}</h1>
+				<p class="app-product-headline">{headline}</p>
+				<p class="app-lead">{description}</p>
+				<div class="app-hero-actions">
+					{primaryHref && primaryLabel ? (
+						isAppStoreLink ? (
+							<AppleStoreButton href={primaryHref} label={primaryLabel} />
+						) : isItchLink ? (
+							<ServiceButton service="itch" href={primaryHref} label={primaryLabel} variant="filled" />
+						) : (
+							<a class="button app-primary-action" href={primaryHref} target={primaryHref.startsWith('http') ? '_blank' : undefined} rel={primaryHref.startsWith('http') ? 'noreferrer' : undefined}>
+								{primaryLabel}
+							</a>
+						)
+					) : (
+						<a class="button app-primary-action" href="mailto:contact@holtsdav.com?subject=Feedback%20zu%20Mute%20On%20Location">Feedback geben</a>
+					)}
+					{secondaryHref && secondaryLabel && (
+						isGitHubSecondaryLink ? (
+							<ServiceButton service="github" href={secondaryHref} label={secondaryLabel} variant="outline" />
+						) : (
+							<a class="button button-secondary" href={secondaryHref} target={secondaryHref.startsWith('http') ? '_blank' : undefined} rel={secondaryHref.startsWith('http') ? 'noreferrer' : undefined}>
+								{secondaryLabel}
+							</a>
+						)
+					)}
+					{primaryHref ? (
+						<a class="app-text-link" href="mailto:contact@holtsdav.com">Feedback senden →</a>
+					) : (
+						<a class="app-text-link" href="/#projects">Andere Projekte →</a>
+					)}
+					{privacyHref && <a class="app-text-link" href={privacyHref}>Datenschutz →</a>}
+				</div>
+			</div>
+		</section>
+
+		<section class="app-editorial shell" aria-labelledby="app-story-title">
+			<div class="app-editorial-heading">
+				<p class="app-section-label">Funktionen</p>
+				<h2 id="app-story-title">{closingHeadline}</h2>
+				<p>{closingDescription}</p>
+			</div>
+
+			<div class="app-feature-list">
+				{features.map((feature) => (
+					<article>
+						<span>{feature.number}</span>
+						<div>
+							<h3>{feature.title}</h3>
+							<p>{feature.description}</p>
+						</div>
+					</article>
+				))}
+			</div>
+		</section>
+
+		<section class:list={['app-product-stage', { 'app-product-stage-media': mediaSrc }]} aria-label={`${name} Produktansicht`}>
+			{mediaSrc ? (
+				<figure class="app-media-frame">
+					<Image
+						src={mediaSrc}
+						alt={mediaAlt ?? `${name} Produktansicht`}
+						width={mediaWidth ?? 1200}
+						height={mediaHeight ?? 800}
+						loading="lazy"
+					/>
+					{mediaCaption && <figcaption>{mediaCaption}</figcaption>}
+				</figure>
+			) : (
+				<>
+					<p aria-hidden="true">{name}</p>
+					<div class="app-stage-icon">
+						<Image src={icon} alt="" width={512} height={512} loading="lazy" />
+					</div>
+				</>
+			)}
+		</section>
+
+		<section class="app-product-cta shell">
+			<div>
+				<p class="app-section-label">{status}</p>
+				<h2>{name}</h2>
+			</div>
+			<div>
+				<p>{description}</p>
+				<div class="app-hero-actions">
+					{primaryHref && primaryLabel ? (
+						isAppStoreLink ? (
+							<AppleStoreButton href={primaryHref} label={primaryLabel} />
+						) : isItchLink ? (
+							<ServiceButton service="itch" href={primaryHref} label={primaryLabel} variant="filled" />
+						) : (
+							<a class="button app-primary-action" href={primaryHref} target={primaryHref.startsWith('http') ? '_blank' : undefined} rel={primaryHref.startsWith('http') ? 'noreferrer' : undefined}>
+								{primaryLabel}
+							</a>
+						)
+					) : (
+						<a class="button app-primary-action" href="mailto:contact@holtsdav.com?subject=Feedback%20zu%20Mute%20On%20Location">Feedback geben</a>
+					)}
+					{secondaryHref && secondaryLabel && (
+						isGitHubSecondaryLink ? (
+							<ServiceButton service="github" href={secondaryHref} label={secondaryLabel} variant="outline" />
+						) : (
+							<a class="button button-secondary" href={secondaryHref} target={secondaryHref.startsWith('http') ? '_blank' : undefined} rel={secondaryHref.startsWith('http') ? 'noreferrer' : undefined}>
+								{secondaryLabel}
+							</a>
+						)
+					)}
+					<a class="button button-secondary" href="/#projects">Andere Projekte</a>
+					{privacyHref && <a class="app-text-link" href={privacyHref}>Datenschutz →</a>}
+				</div>
+			</div>
+		</section>
+	</article>
+</BaseLayout>

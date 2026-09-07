@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface LanguageLink {
+	label: string;
+	href: string;
+	lang: string;
+}
+
+interface Props {
+	title: string;
+	description: string;
+	canonical: string;
+	lang: string;
+	productName: string;
+	productHref: string;
+	updated: string;
+	languages?: LanguageLink[];
+}
+
+const {
+	title,
+	description,
+	canonical,
+	lang,
+	productName,
+	productHref,
+	updated,
+	languages = [],
+} = Astro.props;
+---
+
+<BaseLayout
+	title={`${title} | holtsdav`}
+	description={description}
+	canonical={canonical}
+	lang={lang}
+>
+	<article class="legal-page app-privacy-page shell">
+		<div class="legal-breadcrumb">
+			<a href={productHref}>← {productName}</a>
+		</div>
+
+		<header class="legal-header">
+			<div class="legal-heading-row">
+				<div>
+					<h1>{title}</h1>
+					<p>{updated}</p>
+				</div>
+
+				{languages.length > 1 && (
+					<nav class="language-switcher" aria-label="Language selection">
+						{languages.map((language) => (
+							<a
+								href={language.href}
+								lang={language.lang}
+								aria-current={language.lang === lang ? 'page' : undefined}
+							>
+								{language.label}
+							</a>
+						))}
+					</nav>
+				)}
+			</div>
+		</header>
+
+		<div class="legal-content privacy-content app-privacy-content">
+			<slot />
+		</div>
+	</article>
+</BaseLayout>

@@ -1,0 +1,42 @@
+---
+import AppLanding from '../../components/AppLanding.astro';
+---
+
+<AppLanding
+	name="Rogue Color"
+	slug="rogue-color"
+	icon="/app-icons/rogue-color.png"
+	status="Spielbar auf itch.io"
+	kicker="Action · Roguelite · Pixel Art"
+	headline="Wechsle die Farbe und überlebe so lange wie möglich."
+	description="Rogue Color ist ein Survival-Actionspiel in Schwarz und Weiß. Passe deine Farbe an die Gegner an, sammle Verbesserungen und versuche, deinen eigenen Rekord zu schlagen."
+	accent="#b7bac2"
+	features={[
+		{
+			number: '01',
+			title: 'Farbe wechseln',
+			description: 'Mit E wechselst du zwischen Schwarz und Weiß. Deine Farbe bestimmt, gegen welche Gegner du dich verteidigen kannst.',
+		},
+		{
+			number: '02',
+			title: 'Steigender Schwierigkeitsgrad',
+			description: 'Ab der dritten Minute verdoppeln sich Gesundheit und Schaden der Gegner mit jeder weiteren Minute.',
+		},
+		{
+			number: '03',
+			title: 'Game-Jam-Projekt',
+			description: 'Rogue Color war mein erstes Spiel und entstand in sieben Tagen für den Theana Game Jam zum Thema Black & White.',
+		},
+	]}
+	closingHeadline="Mein erstes Spielprojekt."
+	closingDescription="Rogue Color wurde mit Godot entwickelt. Der Prototyp ist für Windows, macOS und Linux auf itch.io verfügbar. Das Projekt findest du auch auf GitHub."
+	primaryLabel="Auf itch.io öffnen"
+	primaryHref="https://holtsdav.itch.io/rouge-color"
+	secondaryLabel="GitHub"
+	secondaryHref="https://github.com/holtsdav/RogueColor"
+	mediaSrc="/rogue-color-gameplay.png"
+	mediaAlt="Gameplay aus Rogue Color mit schwarz-weißen Gegnern und drei auswählbaren Verbesserungen"
+	mediaWidth={639}
+	mediaHeight={359}
+	mediaCaption="Rogue Color · Gameplay"
+/>

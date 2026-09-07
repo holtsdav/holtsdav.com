@@ -1,0 +1,29 @@
+---
+interface Props {
+	href: string;
+	label?: string;
+	class?: string;
+}
+
+const {
+	href,
+	label = 'Laden im App Store',
+	class: className,
+} = Astro.props;
+---
+
+<a
+	class:list={['button', 'apple-store-button', className]}
+	href={href}
+	target="_blank"
+	rel="noreferrer"
+	aria-label={`${label} (öffnet den App Store)`}
+>
+	<svg viewBox="0 0 24 24" aria-hidden="true">
+		<path
+			fill="currentColor"
+			d="M16.7 12.8c0-2.5 2.1-3.7 2.2-3.8a4.8 4.8 0 0 0-3.8-2c-1.6-.2-3.1 1-3.9 1s-2-1-3.3-1c-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.3 2.5 1.3-.1 1.8-.8 3.5-.8 1.6 0 2.1.8 3.5.8s2.4-1.2 3.2-2.5a11 11 0 0 0 1.5-3.1 4.4 4.4 0 0 1-2.3-3.8ZM14 5.3A4.4 4.4 0 0 0 15 2a4.5 4.5 0 0 0-3 1.6 4.2 4.2 0 0 0-1.1 3.2A3.7 3.7 0 0 0 14 5.3Z"
+		/>
+	</svg>
+	<span>{label}</span>
+</a>

@@ -1,0 +1,39 @@
+---
+import AppLanding from '../../components/AppLanding.astro';
+---
+
+<AppLanding
+	name="Mute On Location"
+	slug="mute-on-location"
+	icon="/app-icons/mute-on-location.png"
+	status="In Entwicklung"
+	kicker="macOS · Standortbasiertes Stummschalten"
+	headline="An gespeicherten Orten automatisch stumm."
+	description="Mute On Location schaltet die aktuelle Audioausgabe deines Macs stumm, sobald du einen gespeicherten Ort erreichst. Orte, Radien und die Automatisierung verwaltest du direkt in der Menüleisten-App."
+	accent="#d8c7b7"
+	features={[
+		{
+			number: '01',
+			title: 'Orte und Radien speichern',
+			description: 'Lege Orte wie Büro, Schule oder Bibliothek fest und bestimme für jeden Ort einen passenden Radius.',
+		},
+		{
+			number: '02',
+			title: 'Automatisch stummschalten',
+			description: 'Smart Monitoring erkennt, wenn du einen gespeicherten Ort erreichst, und schaltet die ausgewählte Audioausgabe stumm.',
+		},
+		{
+			number: '03',
+			title: 'Daten bleiben auf dem Mac',
+			description: 'Gespeicherte Orte und Einstellungen liegen lokal im App-Container. Die App erstellt keinen Bewegungs- oder Standortverlauf.',
+		},
+	]}
+	closingHeadline="Stummschalten, ohne daran denken zu müssen."
+	closingDescription="Mute On Location befindet sich in Entwicklung und ist noch nicht im App Store verfügbar."
+	privacyHref="/apps/mute-on-location/privacy/"
+	mediaSrc="/MuteOnLocation.gif"
+	mediaAlt="Mute On Location zeigt den aktuellen Standortstatus und gespeicherte Orte in einer macOS-Menüleisten-App"
+	mediaWidth={900}
+	mediaHeight={600}
+	mediaCaption="Mute On Location · macOS"
+/>

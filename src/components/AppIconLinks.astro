@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+
+const apps = [
+	{
+		name: 'Rogue Color',
+		href: '/apps/rogue-color/',
+		icon: '/app-icons/rogue-color.png',
+		status: 'Spielbar auf itch.io',
+	},
+	{
+		name: 'Glassdays Countdown',
+		href: '/apps/glassdays-countdown/',
+		icon: '/app-icons/glassdays.png',
+		status: 'Im App Store',
+	},
+	{
+		name: 'Mute On Location',
+		href: '/apps/mute-on-location/',
+		icon: '/app-icons/mute-on-location.png',
+		status: 'In Entwicklung',
+	},
+];
+---
+
+<nav class="app-icon-links" id="apps" aria-label="Apps entdecken">
+	{apps.map((app, index) => (
+		<a
+			class="app-icon-link"
+			href={app.href}
+			aria-label={`${app.name} – ${app.status}`}
+			style={`--app-index: ${index}`}
+		>
+			<Image src={app.icon} alt="" width={512} height={512} loading="eager" />
+			<span>
+				<strong>{app.name}</strong>
+				<small>{app.status}</small>
+			</span>
+		</a>
+	))}
+</nav>
