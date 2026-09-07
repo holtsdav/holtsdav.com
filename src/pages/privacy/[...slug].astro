@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import glassdaysDeSource from '../apps/glassdays-countdown/privacy/index.astro?raw';
+import glassdaysEnSource from '../apps/glassdays-countdown/privacy/en.astro?raw';
+import glassdaysEsSource from '../apps/glassdays-countdown/privacy/es.astro?raw';
+import muteOnLocationSource from '../apps/mute-on-location/privacy.astro?raw';
+
+const policySources = {
+	glassdaysDe: glassdaysDeSource,
+	glassdaysEn: glassdaysEnSource,
+	glassdaysEs: glassdaysEsSource,
+	muteOnLocation: muteOnLocationSource,
+} as const;
+
+function extractPolicyContent(source: string) {
+	const match = source.match(/<AppPrivacyLayout[\s\S]*?>\s*([\s\S]*?)\s*<\/AppPrivacyLayout>/);
+	return match?.[1] ?? '';
+}
+
+interface LanguageLink {
+	label: string;
+	href: string;
+	lang: string;
+}
+
+export function getStaticPaths() {
+	const glassdaysLanguages: LanguageLink[] = [
+		{ label: 'Deutsch', href: '/privacy/glassdays/de/', lang: 'de' },
+		{ label: 'English', href: '/privacy/glassdays/', lang: 'en' },
+		{ label: 'Español', href: '/privacy/glassdays/es/', lang: 'es' },
+	];
+	const privacyPages = [
+		{ slug: 'glassdays', productName: 'Glassdays', lang: 'en', productHref: '/project/glassdays/', updated: 'Last updated: September 7, 2026', policyKey: 'glassdaysEn' },
+		{ slug: 'glassdays/de', productName: 'Glassdays', lang: 'de', productHref: '/project/glassdays/', updated: 'Zuletzt aktualisiert: 7. September 2026', policyKey: 'glassdaysDe' },
+		{ slug: 'glassdays/es', productName: 'Glassdays', lang: 'es', productHref: '/project/glassdays/', updated: 'Última actualización: 7 de septiembre de 2026', policyKey: 'glassdaysEs' },
+		{ slug: 'muteonlocation', productName: 'Mute On Location', lang: 'en', productHref: '/project/mute-on-location/', updated: 'Last updated: September 7, 2026', policyKey: 'muteOnLocation' },
+		{ slug: 'notilog', productName: 'NotiLog', lang: 'en', productHref: '/project/notilog/', updated: 'Last updated:', policyKey: null },
+		{ slug: 'roomplanner', productName: 'Room Planner', lang: 'en', productHref: '/project/RoomPlanner/', updated: 'Last updated:', policyKey: null },
+		{ slug: 'roguecolor', productName: 'Rogue Color', lang: 'en', productHref: '/project/rogue-color/', updated: 'Last updated:', policyKey: null },
+	];
+
+	return privacyPages.map((page) => ({
+		params: { slug: page.slug },
+		props: {
+			...page,
+			languages: page.slug.startsWith('glassdays') ? glassdaysLanguages : [],
+		},
+	}));
+}
+
+const { productName, productHref, lang, languages = [], updated, policyKey } = Astro.props;
+const slug = Astro.params.slug ?? '';
+const policyContent = policyKey && policyKey in policySources
+	? extractPolicyContent(policySources[policyKey as keyof typeof policySources])
+	: '';
+---
+
+<BaseLayout
+	title={`Privacy Policy | ${productName} | holtsdav`}
+	description={`Privacy Policy for ${productName}.`}
+	robots="noindex, follow"
+	canonical={`https://holtsdav.com/privacy/${slug}/`}
+	lang={lang}
+>
+	<article class="legal-page app-privacy-page shell">
+		<div class="legal-breadcrumb">
+			<a href={productHref}>← {productName}</a>
+		</div>
+
+		<header class="legal-header">
+			<div class="legal-heading-row">
+				<div>
+					<p class="privacy-product-label">{productName}</p>
+					<h1>Privacy Policy</h1>
+					<p><em>{updated}</em></p>
+				</div>
+
+				{languages.length > 1 && (
+					<nav class="language-switcher" aria-label="Language selection">
+						{languages.map((language) => (
+							<a
+								href={language.href}
+								lang={language.lang}
+								aria-current={language.lang === lang ? 'page' : undefined}
+							>
+								{language.label}
+							</a>
+						))}
+					</nav>
+				)}
+			</div>
+		</header>
+
+		{policyContent && (
+			<div class="legal-content privacy-content app-privacy-content" set:html={policyContent}></div>
+		)}
+	</article>
+</BaseLayout>

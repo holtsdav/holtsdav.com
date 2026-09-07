@@ -1,5 +1,7 @@
 ---
 import AppPrivacyLayout from '../../../components/AppPrivacyLayout.astro';
+
+return Astro.redirect('/privacy/muteonlocation/', 301);
 ---
 
 <AppPrivacyLayout
@@ -9,7 +11,7 @@ import AppPrivacyLayout from '../../../components/AppPrivacyLayout.astro';
 	lang="en"
 	productName="Mute On Location"
 	productHref="/apps/mute-on-location/"
-	updated="Effective date: July 13, 2026"
+	updated="Last updated: September 7, 2026"
 >
 	<p>Mute On Location is a macOS utility that mutes your Mac’s selected audio output at places you choose. The app is designed to work locally on your Mac.</p>
 
@@ -78,6 +80,6 @@ import AppPrivacyLayout from '../../../components/AppPrivacyLayout.astro';
 
 	<section>
 		<h2>Contact</h2>
-		<p>For privacy questions, open an issue in the <a href="https://github.com/holtsdav/MuteOnLocation-Privacy/issues" target="_blank" rel="noreferrer">Mute On Location Privacy repository</a>.</p>
+		<p>For privacy questions, contact <a href="mailto:contact@holtsdav.com">contact@holtsdav.com</a>.</p>
 	</section>
 </AppPrivacyLayout>

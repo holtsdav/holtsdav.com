@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AppleStoreButton from './AppleStoreButton.astro';
 import ServiceButton from './ServiceButton.astro';
@@ -13,7 +14,7 @@ interface Feature {
 interface Props {
 	name: string;
 	slug: string;
-	icon: string;
+	icon: ImageMetadata;
 	status: string;
 	kicker: string;
 	headline: string;
@@ -27,7 +28,7 @@ interface Props {
 	secondaryLabel?: string;
 	secondaryHref?: string;
 	privacyHref?: string;
-	mediaSrc?: string;
+	mediaSrc?: ImageMetadata;
 	mediaAlt?: string;
 	mediaWidth?: number;
 	mediaHeight?: number;
@@ -75,7 +76,7 @@ const isGitHubSecondaryLink = secondaryHref?.includes('github.com') ?? false;
 
 			<div class="app-product-intro shell">
 				<div class="app-product-icon">
-					<Image src={icon} alt={`${name} App-Icon`} width={512} height={512} />
+					<Image src={icon} alt={`${name} app icon`} width={512} height={512} />
 				</div>
 				<p class="app-kicker">{kicker}</p>
 				<h1>{name}</h1>
@@ -93,7 +94,7 @@ const isGitHubSecondaryLink = secondaryHref?.includes('github.com') ?? false;
 							</a>
 						)
 					) : (
-						<a class="button app-primary-action" href="mailto:contact@holtsdav.com?subject=Feedback%20zu%20Mute%20On%20Location">Feedback geben</a>
+						<a class="button app-primary-action" href="mailto:contact@holtsdav.com?subject=Feedback%20for%20Mute%20On%20Location">Send feedback</a>
 					)}
 					{secondaryHref && secondaryLabel && (
 						isGitHubSecondaryLink ? (
@@ -105,18 +106,18 @@ const isGitHubSecondaryLink = secondaryHref?.includes('github.com') ?? false;
 						)
 					)}
 					{primaryHref ? (
-						<a class="app-text-link" href="mailto:contact@holtsdav.com">Feedback senden →</a>
+						<a class="app-text-link" href="mailto:contact@holtsdav.com">Send feedback →</a>
 					) : (
-						<a class="app-text-link" href="/#projects">Andere Projekte →</a>
+						<a class="app-text-link" href="/#projects">Other projects →</a>
 					)}
-					{privacyHref && <a class="app-text-link" href={privacyHref}>Datenschutz →</a>}
+					{privacyHref && <a class="app-text-link" href={privacyHref}>Privacy Policy →</a>}
 				</div>
 			</div>
 		</section>
 
 		<section class="app-editorial shell" aria-labelledby="app-story-title">
 			<div class="app-editorial-heading">
-				<p class="app-section-label">Funktionen</p>
+				<p class="app-section-label">Features</p>
 				<h2 id="app-story-title">{closingHeadline}</h2>
 				<p>{closingDescription}</p>
 			</div>
@@ -134,12 +135,12 @@ const isGitHubSecondaryLink = secondaryHref?.includes('github.com') ?? false;
 			</div>
 		</section>
 
-		<section class:list={['app-product-stage', { 'app-product-stage-media': mediaSrc }]} aria-label={`${name} Produktansicht`}>
+		<section class:list={['app-product-stage', { 'app-product-stage-media': mediaSrc }]} aria-label={`${name} product preview`}>
 			{mediaSrc ? (
 				<figure class="app-media-frame">
 					<Image
 						src={mediaSrc}
-						alt={mediaAlt ?? `${name} Produktansicht`}
+						alt={mediaAlt ?? `${name} product preview`}
 						width={mediaWidth ?? 1200}
 						height={mediaHeight ?? 800}
 						loading="lazy"
@@ -175,7 +176,7 @@ const isGitHubSecondaryLink = secondaryHref?.includes('github.com') ?? false;
 							</a>
 						)
 					) : (
-						<a class="button app-primary-action" href="mailto:contact@holtsdav.com?subject=Feedback%20zu%20Mute%20On%20Location">Feedback geben</a>
+						<a class="button app-primary-action" href="mailto:contact@holtsdav.com?subject=Feedback%20for%20Mute%20On%20Location">Send feedback</a>
 					)}
 					{secondaryHref && secondaryLabel && (
 						isGitHubSecondaryLink ? (
@@ -186,8 +187,8 @@ const isGitHubSecondaryLink = secondaryHref?.includes('github.com') ?? false;
 							</a>
 						)
 					)}
-					<a class="button button-secondary" href="/#projects">Andere Projekte</a>
-					{privacyHref && <a class="app-text-link" href={privacyHref}>Datenschutz →</a>}
+					<a class="button button-secondary" href="/#projects">Other projects</a>
+					{privacyHref && <a class="app-text-link" href={privacyHref}>Privacy Policy →</a>}
 				</div>
 			</div>
 		</section>

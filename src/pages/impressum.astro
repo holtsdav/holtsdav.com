@@ -2,29 +2,54 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
+<!--
+	LEGAL-NOTICE TEMPLATE
+
+	Before publishing:
+	- Replace "Not yet received" when the W-IdNr. has been assigned.
+	- Do not publish the personal tax number (Steuernummer).
+	- This template assumes an unregistered sole proprietorship, no regulated
+	  profession and no journalistic-editorial content.
+-->
+
 <BaseLayout
-	title="Impressum | holtsdav"
-	description="Impressum von David Holtschke."
+	title="Legal Notice (Impressum) | holtsdav"
+	description="Legal notice and provider information for holtsdav.com."
 	robots="noindex, follow"
 	canonical="https://holtsdav.com/impressum/"
+	lang="en"
 >
 	<article class="legal-page shell">
 		<header class="legal-header">
-			<h1>Impressum</h1>
-			<p>Angaben gemäß § 5 DDG</p>
+			<h1>Legal Notice (Impressum)</h1>
+			<p>Provider information pursuant to Section 5 of the German Digital Services Act (Digitale-Dienste-Gesetz, DDG).</p>
 		</header>
 
 		<div class="legal-content">
-			<address>
-				David Holtschke<br />
-				Arcisstraße 50<br />
-				80799 München<br />
-				Deutschland
-			</address>
+			<section>
+				<h2>Provider</h2>
+				<p>Business name: holtsdav</p>
+				<p>Website operator and responsible person:</p>
+				<address>
+					David Holtschke<br />
+					Arcisstraße 50<br />
+					80799 München<br />
+					Germany
+				</address>
+			</section>
 
 			<section>
-				<h2>Kontakt</h2>
-				<p>E-Mail: <a href="mailto:contact@holtsdav.com">contact@holtsdav.com</a></p>
+				<h2>Contact</h2>
+				<p>Email: <a href="mailto:contact@holtsdav.com">contact@holtsdav.com</a></p>
+				<p>Contact form: <a href="/contact/#contact-form">Send a message</a></p>
+			</section>
+
+			<!--
+				Update this entry when the W-IdNr. has been assigned.
+			-->
+			<section>
+				<h2>Tax and business identification</h2>
+				<p>Business identification number (W-IdNr.): Not yet received</p>
 			</section>
 		</div>
 	</article>

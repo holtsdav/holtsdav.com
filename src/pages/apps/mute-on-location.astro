@@ -1,38 +1,40 @@
 ---
 import AppLanding from '../../components/AppLanding.astro';
+import muteOnLocationIcon from '../../../Assets/app-icons/mute-on-location.png';
+import muteOnLocationPreview from '../../../Assets/MuteOnLocation.gif';
 ---
 
 <AppLanding
 	name="Mute On Location"
 	slug="mute-on-location"
-	icon="/app-icons/mute-on-location.png"
-	status="In Entwicklung"
-	kicker="macOS · Standortbasiertes Stummschalten"
-	headline="An gespeicherten Orten automatisch stumm."
-	description="Mute On Location schaltet die aktuelle Audioausgabe deines Macs stumm, sobald du einen gespeicherten Ort erreichst. Orte, Radien und die Automatisierung verwaltest du direkt in der Menüleisten-App."
+	icon={muteOnLocationIcon}
+	status="In development"
+	kicker="macOS · Location-based muting"
+	headline="Automatically mute at saved locations."
+	description="Mute On Location mutes your Mac’s current audio output when you arrive at a saved location. Manage locations, radii, and automation directly from the menu bar app."
 	accent="#d8c7b7"
 	features={[
 		{
 			number: '01',
-			title: 'Orte und Radien speichern',
-			description: 'Lege Orte wie Büro, Schule oder Bibliothek fest und bestimme für jeden Ort einen passenden Radius.',
+			title: 'Save locations and radii',
+			description: 'Add places such as your office, school, or library and choose a suitable radius for each one.',
 		},
 		{
 			number: '02',
-			title: 'Automatisch stummschalten',
-			description: 'Smart Monitoring erkennt, wenn du einen gespeicherten Ort erreichst, und schaltet die ausgewählte Audioausgabe stumm.',
+			title: 'Mute automatically',
+			description: 'Smart Monitoring detects when you reach a saved location and mutes the selected audio output.',
 		},
 		{
 			number: '03',
-			title: 'Daten bleiben auf dem Mac',
-			description: 'Gespeicherte Orte und Einstellungen liegen lokal im App-Container. Die App erstellt keinen Bewegungs- oder Standortverlauf.',
+			title: 'Data stays on your Mac',
+			description: 'Saved locations and settings remain in the local app container. The app does not create a travel or location history.',
 		},
 	]}
-	closingHeadline="Stummschalten, ohne daran denken zu müssen."
-	closingDescription="Mute On Location befindet sich in Entwicklung und ist noch nicht im App Store verfügbar."
-	privacyHref="/apps/mute-on-location/privacy/"
-	mediaSrc="/MuteOnLocation.gif"
-	mediaAlt="Mute On Location zeigt den aktuellen Standortstatus und gespeicherte Orte in einer macOS-Menüleisten-App"
+	closingHeadline="Stay muted without having to remember."
+	closingDescription="Mute On Location is currently in development and is not yet available on the App Store."
+	privacyHref="/privacy/muteonlocation/"
+	mediaSrc={muteOnLocationPreview}
+	mediaAlt="Mute On Location showing the current location status and saved places in a macOS menu bar app"
 	mediaWidth={900}
 	mediaHeight={600}
 	mediaCaption="Mute On Location · macOS"
