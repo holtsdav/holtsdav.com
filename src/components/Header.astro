@@ -1,32 +1,25 @@
 ---
 import SocialLinks from './SocialLinks.astro';
-
-const isHome = Astro.url.pathname === '/';
-
-const navigation = [
-	{ label: 'Projekte', href: isHome ? '#projects' : '/#projects' },
-	{ label: 'Über mich', href: isHome ? '#about' : '/#about' },
-	{ label: 'Kontakt', href: isHome ? '#contact' : '/#contact' },
-];
 ---
 
 <header class="site-header">
 	<div class="shell header-inner">
-		<a class="wordmark" href="/" aria-label="holtsdav – Startseite">
-			holtsdav
+		<a class="wordmark" href="/" aria-label="holtsdav – Home">
+			holts<span class="wordmark-dav">dav</span>
 		</a>
 
 		<div class="header-actions">
-			<nav aria-label="Hauptnavigation">
-				<ul class="nav-list">
-					{navigation.map((item) => (
-						<li><a href={item.href}>{item.label}</a></li>
-					))}
-				</ul>
-			</nav>
 			<SocialLinks class="header-socials" />
-			<a class="mobile-contact" href={isHome ? '#contact' : '/#contact'}>
-				Kontakt
+			<a
+				class="header-contact"
+				href="/contact/"
+				aria-label="Contact David Holtschke"
+				title="Contact"
+			>
+				<svg viewBox="0 0 24 24" aria-hidden="true">
+					<path d="M3 5.5h18v13H3z" />
+					<path d="m3.5 6 8.5 7 8.5-7" />
+				</svg>
 			</a>
 		</div>
 	</div>

@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import glassdaysPreview from '../../../Assets/Glassdays.gif';
+import muteOnLocationPreview from '../../../Assets/MuteOnLocation-preview.png';
+import rogueColorPreview from '../../../Assets/rogue-color-gameplay.png';
+import roomPlannerPreview from '../../../Assets/RoomPlaner.png';
+
+const projectImages = {
+	glassdays: glassdaysPreview,
+	'mute-on-location': muteOnLocationPreview,
+	'rogue-color': rogueColorPreview,
+	RoomPlanner: roomPlannerPreview,
+} as const;
+
+export function getStaticPaths() {
+	const projects = {
+		glassdays: {
+			name: 'Glassdays Countdown',
+			description: 'A personal countdown app for special moments, reminders, and everything you are looking forward to.',
+			privacyHref: '/privacy/glassdays/',
+			visual: 'glassdays',
+			imageAlt: 'Glassdays Countdown app preview',
+			accent: '#8092ff',
+		},
+		'mute-on-location': {
+			name: 'Mute On Location',
+			description: 'A macOS app that automatically mutes your audio output when you arrive at a saved location.',
+			privacyHref: '/privacy/muteonlocation/',
+			visual: 'mute-on-location',
+			imageAlt: 'Mute On Location app preview',
+			accent: '#4a9eff',
+		},
+		'rogue-color': {
+			name: 'Rogue Color',
+			description: 'A fast-paced black-and-white game about reactions, color, and chasing your next high score.',
+			privacyHref: '/privacy/roguecolor/',
+			visual: 'rogue-color',
+			imageAlt: 'Rogue Color gameplay preview',
+			accent: '#b9c1ce',
+		},
+		RoomPlanner: {
+			name: 'Room Planner',
+			description: 'Explore Room Planner on holtsdav.com.',
+			privacyHref: '/privacy/roomplanner/',
+			visual: 'RoomPlanner',
+			imageAlt: 'Room Planner floor plan preview',
+			accent: '#a985ff',
+		},
+		notilog: {
+			name: 'NotiLog',
+			description: 'A new software project in the works. More details and real previews are coming later.',
+			privacyHref: '/privacy/notilog/',
+			visual: 'notilog',
+			imageAlt: '',
+			accent: '#9aa8ff',
+		},
+	};
+
+	return Object.keys(projects).map((slug) => ({ params: { slug }, props: projects[slug as keyof typeof projects] }));
+}
+
+const { name, description, privacyHref, visual, imageAlt, accent } = Astro.props;
+const slug = Astro.params.slug ?? '';
+const projectImage = visual in projectImages
+	? projectImages[visual as keyof typeof projectImages]
+	: null;
+---
+
+<BaseLayout
+	title={`${name} | holtsdav`}
+	description={description}
+	canonical={`https://holtsdav.com/project/${slug}/`}
+>
+	<article class="project-detail-page shell" style={`--project-accent: ${accent};`}>
+		<header class="project-detail-header">
+			<nav class="project-detail-nav" aria-label="Project navigation">
+				<a class="project-detail-back" href="/#projects">
+					<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m11.5 4-6 6 6 6" /></svg>
+					Back to projects
+				</a>
+				<a class="project-detail-privacy" href={privacyHref}>Privacy Policy</a>
+			</nav>
+		</header>
+
+		<div class="project-detail-stage">
+			<div class:list={['project-detail-media', `project-detail-media-${visual}`]}>
+				{projectImage ? (
+					<img src={projectImage.src} alt={imageAlt} loading="eager" decoding="async" />
+				) : (
+					<div class="project-detail-notilog-mark" role="img" aria-label="NotiLog icon">
+						<svg viewBox="0 0 24 24" aria-hidden="true">
+							<path fill="currentColor" d="M18 3a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4h-4.724l-4.762 2.857a1 1 0 0 1-1.508-.743L7 21v-2H6a4 4 0 0 1-3.995-3.8L2 15V7a4 4 0 0 1 4-4zm-4 9H8a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2m2-4H8a1 1 0 1 0 0 2h8a1 1 0 0 0 0-2" />
+						</svg>
+					</div>
+				)}
+			</div>
+
+			<section class="project-detail-content" aria-labelledby="project-title">
+				<h1 id="project-title">{name}</h1>
+				<p class="project-detail-description">{description}</p>
+				<div class="project-detail-notice">
+					<svg viewBox="0 0 24 24" aria-hidden="true">
+						<circle cx="12" cy="12" r="8.5" />
+						<path d="M12 7.5v5l3 2" />
+					</svg>
+					<p>More details on <strong>{name}</strong> are coming soon.</p>
+				</div>
+			</section>
+		</div>
+	</article>
+</BaseLayout>

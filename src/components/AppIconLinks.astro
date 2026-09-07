@@ -1,41 +1,68 @@
 ---
 import { Image } from 'astro:assets';
+import glassdaysIcon from '../../Assets/AppIcon_TransparentBackground.png';
+import rogueColorIcon from '../../Assets/RogueColor_Transparent.png';
 
-const apps = [
-	{
-		name: 'Rogue Color',
-		href: '/apps/rogue-color/',
-		icon: '/app-icons/rogue-color.png',
-		status: 'Spielbar auf itch.io',
-	},
-	{
-		name: 'Glassdays Countdown',
-		href: '/apps/glassdays-countdown/',
-		icon: '/app-icons/glassdays.png',
-		status: 'Im App Store',
-	},
-	{
-		name: 'Mute On Location',
-		href: '/apps/mute-on-location/',
-		icon: '/app-icons/mute-on-location.png',
-		status: 'In Entwicklung',
-	},
+const icons = [
+	{ kind: 'image', name: 'Glassdays', href: '/project/glassdays/', image: glassdaysIcon },
+	{ kind: 'image', name: 'Rogue Color', href: '/project/rogue-color/', image: rogueColorIcon },
+	{ kind: 'mute', name: 'Mute On Location', href: '/project/mute-on-location/' },
+	{ kind: 'notilog', name: 'NotiLog', href: '/project/notilog/' },
+	{ kind: 'roomplanner', name: 'Room Planner', href: '/project/RoomPlanner/' },
 ];
 ---
 
-<nav class="app-icon-links" id="apps" aria-label="Apps entdecken">
-	{apps.map((app, index) => (
-		<a
-			class="app-icon-link"
-			href={app.href}
-			aria-label={`${app.name} – ${app.status}`}
-			style={`--app-index: ${index}`}
-		>
-			<Image src={app.icon} alt="" width={512} height={512} loading="eager" />
-			<span>
-				<strong>{app.name}</strong>
-				<small>{app.status}</small>
+<nav class="app-icon-links" aria-label="Apps and projects">
+	{icons.map((icon, index) => (
+		icon.href ? (
+			<a
+				class={`floating-app-icon floating-app-icon-${index + 1}`}
+				href={icon.href}
+				aria-label={icon.name}
+				title={icon.name}
+			>
+				{icon.kind === 'image' ? (
+					<Image
+						class="floating-app-icon-image"
+						src={icon.image}
+						alt=""
+						width={196}
+						format="webp"
+						quality={92}
+						loading="eager"
+						decoding="async"
+					/>
+				) : icon.kind === 'mute' ? (
+					<svg class="floating-app-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+						<path fill="currentColor" d="M16.04 17.32a1 1 0 0 1 1.24-.68c.668.194 1.28.445 1.75.766c.435.3.97.82.97 1.594c0 .783-.548 1.308-.99 1.606c-.478.323-1.103.574-1.785.769c-1.38.394-3.226.625-5.225.625s-3.846-.231-5.225-.625c-.682-.195-1.307-.446-1.785-.769C4.548 20.307 4 19.783 4 19c0-.773.535-1.295.97-1.594c.47-.32 1.082-.572 1.75-.766a1 1 0 0 1 .56 1.92c-.5.146-.86.301-1.092.44c.24.144.615.303 1.137.452C8.48 19.782 10.133 20 12 20s3.52-.218 4.675-.548c.522-.15.898-.308 1.136-.452c-.23-.139-.59-.294-1.091-.44a1 1 0 0 1-.68-1.24M12 2a7.5 7.5 0 0 1 7.5 7.5c0 2.568-1.4 4.656-2.85 6.139c-1.46 1.493-3.087 2.492-3.804 2.897a1.71 1.71 0 0 1-1.692 0c-.717-.405-2.344-1.404-3.804-2.897C5.9 14.156 4.5 12.068 4.5 9.5A7.5 7.5 0 0 1 12 2m0 5.5a2 2 0 1 0 0 4a2 2 0 0 0 0-4" />
+					</svg>
+				) : icon.kind === 'roomplanner' ? (
+					<svg class="floating-app-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z" />
+						<path d="m14.5 12.5 2-2" />
+						<path d="m11.5 9.5 2-2" />
+						<path d="m8.5 6.5 2-2" />
+						<path d="m17.5 15.5 2-2" />
+					</svg>
+				) : (
+					<svg class="floating-app-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+						<path fill="currentColor" d="M18 3a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4h-4.724l-4.762 2.857a1 1 0 0 1-1.508-.743L7 21v-2H6a4 4 0 0 1-3.995-3.8L2 15V7a4 4 0 0 1 4-4zm-4 9H8a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2m2-4H8a1 1 0 1 0 0 2h8a1 1 0 0 0 0-2" />
+					</svg>
+				)}
+			</a>
+		) : (
+			<span
+				class={`floating-app-icon floating-app-placeholder floating-app-icon-${index + 1}`}
+				role="img"
+				aria-label={icon.name}
+			>
+				<span class="floating-app-placeholder-inner" aria-hidden="true">
+					<svg class="floating-app-coming-soon-symbol" viewBox="0 0 32 32">
+						<path d="M11.5 11.5a4.75 4.75 0 1 1 7.2 4.06C17.1 16.67 16 17.64 16 20" />
+						<circle cx="16" cy="24" r="1.15" fill="currentColor" stroke="none" />
+					</svg>
+				</span>
 			</span>
-		</a>
+		)
 	))}
 </nav>

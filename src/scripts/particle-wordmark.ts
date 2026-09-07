@@ -10,6 +10,9 @@ const HOLD_DURATION_MS = 3500;
 const MORPH_DURATION_MS = 1600;
 const CYCLE_DURATION_MS = HOLD_DURATION_MS * 2 + MORPH_DURATION_MS * 2;
 const RESIZE_REBUILD_DELAY_MS = 180;
+const TOUCH_RELEASE_DELAY_MS = 180;
+const POINTER_POSITION_RESPONSE = 10;
+const POINTER_VELOCITY_RESPONSE = 8;
 
 const vertexShader = /* glsl */ `
 	attribute vec3 aTargetA;
@@ -19,7 +22,6 @@ const vertexShader = /* glsl */ `
 	attribute float aSize;
 	attribute float aFlow;
 
-	uniform float uTime;
 	uniform float uMorph;
 	uniform float uCanvasWidth;
 	uniform float uPixelRatio;
@@ -57,55 +59,39 @@ const vertexShader = /* glsl */ `
 			2.5 * transitionEnvelope;
 		vec2 base = mix(from, to, localMorph) + transitionFlow;
 
-		float idlePhase = uTime * (0.11 + aSeed * 0.045) + aSeed * 6.2831853;
-		vec2 idle = vec2(
-			sin(idlePhase + base.y * 0.018),
-			cos(idlePhase * 0.79 + base.x * 0.012)
-		) * (0.025 + aSeed * 0.045);
-
 		vec2 delta = base - uPointer;
 		float distanceToPointer = length(delta);
-		float safeDistance = max(distanceToPointer, 0.001);
-		vec2 radialDirection = delta / safeDistance;
-		if (distanceToPointer < 0.001) {
-			float seedAngle = aSeed * 6.2831853;
-			radialDirection = vec2(cos(seedAngle), sin(seedAngle));
-		}
-
-		vec2 tangent = vec2(-radialDirection.y, radialDirection.x);
+		float centerSoftness = max(uInteractionRadius * 0.075, 1.0);
+		vec2 radialDirection = delta /
+			sqrt(dot(delta, delta) + centerSoftness * centerSoftness);
 		float velocityLength = length(uPointerVelocity);
 		vec2 velocityDirection = velocityLength > 0.001
 			? uPointerVelocity / velocityLength
-			: vec2(1.0, 0.0);
+			: vec2(0.0);
 		float velocityAmount = clamp(velocityLength / 900.0, 0.0, 1.0);
-		float tangentSign = dot(tangent, velocityDirection) >= 0.0 ? 1.0 : -1.0;
 
 		float normalizedDistance = distanceToPointer / max(uInteractionRadius, 1.0);
-		float falloff = exp(-normalizedDistance * normalizedDistance * 3.0);
+		float falloff = exp(-normalizedDistance * normalizedDistance * 2.7);
 		float organicVariation = 0.88 + aSeed * 0.12;
 
 		vec2 radialFlow =
-			radialDirection * uMaxDisplacement * 0.35 * (0.54 + velocityAmount * 0.18);
-		vec2 tangentialFlow =
-			tangent * tangentSign * uMaxDisplacement * 0.45 *
-			(0.32 + velocityAmount * 0.68);
-		float wakeMask = 0.45 + 0.55 * max(dot(-radialDirection, velocityDirection), 0.0);
-		vec2 wake =
-			velocityDirection * uMaxDisplacement * 0.20 * velocityAmount * wakeMask;
+			radialDirection * uMaxDisplacement * (0.44 + velocityAmount * 0.10);
+		vec2 pointerDrag =
+			velocityDirection * uMaxDisplacement * 0.12 * velocityAmount;
 
-		vec2 flow = (radialFlow + tangentialFlow + wake) *
+		vec2 flow = (radialFlow + pointerDrag) *
 			falloff * uPointerStrength * organicVariation;
 		float flowLength = length(flow);
 		if (flowLength > uMaxDisplacement) {
 			flow *= uMaxDisplacement / flowLength;
 		}
 
-		vec2 displaced = base + idle + flow;
+		vec2 displaced = base + flow;
 		gl_Position = projectionMatrix * modelViewMatrix * vec4(displaced, 0.0, 1.0);
 		gl_PointSize = aSize * uPixelRatio;
 		vSeed = aSeed;
-		vec3 holtsColor = vec3(0.7843137, 0.8235294, 1.0);
-		vec3 davColor = vec3(0.3529412, 0.4235294, 1.0);
+		vec3 holtsColor = vec3(0.8941176, 0.9215686, 1.0);
+		vec3 davColor = vec3(0.5058824, 0.5921569, 1.0);
 		vColor = mix(holtsColor, davColor, aColorGroup);
 	}
 `;
@@ -119,7 +105,7 @@ const fragmentShader = /* glsl */ `
 	void main() {
 		vec2 centeredPoint = gl_PointCoord - 0.5;
 		float distanceFromCenter = length(centeredPoint) * 2.0;
-		float particle = 1.0 - smoothstep(0.28, 1.0, distanceFromCenter);
+		float particle = 1.0 - smoothstep(0.45, 1.0, distanceFromCenter);
 		float alpha = particle * uOpacity * (0.88 + vSeed * 0.12);
 
 		if (alpha < 0.01) discard;
@@ -487,7 +473,7 @@ function createMorphParticleData(width: number): MorphParticleData | null {
 	for (let index = 0; index < matchedTargets.count; index += 1) {
 		const seed = random();
 		seeds[index] = seed;
-		sizes[index] = isMobile ? 0.72 + seed * 0.28 : 0.82 + seed * 0.34;
+		sizes[index] = isMobile ? 0.9 + seed * 0.3 : 1.1 + seed * 0.4;
 		flows[index] = random();
 	}
 
@@ -540,6 +526,8 @@ function getMorphProgress(elapsedMilliseconds: number) {
 function initializeWordmark(root: HTMLElement) {
 	const canvas = root.querySelector('canvas');
 	if (!(canvas instanceof HTMLCanvasElement)) return;
+	canvas.hidden = true;
+	delete root.dataset.particleReady;
 
 	const initialParticleData = createMorphParticleData(root.clientWidth);
 	if (!initialParticleData) return;
@@ -565,7 +553,6 @@ function initializeWordmark(root: HTMLElement) {
 	const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, -1, 1);
 	let geometry = createGeometry(initialParticleData);
 	const uniforms = {
-		uTime: { value: 0 },
 		uMorph: { value: 0 },
 		uCanvasWidth: { value: 1 },
 		uPixelRatio: { value: 1 },
@@ -574,7 +561,7 @@ function initializeWordmark(root: HTMLElement) {
 		uMaxDisplacement: { value: 58 },
 		uPointer: { value: new THREE.Vector2(0, 0) },
 		uPointerVelocity: { value: new THREE.Vector2(0, 0) },
-		uOpacity: { value: 0.92 },
+		uOpacity: { value: 1 },
 	};
 	const material = new THREE.ShaderMaterial({
 		uniforms,
@@ -608,7 +595,8 @@ function initializeWordmark(root: HTMLElement) {
 	let hasPointerPosition = false;
 	let interactionTarget = 0;
 	let interactionStrength = 0;
-	let lastPointerMove = Number.NEGATIVE_INFINITY;
+	let activeTouchPointerId: number | null = null;
+	let touchReleaseTimer = 0;
 	let lastFrameTime = performance.now();
 	const morphStartTime = performance.now();
 
@@ -670,7 +658,6 @@ function initializeWordmark(root: HTMLElement) {
 			tier === 'mobile' ? 62 : tier === 'tablet' ? 90 : 115;
 		uniforms.uMaxDisplacement.value =
 			tier === 'mobile' ? 34 : tier === 'tablet' ? 48 : 58;
-		uniforms.uOpacity.value = tier === 'mobile' ? 0.9 : 0.92;
 		scheduleGeometryRebuild();
 		renderer.render(scene, camera);
 	};
@@ -694,9 +681,8 @@ function initializeWordmark(root: HTMLElement) {
 		const deltaSeconds = Math.min(elapsedFrameSeconds, 0.05);
 		lastFrameTime = now;
 
-		if (now - lastPointerMove > 120) interactionTarget = 0;
-
-		const pointerPositionSmoothing = 1 - Math.exp(-14 * deltaSeconds);
+		const pointerPositionSmoothing =
+			1 - Math.exp(-POINTER_POSITION_RESPONSE * deltaSeconds);
 		smoothedPointer.lerp(rawPointer, pointerPositionSmoothing);
 
 		if (deltaSeconds > 0) {
@@ -712,7 +698,8 @@ function initializeWordmark(root: HTMLElement) {
 		previousSmoothedPointerX = smoothedPointer.x;
 		previousSmoothedPointerY = smoothedPointer.y;
 
-		const pointerVelocitySmoothing = 1 - Math.exp(-9 * deltaSeconds);
+		const pointerVelocitySmoothing =
+			1 - Math.exp(-POINTER_VELOCITY_RESPONSE * deltaSeconds);
 		smoothedPointerVelocity.lerp(
 			rawPointerVelocity,
 			pointerVelocitySmoothing,
@@ -724,8 +711,8 @@ function initializeWordmark(root: HTMLElement) {
 		interactionStrength +=
 			(interactionTarget - interactionStrength) * interactionSmoothing;
 
-		uniforms.uTime.value = now / 1000;
-		uniforms.uMorph.value = getMorphProgress(now - morphStartTime);
+		const morphElapsed = now - morphStartTime;
+		uniforms.uMorph.value = getMorphProgress(morphElapsed);
 		uniforms.uPointer.value.copy(smoothedPointer);
 		uniforms.uPointerVelocity.value.copy(smoothedPointerVelocity);
 		uniforms.uPointerStrength.value = interactionStrength;
@@ -733,7 +720,7 @@ function initializeWordmark(root: HTMLElement) {
 		animationFrame = window.requestAnimationFrame(render);
 	};
 
-	const updatePointer = (event: PointerEvent) => {
+	const updatePointerPosition = (event: PointerEvent) => {
 		const bounds = root.getBoundingClientRect();
 		rawPointer.set(
 			event.clientX - bounds.left - width / 2,
@@ -747,14 +734,68 @@ function initializeWordmark(root: HTMLElement) {
 			hasPointerPosition = true;
 		}
 
-		lastPointerMove = performance.now();
 		interactionTarget = 1;
 		requestRender();
 	};
 
-	const releasePointer = () => {
+	const clearTouchReleaseTimer = () => {
+		if (!touchReleaseTimer) return;
+		window.clearTimeout(touchReleaseTimer);
+		touchReleaseTimer = 0;
+	};
+
+	const deactivatePointer = () => {
 		interactionTarget = 0;
-		lastPointerMove = Number.NEGATIVE_INFINITY;
+		requestRender();
+	};
+
+	const handlePointerEnter = (event: PointerEvent) => {
+		if (event.pointerType === 'touch') return;
+		updatePointerPosition(event);
+	};
+
+	const handlePointerMove = (event: PointerEvent) => {
+		if (
+			event.pointerType === 'touch' &&
+			activeTouchPointerId !== event.pointerId
+		) {
+			return;
+		}
+		updatePointerPosition(event);
+	};
+
+	const handlePointerDown = (event: PointerEvent) => {
+		clearTouchReleaseTimer();
+		if (event.pointerType === 'touch') {
+			activeTouchPointerId = event.pointerId;
+			try {
+				root.setPointerCapture(event.pointerId);
+			} catch {
+				// Tracking can continue without capture when the browser owns the gesture.
+			}
+		}
+		updatePointerPosition(event);
+	};
+
+	const handlePointerEnd = (event: PointerEvent) => {
+		if (
+			event.pointerType !== 'touch' ||
+			activeTouchPointerId !== event.pointerId
+		) {
+			return;
+		}
+
+		activeTouchPointerId = null;
+		clearTouchReleaseTimer();
+		touchReleaseTimer = window.setTimeout(() => {
+			touchReleaseTimer = 0;
+			deactivatePointer();
+		}, TOUCH_RELEASE_DELAY_MS);
+	};
+
+	const handlePointerLeave = (event: PointerEvent) => {
+		if (event.pointerType === 'touch') return;
+		deactivatePointer();
 	};
 
 	const handleVisibilityChange = () => {
@@ -769,6 +810,7 @@ function initializeWordmark(root: HTMLElement) {
 
 	const handleContextLost = () => {
 		delete root.dataset.particleReady;
+		canvas.hidden = true;
 		if (animationFrame) {
 			window.cancelAnimationFrame(animationFrame);
 			animationFrame = 0;
@@ -778,6 +820,7 @@ function initializeWordmark(root: HTMLElement) {
 	const handleContextRestored = () => {
 		if (destroyed) return;
 		resize();
+		canvas.hidden = false;
 		root.dataset.particleReady = 'true';
 		requestRender();
 	};
@@ -796,9 +839,12 @@ function initializeWordmark(root: HTMLElement) {
 	);
 	const resizeObserver = new ResizeObserver(requestResize);
 
-	root.addEventListener('pointermove', updatePointer, { passive: true });
-	root.addEventListener('pointerleave', releasePointer, { passive: true });
-	root.addEventListener('pointercancel', releasePointer, { passive: true });
+	root.addEventListener('pointerenter', handlePointerEnter, { passive: true });
+	root.addEventListener('pointermove', handlePointerMove, { passive: true });
+	root.addEventListener('pointerdown', handlePointerDown, { passive: true });
+	root.addEventListener('pointerup', handlePointerEnd, { passive: true });
+	root.addEventListener('pointercancel', handlePointerEnd, { passive: true });
+	root.addEventListener('pointerleave', handlePointerLeave, { passive: true });
 	canvas.addEventListener('webglcontextlost', handleContextLost, { passive: true });
 	canvas.addEventListener('webglcontextrestored', handleContextRestored, {
 		passive: true,
@@ -808,18 +854,24 @@ function initializeWordmark(root: HTMLElement) {
 	resizeObserver.observe(root);
 	resize();
 	renderer.render(scene, camera);
+	canvas.hidden = false;
 	root.dataset.particleReady = 'true';
 	requestRender();
 
 	return () => {
 		destroyed = true;
 		delete root.dataset.particleReady;
+		canvas.hidden = true;
 		if (animationFrame) window.cancelAnimationFrame(animationFrame);
 		if (resizeFrame) window.cancelAnimationFrame(resizeFrame);
 		if (rebuildTimer) window.clearTimeout(rebuildTimer);
-		root.removeEventListener('pointermove', updatePointer);
-		root.removeEventListener('pointerleave', releasePointer);
-		root.removeEventListener('pointercancel', releasePointer);
+		clearTouchReleaseTimer();
+		root.removeEventListener('pointerenter', handlePointerEnter);
+		root.removeEventListener('pointermove', handlePointerMove);
+		root.removeEventListener('pointerdown', handlePointerDown);
+		root.removeEventListener('pointerup', handlePointerEnd);
+		root.removeEventListener('pointercancel', handlePointerEnd);
+		root.removeEventListener('pointerleave', handlePointerLeave);
 		canvas.removeEventListener('webglcontextlost', handleContextLost);
 		canvas.removeEventListener('webglcontextrestored', handleContextRestored);
 		document.removeEventListener('visibilitychange', handleVisibilityChange);

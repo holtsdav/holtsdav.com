@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import holtsdavLogo from '../../Assets/holtsdav-logo.png';
 
 interface Props {
 	title: string;
@@ -11,7 +12,7 @@ interface Props {
 	lang?: string;
 }
 
-const { title, description, robots, canonical, lang = 'de' } = Astro.props;
+const { title, description, robots, canonical, lang = 'en' } = Astro.props;
 const canonicalURL = canonical
 	? new URL(canonical, Astro.site ?? 'https://holtsdav.com')
 	: undefined;
@@ -26,7 +27,7 @@ const canonicalURL = canonical
 		<meta name="color-scheme" content="dark" />
 		<meta name="description" content={description} />
 		<meta property="og:type" content="website" />
-		<meta property="og:locale" content="de_DE" />
+		<meta property="og:locale" content={lang === 'de' ? 'de_DE' : lang === 'es' ? 'es_ES' : 'en_US'} />
 		<meta property="og:site_name" content="holtsdav" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
@@ -37,11 +38,11 @@ const canonicalURL = canonical
 		{robots && <meta name="robots" content={robots} />}
 		{canonicalURL && <link rel="canonical" href={canonicalURL} />}
 		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/png" href="/holtsdav-logo.png" />
+		<link rel="icon" type="image/png" href={holtsdavLogo.src} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+		<a class="skip-link" href="#main-content">Skip to content</a>
 		<div class="site-shell">
 			<Header />
 			<main id="main-content">

@@ -4,29 +4,17 @@ import SocialLinks from './SocialLinks.astro';
 
 <footer class="site-footer">
 	<div class="shell footer-inner">
-		<div class="footer-brand">
-			<a class="wordmark footer-wordmark" href="/" aria-label="holtsdav – Startseite">
-				holtsdav
-			</a>
-			<p>Apps und Software von David Holtschke.</p>
+		<div class="footer-main">
+			<p>© 2026 David Holtschke</p>
+			<div class="footer-actions">
+				<SocialLinks class="footer-socials" />
+				<a class="footer-contact" href="mailto:contact@holtsdav.com">contact@holtsdav.com</a>
+			</div>
 		</div>
-
-		<div class="footer-links">
-			<SocialLinks class="footer-socials" />
-			<nav aria-label="Projekte">
-				<a href="/apps/glassdays-countdown/">Glassdays</a>
-				<a href="/apps/rogue-color/">Rogue Color</a>
-				<a href="/apps/mute-on-location/">Mute On Location</a>
-			</nav>
-			<nav aria-label="Rechtliche Navigation">
-				<a href="/apps/glassdays-countdown/privacy/">Glassdays Datenschutz</a>
-				<a href="/apps/mute-on-location/privacy/">Mute On Location Datenschutz</a>
-				<a href="/impressum/">Impressum</a>
-				<a href="/privacy/">Datenschutz</a>
-			</nav>
-		</div>
-	</div>
-	<div class="shell footer-bottom">
-		<p>© 2026 David Holtschke</p>
+		<nav class="footer-legal-links" aria-label="Contact and legal information">
+			<a href="/contact/">Contact</a>
+			<a href="/impressum/">Legal Notice (Impressum)</a>
+			<a href="/privacy/">Privacy Policy</a>
+		</nav>
 	</div>
 </footer>

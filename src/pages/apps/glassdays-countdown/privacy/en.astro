@@ -6,6 +6,8 @@ const languages = [
 	{ label: 'English', href: '/apps/glassdays-countdown/privacy/en/', lang: 'en' },
 	{ label: 'Español', href: '/apps/glassdays-countdown/privacy/es/', lang: 'es' },
 ];
+
+return Astro.redirect('/privacy/glassdays/', 301);
 ---
 
 <AppPrivacyLayout
@@ -15,7 +17,7 @@ const languages = [
 	lang="en"
 	productName="Glassdays Countdown"
 	productHref="/apps/glassdays-countdown/"
-	updated="Last updated: July 17, 2026"
+	updated="Last updated: September 7, 2026"
 	{languages}
 >
 	<p>Glassdays is designed to keep your countdown content on your device. The app uses privacy-focused, anonymous usage analytics and a purchase-validation service as described below. Glassdays does not use advertising, cross-app tracking, crash reporting, or a developer-operated user-account system.</p>
@@ -83,7 +85,7 @@ const languages = [
 	<section>
 		<h2>Retention and Your Choices</h2>
 		<p>Glassdays keeps local app data until you delete it in the app or remove the app. Support emails are retained only as long as reasonably needed to respond to and resolve your request. You may stop using optional network features, notifications, calendar access, and iCloud Sync at any time through Glassdays or iOS Settings.</p>
-		<p>For privacy questions or a deletion request relating to a support message, contact <a href="mailto:8-kapsel-guertel@icloud.com">8-kapsel-guertel@icloud.com</a>.</p>
+		<p>For privacy questions or a deletion request relating to a support message, contact <a href="mailto:contact@holtsdav.com">contact@holtsdav.com</a>.</p>
 	</section>
 
 	<section>
