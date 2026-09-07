@@ -229,16 +229,11 @@ a:focus-visible {
 	isolation: isolate;
 }
 
-.hero::before {
-	position: absolute;
-	z-index: -1;
-	inset: 0;
+.home-page-grid {
 	background-image:
 		linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
 		linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
 	background-size: 48px 48px;
-	content: "";
-	pointer-events: none;
 }
 
 .hero-content {
@@ -364,6 +359,7 @@ a:focus-visible {
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 1.3;
+	white-space: nowrap;
 	transform: translateX(-50%);
 	transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
@@ -1083,18 +1079,7 @@ a.floating-app-icon:hover .floating-app-icon-svg {
 }
 
 .home-section-header {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) minmax(260px, 390px);
-	gap: 40px;
-	align-items: end;
 	margin-bottom: 42px;
-}
-
-.home-section-header > p {
-	margin: 0;
-	color: var(--color-secondary);
-	font-size: 17px;
-	line-height: 1.65;
 }
 
 .project-gallery {
@@ -1957,36 +1942,19 @@ a.project-gallery-store:hover {
 	line-height: 1.65;
 }
 
-.project-detail-notice {
-	display: grid;
-	grid-template-columns: 24px minmax(0, 1fr);
-	gap: 12px;
-	margin-top: 34px;
-	padding-top: 24px;
-	border-top: 1px solid color-mix(in srgb, var(--project-accent) 35%, transparent);
-	color: color-mix(in srgb, var(--project-accent) 76%, white);
+.project-detail-tags,
+.project-detail-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
 }
 
-.project-detail-notice svg {
-	width: 22px;
-	height: 22px;
-	margin-top: 2px;
-	fill: none;
-	stroke: currentColor;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	stroke-width: 1.7;
+.project-detail-tags {
+	margin: 0 0 28px;
 }
 
-.project-detail-notice p {
-	margin: 0;
-	font-size: 15px;
-	line-height: 1.6;
-}
-
-.project-detail-notice strong {
-	color: var(--color-primary);
-	font-weight: 700;
+.project-detail-actions {
+	margin-top: 28px;
 }
 
 .not-found-page {
@@ -2564,8 +2532,8 @@ a.project-gallery-store:hover {
 	}
 
 	.floating-app-icon-2 {
-		bottom: 12px;
-		left: 0;
+		bottom: 84px;
+		left: -12px;
 		rotate: -8deg;
 	}
 
@@ -2576,9 +2544,17 @@ a.project-gallery-store:hover {
 	}
 
 	.floating-app-icon-4 {
-		right: 0;
-		bottom: 12px;
+		right: -12px;
+		bottom: 84px;
 		rotate: 7deg;
+	}
+
+	.hero-projects-button {
+		bottom: 12px;
+		gap: 8px;
+		min-height: 48px;
+		padding: 11px 14px;
+		font-size: 14px;
 	}
 
 	.floating-app-icon-5 {
@@ -2640,13 +2616,7 @@ a.project-gallery-store:hover {
 	}
 
 	.home-section-header {
-		grid-template-columns: 1fr;
-		gap: 18px;
 		margin-bottom: 32px;
-	}
-
-	.home-section-header > p {
-		max-width: 520px;
 	}
 
 	.activity-grid {

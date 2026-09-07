@@ -36,7 +36,7 @@ Use the existing names David Holtschke and holtsdav. Preserve project names and 
 ## Evidence on Hand
 
 - `src/pages/index.astro`: portfolio entries, project destinations, and contact links. The biography and portrait area are explicitly placeholders.
-- `src/pages/apps/glassdays-countdown.astro`: existing Glassdays Countdown feature copy and App Store destination.
+- `src/pages/apps/glassdays-countdown.astro`: existing Glassdays feature copy and App Store destination.
 - `src/pages/apps/mute-on-location.astro`: existing Mute On Location feature copy and development status.
 - `src/pages/apps/rogue-color.astro`: existing Rogue Color description, game-jam background, and itch.io/GitHub destinations.
 - `src/pages/NotiLog.astro`: a future-project placeholder; it does not establish a finished product.

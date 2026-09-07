@@ -15,51 +15,94 @@ const projectImages = {
 export function getStaticPaths() {
 	const projects = {
 		glassdays: {
-			name: 'Glassdays Countdown',
-			description: 'A personal countdown app for special moments, reminders, and everything you are looking forward to.',
+			name: 'Glassdays',
+			description: 'More Info coming soon.',
 			privacyHref: '/privacy/glassdays/',
 			visual: 'glassdays',
-			imageAlt: 'Glassdays Countdown app preview',
+			imageAlt: 'Glassdays app preview',
 			accent: '#8092ff',
+			category: 'iPhone & iPad',
+			tags: [
+				{ label: 'Ai assisted', kind: 'ai' },
+				{ label: 'Swift', kind: 'swift', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg' },
+				{ label: 'Xcode', kind: 'xcode', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg' },
+				{ label: 'Monetized', kind: 'monetized' },
+			],
+			storeHref: 'https://apps.apple.com/de/app/glassdays-countdown/id6785538729',
+			githubHref: 'https://github.com/holtsdav/Glassdays',
 		},
 		'mute-on-location': {
 			name: 'Mute On Location',
-			description: 'A macOS app that automatically mutes your audio output when you arrive at a saved location.',
+			description: 'More Info coming soon.',
 			privacyHref: '/privacy/muteonlocation/',
 			visual: 'mute-on-location',
 			imageAlt: 'Mute On Location app preview',
 			accent: '#4a9eff',
+			category: 'macOS',
+			tags: [
+				{ label: 'Ai assisted', kind: 'ai' },
+				{ label: 'Swift', kind: 'swift', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg' },
+				{ label: 'Xcode', kind: 'xcode', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg' },
+				{ label: 'Monetized', kind: 'monetized' },
+			],
+			storeHref: 'https://apps.apple.com/de/app/mute-on-location/id6790398791?l=en-GB&mt=12',
+			githubHref: 'https://github.com/holtsdav/MuteOnLocation',
 		},
 		'rogue-color': {
 			name: 'Rogue Color',
-			description: 'A fast-paced black-and-white game about reactions, color, and chasing your next high score.',
+			description: 'More Info coming soon.',
 			privacyHref: '/privacy/roguecolor/',
 			visual: 'rogue-color',
 			imageAlt: 'Rogue Color gameplay preview',
 			accent: '#b9c1ce',
+			category: 'Desktop Game',
+			tags: [
+				{ label: 'Godot', kind: 'godot', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/godot/godot-original.svg' },
+				{ label: 'No Ai used', kind: 'no-ai' },
+				{ label: 'Not Monetized', kind: 'not-monetized' },
+			],
+			itchHref: 'https://holtsdav.itch.io/rouge-color',
+			githubHref: 'https://github.com/holtsdav/RogueColor',
 		},
 		RoomPlanner: {
 			name: 'Room Planner',
-			description: 'Explore Room Planner on holtsdav.com.',
+			description: 'More Info coming soon.',
 			privacyHref: '/privacy/roomplanner/',
 			visual: 'RoomPlanner',
 			imageAlt: 'Room Planner floor plan preview',
 			accent: '#a985ff',
+			category: 'Web project',
+			tags: [
+				{ label: 'Ai assisted', kind: 'ai' },
+				{ label: 'Astro', kind: 'astro', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg' },
+				{ label: 'Not Monetized', kind: 'not-monetized' },
+			],
+			websiteHref: 'https://holtsdav.com/RoomPlanner',
+			githubHref: 'https://github.com/holtsdav/RoomPlanner',
 		},
 		notilog: {
 			name: 'NotiLog',
-			description: 'A new software project in the works. More details and real previews are coming later.',
+			description: 'More Info coming soon.',
 			privacyHref: '/privacy/notilog/',
 			visual: 'notilog',
 			imageAlt: '',
 			accent: '#9aa8ff',
+			category: 'iPhone & iPad',
+			tags: [
+				{ label: 'Ai assisted', kind: 'ai' },
+				{ label: 'Swift', kind: 'swift', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg' },
+				{ label: 'Xcode', kind: 'xcode', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg' },
+				{ label: 'Monetized', kind: 'monetized' },
+			],
+			storeComingSoon: true,
+			githubHref: 'https://github.com/holtsdav/NotiLog',
 		},
 	};
 
 	return Object.keys(projects).map((slug) => ({ params: { slug }, props: projects[slug as keyof typeof projects] }));
 }
 
-const { name, description, privacyHref, visual, imageAlt, accent } = Astro.props;
+const { name, description, privacyHref, visual, imageAlt, accent, category, tags, storeHref, storeComingSoon, itchHref, websiteHref, githubHref } = Astro.props;
 const slug = Astro.params.slug ?? '';
 const projectImage = visual in projectImages
 	? projectImages[visual as keyof typeof projectImages]
@@ -74,13 +117,27 @@ const projectImage = visual in projectImages
 	<article class="project-detail-page shell" style={`--project-accent: ${accent};`}>
 		<header class="project-detail-header">
 			<nav class="project-detail-nav" aria-label="Project navigation">
-				<a class="project-detail-back" href="/#projects">
+				<a class="project-detail-back" href="/?projects#projects">
 					<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m11.5 4-6 6 6 6" /></svg>
 					Back to projects
 				</a>
 				<a class="project-detail-privacy" href={privacyHref}>Privacy Policy</a>
 			</nav>
 		</header>
+
+		<div class="project-detail-tags" aria-label={`${name} tags`}>
+			<span class="project-gallery-category">{category}</span>
+			{tags.map((tag: { label: string; kind: string; logo?: string }) => (
+				<span class:list={['project-gallery-category', `project-gallery-tag-${tag.kind}`]}>
+					{tag.logo ? (
+						<img class="project-gallery-tag-icon" src={tag.logo} alt="" aria-hidden="true" />
+					) : (
+						<span class="project-gallery-tag-icon" aria-hidden="true">{tag.kind === 'monetized' ? '$' : '✦'}</span>
+					)}
+					{tag.label}
+				</span>
+			))}
+		</div>
 
 		<div class="project-detail-stage">
 			<div class:list={['project-detail-media', `project-detail-media-${visual}`]}>
@@ -98,12 +155,24 @@ const projectImage = visual in projectImages
 			<section class="project-detail-content" aria-labelledby="project-title">
 				<h1 id="project-title">{name}</h1>
 				<p class="project-detail-description">{description}</p>
-				<div class="project-detail-notice">
-					<svg viewBox="0 0 24 24" aria-hidden="true">
-						<circle cx="12" cy="12" r="8.5" />
-						<path d="M12 7.5v5l3 2" />
-					</svg>
-					<p>More details on <strong>{name}</strong> are coming soon.</p>
+				<div class="project-detail-actions">
+					{itchHref && <a class="project-gallery-button project-gallery-itch" href={itchHref} target="_blank" rel="noreferrer">itch.io</a>}
+					{storeHref && (
+						<a class="project-gallery-button project-gallery-store" href={storeHref} target="_blank" rel="noreferrer">
+							<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.7 12.8c0-2.5 2.1-3.7 2.2-3.8a4.8 4.8 0 0 0-3.8-2c-1.6-.2-3.1 1-3.9 1s-2-1-3.3-1c-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.3 2.5 1.3-.1 1.8-.8 3.5-.8 1.6 0 2.1.8 3.5.8s2.4-1.2 3.2-2.5a11 11 0 0 0 1.5-3.1 4.4 4.4 0 0 1-2.3-3.8ZM14 5.3A4.4 4.4 0 0 0 15 2a4.5 4.5 0 0 0-3 1.6 4.2 4.2 0 0 0-1.1 3.2A3.7 3.7 0 0 0 14 5.3Z" /></svg>
+							App Store
+						</a>
+					)}
+					{storeComingSoon && <span class="project-gallery-button project-gallery-store project-gallery-button-disabled" aria-disabled="true" data-tooltip="In Development">App Store</span>}
+					{websiteHref && (
+						<a class="project-gallery-button project-gallery-website" href={websiteHref} target="_blank" rel="noreferrer">
+							<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.2 2.4 3.3 5.4 3.3 9s-1.1 6.6-3.3 9c-2.2-2.4-3.3-5.4-3.3-9S9.8 5.4 12 3Z" /></svg>
+							Open
+						</a>
+					)}
+					<a class="project-gallery-button project-gallery-github" href={githubHref} target="_blank" rel="noreferrer" aria-label={`Open ${name} on GitHub`} title="GitHub">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" /></svg>
+					</a>
 				</div>
 			</section>
 		</div>
