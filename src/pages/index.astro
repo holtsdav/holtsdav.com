@@ -10,15 +10,15 @@ import holtsdavLogo from '../../Assets/holtsdav-logo.png';
 
 const projects = [
 	{
-		name: 'Glassdays Countdown',
-		description: 'A personal countdown app for special moments, reminders, and everything you are looking forward to.',
+		name: 'Glassdays',
+		description: 'More Info Soon.',
 		href: '/project/glassdays/',
 		storeHref: 'https://apps.apple.com/de/app/glassdays-countdown/id6785538729',
 		itchHref: null,
 		githubHref: 'https://github.com/holtsdav/Glassdays',
 		githubLabel: 'Open Glassdays on GitHub',
 		image: glassdaysPreview.src,
-		imageAlt: 'Placeholder preview for Glassdays Countdown',
+		imageAlt: 'Placeholder preview for Glassdays',
 		imageClass: 'project-gallery-image-cover project-gallery-image-glassdays',
 		category: 'iPhone & iPad',
 		categoryIcon: 'phone',
@@ -31,7 +31,7 @@ const projects = [
 	},
 	{
 		name: 'Mute On Location',
-		description: 'A macOS app that automatically mutes your audio output when you arrive at a saved location.',
+		description: 'More Info Soon.',
 		href: '/project/mute-on-location/',
 		storeHref: 'https://apps.apple.com/de/app/mute-on-location/id6790398791?l=en-GB&mt=12',
 		itchHref: null,
@@ -51,7 +51,7 @@ const projects = [
 	},
 	{
 		name: 'Rogue Color',
-		description: 'A fast-paced black-and-white game about reactions, color, and chasing your next high score.',
+		description: 'More Info Soon.',
 		href: '/project/rogue-color/',
 		storeHref: null,
 		itchHref: 'https://holtsdav.itch.io/rouge-color',
@@ -70,7 +70,7 @@ const projects = [
 	},
 	{
 		name: 'Room Planner',
-		description: 'Explore Room Planner on holtsdav.com.',
+		description: 'More Info Soon.',
 		href: '/project/RoomPlanner/',
 		websiteHref: 'https://holtsdav.com/RoomPlanner',
 		storeHref: null,
@@ -91,7 +91,7 @@ const projects = [
 	},
 	{
 		name: 'NotiLog',
-		description: 'A new software project in the works. More details and real previews are coming later.',
+		description: 'More Info Soon.',
 		href: '/project/notilog/',
 		storeHref: null,
 		itchHref: null,
@@ -117,6 +117,16 @@ const projects = [
 	if (window.location.hash === '#contact') {
 		window.location.replace('/contact/#contact-form');
 	}
+
+	const pageUrl = new URL(window.location.href);
+	if (pageUrl.searchParams.has('projects')) {
+		document.documentElement.style.scrollBehavior = 'auto';
+		pageUrl.searchParams.delete('projects');
+		window.history.replaceState(null, '', `${pageUrl.pathname}${pageUrl.search}${pageUrl.hash}`);
+		window.addEventListener('load', () => {
+			requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.style.removeProperty('scroll-behavior')));
+		}, { once: true });
+	}
 </script>
 
 <BaseLayout
@@ -124,6 +134,7 @@ const projects = [
 	description="David Holtschke – software developer based in Munich, Germany."
 	canonical="https://holtsdav.com/"
 >
+	<div class="home-page-grid">
 	<section class="hero shell" aria-labelledby="hero-title">
 		<div class="hero-constellation">
 			<AppIconLinks />
@@ -146,10 +157,7 @@ const projects = [
 			<div class="home-about-copy">
 				<p class="home-section-label">About me</p>
 				<h2 id="about-title">Hi, I’m David.</h2>
-				<p>
-					This is where a short introduction about me, my work, and the things I enjoy building will go.
-					The copy and image are placeholders for now and can easily be replaced later.
-				</p>
+				<p>More Info coming soon.</p>
 				<div class="home-about-actions">
 					<a class="home-about-action" href="mailto:contact@holtsdav.com">
 						<svg viewBox="0 0 24 24" aria-hidden="true">
@@ -176,11 +184,7 @@ const projects = [
 
 	<section class="home-projects shell" id="projects" aria-labelledby="projects-title">
 		<header class="home-section-header">
-			<div>
-				<p class="home-section-label">Selected work</p>
-				<h2 id="projects-title">My Projects</h2>
-			</div>
-			<p>A growing collection of my apps, games, and experiments.</p>
+			<h2 id="projects-title">My Projects</h2>
 		</header>
 
 		<div class="project-gallery">
@@ -336,4 +340,5 @@ const projects = [
 			))}
 		</div>
 	</section>
+	</div>
 </BaseLayout>
