@@ -64,7 +64,7 @@ const policyContent = policyKey && policyKey in policySources
 >
 	<article class="legal-page app-privacy-page shell">
 		<div class="legal-breadcrumb">
-			<a href={productHref}>← {productName}</a>
+			<a href={import.meta.env.DEV ? '/' : productHref}>← {import.meta.env.DEV ? 'Home' : productName}</a>
 		</div>
 
 		<header class="legal-header">

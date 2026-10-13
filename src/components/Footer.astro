@@ -12,7 +12,7 @@ import SocialLinks from './SocialLinks.astro';
 			</div>
 		</div>
 		<nav class="footer-legal-links" aria-label="Contact and legal information">
-			<a href="/contact/">Contact</a>
+			<a href={import.meta.env.DEV ? 'mailto:contact@holtsdav.com' : '/contact/'}>Contact</a>
 			<a href="/impressum/">Legal Notice (Impressum)</a>
 			<a href="/privacy/">Privacy Policy</a>
 		</nav>

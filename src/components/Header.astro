@@ -12,7 +12,7 @@ import SocialLinks from './SocialLinks.astro';
 			<SocialLinks class="header-socials" />
 			<a
 				class="header-contact"
-				href="/contact/"
+				href={import.meta.env.DEV ? 'mailto:contact@holtsdav.com' : '/contact/'}
 				aria-label="Contact David Holtschke"
 				title="Contact"
 			>
