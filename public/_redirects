@@ -2,5 +2,19 @@
 /apps/glassdays-countdown/privacy/en/ /privacy/glassdays/ 301
 /apps/glassdays-countdown/privacy/es/ /privacy/glassdays/es/ 301
 /apps/mute-on-location/privacy/ /privacy/muteonlocation/ 301
-/project/RoomPlaner/ /project/RoomPlanner/ 301
+/project/RoomPlaner/ /projects/room-planner/ 301
 /privacy/roomplaner/ /privacy/roomplanner/ 301
+
+/Glassdays/ /projects/glassdays/ 301
+/MuteOnLocation/ /projects/mute-on-location/ 301
+/NotiLog/ /projects/notilog/ 301
+/RogueColor/ /projects/rogue-color/ 301
+/project/glassdays/ /projects/glassdays/ 301
+/project/mute-on-location/ /projects/mute-on-location/ 301
+/project/notilog/ /projects/notilog/ 301
+/project/rogue-color/ /projects/rogue-color/ 301
+/project/RoomPlanner/ /projects/room-planner/ 301
+/apps/glassdays-countdown/ /projects/glassdays/ 301
+/apps/mute-on-location/ /projects/mute-on-location/ 301
+/apps/rogue-color/ /projects/rogue-color/ 301
+/apps/room-planner/ /projects/room-planner/ 301

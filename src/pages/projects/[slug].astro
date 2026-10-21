@@ -1,0 +1,14 @@
+---
+import {Image} from 'astro:assets';
+import WorkspaceLayout from '../../layouts/WorkspaceLayout.astro';
+import {projects} from '../../data/portfolio';
+export function getStaticPaths(){return projects.map(project=>({params:{slug:project.id},props:{project}}));}
+const {project:p}=Astro.props;
+---
+<WorkspaceLayout title={`${p.name} — holtsdav`} description={p.description} canonical={`https://holtsdav.com/projects/${p.id}/`} project={p.id}>
+<article class:list={['project-page',{'project-page-compact':!p.images.length}]} style={`--project-accent:${p.accent??'#426690'}`}><div class="project-toolbar"><a href="/">← Home</a><a href="/" data-close-project={p.id} aria-label={`Close ${p.name}`}>Close <span aria-hidden="true">×</span></a></div>
+<header class="project-title"><Image src={p.icon} alt="" width={160} height={160} format={p.icon.format==='svg'?'svg':'webp'}/><div><h1>{p.name}</h1><p>{p.platform}</p></div><span class="project-status">{p.status}</span></header>
+<div class="project-summary"><p>{p.description}</p>{p.links.length>0&&<nav class="project-actions" aria-label={`${p.name} links`}>{p.links.map(link=><a href={link.href} target="_blank" rel="noreferrer">{link.label}<span aria-hidden="true">↗</span></a>)}</nav>}</div>
+{p.images.length>0&&<div class="project-images">{p.images.map(image=><div class:list={['project-image',image.kind]} style={`--project-color:${p.color}`}><Image src={image.src} alt={image.alt} width={image.kind==='phone'?650:1440} format="webp" quality={90} loading="eager"/></div>)}</div>}
+<footer class="project-bottom"><a href={`mailto:contact@holtsdav.com?subject=${encodeURIComponent(p.name)}`}>Ask about {p.name} <span aria-hidden="true">↗</span></a>{p.privacy&&<a href={p.privacy}>{p.id==='notilog'?'Privacy draft':'App privacy'} <span aria-hidden="true">↗</span></a>}<a href="/projects/" data-open-projects>All projects <span aria-hidden="true">↗</span></a></footer></article>
+</WorkspaceLayout>

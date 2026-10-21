@@ -1,0 +1,448 @@
+{
+  "base": "http://127.0.0.1:4330",
+  "date": "2026-10-21T01:12:26.789Z",
+  "originalSourceSha256": "e25857389d53ea36d5df75708dc0f0662864de789f3a9d5d58782ed455467921",
+  "lightSourceSha256": "cebccdbe6aa5798a0aadf815de8dd0b43b6dafc2a9975b18b8d4ce08fe843adc",
+  "allowedSourceChanges": [
+    "two palette color literals",
+    "1.5x point coverage"
+  ],
+  "allOtherSourceBytesMatch": true,
+  "results": [
+    {
+      "kind": "light",
+      "width": 390,
+      "cycleCaptured": true,
+      "nameLayout": "split"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "cycleCaptured": true,
+      "nameLayout": "split"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "cycleCaptured": true,
+      "nameLayout": "single"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "cycleCaptured": true,
+      "nameLayout": "single"
+    },
+    {
+      "checks": [
+        "pointer response and recovery",
+        "manual pause",
+        "manual pause survives OS preference cycle and reload",
+        "play",
+        "live reduced motion fallback"
+      ],
+      "passed": true
+    },
+    {
+      "checks": [
+        "WebGL unavailable keeps readable identity"
+      ],
+      "passed": true
+    }
+  ],
+  "frames": [
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 400,
+      "actualElapsed": 401.29999999701977,
+      "file": "light-390-400.png"
+    },
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 3550,
+      "actualElapsed": 3552,
+      "file": "light-390-3550.png"
+    },
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 3800,
+      "actualElapsed": 3801.5,
+      "file": "light-390-3800.png"
+    },
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 4100,
+      "actualElapsed": 4100.699999999255,
+      "file": "light-390-4100.png"
+    },
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 4400,
+      "actualElapsed": 4403.29999999702,
+      "file": "light-390-4400.png"
+    },
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 4700,
+      "actualElapsed": 4701.199999999255,
+      "file": "light-390-4700.png"
+    },
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 5150,
+      "actualElapsed": 5151.39999999851,
+      "file": "light-390-5150.png"
+    },
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 6500,
+      "actualElapsed": 6501.199999999255,
+      "file": "light-390-6500.png"
+    },
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 8650,
+      "actualElapsed": 8652,
+      "file": "light-390-8650.png"
+    },
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 8950,
+      "actualElapsed": 8950.699999999255,
+      "file": "light-390-8950.png"
+    },
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 9250,
+      "actualElapsed": 9251.599999997765,
+      "file": "light-390-9250.png"
+    },
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 9550,
+      "actualElapsed": 9551.599999997765,
+      "file": "light-390-9550.png"
+    },
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 9950,
+      "actualElapsed": 9951.699999999255,
+      "file": "light-390-9950.png"
+    },
+    {
+      "kind": "light",
+      "width": 390,
+      "target": 10500,
+      "actualElapsed": 10502.5,
+      "file": "light-390-10500.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 400,
+      "actualElapsed": 401.5,
+      "file": "original-dark-390-400.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 3550,
+      "actualElapsed": 3552.7999999970198,
+      "file": "original-dark-390-3550.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 3800,
+      "actualElapsed": 3801.699999999255,
+      "file": "original-dark-390-3800.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 4100,
+      "actualElapsed": 4101.699999999255,
+      "file": "original-dark-390-4100.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 4400,
+      "actualElapsed": 4401.29999999702,
+      "file": "original-dark-390-4400.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 4700,
+      "actualElapsed": 4700.29999999702,
+      "file": "original-dark-390-4700.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 5150,
+      "actualElapsed": 5150.39999999851,
+      "file": "original-dark-390-5150.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 6500,
+      "actualElapsed": 6502.5,
+      "file": "original-dark-390-6500.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 8650,
+      "actualElapsed": 8651.79999999702,
+      "file": "original-dark-390-8650.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 8950,
+      "actualElapsed": 8951.099999997765,
+      "file": "original-dark-390-8950.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 9250,
+      "actualElapsed": 9251,
+      "file": "original-dark-390-9250.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 9550,
+      "actualElapsed": 9551.099999997765,
+      "file": "original-dark-390-9550.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 9950,
+      "actualElapsed": 9951.699999999255,
+      "file": "original-dark-390-9950.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 390,
+      "target": 10500,
+      "actualElapsed": 10502,
+      "file": "original-dark-390-10500.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 400,
+      "actualElapsed": 400.9000000022352,
+      "file": "light-1440-400.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 3550,
+      "actualElapsed": 3551.5,
+      "file": "light-1440-3550.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 3800,
+      "actualElapsed": 3801.699999999255,
+      "file": "light-1440-3800.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 4100,
+      "actualElapsed": 4101,
+      "file": "light-1440-4100.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 4400,
+      "actualElapsed": 4402.800000000745,
+      "file": "light-1440-4400.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 4700,
+      "actualElapsed": 4701.900000002235,
+      "file": "light-1440-4700.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 5150,
+      "actualElapsed": 5152.199999999255,
+      "file": "light-1440-5150.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 6500,
+      "actualElapsed": 6501.5,
+      "file": "light-1440-6500.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 8650,
+      "actualElapsed": 8652,
+      "file": "light-1440-8650.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 8950,
+      "actualElapsed": 8951.699999999255,
+      "file": "light-1440-8950.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 9250,
+      "actualElapsed": 9251.699999999255,
+      "file": "light-1440-9250.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 9550,
+      "actualElapsed": 9552.300000000745,
+      "file": "light-1440-9550.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 9950,
+      "actualElapsed": 9951.400000002235,
+      "file": "light-1440-9950.png"
+    },
+    {
+      "kind": "light",
+      "width": 1440,
+      "target": 10500,
+      "actualElapsed": 10502.300000000745,
+      "file": "light-1440-10500.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 400,
+      "actualElapsed": 401.3999999985099,
+      "file": "original-dark-1440-400.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 3550,
+      "actualElapsed": 3553.699999999255,
+      "file": "original-dark-1440-3550.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 3800,
+      "actualElapsed": 3801.699999999255,
+      "file": "original-dark-1440-3800.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 4100,
+      "actualElapsed": 4101.599999997765,
+      "file": "original-dark-1440-4100.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 4400,
+      "actualElapsed": 4401.39999999851,
+      "file": "original-dark-1440-4400.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 4700,
+      "actualElapsed": 4701.89999999851,
+      "file": "original-dark-1440-4700.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 5150,
+      "actualElapsed": 5152.29999999702,
+      "file": "original-dark-1440-5150.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 6500,
+      "actualElapsed": 6501.89999999851,
+      "file": "original-dark-1440-6500.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 8650,
+      "actualElapsed": 8650.79999999702,
+      "file": "original-dark-1440-8650.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 8950,
+      "actualElapsed": 8951.5,
+      "file": "original-dark-1440-8950.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 9250,
+      "actualElapsed": 9252.099999997765,
+      "file": "original-dark-1440-9250.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 9550,
+      "actualElapsed": 9552,
+      "file": "original-dark-1440-9550.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 9950,
+      "actualElapsed": 9952,
+      "file": "original-dark-1440-9950.png"
+    },
+    {
+      "kind": "original-dark",
+      "width": 1440,
+      "target": 10500,
+      "actualElapsed": 10501.79999999702,
+      "file": "original-dark-1440-10500.png"
+    }
+  ],
+  "errors": []
+}

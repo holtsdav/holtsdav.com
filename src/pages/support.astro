@@ -1,0 +1,6 @@
+---
+import {Image} from 'astro:assets';
+import WorkspaceLayout from '../layouts/WorkspaceLayout.astro';
+import {projects} from '../data/portfolio';
+---
+<WorkspaceLayout title="Support — holtsdav" canonical="https://holtsdav.com/support/"><section class="utility-page"><h1>Support.</h1><p>Choose a project to email me. Include your device, app version and what happened.</p><a class="email-link" href="mailto:contact@holtsdav.com">contact@holtsdav.com ↗</a><div class="support-projects">{projects.map(p=><a href={`mailto:contact@holtsdav.com?subject=${encodeURIComponent(p.name+' support')}`}><Image src={p.icon} alt="" width={84} height={84} format={p.icon.format==='svg'?'svg':'webp'}/>{p.name}<span aria-hidden="true">↗</span></a>)}</div></section></WorkspaceLayout>

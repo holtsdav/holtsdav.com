@@ -1,0 +1,175 @@
+{
+  "candidateBaseline": "b9069c2c2578d162102d416d877af5042afa33b6",
+  "ownerOnlyFilesIncluded": false,
+  "results": [
+    {
+      "route": "/",
+      "width": 390,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/projects/glassdays/",
+      "width": 390,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/projects/glassdays/",
+      "width": 1440,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/projects/notilog/",
+      "width": 390,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/projects/notilog/",
+      "width": 1440,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/projects/pdf-editor/",
+      "width": 390,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/projects/pdf-editor/",
+      "width": 1440,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/about/",
+      "width": 390,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/about/",
+      "width": 1440,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/support/",
+      "width": 390,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/support/",
+      "width": 1440,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/contact/",
+      "width": 390,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/contact/",
+      "width": 1440,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/privacy/",
+      "width": 390,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/privacy/",
+      "width": 1440,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/impressum/",
+      "width": 390,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/impressum/",
+      "width": 1440,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/privacy/glassdays/",
+      "width": 390,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/privacy/glassdays/",
+      "width": 1440,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/privacy/glassdays/es/",
+      "width": 390,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/privacy/glassdays/es/",
+      "width": 1440,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/privacy/muteonlocation/",
+      "width": 390,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    },
+    {
+      "route": "/privacy/muteonlocation/",
+      "width": 1440,
+      "pixelIdentical": true,
+      "computedDifferences": [],
+      "passed": true
+    }
+  ],
+  "errors": []
+}

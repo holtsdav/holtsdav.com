@@ -1,0 +1,52 @@
+{
+  "observations": [
+    {
+      "width": 568,
+      "height": 320,
+      "state": "live",
+      "allTenOpen": true,
+      "controls": [
+        {
+          "text": "Software developer in Munich.",
+          "inside": true,
+          "overlap": false
+        },
+        {
+          "text": "Projects ↗",
+          "inside": true,
+          "overlap": false
+        },
+        {
+          "text": "Pause animation",
+          "inside": true,
+          "overlap": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "state": "reduced",
+      "allTenOpen": true,
+      "controls": [
+        {
+          "text": "Software developer in Munich.",
+          "inside": true,
+          "overlap": false
+        },
+        {
+          "text": "Projects ↗",
+          "inside": true,
+          "overlap": false
+        },
+        {
+          "text": "Pause animation",
+          "inside": true,
+          "overlap": false
+        }
+      ],
+      "passed": true
+    }
+  ]
+}

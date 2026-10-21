@@ -1,0 +1,15 @@
+---
+import {Image} from 'astro:assets';
+import OriginalWordmark from './OriginalWordmark.astro';
+import {projects} from '../data/portfolio';
+const featured=[projects[0],projects[1],projects[2],projects[3],projects[4],projects[5]];
+---
+<div class="workspace-home">
+ <section class="desktop-scene" aria-label="David Holtschke’s workspace">
+  <div class="home-identity"><OriginalWordmark/><p class="home-caption">Software developer in Munich.</p><div class="identity-controls"><a href="/projects/" class="browse-projects" data-open-projects>Projects <span aria-hidden="true">↗</span></a><button class="motion-control" type="button" data-toggle-particles hidden aria-pressed="false">Pause animation</button></div></div>
+  <div class="desktop-icons" aria-label="Featured projects">{featured.map((p,i)=><a href={`/projects/${p.id}/`} class={`desktop-project desktop-project-${i+1}`}><Image src={p.icon} alt="" width={128} height={128} format={p.icon.format==='svg'?'svg':'webp'}/><span>{p.name}</span></a>)}</div>
+  <p class="desktop-signature">David Holtschke <span>© 2026</span></p>
+ </section>
+ <section class="gallery-direction" aria-label="Project gallery">{projects.filter(p=>p.images.length).map(p=><a href={`/projects/${p.id}/`} class="gallery-project"><div style={`--project-color:${p.color}`}><Image src={p.images[0].src} alt={p.images[0].alt} width={800} height={p.images[0].kind==='phone'?1100:520} fit="contain" format="webp"/></div><span>{p.name}<small>{p.platform}</small></span></a>)}</section>
+ <section class="shelf-direction" aria-label="All projects">{projects.map(p=><a href={`/projects/${p.id}/`}><Image src={p.icon} alt="" width={160} height={160} format={p.icon.format==='svg'?'svg':'webp'}/><span>{p.name}</span><small>{p.platform}</small></a>)}</section>
+</div>

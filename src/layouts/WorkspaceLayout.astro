@@ -1,0 +1,16 @@
+---
+import WorkspaceDock from '../components/WorkspaceDock.astro';
+import mark from '../../Assets/holtsdav-logo.png';
+import '../styles/global.css';
+import '../styles/workspace.css';
+interface Props {title:string;description?:string;canonical?:string|URL;robots?:string;lang?:string;project?:string;home?:boolean;}
+const {title,description='David Holtschke’s apps and tools.',canonical,robots,lang='en',project,home=false}=Astro.props;
+---
+<!doctype html><html lang={lang} data-direction="gallery"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="color-scheme" content="light"/><meta name="theme-color" content="#f7f8fa"/><meta name="description" content={description}/>{canonical&&<link rel="canonical" href={new URL(canonical,'https://holtsdav.com')}/>} {robots&&<meta name="robots" content={robots}/>}<meta property="og:title" content={title}/><meta property="og:description" content={description}/><link rel="icon" href={mark.src}/><title>{title}</title>
+<script is:inline>try{const allowed=['workspace','gallery','shelf'];const requested=new URL(location.href).searchParams.get('direction');if(requested&&allowed.includes(requested))sessionStorage.setItem('portfolio.direction',requested);const direction=sessionStorage.getItem('portfolio.direction');if(allowed.includes(direction))document.documentElement.dataset.direction=direction;}catch{}</script>
+</head><body class:list={['workspace-site',{ 'is-home':home}]} data-current-project={project}>
+<a class="ws-skip" href="#main-content">Skip to content</a>
+<header class="ws-menubar"><a class="ws-brand" href="/" aria-label="holtsdav — Home"><img src={mark.src} width="23" height="23" alt=""/>holtsdav</a><nav aria-label="Contact links"><a href="https://github.com/holtsdav" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="mailto:contact@holtsdav.com">Email <span aria-hidden="true">↗</span></a></nav></header>
+<main id="main-content" tabindex="-1"><slot/></main>
+<WorkspaceDock/>
+</body></html>

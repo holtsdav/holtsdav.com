@@ -91,6 +91,7 @@ const policyContent = policyKey && policyKey in policySources
 			</div>
 		</header>
 
+		{!policyContent && <div class="legal-content"><p>No published privacy policy is available for this project here.</p>{slug==='notilog'&&<p><a href="/drafts/notilog-privacy/">Read the clearly marked NotiLog review draft</a></p>}<p><a href="mailto:contact@holtsdav.com">Contact David about {productName}</a></p></div>}
 		{policyContent && (
 			<div class="legal-content privacy-content app-privacy-content" set:html={policyContent}></div>
 		)}

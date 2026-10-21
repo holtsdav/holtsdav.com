@@ -1,0 +1,6 @@
+---
+import {Image} from 'astro:assets';
+import WorkspaceLayout from '../../layouts/WorkspaceLayout.astro';
+import {projects} from '../../data/portfolio';
+---
+<WorkspaceLayout title="Projects — holtsdav" canonical="https://holtsdav.com/projects/"><section class="utility-page"><h1>Projects</h1><div class="project-index">{projects.map(p=><a href={`/projects/${p.id}/`}><Image src={p.icon} alt="" width={120} height={120} format={p.icon.format==='svg'?'svg':'webp'}/><span>{p.name}<small>{p.platform}</small></span></a>)}</div></section></WorkspaceLayout>

@@ -1,0 +1,1700 @@
+{
+  "date": "2026-10-21T01:45:52.885Z",
+  "folds": [
+    {
+      "width": 1440,
+      "height": 900,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 314,
+          "bottom": 331,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 367.390625,
+          "bottom": 382.390625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 367.390625,
+          "bottom": 382.390625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 431.6875,
+          "bottom": 448.6875,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 431.6875,
+          "bottom": 444.6875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 431.6875,
+          "bottom": 448.6875,
+          "visible": true
+        },
+        {
+          "text": "Mac",
+          "top": 431.6875,
+          "bottom": 444.6875,
+          "visible": true
+        },
+        {
+          "text": "PDF Editor",
+          "top": 926.375,
+          "bottom": 943.375,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 926.375,
+          "bottom": 939.375,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 926.375,
+          "bottom": 943.375,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 926.375,
+          "bottom": 939.375,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1379.0625,
+          "bottom": 1396.0625,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1379.0625,
+          "bottom": 1392.0625,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 786,
+        "bottom": 882
+      }
+    },
+    {
+      "width": 1440,
+      "height": 800,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 314,
+          "bottom": 331,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 367.390625,
+          "bottom": 382.390625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 367.390625,
+          "bottom": 382.390625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 431.6875,
+          "bottom": 448.6875,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 431.6875,
+          "bottom": 444.6875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 431.6875,
+          "bottom": 448.6875,
+          "visible": true
+        },
+        {
+          "text": "Mac",
+          "top": 431.6875,
+          "bottom": 444.6875,
+          "visible": true
+        },
+        {
+          "text": "PDF Editor",
+          "top": 884.375,
+          "bottom": 901.375,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 884.375,
+          "bottom": 897.375,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 884.375,
+          "bottom": 901.375,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 884.375,
+          "bottom": 897.375,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1337.0625,
+          "bottom": 1354.0625,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1337.0625,
+          "bottom": 1350.0625,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 686,
+        "bottom": 782
+      }
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 314,
+          "bottom": 331,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 367.390625,
+          "bottom": 382.390625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 367.390625,
+          "bottom": 382.390625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 431.6875,
+          "bottom": 448.6875,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 431.6875,
+          "bottom": 444.6875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 431.6875,
+          "bottom": 448.6875,
+          "visible": true
+        },
+        {
+          "text": "Mac",
+          "top": 431.6875,
+          "bottom": 444.6875,
+          "visible": true
+        },
+        {
+          "text": "PDF Editor",
+          "top": 1026.375,
+          "bottom": 1043.375,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 1026.375,
+          "bottom": 1039.375,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 1026.375,
+          "bottom": 1043.375,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 1026.375,
+          "bottom": 1039.375,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1479.0625,
+          "bottom": 1496.0625,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1479.0625,
+          "bottom": 1492.0625,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 886,
+        "bottom": 982
+      }
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 314,
+          "bottom": 331,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 367.390625,
+          "bottom": 382.390625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 367.390625,
+          "bottom": 382.390625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 431.6875,
+          "bottom": 448.6875,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 431.6875,
+          "bottom": 444.6875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 431.6875,
+          "bottom": 448.6875,
+          "visible": true
+        },
+        {
+          "text": "Mac",
+          "top": 431.6875,
+          "bottom": 444.6875,
+          "visible": true
+        },
+        {
+          "text": "PDF Editor",
+          "top": 884.375,
+          "bottom": 901.375,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 884.375,
+          "bottom": 897.375,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 884.375,
+          "bottom": 901.375,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 884.375,
+          "bottom": 897.375,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1337.0625,
+          "bottom": 1354.0625,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1337.0625,
+          "bottom": 1350.0625,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 654,
+        "bottom": 750
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 314,
+          "bottom": 331,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 367.390625,
+          "bottom": 382.390625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 367.390625,
+          "bottom": 382.390625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 431.6875,
+          "bottom": 448.6875,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 431.6875,
+          "bottom": 444.6875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 431.6875,
+          "bottom": 448.6875,
+          "visible": true
+        },
+        {
+          "text": "Mac",
+          "top": 431.6875,
+          "bottom": 444.6875,
+          "visible": true
+        },
+        {
+          "text": "PDF Editor",
+          "top": 1050.375,
+          "bottom": 1067.375,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 1050.375,
+          "bottom": 1063.375,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 1050.375,
+          "bottom": 1067.375,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 1050.375,
+          "bottom": 1063.375,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1503.0625,
+          "bottom": 1520.0625,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1503.0625,
+          "bottom": 1516.0625,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 910,
+        "bottom": 1006
+      }
+    },
+    {
+      "width": 768,
+      "height": 700,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 314,
+          "bottom": 331,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 367.390625,
+          "bottom": 382.390625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 367.390625,
+          "bottom": 382.390625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 431.6875,
+          "bottom": 448.6875,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 431.6875,
+          "bottom": 444.6875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 431.6875,
+          "bottom": 448.6875,
+          "visible": true
+        },
+        {
+          "text": "Mac",
+          "top": 431.6875,
+          "bottom": 444.6875,
+          "visible": true
+        },
+        {
+          "text": "PDF Editor",
+          "top": 884.375,
+          "bottom": 901.375,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 884.375,
+          "bottom": 897.375,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 884.375,
+          "bottom": 901.375,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 884.375,
+          "bottom": 897.375,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1337.0625,
+          "bottom": 1354.0625,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1337.0625,
+          "bottom": 1350.0625,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 586,
+        "bottom": 682
+      }
+    },
+    {
+      "width": 620,
+      "height": 900,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 305,
+          "bottom": 320,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 416.59375,
+          "bottom": 431.59375,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 438.1875,
+          "bottom": 450.1875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 416.59375,
+          "bottom": 431.59375,
+          "visible": true
+        },
+        {
+          "text": "Mac",
+          "top": 438.1875,
+          "bottom": 450.1875,
+          "visible": true
+        },
+        {
+          "text": "PDF Editor",
+          "top": 934.6875,
+          "bottom": 949.6875,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 956.28125,
+          "bottom": 968.28125,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 934.6875,
+          "bottom": 949.6875,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 956.28125,
+          "bottom": 968.28125,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1264.78125,
+          "bottom": 1279.78125,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1286.375,
+          "bottom": 1298.375,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 797,
+        "bottom": 886
+      }
+    },
+    {
+      "width": 620,
+      "height": 844,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 305,
+          "bottom": 320,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 416.59375,
+          "bottom": 431.59375,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 438.1875,
+          "bottom": 450.1875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 416.59375,
+          "bottom": 431.59375,
+          "visible": true
+        },
+        {
+          "text": "Mac",
+          "top": 438.1875,
+          "bottom": 450.1875,
+          "visible": true
+        },
+        {
+          "text": "PDF Editor",
+          "top": 878.6875,
+          "bottom": 893.6875,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 900.28125,
+          "bottom": 912.28125,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 878.6875,
+          "bottom": 893.6875,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 900.28125,
+          "bottom": 912.28125,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1208.78125,
+          "bottom": 1223.78125,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1230.375,
+          "bottom": 1242.375,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 741,
+        "bottom": 830
+      }
+    },
+    {
+      "width": 620,
+      "height": 768,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 305,
+          "bottom": 320,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 416.59375,
+          "bottom": 431.59375,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 438.1875,
+          "bottom": 450.1875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 416.59375,
+          "bottom": 431.59375,
+          "visible": true
+        },
+        {
+          "text": "Mac",
+          "top": 438.1875,
+          "bottom": 450.1875,
+          "visible": true
+        },
+        {
+          "text": "PDF Editor",
+          "top": 802.6875,
+          "bottom": 817.6875,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 824.28125,
+          "bottom": 836.28125,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 802.6875,
+          "bottom": 817.6875,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 824.28125,
+          "bottom": 836.28125,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1132.78125,
+          "bottom": 1147.78125,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1154.375,
+          "bottom": 1166.375,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 665,
+        "bottom": 754
+      }
+    },
+    {
+      "width": 760,
+      "height": 844,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 305,
+          "bottom": 320,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 416.59375,
+          "bottom": 431.59375,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 438.1875,
+          "bottom": 450.1875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 416.59375,
+          "bottom": 431.59375,
+          "visible": true
+        },
+        {
+          "text": "Mac",
+          "top": 438.1875,
+          "bottom": 450.1875,
+          "visible": true
+        },
+        {
+          "text": "PDF Editor",
+          "top": 878.6875,
+          "bottom": 893.6875,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 900.28125,
+          "bottom": 912.28125,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 878.6875,
+          "bottom": 893.6875,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 900.28125,
+          "bottom": 912.28125,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1208.78125,
+          "bottom": 1223.78125,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1230.375,
+          "bottom": 1242.375,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 741,
+        "bottom": 830
+      }
+    },
+    {
+      "width": 421,
+      "height": 844,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 305,
+          "bottom": 320,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 416.59375,
+          "bottom": 431.59375,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 438.1875,
+          "bottom": 450.1875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 416.59375,
+          "bottom": 431.59375,
+          "visible": true
+        },
+        {
+          "text": "Mac",
+          "top": 438.1875,
+          "bottom": 450.1875,
+          "visible": true
+        },
+        {
+          "text": "PDF Editor",
+          "top": 878.6875,
+          "bottom": 893.6875,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 900.28125,
+          "bottom": 912.28125,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 878.6875,
+          "bottom": 893.6875,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 900.28125,
+          "bottom": 912.28125,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1208.78125,
+          "bottom": 1223.78125,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1230.375,
+          "bottom": 1242.375,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 741,
+        "bottom": 830
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 305,
+          "bottom": 320,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 416.59375,
+          "bottom": 431.59375,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 438.1875,
+          "bottom": 450.1875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 865.6875,
+          "bottom": 880.6875,
+          "visible": false
+        },
+        {
+          "text": "Mac",
+          "top": 887.28125,
+          "bottom": 899.28125,
+          "visible": false
+        },
+        {
+          "text": "PDF Editor",
+          "top": 1170.78125,
+          "bottom": 1185.78125,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 1192.375,
+          "bottom": 1204.375,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 1475.875,
+          "bottom": 1490.875,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 1497.46875,
+          "bottom": 1509.46875,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1780.96875,
+          "bottom": 1795.96875,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1802.5625,
+          "bottom": 1814.5625,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 741,
+        "bottom": 830
+      }
+    },
+    {
+      "width": 390,
+      "height": 700,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 305,
+          "bottom": 320,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 416.59375,
+          "bottom": 431.59375,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 438.1875,
+          "bottom": 450.1875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 721.6875,
+          "bottom": 736.6875,
+          "visible": false
+        },
+        {
+          "text": "Mac",
+          "top": 743.28125,
+          "bottom": 755.28125,
+          "visible": false
+        },
+        {
+          "text": "PDF Editor",
+          "top": 1026.78125,
+          "bottom": 1041.78125,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 1048.375,
+          "bottom": 1060.375,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 1331.875,
+          "bottom": 1346.875,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 1353.46875,
+          "bottom": 1365.46875,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1636.96875,
+          "bottom": 1651.96875,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1658.5625,
+          "bottom": 1670.5625,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 597,
+        "bottom": 686
+      }
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 305,
+          "bottom": 320,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 352.0625,
+          "bottom": 365.0625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 416.59375,
+          "bottom": 431.59375,
+          "visible": true
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 438.1875,
+          "bottom": 450.1875,
+          "visible": true
+        },
+        {
+          "text": "Mute On Location",
+          "top": 721.6875,
+          "bottom": 736.6875,
+          "visible": false
+        },
+        {
+          "text": "Mac",
+          "top": 743.28125,
+          "bottom": 755.28125,
+          "visible": false
+        },
+        {
+          "text": "PDF Editor",
+          "top": 1026.78125,
+          "bottom": 1041.78125,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 1048.375,
+          "bottom": 1060.375,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 1331.875,
+          "bottom": 1346.875,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 1353.46875,
+          "bottom": 1365.46875,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1636.96875,
+          "bottom": 1651.96875,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1658.5625,
+          "bottom": 1670.5625,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 465,
+        "bottom": 554
+      }
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 155.15625,
+          "bottom": 172.15625,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 200.546875,
+          "bottom": 215.546875,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 200.546875,
+          "bottom": 215.546875,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 412,
+          "bottom": 429,
+          "visible": false
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 412,
+          "bottom": 425,
+          "visible": false
+        },
+        {
+          "text": "Mute On Location",
+          "top": 412,
+          "bottom": 429,
+          "visible": false
+        },
+        {
+          "text": "Mac",
+          "top": 412,
+          "bottom": 425,
+          "visible": false
+        },
+        {
+          "text": "PDF Editor",
+          "top": 864.6875,
+          "bottom": 881.6875,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 864.6875,
+          "bottom": 877.6875,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 864.6875,
+          "bottom": 881.6875,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 864.6875,
+          "bottom": 877.6875,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1317.375,
+          "bottom": 1334.375,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1317.375,
+          "bottom": 1330.375,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 276,
+        "bottom": 372
+      }
+    },
+    {
+      "width": 844,
+      "height": 320,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 120.15625,
+          "bottom": 137.15625,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 165.546875,
+          "bottom": 180.546875,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 165.546875,
+          "bottom": 180.546875,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 342,
+          "bottom": 359,
+          "visible": false
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 342,
+          "bottom": 355,
+          "visible": false
+        },
+        {
+          "text": "Mute On Location",
+          "top": 342,
+          "bottom": 359,
+          "visible": false
+        },
+        {
+          "text": "Mac",
+          "top": 342,
+          "bottom": 355,
+          "visible": false
+        },
+        {
+          "text": "PDF Editor",
+          "top": 794.6875,
+          "bottom": 811.6875,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 794.6875,
+          "bottom": 807.6875,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 794.6875,
+          "bottom": 811.6875,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 794.6875,
+          "bottom": 807.6875,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1247.375,
+          "bottom": 1264.375,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1247.375,
+          "bottom": 1260.375,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 206,
+        "bottom": 302
+      }
+    },
+    {
+      "width": 600,
+      "height": 390,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 147.703125,
+          "bottom": 162.703125,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 192.765625,
+          "bottom": 205.765625,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 192.765625,
+          "bottom": 205.765625,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 403,
+          "bottom": 418,
+          "visible": false
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 424.59375,
+          "bottom": 436.59375,
+          "visible": false
+        },
+        {
+          "text": "Mute On Location",
+          "top": 403,
+          "bottom": 418,
+          "visible": false
+        },
+        {
+          "text": "Mac",
+          "top": 424.59375,
+          "bottom": 436.59375,
+          "visible": false
+        },
+        {
+          "text": "PDF Editor",
+          "top": 733.09375,
+          "bottom": 748.09375,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 754.6875,
+          "bottom": 766.6875,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 733.09375,
+          "bottom": 748.09375,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 754.6875,
+          "bottom": 766.6875,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1063.1875,
+          "bottom": 1078.1875,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1084.78125,
+          "bottom": 1096.78125,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 287,
+        "bottom": 376
+      }
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bad": [],
+      "captions": [
+        {
+          "text": "Software developer in Munich.",
+          "top": 160.15625,
+          "bottom": 177.15625,
+          "visible": true
+        },
+        {
+          "text": "Projects",
+          "top": 205.546875,
+          "bottom": 220.546875,
+          "visible": true
+        },
+        {
+          "text": "↗",
+          "top": 205.546875,
+          "bottom": 220.546875,
+          "visible": true
+        },
+        {
+          "text": "Glassdays",
+          "top": 522,
+          "bottom": 539,
+          "visible": false
+        },
+        {
+          "text": "iPhone & iPad",
+          "top": 522,
+          "bottom": 535,
+          "visible": false
+        },
+        {
+          "text": "Mute On Location",
+          "top": 522,
+          "bottom": 539,
+          "visible": false
+        },
+        {
+          "text": "Mac",
+          "top": 522,
+          "bottom": 535,
+          "visible": false
+        },
+        {
+          "text": "PDF Editor",
+          "top": 974.6875,
+          "bottom": 991.6875,
+          "visible": false
+        },
+        {
+          "text": "Obsidian · Desktop",
+          "top": 974.6875,
+          "bottom": 987.6875,
+          "visible": false
+        },
+        {
+          "text": "Room Planner",
+          "top": 974.6875,
+          "bottom": 991.6875,
+          "visible": false
+        },
+        {
+          "text": "Web",
+          "top": 974.6875,
+          "bottom": 987.6875,
+          "visible": false
+        },
+        {
+          "text": "Rogue Color",
+          "top": 1427.375,
+          "bottom": 1444.375,
+          "visible": false
+        },
+        {
+          "text": "Desktop",
+          "top": 1427.375,
+          "bottom": 1440.375,
+          "visible": false
+        }
+      ],
+      "dock": {
+        "top": 386,
+        "bottom": 482
+      }
+    }
+  ],
+  "compact": [
+    {
+      "id": "notilog",
+      "width": 320,
+      "summaryHeight": 102,
+      "passed": true
+    },
+    {
+      "id": "notilog",
+      "width": 390,
+      "summaryHeight": 68,
+      "passed": true
+    },
+    {
+      "id": "notilog",
+      "width": 1440,
+      "summaryHeight": 75.875,
+      "passed": true
+    },
+    {
+      "id": "saveshelf",
+      "width": 320,
+      "summaryHeight": 68,
+      "passed": true
+    },
+    {
+      "id": "saveshelf",
+      "width": 390,
+      "summaryHeight": 68,
+      "passed": true
+    },
+    {
+      "id": "saveshelf",
+      "width": 1440,
+      "summaryHeight": 37.9375,
+      "passed": true
+    },
+    {
+      "id": "reviewbar",
+      "width": 320,
+      "summaryHeight": 102,
+      "passed": true
+    },
+    {
+      "id": "reviewbar",
+      "width": 390,
+      "summaryHeight": 68,
+      "passed": true
+    },
+    {
+      "id": "reviewbar",
+      "width": 1440,
+      "summaryHeight": 37.9375,
+      "passed": true
+    },
+    {
+      "id": "auxjam",
+      "width": 320,
+      "summaryHeight": 102,
+      "passed": true
+    },
+    {
+      "id": "auxjam",
+      "width": 390,
+      "summaryHeight": 68,
+      "passed": true
+    },
+    {
+      "id": "auxjam",
+      "width": 1440,
+      "summaryHeight": 75.875,
+      "passed": true
+    },
+    {
+      "id": "glassdays-catalog",
+      "width": 320,
+      "summaryHeight": 102,
+      "passed": true
+    },
+    {
+      "id": "glassdays-catalog",
+      "width": 390,
+      "summaryHeight": 68,
+      "passed": true
+    },
+    {
+      "id": "glassdays-catalog",
+      "width": 1440,
+      "summaryHeight": 75.875,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

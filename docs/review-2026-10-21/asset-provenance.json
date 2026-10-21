@@ -1,0 +1,52 @@
+[
+  {
+    "asset": "Assets/portfolio/notilog.png",
+    "source": "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/NotiLog-iOS-Default-1024@1x.png",
+    "sha256": "689860f757652d3b224381cb8753e0557c756d9cfbc465a87deff734461ee53f",
+    "kind": "existing owner project asset"
+  },
+  {
+    "asset": "Assets/portfolio/reviewbar.png",
+    "source": "/Users/holtsdav/Documents/Dev/ReviewBar/ReviewBar/Assets.xcassets/AppIcon.appiconset/ReviewBarIcon.png",
+    "sha256": "3ae5633ecb0197c5649f24db000312599534ab21f8e09c4108bd0b06c74c5433",
+    "kind": "existing owner project asset"
+  },
+  {
+    "asset": "Assets/portfolio/catalog.svg",
+    "source": "/Users/holtsdav/Documents/Dev/JsonEditor/favicon.svg",
+    "sha256": "ed31ba0f2b1b89fd41e09b35462c25e2176bb8b8a0d67a8f7bf60d5df73a6309",
+    "kind": "existing owner project asset"
+  },
+  {
+    "asset": "Assets/portfolio/pdf-demo.gif",
+    "source": "/Users/holtsdav/Documents/Dev/PDF_Editor/assets/demos/text-and-answers.gif",
+    "sha256": "534525c828eb359df28ee08d3cbc3d9205bee8aff25adb9bdb2af674b2133ad4",
+    "kind": "existing owner project asset"
+  },
+  {
+    "asset": "Assets/portfolio/saveshelf.svg",
+    "source": "/Users/holtsdav/Documents/Dev/SaveShelf/SaveShelf.icon/Assets/SVG Image 6.svg",
+    "sha256": "8d244cb14dafb9e3859d253647f1453e01a829b664de1e72c36b2b4d9515264a",
+    "kind": "visible layered icon asset, original order 6/3/4"
+  },
+  {
+    "asset": "Assets/portfolio/saveshelf.svg",
+    "source": "/Users/holtsdav/Documents/Dev/SaveShelf/SaveShelf.icon/Assets/SVG Image 3.svg",
+    "sha256": "f42f3a0f08464faf08a71a213a561f5370bc295b0ec6835fc1ee751dce774489",
+    "kind": "visible layered icon asset, original order 6/3/4"
+  },
+  {
+    "asset": "Assets/portfolio/saveshelf.svg",
+    "source": "/Users/holtsdav/Documents/Dev/SaveShelf/SaveShelf.icon/Assets/SVG Image 4.svg",
+    "sha256": "0f6c06a6b701e7801c5ea3bb8746cd4eb720f6141a97123cf72aeeea80baae24",
+    "kind": "visible layered icon asset, original order 6/3/4"
+  },
+  {
+    "asset": "Assets/portfolio/auxjam.svg",
+    "kind": "new neutral project navigation glyph; no dedicated genuine project icon found; not represented as app artwork"
+  },
+  {
+    "asset": "Assets/portfolio/pdf-editor.svg",
+    "kind": "new neutral project navigation glyph; no dedicated genuine project icon found; not represented as app artwork"
+  }
+]

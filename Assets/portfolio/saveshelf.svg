@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><rect width="128" height="128" rx="27" fill="#fff"/>
+  <rect x="36" y="49" width="56" height="38"
+        rx="10" fill="#F3E5CC"
+        stroke="#354A36" stroke-width="4"/>
+  <g fill="#354A36">
+    <rect x="51.5" y="60" width="5" height="7" rx="2.5"/>
+    <rect x="71.5" y="60" width="5" height="7" rx="2.5"/>
+  </g>
+  <path d="M58 73C60.5 77 67.5 77 70 73"
+        stroke="#354A36" stroke-width="3.5"
+        stroke-linecap="round"/>
+
+  <g stroke="#354A36" stroke-width="4"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="
+      M34 35H84
+      Q88 35 91 38L101 48
+      Q104 51 104 55V102
+      Q104 112 94 112H34
+      Q24 112 24 102V45
+      Q24 35 34 35Z"
+      fill="#A9BE91"/>
+    <rect x="47" y="95" width="34" height="17"
+          rx="3" fill="#E5D5B5"/>
+    <path d="M59 103v7M69 103v7" stroke-width="3.5"/>
+  </g>
+
+  <g stroke="#354A36" stroke-width="4"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 35V25" stroke="#4B7044"/>
+    <path d="
+      M64 27
+      C51 30 41 23 42 12
+      C55 10 65 16 64 27Z"
+      fill="#7FAF65"/>
+    <path d="
+      M64 25
+      C63 13 73 8 86 11
+      C86 23 76 29 64 25Z"
+      fill="#A7CB7B"/>
+  </g>
+</svg>
