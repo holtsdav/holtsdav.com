@@ -10,9 +10,10 @@ interface Props {
 	robots?: string;
 	canonical?: string | URL;
 	lang?: string;
+	portfolio?: boolean;
 }
 
-const { title, description, robots, canonical, lang = 'en' } = Astro.props;
+const { title, description, robots, canonical, lang = 'en', portfolio = false } = Astro.props;
 const canonicalURL = canonical
 	? new URL(canonical, Astro.site ?? 'https://holtsdav.com')
 	: undefined;
@@ -23,8 +24,8 @@ const canonicalURL = canonical
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#090a0f" />
-		<meta name="color-scheme" content="dark" />
+		<meta name="theme-color" content="#f7f7f5" />
+		<meta name="color-scheme" content="light" />
 		<meta name="description" content={description} />
 		<meta property="og:type" content="website" />
 		<meta property="og:locale" content={lang === 'de' ? 'de_DE' : lang === 'es' ? 'es_ES' : 'en_US'} />
@@ -41,11 +42,11 @@ const canonicalURL = canonical
 		<link rel="icon" type="image/png" href={holtsdavLogo.src} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class:list={{ 'portfolio-page': portfolio }}>
 		<a class="skip-link" href="#main-content">Skip to content</a>
 		<div class="site-shell">
-			<Header />
-			<main id="main-content">
+			{!portfolio && <Header />}
+			<main id="main-content" tabindex="-1">
 				<slot />
 			</main>
 			<Footer />

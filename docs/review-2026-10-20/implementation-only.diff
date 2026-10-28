@@ -1,0 +1,1824 @@
+--- copied-baseline/Assets/app-icons/room-planner.svg
++++ portfolio/Assets/app-icons/room-planner.svg
+@@ -0,0 +1 @@
++<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><rect x="2" y="2" width="124" height="124" rx="32" fill="#e5edf6" stroke="#d2dfed" stroke-width="2"/><g transform="translate(22 17) scale(1.3)" fill="none" stroke="#33639a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m13 23 20-11 19 11v23L32 57 13 46Z"/><path d="m13 23 19 11 20-11M32 34v23M23 17l20 12M23 29v12l9 5"/></g></svg>
+--- copied-baseline/public/_redirects
++++ portfolio/public/_redirects
+@@ -4,3 +4,11 @@
+ /apps/mute-on-location/privacy/ /privacy/muteonlocation/ 301
+ /project/RoomPlaner/ /project/RoomPlanner/ 301
+ /privacy/roomplaner/ /privacy/roomplanner/ 301
++/Glassdays/ /apps/glassdays-countdown/ 301
++/MuteOnLocation/ /apps/mute-on-location/ 301
++/RogueColor/ /apps/rogue-color/ 301
++/NotiLog/ /#projects 302
++/project/mute-on-location/ /apps/mute-on-location/ 301
++/project/rogue-color/ /apps/rogue-color/ 301
++/project/RoomPlanner/ /apps/room-planner/ 301
++/project/notilog/ /#projects 302
+--- copied-baseline/scripts/verify-notilog-drafts.mjs
++++ portfolio/scripts/verify-notilog-drafts.mjs
+@@ -0,0 +1,77 @@
++import assert from 'node:assert/strict';
++import { mkdir,writeFile } from 'node:fs/promises';
++import path from 'node:path';
++const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
++const base=process.env.PORTFOLIO_PREVIEW_URL||'http://127.0.0.1:4326';
++assert.ok(['127.0.0.1','localhost'].includes(new URL(base).hostname));
++const out=path.resolve('docs/review-2026-10-20');await mkdir(path.join(out,'screenshots'),{recursive:true});
++const browser=await chromium.launch({headless:true,...(process.env.PORTFOLIO_CHROMIUM_PATH?{executablePath:process.env.PORTFOLIO_CHROMIUM_PATH}:{})});
++const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
++await context.route('**/*',route=>['localhost','127.0.0.1'].includes(new URL(route.request().url()).hostname)?route.continue():route.abort());
++const page=await context.newPage(),errors=[],results=[];page.on('pageerror',e=>errors.push(e.message));
++async function check(name,fn){await fn();results.push({name,passed:true});console.log('PASS '+name)}
++async function visit(route){const r=await page.goto(base+route,{waitUntil:'networkidle'});assert.equal(r.status(),200,route)}
++try{
++  for(const [route,name] of [['/support/notilog/','notilog-support'],['/drafts/notilog-privacy/','notilog-privacy-draft']]){
++    await check(name+': draft markers, semantics, privacy and links',async()=>{
++      await visit(route);
++      assert.equal(await page.locator('h1').count(),1);assert.equal(await page.locator('main').count(),1);
++      assert.equal(await page.locator('html').getAttribute('lang'),'en');
++      assert.equal(await page.locator('meta[name="robots"]').getAttribute('content'),'noindex, nofollow');
++      assert.equal(await page.locator('link[rel="canonical"]').count(),0);
++      assert.equal(await page.getByText('Local draft · Not published',{exact:true}).count(),1);
++      assert.equal(await page.locator('[aria-labelledby]').evaluateAll(els=>els.filter(el=>el.getAttribute('aria-labelledby').split(/\s+/).some(id=>!document.getElementById(id))).length),0);
++      const content=await page.locator('.draft-document').textContent();assert.ok(!content.includes('/Users/'));assert.ok(!content.includes('TURNSTILE_SECRET'));
++      const ids=await page.locator('[id]').evaluateAll(els=>els.map(el=>el.id));assert.equal(new Set(ids).size,ids.length);
++      for(const href of await page.locator('.draft-document a').evaluateAll(els=>els.map(el=>el.getAttribute('href')))){
++        assert.ok(href);
++        if(href.startsWith('#'))assert.equal(await page.locator(`[id="${href.slice(1)}"]`).count(),1,href);
++        else if(href.startsWith('/'))assert.equal((await context.request.get(base+href)).status(),200,href);
++        else if(href.startsWith('mailto:'))assert.ok(href.startsWith('mailto:contact@holtsdav.com?'));
++        else assert.equal(new URL(href).protocol,'https:');
++      }
++      assert.equal(await page.locator('.draft-document a[target="_blank"]:not([rel~="noreferrer"])').count(),0);
++    });
++    await check(name+': responsive text bounds at 320, 390, 621, 768, 1024 and 1440 px',async()=>{
++      for(const width of [320,390,621,768,1024,1440]){
++        await page.setViewportSize({width,height:1000});
++        const outside=await page.locator('.draft-document h1,.draft-document h2,.draft-document a,.draft-notice,.draft-review-point').evaluateAll(els=>els.filter(el=>{const r=el.getBoundingClientRect();return r.left< -1||r.right>innerWidth+1}).map(el=>el.textContent.slice(0,60)));
++        assert.deepEqual(outside,[],`${width}: ${JSON.stringify(outside)}`);
++      }
++    });
++    await check(name+': text contrast',async()=>{
++      const failures=await page.evaluate(()=>{
++        const parse=v=>{const a=v.match(/[\d.]+/g)?.map(Number)??[0,0,0,1];return [...a.slice(0,3),a[3]??1]};
++        const over=(a,b)=>[...a.slice(0,3).map((v,i)=>v*a[3]+b[i]*(1-a[3])),1];
++        const lum=c=>c.slice(0,3).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);
++        const walker=document.createTreeWalker(document.querySelector('.draft-document'),NodeFilter.SHOW_TEXT),bad=[];
++        for(let n=walker.nextNode();n;n=walker.nextNode()){
++          const el=n.parentElement;if(!n.textContent.trim()||!el.getClientRects().length)continue;
++          const s=getComputedStyle(el);if(s.visibility!=='visible')continue;
++          const ancestors=[];for(let p=el;p;p=p.parentElement)ancestors.unshift(p);
++          let bg=[255,255,255,1];for(const p of ancestors)bg=over(parse(getComputedStyle(p).backgroundColor),bg);
++          const a=lum(over(parse(s.color),bg)),b=lum(bg),ratio=(Math.max(a,b)+.05)/(Math.min(a,b)+.05),size=parseFloat(s.fontSize),min=size>=24||(size>=18.66&&Number(s.fontWeight)>=700)?3:4.5;
++          if(ratio<min-.01)bad.push({text:n.textContent.trim().slice(0,50),ratio});
++        }return bad;
++      });assert.deepEqual(failures,[]);
++    });
++    await check(name+': keyboard, anchor clearance, no-JavaScript content and screenshots',async()=>{
++      await page.setViewportSize({width:390,height:844});await visit(route);
++      await page.keyboard.press('Tab');assert.equal(await page.evaluate(()=>document.activeElement.textContent),'Skip to content');
++      await page.keyboard.press('Enter');assert.equal(await page.evaluate(()=>document.activeElement.id),'main-content');
++      await page.locator('.draft-contents a[href="#retention"]').focus();
++      assert.notEqual(await page.locator('.draft-contents a[href="#retention"]').evaluate(el=>getComputedStyle(el).outlineStyle),'none');
++      await page.keyboard.press('Enter');
++      assert.equal(new URL(page.url()).hash,'#retention');
++      const top=await page.locator('#retention h2').evaluate(el=>el.getBoundingClientRect().top);assert.ok(top>=100,`Anchor heading covered: ${top}`);
++      assert.equal(await page.evaluate(()=>getComputedStyle(document.documentElement).scrollBehavior),'auto');
++      for(const [width,height,view] of [[1440,1000,'desktop'],[390,844,'mobile']]){
++        await page.setViewportSize({width,height});await visit(route);await page.mouse.move(0,0);
++        await page.screenshot({path:path.join(out,'screenshots',`${view}-${name}.png`),fullPage:true});
++      }
++      const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}}),p=await nojs.newPage();
++      await p.goto(base+route);assert.ok(await p.locator('.draft-copy section').count()>=7);assert.equal(await p.locator('h1').count(),1);await nojs.close();
++    });
++  }
++  await check('No JavaScript exceptions',async()=>assert.deepEqual(errors,[]));
++}finally{await writeFile(path.join(out,'notilog-draft-qa.json'),JSON.stringify({base,date:new Date().toISOString(),results,errors},null,2)+'\n');await browser.close()}
+--- copied-baseline/scripts/verify-portfolio.mjs
++++ portfolio/scripts/verify-portfolio.mjs
+@@ -0,0 +1,181 @@
++/** Local browser QA. Uses an already installed Playwright and Chromium. */
++import assert from 'node:assert/strict';
++import { mkdir, writeFile } from 'node:fs/promises';
++import path from 'node:path';
++const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
++const base = process.env.PORTFOLIO_PREVIEW_URL || 'http://127.0.0.1:4326';
++assert.ok(['localhost','127.0.0.1'].includes(new URL(base).hostname), 'QA must use a loopback preview');
++const output = path.resolve('docs/review-2026-10-20');
++await mkdir(path.join(output, 'screenshots'), { recursive: true });
++const results = [];
++const browser = await chromium.launch({headless:true, ...(process.env.PORTFOLIO_CHROMIUM_PATH ? {executablePath:process.env.PORTFOLIO_CHROMIUM_PATH} : {})});
++const context = await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce',permissions:['clipboard-read','clipboard-write']});
++const page = await context.newPage();
++const errors = [];
++page.on('pageerror', e => errors.push(e.message));
++const localRoutes = new Set();
++// Keep QA fully local. Outbound links are inspected, not followed. The contact
++// form is not submitted and its external challenge is not needed for these checks.
++await context.route('**/*', route => {
++  const url = new URL(route.request().url());
++  return ['127.0.0.1','localhost'].includes(url.hostname) || ['data:','blob:'].includes(url.protocol) ? route.continue() : route.abort();
++});
++async function check(name, fn) { await fn(); results.push({name,passed:true}); console.log(`PASS ${name}`); }
++async function visit(url='/') { const response=await page.goto(base+url,{waitUntil:'networkidle'}); assert.equal(response.status(),200,url); }
++try {
++  await check('Homepage semantics, still imagery, local links',async()=>{
++    await visit();
++    assert.equal(await page.locator('h1').count(),1);
++    assert.equal(await page.locator('html').getAttribute('lang'),'en');
++    assert.equal(await page.locator('main').count(),1);
++    assert.equal(await page.locator('[data-project]').count(),3);
++    assert.equal(await page.locator('img:not([alt])').count(),0);
++    assert.equal(await page.locator('img[src$=".gif"],canvas').count(),0);
++    assert.equal(await page.locator('a[target="_blank"]:not([rel~="noreferrer"])').count(),0);
++    const hrefs=await page.locator('a').evaluateAll(els=>els.map(el=>el.getAttribute('href')).filter(Boolean));
++    for(const href of hrefs){if(href.startsWith('/')&&!href.startsWith('//'))localRoutes.add(href.split('#')[0]);if(href.startsWith('#'))assert.equal(await page.locator(`[id="${href.slice(1)}"]`).count(),1);}
++  });
++  await check('Responsive painted hero bounds at 320, 390, 620, 621, 700, 701, 768, 800, 801, 900, 901, 1024 and 1440 pixels',async()=>{
++    for(const width of [320,390,620,621,700,701,768,800,801,900,901,1024,1440]){
++      await page.setViewportSize({width,height:width<600?844:1000});
++      const geometry=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,offscreen:[...document.querySelectorAll('.folio h1,.folio h2,.folio-dock,.folio-project,.folio-hero a,.folio-object-stage img,.folio-room-icon,.folio-stage-note,.folio-hero-foot')].filter(el=>!el.hidden).filter(el=>{const r=el.getBoundingClientRect();return r.left < -1 || r.right>innerWidth+1}).map(el=>({class:el.className,left:el.getBoundingClientRect().left,right:el.getBoundingClientRect().right}))}));
++      assert.ok(geometry.scroll<=geometry.width+1,JSON.stringify(geometry));
++      assert.deepEqual(geometry.offscreen,[],JSON.stringify(geometry));
++    }
++  });
++  await check('Project filtering and direct project navigation',async()=>{
++    await page.setViewportSize({width:1440,height:1000});
++    await page.getByRole('button',{name:'Web tools'}).click();
++    assert.equal(await page.locator('[data-project]:visible').count(),1);
++    assert.equal(await page.locator('[data-filter-count]').textContent(),'1 project');
++    await page.getByRole('button',{name:'Apple apps'}).click();
++    assert.equal(await page.locator('[data-project]:visible').count(),2);
++    await page.evaluate(()=>{location.hash='room-planner'});
++    await page.waitForFunction(()=>!document.getElementById('room-planner').hidden);
++    assert.equal(await page.locator('[data-project]:visible').count(),3);
++  });
++  await check('Dock navigation, active section and reduced motion',async()=>{
++    for(const id of ['home','projects','about','contact']){
++      await page.locator(`.folio-dock a[href="#${id}"]`).click();
++      await page.waitForFunction(id=>document.querySelector('.folio-dock a[aria-current]')?.getAttribute('data-section')===id,id);
++      assert.equal(await page.locator('.folio-dock a[aria-current]').count(),1);
++    }
++    assert.equal(await page.evaluate(()=>getComputedStyle(document.documentElement).scrollBehavior),'auto');
++    assert.equal(await page.locator('.folio-app-object').first().evaluate(el=>getComputedStyle(el).animationName),'none');
++  });
++  await check('Keyboard skip link and visible focus',async()=>{
++    await visit();
++    await page.keyboard.press('Tab');
++    assert.equal(await page.evaluate(()=>document.activeElement?.textContent),'Skip to content');
++    await page.keyboard.press('Enter');
++    assert.equal(await page.evaluate(()=>document.activeElement?.id),'main-content');
++    await page.locator('.folio-dock a[href="#projects"]').focus();
++    assert.notEqual(await page.locator('.folio-dock a[href="#projects"]').evaluate(el=>getComputedStyle(el).outlineStyle),'none');
++    await page.keyboard.press('Enter');
++    assert.equal(new URL(page.url()).hash,'#projects');
++  });
++  await check('Sequential keyboard targets clear the dock at mobile and desktop heights',async()=>{
++    const records=[];
++    for(const [width,height] of [[390,844],[1440,844]]){
++      await page.setViewportSize({width,height});await visit();
++      const count=await page.locator('a[href]:visible,button:not([disabled]):visible').count();
++      for(let index=0;index<count;index++){
++        await page.keyboard.press('Tab');
++        await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
++        const state=await page.evaluate(()=>{
++          const el=document.activeElement,dock=document.querySelector('.folio-dock');
++          const r=el.getBoundingClientRect(),d=dock.getBoundingClientRect();
++          return {label:el.getAttribute('aria-label')||el.textContent.trim(),href:el.getAttribute('href'),inDock:!!el.closest('.folio-dock'),rect:{left:r.left,right:r.right,top:r.top,bottom:r.bottom},dock:{left:d.left,right:d.right,top:d.top,bottom:d.bottom},overlaps:r.left<d.right&&r.right>d.left&&r.top<d.bottom&&r.bottom>d.top};
++        });
++        records.push({width,height,index,...state});
++        assert.ok(state.inDock||!state.overlaps,JSON.stringify({width,height,index,...state}));
++        if(width===390&&state.href==='/apps/mute-on-location/'&&state.label.includes('Explore the app'))await page.screenshot({path:path.join(output,'screenshots','keyboard-mobile-mute.png')});
++        if(width===1440&&state.label==='Copy email')await page.screenshot({path:path.join(output,'screenshots','keyboard-desktop-copy.png')});
++      }
++    }
++    await writeFile(path.join(output,'keyboard-clearance.json'),JSON.stringify(records,null,2)+'\n');
++  });
++  await check('Copy email feedback',async()=>{
++    await page.locator('.folio-dock a[href="#contact"]').click();
++    await page.locator('[data-copy-email]').click();
++    await page.waitForFunction(()=>document.querySelector('[data-copy-status]')?.textContent==='Email copied.');
++    assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),'contact@holtsdav.com');
++  });
++  await check('New project pages, privacy and legal links resolve locally',async()=>{
++    for(const route of [...localRoutes,'/project/glassdays/','/apps/glassdays-countdown/','/apps/mute-on-location/','/privacy/glassdays/','/impressum/','/privacy/','/contact/']){
++      const response=await context.request.get(base+route);assert.equal(response.status(),200,route);
++    }
++    for(const route of ['/apps/glassdays-countdown/','/project/glassdays/']){
++      await visit(route);
++      assert.equal(await page.locator('h1').count(),1);
++      assert.equal(await page.getByText('More Info coming soon.',{exact:true}).count(),0);
++      assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),'https://holtsdav.com/apps/glassdays-countdown/');
++      for(const width of [320,390,768,1440]){
++        await page.setViewportSize({width,height:width<600?844:1000});
++        assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${route} at ${width}`);
++      }
++    }
++  });
++  await check('Public destinations, truthful Mute release copy and legacy aliases',async()=>{
++    await visit();
++    assert.equal(await page.locator('a[href*="github.com/holtsdav/Glassdays"],a[href*="github.com/holtsdav/MuteOnLocation"]').count(),0);
++    await visit('/apps/glassdays-countdown/');
++    assert.equal(await page.locator('a[href*="github.com/holtsdav/Glassdays"]').count(),0);
++    await visit('/apps/mute-on-location/');
++    assert.equal(await page.getByText('Available on the Mac App Store',{exact:true}).count(),1);
++    assert.equal(await page.getByText(/not yet available|In development/).count(),0);
++    assert.ok(await page.locator('a[href="https://apps.apple.com/de/app/mute-on-location/id6790398791?l=en-GB&mt=12"]').count()>=1);
++    const aliases={'/Glassdays/':'/apps/glassdays-countdown/','/MuteOnLocation/':'/apps/mute-on-location/','/RogueColor/':'/apps/rogue-color/','/NotiLog/':'/','/project/mute-on-location/':'/apps/mute-on-location/','/project/rogue-color/':'/apps/rogue-color/','/project/RoomPlanner/':'/apps/room-planner/','/project/notilog/':'/'};
++    for(const [alias,destination] of Object.entries(aliases)){
++      await visit(alias);await page.waitForURL(base+destination+(alias.toLowerCase().includes('notilog')?'#projects':''));
++      assert.equal(await page.locator('h1').count(),1);
++      assert.equal(await page.getByText(/More Info coming soon/i).count(),0);
++    }
++  });
++  await check('Images decode and desktop/mobile screenshots',async()=>{
++    for(const [name,route,width,height] of [['desktop-home','/',1440,1000],['mobile-home','/',390,844],['desktop-glassdays','/project/glassdays/',1440,1000],['mobile-glassdays','/project/glassdays/',390,844],['mobile-mute','/apps/mute-on-location/',390,844],['home-621','/',621,844],['home-700','/',700,844],['home-701','/',701,844],['home-801','/',801,844]]){
++      await page.setViewportSize({width,height});await visit(route);
++      await page.evaluate(async()=>{await Promise.all([...document.images].map(img=>{img.loading='eager';return img.decode()}))});
++      await page.screenshot({path:path.join(output,'screenshots',`${name}.png`),fullPage:true});
++      if(route==='/')await page.screenshot({path:path.join(output,'screenshots',`${name}-viewport.png`)});
++    }
++  });
++  await check('Text contrast on homepage and Glassdays page',async()=>{
++    for(const route of ['/','/project/glassdays/']){
++      await visit(route);
++      const failures=await page.evaluate(()=>{
++        const parse=value=>{const c=value.match(/[\d.]+/g)?.map(Number)??[0,0,0,1];return [...c.slice(0,3),c[3]??1]};
++        const over=(a,b)=>[...a.slice(0,3).map((v,i)=>v*a[3]+b[i]*(1-a[3])),1];
++        const lum=c=>c.slice(0,3).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);
++        const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const failures=[];
++        for(let node=walker.nextNode();node;node=walker.nextNode()){
++          const el=node.parentElement,text=node.textContent.trim();
++          if(!el||!text||el.closest('script,style,noscript,[aria-hidden="true"],[hidden]')||!el.getClientRects().length)continue;
++          const style=getComputedStyle(el);if(style.visibility!=='visible')continue;
++          const ancestors=[];for(let p=el;p;p=p.parentElement)ancestors.unshift(p);
++          let bg=[255,255,255,1];for(const p of ancestors)bg=over(parse(getComputedStyle(p).backgroundColor),bg);
++          const fg=over(parse(style.color),bg),a=lum(fg),b=lum(bg),ratio=(Math.max(a,b)+.05)/(Math.min(a,b)+.05);
++          const size=parseFloat(style.fontSize),large=size>=24||(size>=18.66&&Number(style.fontWeight)>=700),minimum=large?3:4.5;
++          if(ratio<minimum-.01)failures.push({text:text.slice(0,70),ratio:Math.round(ratio*100)/100,minimum,color:style.color});
++        }
++        return failures;
++      });
++      assert.deepEqual(failures,[],`${route}: ${JSON.stringify(failures)}`);
++    }
++  });
++  await check('Readable portfolio with JavaScript disabled',async()=>{
++    const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});
++    const p=await nojs.newPage();await p.goto(base);
++    assert.equal(await p.locator('[data-project]:visible').count(),3);
++    assert.equal(await p.locator('.folio-dock a').count(),4);
++    assert.equal(await p.locator('[data-project-filters]:visible').count(),0);
++    await p.locator('.folio-dock a[href="#about"]').click();
++    assert.equal(new URL(p.url()).hash,'#about');
++    await p.screenshot({path:path.join(output,'screenshots','mobile-no-javascript.png'),fullPage:true});
++    await nojs.close();
++  });
++  await check('No browser JavaScript exceptions',async()=>assert.deepEqual(errors,[]));
++} finally {
++  await writeFile(path.join(output,'browser-qa.json'),JSON.stringify({base,date:new Date().toISOString(),results,errors},null,2)+'\n');
++  await browser.close();
++}
+--- copied-baseline/src/components/DraftDocument.astro
++++ portfolio/src/components/DraftDocument.astro
+@@ -0,0 +1,26 @@
++---
++import BaseLayout from '../layouts/BaseLayout.astro';
++import '../styles/document-draft.css';
++interface Props {
++  title: string;
++  description: string;
++  kind: string;
++  contents: { id: string; label: string }[];
++}
++const { title, description, kind, contents } = Astro.props;
++---
++<BaseLayout title={`${title} — Review draft | holtsdav`} description={description} robots="noindex, nofollow">
++  <article class="draft-document">
++    <div class="draft-breadcrumb"><a href="/">← Portfolio</a><span>NotiLog / {kind}</span></div>
++    <aside class="draft-notice" aria-labelledby="draft-status">
++      <strong id="draft-status">Local draft · Not published</strong>
++      <p>Prepared for David’s review on 20 October 2026. This is not a release announcement or an approved privacy policy. Confirm the final app build and the marked review points before using this content publicly.</p>
++    </aside>
++    <header class="draft-heading"><p class="draft-kicker">NOTILOG / {kind.toUpperCase()}</p><h1>{title}</h1><p>{description}</p></header>
++    <div class="draft-columns">
++      <nav class="draft-contents" aria-label="On this page"><p>On this page</p>{contents.map(item => <a href={`#${item.id}`}>{item.label}</a>)}</nav>
++      <div class="draft-copy"><slot /></div>
++    </div>
++    <footer class="draft-end"><p>Review draft only. Nothing has been published or configured in the app.</p><a href="#main-content">Back to top ↑</a></footer>
++  </article>
++</BaseLayout>
+--- copied-baseline/src/components/GlassdaysPage.astro
++++ portfolio/src/components/GlassdaysPage.astro
+@@ -0,0 +1,28 @@
++---
++import { Image } from 'astro:assets';
++import BaseLayout from '../layouts/BaseLayout.astro';
++import icon from '../../Assets/app-icons/glassdays.png';
++import home from '../../Assets/glassdays-screenshots/home-light.png';
++import widgets from '../../Assets/glassdays-screenshots/widgets.png';
++import create from '../../Assets/glassdays-screenshots/create-dark.png';
++import folders from '../../Assets/glassdays-screenshots/folders.png';
++import '../styles/portfolio.css';
++import '../styles/glassdays-case.css';
++const store = 'https://apps.apple.com/de/app/glassdays-countdown/id6785538729';
++---
++<BaseLayout title="Glassdays — Personal countdowns | David Holtschke" description="Count down to the moments that matter with Glassdays for iPhone and iPad. Personal photos, collections, widgets, and optional reminders." canonical="https://holtsdav.com/apps/glassdays-countdown/" portfolio>
++  <div class="folio glass-case">
++    <header class="folio-masthead folio-shell"><a class="folio-logo" href="/" aria-label="holtsdav — Home">holts<span>dav</span><b aria-hidden="true">.</b></a><a class="folio-header-contact" href="/#projects"><span aria-hidden="true">←</span> All work</a></header>
++    <article>
++      <header class="glass-case-hero folio-shell">
++        <div class="glass-case-heading"><p class="folio-eyebrow">SELECTED WORK / iPHONE & iPAD</p><div class="glass-case-name"><Image src={icon} alt="" width={72} height={72} format="webp" /><span>Glassdays</span></div><h1>Good things.<br /><em>Worth waiting for.</em></h1><p>A long-awaited trip. A birthday. The next little thing to look forward to. Glassdays turns your important moments into personal, visual countdowns.</p><div class="glass-case-actions"><a class="folio-button" href={store} target="_blank" rel="noreferrer">Get Glassdays <span aria-hidden="true">↗</span></a><a class="folio-text-link" href="mailto:contact@holtsdav.com?subject=Glassdays%20support">App support <span aria-hidden="true">↗</span></a></div><p class="glass-case-availability">Free to download · Optional one-time Pro unlock</p></div>
++        <div class="glass-case-preview"><span class="glass-case-preview-note">YOUR MOMENTS, AT A GLANCE</span><div class="glass-case-phones"><Image src={home} alt="Glassdays’ light appearance showing countdowns with photos and pinned events" width={480} height={1044} format="webp" quality={85} loading="eager" fetchpriority="high" /><Image src={widgets} alt="Small and medium Glassdays widgets on an iPhone home screen" width={390} height={848} format="webp" quality={85} loading="eager" /></div><span class="glass-case-preview-footer">Real app screens <span>iPhone</span></span></div>
++      </header>
++      <div class="glass-case-facts folio-shell"><div><span>PLATFORM</span><p>iPhone & iPad</p></div><div><span>BUILT WITH</span><p>Swift</p></div><div><span>FOCUS</span><p>Personal countdowns</p></div><div><span>EXPLORE</span><a href="/privacy/glassdays/">App privacy <span aria-hidden="true">↗</span></a></div></div>
++      <section class="glass-case-overview folio-shell" aria-labelledby="glass-overview"><p class="folio-eyebrow">01 / THE IDEA</p><div><h2 id="glass-overview">A date is useful.<br /><em>A moment is personal.</em></h2><p>Some dates deserve more than a row in a calendar. Glassdays gives them a place of their own, with a photo, an emoji, and a countdown you can keep close.</p><p>It is designed for small, everyday glances: a collection of upcoming plans in the app, or a widget on your Home Screen.</p></div></section>
++      <section class="glass-case-features folio-shell" aria-labelledby="glass-features"><div class="folio-section-heading"><div><p class="folio-eyebrow">02 / IN THE APP</p><h2 id="glass-features">Make it <em>your own.</em></h2></div><p>A few of the details inside Glassdays.</p></div><div class="glass-feature-grid"><article class="glass-feature"><div class="glass-feature-image glass-feature-create"><Image src={create} alt="The New Countdown screen with an emoji, photo preview, and date picker" width={440} height={957} format="webp" quality={85} loading="lazy" /></div><p class="folio-eyebrow">01 / PERSONALIZE</p><h3>A countdown with character.</h3><p>Choose a photo and emoji for each moment. Pin the ones you want to see first, and make the collection feel like yours.</p></article><article class="glass-feature"><div class="glass-feature-image glass-feature-folders"><Image src={folders} alt="Glassdays folders grouping countdowns into Holidays, Games, and Tech" width={700} height={663} format="webp" quality={85} loading="lazy" /></div><p class="folio-eyebrow">02 / ORGANIZE</p><h3>Give your plans a place.</h3><p>Group countdowns in collections, from holidays to the things you follow. Keep your next moments together without losing the ones that matter most.</p></article></div></section>
++      <section class="glass-case-small-details folio-shell" aria-labelledby="glass-details"><div><p class="folio-eyebrow">03 / EVERYDAY DETAILS</p><h2 id="glass-details">There when<br /><em>you need a glance.</em></h2></div><div class="glass-detail-list"><div><span>01</span><div><h3>Widgets for what’s next</h3><p>Keep upcoming dates in view from your Home Screen.</p></div></div><div><span>02</span><div><h3>Repeats and reminders</h3><p>Create annual repeats and turn on optional reminders as a moment gets closer.</p></div></div><div><span>03</span><div><h3>Start without an account</h3><p>Create countdowns on your device. Optional Pro features include iCloud sync, calendar integration, and custom widgets.</p></div></div></div></section>
++      <section class="glass-case-closing folio-shell" aria-labelledby="glass-next"><Image src={icon} alt="" width={70} height={70} format="webp" loading="lazy" /><p class="folio-eyebrow">SOMETHING TO LOOK FORWARD TO</p><h2 id="glass-next">What’s your<br /><em>next good thing?</em></h2><a class="folio-button" href={store} target="_blank" rel="noreferrer">Find Glassdays on the App Store <span aria-hidden="true">↗</span></a><div class="glass-case-closing-links"><a href="/privacy/glassdays/">Privacy policy</a><a href="mailto:contact@holtsdav.com?subject=Glassdays%20support">App support</a><a href="/#projects">More work <span aria-hidden="true">↗</span></a></div></section>
++    </article>
++  </div>
++</BaseLayout>
+--- copied-baseline/src/components/PortfolioDock.astro
++++ portfolio/src/components/PortfolioDock.astro
+@@ -0,0 +1,17 @@
++---
++const sections = [
++  { id: 'home', label: 'Home', path: 'm3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z' },
++  { id: 'projects', label: 'Work', path: 'M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z' },
++  { id: 'about', label: 'About', path: 'M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM4 21v-2a8 8 0 0 1 16 0v2' },
++  { id: 'contact', label: 'Contact', path: 'M3 5h18v14H3zM3 5l9 8 9-8' },
++];
++---
++<nav class="folio-dock" aria-label="Portfolio sections">
++  {sections.map(({ id, label, path }, index) => (
++    <a href={`#${id}`} data-section={id} aria-current={index === 0 ? 'location' : undefined}>
++      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={path} /></svg>
++      <span>{label}</span>
++      <i aria-hidden="true"></i>
++    </a>
++  ))}
++</nav>
+--- copied-baseline/src/components/PortfolioHome.astro
++++ portfolio/src/components/PortfolioHome.astro
+@@ -0,0 +1,121 @@
++---
++import { Image } from 'astro:assets';
++import PortfolioDock from './PortfolioDock.astro';
++import glassdaysIcon from '../../Assets/app-icons/glassdays.png';
++import muteIcon from '../../Assets/app-icons/mute-on-location.png';
++import glassdaysHome from '../../Assets/glassdays-screenshots/home-light.png';
++import glassdaysWidgets from '../../Assets/glassdays-screenshots/widgets.png';
++import mutePreview from '../../Assets/MuteOnLocation-preview.png';
++import roomPreview from '../../Assets/RoomPlaner.png';
++import '../styles/portfolio.css';
++---
++
++<div class="folio" id="home" data-portfolio-section>
++  <header class="folio-masthead folio-shell">
++    <a class="folio-logo" href="#home" aria-label="holtsdav — Home">holts<span>dav</span><b aria-hidden="true">.</b></a>
++    <p>Software developer <span aria-hidden="true">/</span> Munich, Germany</p>
++    <a class="folio-header-contact" href="#contact">Say hello <span aria-hidden="true">↗</span></a>
++  </header>
++
++  <section class="folio-hero folio-shell" aria-labelledby="folio-title">
++    <div class="folio-hero-copy">
++      <p class="folio-eyebrow"><span class="folio-small-star" aria-hidden="true">✳</span> DAVID HOLTSCHKE · SOFTWARE & INTERFACES</p>
++      <h1 id="folio-title">Small details.<br /><em>Useful software.</em></h1>
++      <p class="folio-intro">Hi, I’m David. I build apps and tools that bring a little more ease to everyday life.</p>
++      <div class="folio-hero-actions">
++        <a class="folio-button" href="#projects">Explore my work <span aria-hidden="true">↓</span></a>
++        <a class="folio-text-link" href="https://github.com/holtsdav" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
++      </div>
++    </div>
++    <div class="folio-object-stage" aria-label="A few things I've built">
++      <div class="folio-orbit" aria-hidden="true"></div>
++      <div class="folio-orbit folio-orbit-inner" aria-hidden="true"></div>
++      <span class="folio-stage-cross folio-cross-one" aria-hidden="true">+</span>
++      <span class="folio-stage-cross folio-cross-two" aria-hidden="true">+</span>
++      <a class="folio-app-object folio-object-glass" href="#glassdays">
++        <Image src={glassdaysIcon} alt="" width={172} height={172} format="webp" loading="eager" />
++        <span>Glassdays <b aria-hidden="true">↗</b></span>
++      </a>
++      <a class="folio-app-object folio-object-mute" href="#mute-on-location">
++        <Image src={muteIcon} alt="" width={126} height={126} format="webp" loading="eager" />
++        <span>Mute On Location <b aria-hidden="true">↗</b></span>
++      </a>
++      <a class="folio-app-object folio-object-room" href="#room-planner">
++        <span class="folio-room-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="m13 23 20-11 19 11v23L32 57 13 46Z"/><path d="m13 23 19 11 20-11M32 34v23M23 17l20 12M23 29v12l9 5"/></svg></span>
++        <span>Room Planner <b aria-hidden="true">↗</b></span>
++      </a>
++      <p class="folio-stage-note">a few things I’ve built <span aria-hidden="true">⤴</span></p>
++    </div>
++    <div class="folio-hero-foot"><span>Native apps. Interactive tools. Thoughtful details.</span><a href="#projects">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a></div>
++  </section>
++
++  <section class="folio-work folio-shell" id="projects" data-portfolio-section aria-labelledby="folio-work-title">
++    <header class="folio-section-heading">
++      <div><p class="folio-eyebrow">01 / SELECTED WORK</p><h2 id="folio-work-title">Built to be <em>used.</em></h2></div>
++      <p>From a countdown to your next adventure<br class="folio-desktop-break" /> to a room that feels just right.</p>
++    </header>
++    <div class="folio-filter-bar" data-project-filters hidden>
++      <div class="folio-filters" role="group" aria-label="Filter projects">
++        <button type="button" data-filter="all" aria-pressed="true">All work <span>03</span></button>
++        <button type="button" data-filter="apple" aria-pressed="false">Apple apps</button>
++        <button type="button" data-filter="web" aria-pressed="false">Web tools</button>
++      </div>
++      <p class="folio-filter-count" aria-live="polite" aria-atomic="true" data-filter-count>3 projects</p>
++    </div>
++
++    <div class="folio-projects">
++      <article class="folio-project folio-featured" id="glassdays" data-project="apple" aria-labelledby="glassdays-title">
++        <div class="folio-project-copy">
++          <div class="folio-project-topline"><span class="folio-project-number">01</span><span class="folio-status"><i aria-hidden="true"></i> On the App Store</span></div>
++          <Image class="folio-project-icon" src={glassdaysIcon} alt="" width={64} height={64} format="webp" loading="lazy" />
++          <p class="folio-project-type">iPHONE & iPAD · SWIFT</p>
++          <h3 id="glassdays-title">Glassdays</h3>
++          <p class="folio-project-tagline">Good things are worth<br />looking forward to.</p>
++          <p class="folio-project-description">Personal, visual countdowns for the moments that matter. Add photos and emoji, organize collections, and keep upcoming dates in view with widgets.</p>
++          <div class="folio-project-links"><a class="folio-link-arrow" href="/apps/glassdays-countdown/">Explore Glassdays <span aria-hidden="true">↗</span></a><a class="folio-project-source" href="https://apps.apple.com/de/app/glassdays-countdown/id6785538729" target="_blank" rel="noreferrer" aria-label="Glassdays on the App Store">App Store <span aria-hidden="true">↗</span></a></div>
++        </div>
++        <a class="folio-project-media folio-glass-media" href="/apps/glassdays-countdown/" aria-label="Explore Glassdays">
++          <span class="folio-media-caption">A LITTLE ANTICIPATION, EVERY DAY.</span>
++          <span class="folio-glass-phones"><Image src={glassdaysHome} alt="Glassdays showing pinned countdowns with photos and emoji" width={380} height={826} format="webp" quality={85} loading="lazy" /><Image src={glassdaysWidgets} alt="Glassdays countdown widgets on an iPhone home screen" width={330} height={718} format="webp" quality={85} loading="lazy" /></span>
++          <span class="folio-media-meta">Glassdays <span>Countdowns, made personal</span></span>
++        </a>
++      </article>
++
++      <article class="folio-project folio-secondary folio-mute-project" id="mute-on-location" data-project="apple" aria-labelledby="mute-title">
++        <a class="folio-project-media folio-mute-media" href="/apps/mute-on-location/" aria-label="Explore Mute On Location"><Image src={mutePreview} alt="Mute On Location’s menu bar interface with saved places and a muted audio status" width={1000} height={625} format="webp" quality={85} loading="lazy" /></a>
++        <div class="folio-project-copy">
++          <div class="folio-project-topline"><span class="folio-project-number">02</span><p class="folio-project-type">macOS · SWIFT</p></div>
++          <h3 id="mute-title">Mute On Location</h3>
++          <p class="folio-project-tagline">One less thing to remember.</p>
++          <p class="folio-project-description">A menu bar utility that mutes your Mac when you arrive at a saved location. Set your places and radii, then let the app take care of the quiet.</p>
++          <div class="folio-project-links"><a class="folio-link-arrow" href="/apps/mute-on-location/">Explore the app <span aria-hidden="true">↗</span></a><a class="folio-project-source" href="https://apps.apple.com/de/app/mute-on-location/id6790398791?l=en-GB&amp;mt=12" target="_blank" rel="noreferrer" aria-label="Mute On Location on the Mac App Store">App Store <span aria-hidden="true">↗</span></a></div>
++        </div>
++      </article>
++
++      <article class="folio-project folio-secondary folio-room-project" id="room-planner" data-project="web" aria-labelledby="room-title">
++        <a class="folio-project-media folio-room-media" href="https://holtsdav.com/RoomPlanner" target="_blank" rel="noreferrer" aria-label="Try Room Planner (opens in a new tab)"><Image src={roomPreview} alt="Room Planner canvas showing a furnished living room, dimensions, and an object library" width={1000} height={660} format="webp" quality={85} loading="lazy" /></a>
++        <div class="folio-project-copy">
++          <div class="folio-project-topline"><span class="folio-project-number">03</span><p class="folio-project-type">INTERACTIVE WEB TOOL</p></div>
++          <h3 id="room-title">Room Planner</h3>
++          <p class="folio-project-tagline">Make room for a better layout.</p>
++          <p class="folio-project-description">Explore a room before moving the furniture. Arrange objects on a measured floor plan, adjust the layout, and keep your plan on your device.</p>
++          <div class="folio-project-links"><a class="folio-link-arrow" href="https://holtsdav.com/RoomPlanner" target="_blank" rel="noreferrer">Try Room Planner <span aria-hidden="true">↗</span></a><a class="folio-project-source" href="https://github.com/holtsdav/RoomPlanner" target="_blank" rel="noreferrer" aria-label="Room Planner source on GitHub">Source <span aria-hidden="true">↗</span></a></div>
++        </div>
++      </article>
++    </div>
++  </section>
++
++  <section class="folio-about folio-shell" id="about" data-portfolio-section aria-labelledby="folio-about-title">
++    <div class="folio-about-note"><span class="folio-about-monogram" aria-hidden="true">dh<span>✳</span></span><p>David Holtschke</p><span>Software developer<br />Munich, Germany</span><div class="folio-note-footer"><span aria-hidden="true">48° N / 11° E</span><span>hello, world.</span></div></div>
++    <div class="folio-about-copy"><p class="folio-eyebrow">02 / BEHIND THE WORK</p><h2 id="folio-about-title">Hi, I’m David.<br /><em>I like making things work.</em></h2><p>My projects span native Apple apps and interactive tools for the web. Different platforms, with the same intention: make something useful and give the details the attention they deserve.</p><p>This is a small collection of that work. You can explore the apps, try a tool in your browser, or look through my public projects on GitHub.</p><div class="folio-about-links"><a class="folio-text-link" href="https://github.com/holtsdav" target="_blank" rel="noreferrer">Find me on GitHub <span aria-hidden="true">↗</span></a><a class="folio-text-link" href="https://www.linkedin.com/in/david-holtschke" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></div>
++  </section>
++
++  <section class="folio-contact folio-shell" id="contact" data-portfolio-section aria-labelledby="folio-contact-title">
++    <div class="folio-contact-heading"><p class="folio-eyebrow">03 / LET’S CONNECT</p><h2 id="folio-contact-title">Something on<br /><em>your mind?</em><span class="folio-contact-star" aria-hidden="true">✳</span></h2></div>
++    <div class="folio-contact-copy"><p>A question about an app, an idea for a project, or just a hello. I’d be happy to hear from you.</p><a class="folio-email" href="mailto:contact@holtsdav.com">contact@holtsdav.com <span aria-hidden="true">↗</span></a><div class="folio-copy-row"><button type="button" class="folio-copy-email" data-copy-email hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>Copy email</button><span class="folio-copy-status" data-copy-status role="status"></span></div></div>
++  </section>
++</div>
++<PortfolioDock />
++<script>
++  import '../scripts/portfolio';
++</script>
+--- copied-baseline/src/layouts/BaseLayout.astro
++++ portfolio/src/layouts/BaseLayout.astro
+@@ -10,9 +10,10 @@
+ 	robots?: string;
+ 	canonical?: string | URL;
+ 	lang?: string;
++	portfolio?: boolean;
+ }
+ 
+-const { title, description, robots, canonical, lang = 'en' } = Astro.props;
++const { title, description, robots, canonical, lang = 'en', portfolio = false } = Astro.props;
+ const canonicalURL = canonical
+ 	? new URL(canonical, Astro.site ?? 'https://holtsdav.com')
+ 	: undefined;
+@@ -41,11 +42,11 @@
+ 		<link rel="icon" type="image/png" href={holtsdavLogo.src} />
+ 		<title>{title}</title>
+ 	</head>
+-	<body>
++	<body class:list={{ 'portfolio-page': portfolio }}>
+ 		<a class="skip-link" href="#main-content">Skip to content</a>
+ 		<div class="site-shell">
+-			<Header />
+-			<main id="main-content">
++			{!portfolio && <Header />}
++			<main id="main-content" tabindex="-1">
+ 				<slot />
+ 			</main>
+ 			<Footer />
+--- copied-baseline/src/middleware.ts
++++ portfolio/src/middleware.ts
+@@ -1,12 +1,5 @@
+ import { defineMiddleware } from 'astro:middleware';
+ 
+-export const onRequest = defineMiddleware(({ url, redirect }, next) => {
+-	if (import.meta.env.DEV) {
+-		// Keep both current and legacy privacy URLs available in the stripped dev site.
+-		const privacyPage = /^\/(?:privacy(?:\/|$)|apps\/[^/]+\/privacy(?:\/|$))/.test(url.pathname);
+-		const portfolioPage = /^\/(?:project(?:\/|$)|apps(?:\/|$)|(?:contact|Glassdays|MuteOnLocation|NotiLog|RogueColor)\/?$)/.test(url.pathname);
+-		if (portfolioPage && !privacyPage) return redirect('/', 302);
+-	}
+-
+-	return next();
+-});
++// Keep development and built previews consistent so project and privacy links
++// can be reviewed locally. No production services are needed to view the site.
++export const onRequest = defineMiddleware((_context, next) => next());
+--- copied-baseline/src/pages/Glassdays.astro
++++ portfolio/src/pages/Glassdays.astro
+@@ -1,9 +1,3 @@
+ ---
+-import BaseLayout from '../layouts/BaseLayout.astro';
++return Astro.redirect('/apps/glassdays-countdown/', 301);
+ ---
+-
+-<BaseLayout
+-	title="Glassdays | holtsdav"
+-	description="Glassdays by David Holtschke."
+-	canonical="https://holtsdav.com/Glassdays/"
+-/>
+--- copied-baseline/src/pages/MuteOnLocation.astro
++++ portfolio/src/pages/MuteOnLocation.astro
+@@ -1,9 +1,3 @@
+ ---
+-import BaseLayout from '../layouts/BaseLayout.astro';
++return Astro.redirect('/apps/mute-on-location/', 301);
+ ---
+-
+-<BaseLayout
+-	title="Mute On Location | holtsdav"
+-	description="Mute On Location by David Holtschke."
+-	canonical="https://holtsdav.com/MuteOnLocation/"
+-/>
+--- copied-baseline/src/pages/NotiLog.astro
++++ portfolio/src/pages/NotiLog.astro
+@@ -1,9 +1,3 @@
+ ---
+-import BaseLayout from '../layouts/BaseLayout.astro';
++return Astro.redirect('/#projects', 302);
+ ---
+-
+-<BaseLayout
+-	title="NotiLog | holtsdav"
+-	description="NotiLog by David Holtschke."
+-	canonical="https://holtsdav.com/NotiLog/"
+-/>
+--- copied-baseline/src/pages/RogueColor.astro
++++ portfolio/src/pages/RogueColor.astro
+@@ -1,9 +1,3 @@
+ ---
+-import BaseLayout from '../layouts/BaseLayout.astro';
++return Astro.redirect('/apps/rogue-color/', 301);
+ ---
+-
+-<BaseLayout
+-	title="Rogue Color | holtsdav"
+-	description="Rogue Color by David Holtschke."
+-	canonical="https://holtsdav.com/RogueColor/"
+-/>
+--- copied-baseline/src/pages/apps/glassdays-countdown.astro
++++ portfolio/src/pages/apps/glassdays-countdown.astro
+@@ -1,43 +1,4 @@
+ ---
+-import AppLanding from '../../components/AppLanding.astro';
+-import glassdaysIcon from '../../../Assets/app-icons/glassdays.png';
+-import glassdaysPreview from '../../../Assets/Glassdays.gif';
++import GlassdaysPage from '../../components/GlassdaysPage.astro';
+ ---
+-
+-<AppLanding
+-	name="Glassdays"
+-	slug="glassdays-countdown"
+-	icon={glassdaysIcon}
+-	status="Available on the App Store"
+-	kicker="Moments that matter"
+-	headline="Personal countdowns for the moments that matter."
+-	description="Glassdays turns the moments you care about into personal, visual countdowns—from a long-awaited trip to the birthday you never want to forget."
+-	accent="#d7d4dd"
+-	features={[
+-		{
+-			number: '01',
+-			title: 'Make it personal',
+-			description: 'Give every moment its own emoji and photo, pin what matters most, and organize your countdowns into beautiful collections.',
+-		},
+-		{
+-			number: '02',
+-			title: 'Keep dates in view',
+-			description: 'See upcoming dates in widgets, create annual repeats, and get optional reminders as each moment gets closer.',
+-		},
+-		{
+-			number: '03',
+-			title: 'No account required',
+-			description: 'Your countdowns stay on your device. Glassdays Pro adds features including iCloud sync, calendar integration, and custom widgets.',
+-		},
+-	]}
+-	closingHeadline="Your next moments at a glance."
+-	closingDescription="Glassdays is free for iPhone and iPad. Glassdays Pro can be unlocked with a one-time purchase."
+-	primaryLabel="Download on the App Store"
+-	primaryHref="https://apps.apple.com/de/app/glassdays-countdown/id6785538729"
+-	privacyHref="/privacy/glassdays/"
+-	mediaSrc={glassdaysPreview}
+-	mediaAlt="Glassdays in use, showing personal countdowns and collections on an Apple device"
+-	mediaWidth={800}
+-	mediaHeight={600}
+-	mediaCaption="Glassdays · App preview"
+-/>
++<GlassdaysPage />
+--- copied-baseline/src/pages/apps/mute-on-location.astro
++++ portfolio/src/pages/apps/mute-on-location.astro
+@@ -1,14 +1,14 @@
+ ---
+ import AppLanding from '../../components/AppLanding.astro';
+ import muteOnLocationIcon from '../../../Assets/app-icons/mute-on-location.png';
+-import muteOnLocationPreview from '../../../Assets/MuteOnLocation.gif';
++import muteOnLocationPreview from '../../../Assets/MuteOnLocation-preview.png';
+ ---
+ 
+ <AppLanding
+ 	name="Mute On Location"
+ 	slug="mute-on-location"
+ 	icon={muteOnLocationIcon}
+-	status="In development"
++	status="Available on the Mac App Store"
+ 	kicker="macOS · Location-based muting"
+ 	headline="Automatically mute at saved locations."
+ 	description="Mute On Location mutes your Mac’s current audio output when you arrive at a saved location. Manage locations, radii, and automation directly from the menu bar app."
+@@ -31,11 +31,13 @@
+ 		},
+ 	]}
+ 	closingHeadline="Stay muted without having to remember."
+-	closingDescription="Mute On Location is currently in development and is not yet available on the App Store."
++	closingDescription="Mute On Location is available for Mac on the App Store. Set up your saved places and choose how the app checks for arrivals."
++	primaryLabel="View on the Mac App Store"
++	primaryHref="https://apps.apple.com/de/app/mute-on-location/id6790398791?l=en-GB&mt=12"
+ 	privacyHref="/privacy/muteonlocation/"
+ 	mediaSrc={muteOnLocationPreview}
+ 	mediaAlt="Mute On Location showing the current location status and saved places in a macOS menu bar app"
+-	mediaWidth={900}
+-	mediaHeight={600}
++	mediaWidth={1200}
++	mediaHeight={750}
+ 	mediaCaption="Mute On Location · macOS"
+ />
+--- copied-baseline/src/pages/apps/room-planner.astro
++++ portfolio/src/pages/apps/room-planner.astro
+@@ -0,0 +1,32 @@
++---
++import AppLanding from '../../components/AppLanding.astro';
++import roomIcon from '../../../Assets/app-icons/room-planner.svg';
++import roomPreview from '../../../Assets/RoomPlaner.png';
++---
++<AppLanding
++  name="Room Planner"
++  slug="room-planner"
++  icon={roomIcon}
++  status="Interactive web tool"
++  kicker="In your browser · Room layouts"
++  headline="Plan a room before moving the furniture."
++  description="Arrange furniture and objects on a measured floor plan. Explore a layout, adjust the room, and keep your plan on your device."
++  accent="#cbdce9"
++  features={[
++    { number: '01', title: 'Work with room dimensions', description: 'Use the measured canvas to see the room and its dimensions while you arrange the layout.' },
++    { number: '02', title: 'Arrange objects', description: 'Choose from the object library, place items in the room, and move them into position.' },
++    { number: '03', title: 'Keep the plan on your device', description: 'The tool saves the plan locally so you can return to the layout in your browser.' },
++  ]}
++  closingHeadline="Make room for a better layout."
++  closingDescription="Try the existing Room Planner web tool to explore your own arrangement."
++  primaryLabel="Open Room Planner"
++  primaryHref="https://holtsdav.com/RoomPlanner"
++  secondaryLabel="View public source"
++  secondaryHref="https://github.com/holtsdav/RoomPlanner"
++  privacyHref="/privacy/roomplanner/"
++  mediaSrc={roomPreview}
++  mediaAlt="Room Planner with a furnished floor plan, room measurements, and an object library"
++  mediaWidth={1200}
++  mediaHeight={792}
++  mediaCaption="Room Planner · Browser interface"
++/>
+--- copied-baseline/src/pages/drafts/notilog-privacy.astro
++++ portfolio/src/pages/drafts/notilog-privacy.astro
+@@ -0,0 +1,23 @@
++---
++import DraftDocument from '../../components/DraftDocument.astro';
++const contents = [
++  { id: 'scope', label: 'Scope of this draft' },
++  { id: 'local-data', label: 'Data on your device' },
++  { id: 'capture-permissions', label: 'Capture and permissions' },
++  { id: 'network', label: 'Apple services and network use' },
++  { id: 'retention', label: 'Retention and deletion' },
++  { id: 'backups', label: 'Backups and sync' },
++  { id: 'support', label: 'Support contact' },
++  { id: 'owner-review', label: 'David’s review points' },
++];
++---
++<DraftDocument title="NotiLog privacy policy draft" description="A technical, source-backed draft about local notification storage, Apple metadata requests, manual backups and App Lock. David’s approval and release verification are pending." kind="Privacy draft" contents={contents}>
++  <section id="scope" aria-labelledby="scope-title"><h2 id="scope-title">Scope of this draft</h2><p>This draft describes the NotiLog app source reviewed on 20 October 2026. It is prepared for David Holtschke’s review and is <strong>not an approved public policy or a legal compliance assurance</strong>.</p><p>The reviewed app has no NotiLog account, custom backend or built-in cloud sync. No advertising, analytics, purchase or third-party crash-reporting SDK integration was found in the reviewed project configuration. Source review alone does not establish the behavior of a future release, App Store settings or an email provider.</p></section>
++  <section id="local-data" aria-labelledby="data-title"><h2 id="data-title">Data on your device</h2><p>NotiLog stores notification information passed to it by your configured automations: title, subtitle and message text; source-app name and identifier; capture dates, repeated-capture records and time-sensitive status; and your pin choices. Settings and cached app metadata/artwork are also stored locally.</p><p>The archive uses local SwiftData storage with CloudKit disabled in the reviewed configuration. Notification content is not sent to a developer-operated server by the reviewed capture, storage or backup code.</p><p>Notification content can contain personal or sensitive information. Choose which source apps to capture and protect access to your device. This draft does not claim that all local data or manual backups are separately encrypted by NotiLog.</p></section>
++  <section id="capture-permissions" aria-labelledby="permission-title"><h2 id="permission-title">Capture and permissions</h2><p>You choose source apps and enable their notification automations in Apple Shortcuts. Those automations pass the notification fields to NotiLog’s Archive Notification action. Disable or remove an automation in Shortcuts to stop its future captures; existing archived data remains until deleted.</p><p>The app cannot reconstruct notifications from before capture was configured. What is archived depends on what the configured automation passes to the app.</p><h3>Optional App Lock</h3><p>App Lock asks the system to authenticate with Face ID, Touch ID or the device passcode. NotiLog receives an authentication result, not your biometric template or passcode. App Lock protects the interface; it does not encrypt manual backup files or disable the capture automation.</p><aside class="draft-review-point"><p><strong>David’s review:</strong> Confirm all permission prompts, shortcut behavior and authentication paths against the shipping build and hardware. Do not describe the App Lock setting as a guarantee that capture or exported files are blocked.</p></aside></section>
++  <section id="network" aria-labelledby="network-title"><h2 id="network-title">Apple services and network use</h2><h3>App metadata and icons</h3><p>To show source-app names, icons and App Store links, the reviewed app requests public metadata from Apple’s App Store lookup service. The request includes a source app’s bundle identifier and a storefront country code, with fallback lookups where needed. <strong>These requests reveal the queried app identifier and storefront to Apple.</strong> Notification titles, subtitles and message text are not included in the lookup request.</p><p>The app downloads artwork from the URL returned by Apple and caches it locally. This network activity is separate from storing the notification archive. Apple’s handling of its service requests is described in <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noreferrer">Apple’s privacy information</a>.</p><h3>Setup and links</h3><p>Opening the shared shortcut during setup uses Apple’s iCloud Shortcuts service. Opening an App Store link or support email uses the selected system app or service. These user-directed actions are not a built-in cloud sync for the notification archive.</p><aside class="draft-review-point"><p><strong>David’s review:</strong> Recheck the final app’s network dependencies and any Apple diagnostics, App Store metrics or external support tools used outside the app code. Do not infer “no network requests” or a final App Store privacy label from the absence of an analytics SDK.</p></aside></section>
++  <section id="retention" aria-labelledby="retention-title"><h2 id="retention-title">Retention and deletion</h2><p>The reviewed main app offers 7 Days, 30 Days, 90 Days and Forever. Finite cleanup removes unpinned notifications older than the selected period, based on each notification’s latest capture date. Pinned notifications are kept by retention cleanup; Forever has no age cutoff.</p><p>Cleanup runs during app activity and capture processing, so this draft does not promise deletion at an exact background deadline. Settings previews eligible removals before applying a shorter period when records would be deleted, with an option to export first. Manual deletion of a notification removes all its repeated captures; Delete All History removes archived notifications and source-app records after confirmation.</p><p>Deleted records cannot be recovered by changing retention back to a longer period. An earlier backup would be needed, if available.</p><aside class="draft-review-point"><p><strong>David’s review:</strong> The separate retention safety fix preserves existing Forever/finite choices and treats unreadable preferences conservatively. Verify its integration into the actual release before describing upgrade behavior as shipped. This draft does not claim that the proposed fix can recover past deletions.</p></aside></section>
++  <section id="backups" aria-labelledby="backups-title"><h2 id="backups-title">Manual backups and sync</h2><p>Exported backups contain readable notification content, source-app information and backup metadata such as app/schema version and export date. The reviewed exporter writes JSON data and does not encrypt the exported file.</p><p>You choose a destination in Files. Saving to iCloud Drive or another cloud provider sends the file to that provider under its own terms and privacy practices. App Lock does not protect a copy after export. Delete exported copies separately when you no longer want them.</p><p>NotiLog does not provide built-in cloud sync in the reviewed source. Device-level backups may include local app data depending on your system and provider settings; confirm those settings separately.</p></section>
++  <section id="support" aria-labelledby="support-title"><h2 id="support-title">Support contact</h2><p>The proposed NotiLog contact is <a href="mailto:contact@holtsdav.com?subject=NotiLog%20privacy%20question">contact@holtsdav.com</a>. If you choose to email, the address, message and any attachments you send leave the local app and are handled through the email services involved. Please use synthetic examples and do not send your notification archive or private message content.</p><aside class="draft-review-point"><p><strong>David’s review:</strong> Confirm the operator identity, contact address, email provider, support-message retention and request-handling process before this becomes a public policy. These details cannot be established from the app source.</p></aside><div class="draft-related"><a href="/support/notilog/">Open the local support draft →</a></div></section>
++  <section id="owner-review" aria-labelledby="owner-title"><h2 id="owner-title">David’s publication review</h2><ol><li>Identify the exact build to release and confirm that this draft matches it, including retention migration, permissions, capture behavior and network dependencies.</li><li>Confirm the operator/contact and any support-provider, diagnostics or other data handling outside the app. Complete the policy’s applicable contact and request-handling details.</li><li>Choose and approve the final support and privacy URLs. This draft is separate from the existing policy route; no URL has been published or set in the app by this work.</li><li>Reconcile the app’s privacy manifest, native policy and App Store privacy answers with the final build. Consult <a href="https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy/" target="_blank" rel="noreferrer">Apple’s current App Privacy guidance</a> as part of that review.</li><li>Resolve the marked uncertainties and review the complete policy before removing this draft status or publishing.</li></ol></section>
++</DraftDocument>
+--- copied-baseline/src/pages/index.astro
++++ portfolio/src/pages/index.astro
+@@ -1,347 +1,13 @@
+ ---
+ import BaseLayout from '../layouts/BaseLayout.astro';
+-import AppIconLinks from '../components/AppIconLinks.astro';
+-import ParticleWordmark from '../components/ParticleWordmark.astro';
+-import DevelopmentHome from '../components/DevelopmentHome.astro';
+-import glassdaysPreview from '../../Assets/Glassdays.gif';
+-import muteOnLocationPreview from '../../Assets/MuteOnLocation-preview.png';
+-import rogueColorPreview from '../../Assets/rogue-color-gameplay.png';
+-import roomPlannerPreview from '../../Assets/RoomPlaner.png';
+-import holtsdavLogo from '../../Assets/holtsdav-logo.png';
+-
+-const projects = [
+-	{
+-		name: 'Glassdays',
+-		description: 'More Info Soon.',
+-		href: '/project/glassdays/',
+-		storeHref: 'https://apps.apple.com/de/app/glassdays-countdown/id6785538729',
+-		itchHref: null,
+-		githubHref: 'https://github.com/holtsdav/Glassdays',
+-		githubLabel: 'Open Glassdays on GitHub',
+-		image: glassdaysPreview.src,
+-		imageAlt: 'Placeholder preview for Glassdays',
+-		imageClass: 'project-gallery-image-cover project-gallery-image-glassdays',
+-		category: 'iPhone & iPad',
+-		categoryIcon: 'phone',
+-			tags: [
+-			{ label: 'Ai assisted', icon: 'ai' },
+-			{ label: 'Swift', icon: 'swift', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg' },
+-			{ label: 'Xcode', icon: 'xcode', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg' },
+-			{ label: 'Monetized', icon: 'monetized' },
+-		],
+-	},
+-	{
+-		name: 'Mute On Location',
+-		description: 'More Info Soon.',
+-		href: '/project/mute-on-location/',
+-		storeHref: 'https://apps.apple.com/de/app/mute-on-location/id6790398791?l=en-GB&mt=12',
+-		itchHref: null,
+-		githubHref: 'https://github.com/holtsdav/MuteOnLocation',
+-		githubLabel: 'Open Mute On Location on GitHub',
+-		image: muteOnLocationPreview.src,
+-		imageAlt: 'Placeholder preview for Mute On Location',
+-		imageClass: 'project-gallery-image-cover',
+-		category: 'macOS',
+-		categoryIcon: 'laptop',
+-			tags: [
+-			{ label: 'Ai assisted', icon: 'ai' },
+-			{ label: 'Swift', icon: 'swift', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg' },
+-			{ label: 'Xcode', icon: 'xcode', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg' },
+-			{ label: 'Monetized', icon: 'monetized' },
+-		],
+-	},
+-	{
+-		name: 'Rogue Color',
+-		description: 'More Info Soon.',
+-		href: '/project/rogue-color/',
+-		storeHref: null,
+-		itchHref: 'https://holtsdav.itch.io/rouge-color',
+-		githubHref: 'https://github.com/holtsdav/RogueColor',
+-		githubLabel: 'Open Rogue Color on GitHub',
+-		image: rogueColorPreview.src,
+-		imageAlt: 'Placeholder preview for Rogue Color',
+-		imageClass: 'project-gallery-image-cover project-gallery-image-pixel',
+-		category: 'Desktop Game',
+-		categoryIcon: 'desktop',
+-		tags: [
+-			{ label: 'Godot', icon: 'godot', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/godot/godot-original.svg' },
+-			{ label: 'No Ai used', icon: 'no-ai' },
+-			{ label: 'Not Monetized', icon: 'not-monetized' },
+-		],
+-	},
+-	{
+-		name: 'Room Planner',
+-		description: 'More Info Soon.',
+-		href: '/project/RoomPlanner/',
+-		websiteHref: 'https://holtsdav.com/RoomPlanner',
+-		storeHref: null,
+-		itchHref: null,
+-		githubHref: 'https://github.com/holtsdav/RoomPlanner',
+-		githubLabel: 'Open Room Planner on GitHub',
+-		image: roomPlannerPreview.src,
+-		imageAlt: 'Room Planner floor plan showing a furnished room layout',
+-		imageClass: 'project-gallery-image-cover',
+-		category: 'Web project',
+-		categoryIcon: 'web',
+-		tags: [
+-			{ label: 'Ai assisted', icon: 'ai' },
+-			{ label: 'Astro', icon: 'astro', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg' },
+-			{ label: 'Not Monetized', icon: 'not-monetized' },
+-		],
+-		hideStorePlaceholder: true,
+-	},
+-	{
+-		name: 'NotiLog',
+-		description: 'More Info Soon.',
+-		href: '/project/notilog/',
+-		storeHref: null,
+-		itchHref: null,
+-		githubHref: 'https://github.com/holtsdav/NotiLog',
+-		githubLabel: 'Open NotiLog on GitHub',
+-		image: holtsdavLogo.src,
+-		imageAlt: 'Placeholder artwork for NotiLog',
+-		imageClass: 'project-gallery-image-placeholder',
+-		notilogLogo: true,
+-		category: 'iPhone & iPad',
+-		categoryIcon: 'phone',
+-			tags: [
+-			{ label: 'Ai assisted', icon: 'ai' },
+-			{ label: 'Swift', icon: 'swift', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg' },
+-			{ label: 'Xcode', icon: 'xcode', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg' },
+-			{ label: 'Monetized', icon: 'monetized' },
+-		],
+-	},
+-];
++import PortfolioHome from '../components/PortfolioHome.astro';
+ ---
+ 
+-{!import.meta.env.DEV && <script is:inline>
+-	if (window.location.hash === '#contact') {
+-		window.location.replace('/contact/#contact-form');
+-	}
+-
+-	const pageUrl = new URL(window.location.href);
+-	if (pageUrl.searchParams.has('projects')) {
+-		document.documentElement.style.scrollBehavior = 'auto';
+-		pageUrl.searchParams.delete('projects');
+-		window.history.replaceState(null, '', `${pageUrl.pathname}${pageUrl.search}${pageUrl.hash}`);
+-		window.addEventListener('load', () => {
+-			requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.style.removeProperty('scroll-behavior')));
+-		}, { once: true });
+-	}
+-</script>}
+-
+ <BaseLayout
+-	title="holtsdav | David Holtschke"
+-	description="David Holtschke – software developer based in Munich, Germany."
+-	canonical="https://holtsdav.com/"
++  title="David Holtschke — Apps & useful software"
++  description="I'm David, a software developer in Munich. Explore Glassdays, Mute On Location, and Room Planner — apps and tools for everyday life."
++  canonical="https://holtsdav.com/"
++  portfolio
+ >
+-	{import.meta.env.DEV ? <DevelopmentHome /> : <>
+-	<div class="home-page-grid">
+-	<section class="hero shell" aria-labelledby="hero-title">
+-		<div class="hero-constellation">
+-			<AppIconLinks />
+-			<ParticleWordmark />
+-			<a class="hero-projects-button" href="#projects">
+-				My Projects
+-				<svg viewBox="0 0 20 20" aria-hidden="true">
+-					<path d="m4 7 6 6 6-6" />
+-				</svg>
+-			</a>
+-		</div>
+-	</section>
+-
+-	<section class="home-about shell" id="about" aria-labelledby="about-title">
+-		<div class="home-about-card">
+-			<div class="home-about-image" aria-hidden="true">
+-				<img src={holtsdavLogo.src} alt="" width="500" height="500" loading="lazy" />
+-				<span>Placeholder image</span>
+-			</div>
+-			<div class="home-about-copy">
+-				<p class="home-section-label">About me</p>
+-				<h2 id="about-title">Hi, I’m David.</h2>
+-				<p>More Info coming soon.</p>
+-				<div class="home-about-actions">
+-					<a class="home-about-action" href="mailto:contact@holtsdav.com">
+-						<svg viewBox="0 0 24 24" aria-hidden="true">
+-							<path d="M3 5.5h18v13H3z" />
+-							<path d="m3.5 6 8.5 7 8.5-7" />
+-						</svg>
+-						Email
+-					</a>
+-					<a
+-						class="home-about-action"
+-						href="https://www.linkedin.com/in/david-holtschke"
+-						target="_blank"
+-						rel="noreferrer"
+-					>
+-						<svg viewBox="0 0 24 24" aria-hidden="true">
+-							<path fill="currentColor" d="M20.5 3H3.5A.5.5 0 0 0 3 3.5v17a.5.5 0 0 0 .5.5h17a.5.5 0 0 0 .5-.5v-17a.5.5 0 0 0-.5-.5ZM8.3 18.3H5.6V9.7h2.7v8.6ZM7 8.5a1.6 1.6 0 1 1 0-3.1 1.6 1.6 0 0 1 0 3.1Zm11.3 9.8h-2.7v-4.2c0-1 0-2.3-1.4-2.3s-1.6 1.1-1.6 2.2v4.3H9.9V9.7h2.6v1.2c.4-.7 1.3-1.5 2.6-1.5 2.8 0 3.3 1.8 3.3 4.2v4.7Z" />
+-						</svg>
+-						LinkedIn
+-					</a>
+-				</div>
+-			</div>
+-		</div>
+-	</section>
+-
+-	<section class="home-projects shell" id="projects" aria-labelledby="projects-title">
+-		<header class="home-section-header">
+-			<h2 id="projects-title">My Projects</h2>
+-		</header>
+-
+-		<div class="project-gallery">
+-			{projects.map((project) => (
+-				<article class="project-gallery-card">
+-					<div class="project-gallery-preview">
+-						{project.notilogLogo ? (
+-							<div class="project-gallery-notilog-logo" aria-label="NotiLog logo" role="img">
+-								<svg viewBox="0 0 24 24" aria-hidden="true">
+-									<path fill="currentColor" d="M18 3a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4h-4.724l-4.762 2.857a1 1 0 0 1-1.508-.743L7 21v-2H6a4 4 0 0 1-3.995-3.8L2 15V7a4 4 0 0 1 4-4zm-4 9H8a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2m2-4H8a1 1 0 1 0 0 2h8a1 1 0 0 0 0-2" />
+-								</svg>
+-							</div>
+-						) : (
+-							<img
+-								class={project.imageClass}
+-								src={project.image}
+-								alt={project.imageAlt}
+-								width="800"
+-								height="520"
+-								loading="lazy"
+-								decoding="async"
+-							/>
+-						)}
+-						<div class="project-gallery-tags">
+-							<span class="project-gallery-category">
+-								{project.categoryIcon === 'phone' && <svg class="project-gallery-device-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2" /><path d="M10 18h4" /></svg>}
+-								{project.categoryIcon === 'laptop' && <svg class="project-gallery-device-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="12" rx="1.5" /><path d="M2.5 18h19l-2 3h-15l-2-3Z" /></svg>}
+-								{project.categoryIcon === 'desktop' && <svg class="project-gallery-device-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="13" rx="1.5" /><path d="M12 16v4M8 21h8" /></svg>}
+-								{project.categoryIcon === 'web' && <svg class="project-gallery-device-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.2 2.4 3.3 5.4 3.3 9s-1.1 6.6-3.3 9c-2.2-2.4-3.3-5.4-3.3-9S9.8 5.4 12 3Z" /></svg>}
+-								{project.categoryIcon === 'spark' && <span class="project-gallery-tag-icon" aria-hidden="true">✦</span>}
+-								{project.category}
+-							</span>
+-			{project.tags.filter((tag) => !['ai', 'no-ai', 'monetized', 'not-monetized'].includes(tag.icon)).map((tag) => (
+-								<span class:list={['project-gallery-category', `project-gallery-tag-${tag.icon}`]}>
+-									{tag.icon === 'astro' ? (
+-										<svg class="project-gallery-tag-icon project-gallery-astro-logo" viewBox="0 0 128 128" aria-hidden="true">
+-											<path fill="#fff" d="M81.504 9.465c.973 1.207 1.469 2.836 2.457 6.09l21.656 71.136a90.079 90.079 0 0 0-25.89-8.765L65.629 30.28a1.833 1.833 0 0 0-3.52.004L48.18 77.902a90.104 90.104 0 0 0-26.003 8.778l21.758-71.14c.996-3.25 1.492-4.876 2.464-6.083a8.023 8.023 0 0 1 3.243-2.398c1.433-.575 3.136-.575 6.535-.575H71.72c3.402 0 5.105 0 6.543.579a7.988 7.988 0 0 1 3.242 2.402Z" />
+-											<path fill="#bd8cff" d="M84.094 90.074c-3.57 3.055-10.696 5.137-18.903 5.137-10.07 0-18.515-3.137-20.754-7.356-.8 2.418-.98 5.184-.98 6.954 0 0-.527 8.675 5.508 14.71a5.671 5.671 0 0 1 5.672-5.671c5.37 0 5.367 4.683 5.363 8.488v.336c0 5.773 3.527 10.719 8.543 12.805a11.62 11.62 0 0 1-1.172-5.098c0-5.508 3.23-7.555 6.988-9.938 2.989-1.894 6.309-4 8.594-8.222a15.513 15.513 0 0 0 1.875-7.41 15.55 15.55 0 0 0-.734-4.735Z" />
+-										</svg>
+-									) : tag.logo ? <img class="project-gallery-tag-icon" src={tag.logo} alt="" aria-hidden="true" /> : <span class="project-gallery-tag-icon" aria-hidden="true">{tag.icon === 'monetized' ? '$' : '✦'}</span>}
+-									{tag.label}
+-								</span>
+-			))}
+-		</div>
+-		{project.tags.filter((tag) => tag.icon === 'monetized' || tag.icon === 'not-monetized').map((tag) => (
+-			<span class:list={['project-gallery-category', 'project-gallery-monetization-tag', `project-gallery-tag-${tag.icon}`]}>
+-				{tag.icon === 'monetized' ? (
+-					<span class="project-gallery-tag-icon" aria-hidden="true">$</span>
+-				) : (
+-					<svg class="project-gallery-tag-icon project-gallery-dollar-icon" viewBox="0 0 24 24" aria-hidden="true">
+-						<path d="M12 3v18M15.5 7.5c-.7-.8-1.8-1.3-3.5-1.3-2.1 0-3.5 1-3.5 2.5 0 4 7 1.8 7 5.7 0 1.5-1.4 2.5-3.5 2.5-1.7 0-2.8-.5-3.5-1.3" />
+-						<path d="m4 4 16 16" />
+-					</svg>
+-				)}
+-				{tag.label}
+-			</span>
+-		))}
+-		{project.tags.filter((tag) => tag.icon === 'ai' || tag.icon === 'no-ai').map((tag) => (
+-							<span class:list={['project-gallery-category', 'project-gallery-ai-tag', `project-gallery-tag-${tag.icon}`]}>
+-								{tag.icon === 'ai' ? (
+-									<span class="project-gallery-tag-icon" aria-hidden="true">✦</span>
+-								) : (
+-									<svg class="project-gallery-tag-icon project-gallery-ai-icon" viewBox="0 0 24 24" aria-hidden="true">
+-										<path class="project-gallery-ai-star" d="m12 2.5 2.3 7.2 7.2 2.3-7.2 2.3-2.3 7.2-2.3-7.2-7.2-2.3 7.2-2.3 2.3-7.2Z" />
+-										<path d="m4 4 16 16" />
+-									</svg>
+-								)}
+-								{tag.label}
+-							</span>
+-						))}
+-					</div>
+-
+-					<div class="project-gallery-body">
+-						<h3>{project.name}</h3>
+-						<p>{project.description}</p>
+-
+-						<div class="project-gallery-actions">
+-							{project.itchHref ? (
+-								<a
+-									class="project-gallery-button project-gallery-itch"
+-									href={project.itchHref}
+-									target="_blank"
+-									rel="noreferrer"
+-									aria-label="Open Rogue Color on itch.io"
+-								>
+-									<svg viewBox="0 0 24 24" aria-hidden="true">
+-										<path fill="currentColor" d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.137 2.41 2.466 2.41h.024c1.33 0 2.466-1.102 2.466-2.41 0 1.308 1.034 2.41 2.363 2.41 1.33 0 2.4-1.102 2.4-2.41 0 1.308 1.106 2.41 2.435 2.41C22.78 8.43 24 7.282 24 5.98V4.95c-.02-.62-2.082-2.99-3.13-3.612-3.253-.114-5.508-.134-8.87-.133-3.362 0-7.945.053-8.87.133Zm6.376 6.477a2.74 2.74 0 0 1-.468.602c-.5.49-1.19.795-1.947.795a2.786 2.786 0 0 1-1.95-.795c-.182-.178-.32-.37-.446-.59-.127.222-.303.412-.486.59a2.788 2.788 0 0 1-1.95.795c-.092 0-.187-.025-.264-.052-.107 1.113-.152 2.176-.168 2.95v.005l-.006 1.167c.02 2.334-.23 7.564 1.03 8.85 1.952.454 5.545.662 9.15.663 3.605 0 7.198-.21 9.15-.664 1.26-1.284 1.01-6.514 1.03-8.848l-.006-1.167v-.004c-.016-.775-.06-1.838-.168-2.95-.077.026-.172.052-.263.052a2.788 2.788 0 0 1-1.95-.795c-.184-.178-.36-.368-.486-.59-.127.22-.265.412-.447.59a2.786 2.786 0 0 1-1.95.794c-.76 0-1.446-.303-1.948-.793a2.74 2.74 0 0 1-.468-.602 2.738 2.738 0 0 1-.463.602 2.787 2.787 0 0 1-1.95.794h-.16a2.787 2.787 0 0 1-1.95-.793 2.738 2.738 0 0 1-.464-.602Zm-2.004 2.59v.002c.795.002 1.5 0 2.373.953.687-.072 1.406-.108 2.125-.107.72 0 1.438.035 2.125.107.873-.953 1.578-.95 2.372-.953.376 0 1.876 0 2.92 2.934l1.123 4.028c.832 2.995-.266 3.068-1.636 3.07-2.03-.075-3.156-1.55-3.156-3.025-1.124.184-2.436.276-3.748.277-1.312 0-2.624-.093-3.748-.277 0 1.475-1.125 2.95-3.156 3.026-1.37-.004-2.468-.077-1.636-3.072l1.122-4.027c1.045-2.934 2.545-2.934 2.92-2.934Z" />
+-									</svg>
+-									itch.io
+-								</a>
+-							) : project.storeHref ? (
+-								<a
+-									class="project-gallery-button project-gallery-store"
+-									href={project.storeHref}
+-									target="_blank"
+-									rel="noreferrer"
+-								>
+-									<svg viewBox="0 0 24 24" aria-hidden="true">
+-										<path fill="currentColor" d="M16.7 12.8c0-2.5 2.1-3.7 2.2-3.8a4.8 4.8 0 0 0-3.8-2c-1.6-.2-3.1 1-3.9 1s-2-1-3.3-1c-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.3 2.5 1.3-.1 1.8-.8 3.5-.8 1.6 0 2.1.8 3.5.8s2.4-1.2 3.2-2.5a11 11 0 0 0 1.5-3.1 4.4 4.4 0 0 1-2.3-3.8ZM14 5.3A4.4 4.4 0 0 0 15 2a4.5 4.5 0 0 0-3 1.6 4.2 4.2 0 0 0-1.1 3.2A3.7 3.7 0 0 0 14 5.3Z" />
+-									</svg>
+-									App Store
+-								</a>
+-							) : !project.hideStorePlaceholder && (
+-								<span
+-									class="project-gallery-button project-gallery-store project-gallery-button-disabled"
+-									aria-disabled="true"
+-									data-tooltip="In Development"
+-								>
+-									<svg viewBox="0 0 24 24" aria-hidden="true">
+-										<path fill="currentColor" d="M16.7 12.8c0-2.5 2.1-3.7 2.2-3.8a4.8 4.8 0 0 0-3.8-2c-1.6-.2-3.1 1-3.9 1s-2-1-3.3-1c-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.3 2.5 1.3-.1 1.8-.8 3.5-.8 1.6 0 2.1.8 3.5.8s2.4-1.2 3.2-2.5a11 11 0 0 0 1.5-3.1 4.4 4.4 0 0 1-2.3-3.8ZM14 5.3A4.4 4.4 0 0 0 15 2a4.5 4.5 0 0 0-3 1.6 4.2 4.2 0 0 0-1.1 3.2A3.7 3.7 0 0 0 14 5.3Z" />
+-									</svg>
+-									App Store
+-								</span>
+-							)}
+-
+-							{project.websiteHref && (
+-								<a
+-									class="project-gallery-button project-gallery-website"
+-									href={project.websiteHref}
+-									target="_blank"
+-									rel="noreferrer"
+-									aria-label={`Open ${project.name} website`}
+-								>
+-									<svg viewBox="0 0 24 24" aria-hidden="true">
+-										<circle cx="12" cy="12" r="9" />
+-										<path d="M3 12h18M12 3c2.2 2.4 3.3 5.4 3.3 9s-1.1 6.6-3.3 9c-2.2-2.4-3.3-5.4-3.3-9S9.8 5.4 12 3Z" />
+-									</svg>
+-									Open
+-								</a>
+-							)}
+-
+-							{project.githubHref && (<a
+-								class="project-gallery-button project-gallery-github"
+-								href={project.githubHref}
+-								target="_blank"
+-								rel="noreferrer"
+-								aria-label={project.githubLabel}
+-							>
+-								<svg viewBox="0 0 24 24" aria-hidden="true">
+-									<path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
+-								</svg>
+-							</a>)}
+-
+-							<a class="project-gallery-button project-gallery-view" href={project.href} aria-label={`View ${project.name}`}>
+-								View
+-								<svg viewBox="0 0 20 20" aria-hidden="true">
+-									<path d="m7 4 6 6-6 6" />
+-								</svg>
+-							</a>
+-						</div>
+-					</div>
+-				</article>
+-			))}
+-		</div>
+-	</section>
+-	</div>
+-	</>}
++  <PortfolioHome />
+ </BaseLayout>
+--- copied-baseline/src/pages/project/[slug].astro
++++ portfolio/src/pages/project/[slug].astro
+@@ -1,180 +1,11 @@
+ ---
+-import BaseLayout from '../../layouts/BaseLayout.astro';
+-import glassdaysPreview from '../../../Assets/Glassdays.gif';
+-import muteOnLocationPreview from '../../../Assets/MuteOnLocation-preview.png';
+-import rogueColorPreview from '../../../Assets/rogue-color-gameplay.png';
+-import roomPlannerPreview from '../../../Assets/RoomPlaner.png';
+-
+-const projectImages = {
+-	glassdays: glassdaysPreview,
+-	'mute-on-location': muteOnLocationPreview,
+-	'rogue-color': rogueColorPreview,
+-	RoomPlanner: roomPlannerPreview,
+-} as const;
+-
+ export function getStaticPaths() {
+-	const projects = {
+-		glassdays: {
+-			name: 'Glassdays',
+-			description: 'More Info coming soon.',
+-			privacyHref: '/privacy/glassdays/',
+-			visual: 'glassdays',
+-			imageAlt: 'Glassdays app preview',
+-			accent: '#8092ff',
+-			category: 'iPhone & iPad',
+-			tags: [
+-				{ label: 'Ai assisted', kind: 'ai' },
+-				{ label: 'Swift', kind: 'swift', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg' },
+-				{ label: 'Xcode', kind: 'xcode', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg' },
+-				{ label: 'Monetized', kind: 'monetized' },
+-			],
+-			storeHref: 'https://apps.apple.com/de/app/glassdays-countdown/id6785538729',
+-			githubHref: 'https://github.com/holtsdav/Glassdays',
+-		},
+-		'mute-on-location': {
+-			name: 'Mute On Location',
+-			description: 'More Info coming soon.',
+-			privacyHref: '/privacy/muteonlocation/',
+-			visual: 'mute-on-location',
+-			imageAlt: 'Mute On Location app preview',
+-			accent: '#4a9eff',
+-			category: 'macOS',
+-			tags: [
+-				{ label: 'Ai assisted', kind: 'ai' },
+-				{ label: 'Swift', kind: 'swift', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg' },
+-				{ label: 'Xcode', kind: 'xcode', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg' },
+-				{ label: 'Monetized', kind: 'monetized' },
+-			],
+-			storeHref: 'https://apps.apple.com/de/app/mute-on-location/id6790398791?l=en-GB&mt=12',
+-			githubHref: 'https://github.com/holtsdav/MuteOnLocation',
+-		},
+-		'rogue-color': {
+-			name: 'Rogue Color',
+-			description: 'More Info coming soon.',
+-			privacyHref: '/privacy/roguecolor/',
+-			visual: 'rogue-color',
+-			imageAlt: 'Rogue Color gameplay preview',
+-			accent: '#b9c1ce',
+-			category: 'Desktop Game',
+-			tags: [
+-				{ label: 'Godot', kind: 'godot', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/godot/godot-original.svg' },
+-				{ label: 'No Ai used', kind: 'no-ai' },
+-				{ label: 'Not Monetized', kind: 'not-monetized' },
+-			],
+-			itchHref: 'https://holtsdav.itch.io/rouge-color',
+-			githubHref: 'https://github.com/holtsdav/RogueColor',
+-		},
+-		RoomPlanner: {
+-			name: 'Room Planner',
+-			description: 'More Info coming soon.',
+-			privacyHref: '/privacy/roomplanner/',
+-			visual: 'RoomPlanner',
+-			imageAlt: 'Room Planner floor plan preview',
+-			accent: '#a985ff',
+-			category: 'Web project',
+-			tags: [
+-				{ label: 'Ai assisted', kind: 'ai' },
+-				{ label: 'Astro', kind: 'astro', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg' },
+-				{ label: 'Not Monetized', kind: 'not-monetized' },
+-			],
+-			websiteHref: 'https://holtsdav.com/RoomPlanner',
+-			githubHref: 'https://github.com/holtsdav/RoomPlanner',
+-		},
+-		notilog: {
+-			name: 'NotiLog',
+-			description: 'More Info coming soon.',
+-			privacyHref: '/privacy/notilog/',
+-			visual: 'notilog',
+-			imageAlt: '',
+-			accent: '#9aa8ff',
+-			category: 'iPhone & iPad',
+-			tags: [
+-				{ label: 'Ai assisted', kind: 'ai' },
+-				{ label: 'Swift', kind: 'swift', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg' },
+-				{ label: 'Xcode', kind: 'xcode', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg' },
+-				{ label: 'Monetized', kind: 'monetized' },
+-			],
+-			storeComingSoon: true,
+-			githubHref: 'https://github.com/holtsdav/NotiLog',
+-		},
+-	};
+-
+-	return Object.keys(projects).map((slug) => ({ params: { slug }, props: projects[slug as keyof typeof projects] }));
++  return [
++    { params: { slug: 'mute-on-location' }, props: { destination: '/apps/mute-on-location/', status: 301 } },
++    { params: { slug: 'rogue-color' }, props: { destination: '/apps/rogue-color/', status: 301 } },
++    { params: { slug: 'RoomPlanner' }, props: { destination: '/apps/room-planner/', status: 301 } },
++    { params: { slug: 'notilog' }, props: { destination: '/#projects', status: 302 } },
++  ];
+ }
+-
+-const { name, description, privacyHref, visual, imageAlt, accent, category, tags, storeHref, storeComingSoon, itchHref, websiteHref, githubHref } = Astro.props;
+-const slug = Astro.params.slug ?? '';
+-const projectImage = visual in projectImages
+-	? projectImages[visual as keyof typeof projectImages]
+-	: null;
++return Astro.redirect(Astro.props.destination, Astro.props.status);
+ ---
+-
+-<BaseLayout
+-	title={`${name} | holtsdav`}
+-	description={description}
+-	canonical={`https://holtsdav.com/project/${slug}/`}
+->
+-	<article class="project-detail-page shell" style={`--project-accent: ${accent};`}>
+-		<header class="project-detail-header">
+-			<nav class="project-detail-nav" aria-label="Project navigation">
+-				<a class="project-detail-back" href="/?projects#projects">
+-					<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m11.5 4-6 6 6 6" /></svg>
+-					Back to projects
+-				</a>
+-				<a class="project-detail-privacy" href={privacyHref}>Privacy Policy</a>
+-			</nav>
+-		</header>
+-
+-		<div class="project-detail-tags" aria-label={`${name} tags`}>
+-			<span class="project-gallery-category">{category}</span>
+-			{tags.map((tag: { label: string; kind: string; logo?: string }) => (
+-				<span class:list={['project-gallery-category', `project-gallery-tag-${tag.kind}`]}>
+-					{tag.logo ? (
+-						<img class="project-gallery-tag-icon" src={tag.logo} alt="" aria-hidden="true" />
+-					) : (
+-						<span class="project-gallery-tag-icon" aria-hidden="true">{tag.kind === 'monetized' ? '$' : '✦'}</span>
+-					)}
+-					{tag.label}
+-				</span>
+-			))}
+-		</div>
+-
+-		<div class="project-detail-stage">
+-			<div class:list={['project-detail-media', `project-detail-media-${visual}`]}>
+-				{projectImage ? (
+-					<img src={projectImage.src} alt={imageAlt} loading="eager" decoding="async" />
+-				) : (
+-					<div class="project-detail-notilog-mark" role="img" aria-label="NotiLog icon">
+-						<svg viewBox="0 0 24 24" aria-hidden="true">
+-							<path fill="currentColor" d="M18 3a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4h-4.724l-4.762 2.857a1 1 0 0 1-1.508-.743L7 21v-2H6a4 4 0 0 1-3.995-3.8L2 15V7a4 4 0 0 1 4-4zm-4 9H8a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2m2-4H8a1 1 0 1 0 0 2h8a1 1 0 0 0 0-2" />
+-						</svg>
+-					</div>
+-				)}
+-			</div>
+-
+-			<section class="project-detail-content" aria-labelledby="project-title">
+-				<h1 id="project-title">{name}</h1>
+-				<p class="project-detail-description">{description}</p>
+-				<div class="project-detail-actions">
+-					{itchHref && <a class="project-gallery-button project-gallery-itch" href={itchHref} target="_blank" rel="noreferrer">itch.io</a>}
+-					{storeHref && (
+-						<a class="project-gallery-button project-gallery-store" href={storeHref} target="_blank" rel="noreferrer">
+-							<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.7 12.8c0-2.5 2.1-3.7 2.2-3.8a4.8 4.8 0 0 0-3.8-2c-1.6-.2-3.1 1-3.9 1s-2-1-3.3-1c-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.3 2.5 1.3-.1 1.8-.8 3.5-.8 1.6 0 2.1.8 3.5.8s2.4-1.2 3.2-2.5a11 11 0 0 0 1.5-3.1 4.4 4.4 0 0 1-2.3-3.8ZM14 5.3A4.4 4.4 0 0 0 15 2a4.5 4.5 0 0 0-3 1.6 4.2 4.2 0 0 0-1.1 3.2A3.7 3.7 0 0 0 14 5.3Z" /></svg>
+-							App Store
+-						</a>
+-					)}
+-					{storeComingSoon && <span class="project-gallery-button project-gallery-store project-gallery-button-disabled" aria-disabled="true" data-tooltip="In Development">App Store</span>}
+-					{websiteHref && (
+-						<a class="project-gallery-button project-gallery-website" href={websiteHref} target="_blank" rel="noreferrer">
+-							<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.2 2.4 3.3 5.4 3.3 9s-1.1 6.6-3.3 9c-2.2-2.4-3.3-5.4-3.3-9S9.8 5.4 12 3Z" /></svg>
+-							Open
+-						</a>
+-					)}
+-					<a class="project-gallery-button project-gallery-github" href={githubHref} target="_blank" rel="noreferrer" aria-label={`Open ${name} on GitHub`} title="GitHub">
+-						<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" /></svg>
+-					</a>
+-				</div>
+-			</section>
+-		</div>
+-	</article>
+-</BaseLayout>
+--- copied-baseline/src/pages/project/glassdays.astro
++++ portfolio/src/pages/project/glassdays.astro
+@@ -0,0 +1,4 @@
++---
++import GlassdaysPage from '../../components/GlassdaysPage.astro';
++---
++<GlassdaysPage />
+--- copied-baseline/src/pages/support/notilog.astro
++++ portfolio/src/pages/support/notilog.astro
+@@ -0,0 +1,21 @@
++---
++import DraftDocument from '../../components/DraftDocument.astro';
++const contents = [
++  { id: 'how-it-works', label: 'How capture works' },
++  { id: 'connect-capture', label: 'Connect capture' },
++  { id: 'troubleshoot', label: 'Nothing arrives' },
++  { id: 'retention', label: 'Retention and deletion' },
++  { id: 'backups', label: 'Backups and App Lock' },
++  { id: 'contact', label: 'Get help' },
++  { id: 'review', label: 'Release review points' },
++];
++---
++<DraftDocument title="NotiLog support" description="Setup, capture limits, retention and backups for the reviewed iPhone and iPad app source. Public release details are still for David to confirm." kind="Support draft" contents={contents}>
++  <section id="how-it-works" aria-labelledby="how-title"><h2 id="how-title">How capture works</h2><p>NotiLog keeps a searchable local history of notifications passed to its <strong>Archive Notification</strong> action by Apple Shortcuts. The reviewed source targets iOS and iPadOS 27 or later and does not require a NotiLog account.</p><p>You choose the source apps in Shortcuts. Capture depends on those automations being configured and running. NotiLog cannot retrieve notifications from before setup or recover earlier items from Notification Center. An imported backup is not evidence that live capture is working.</p></section>
++  <section id="connect-capture" aria-labelledby="setup-title"><h2 id="setup-title">Connect capture</h2><ol><li>Use <strong>Set Up Shortcut</strong> in NotiLog to open the <a href="https://www.icloud.com/shortcuts/150326e49cfb495dbd292fc1c7ab2f07" target="_blank" rel="noreferrer">existing shared NotiLog shortcut</a>. Select the source app and add it to Shortcuts.</li><li>Open the installed shortcut. If its actions are hidden, open the editor’s list view. Expand the notification trigger and enable <strong>Automation</strong>.</li><li>Send a new notification from the selected source app. Return to NotiLog and check History and <strong>Last Captured</strong> in Settings.</li><li>For another source app, duplicate the shortcut in your Shortcuts library, give the copy a distinct name, select the other app, and enable that copy’s automation.</li></ol><p>To stop future capture, disable or remove the automation in Shortcuts. This does not delete notifications already archived in NotiLog.</p></section>
++  <section id="troubleshoot" aria-labelledby="trouble-title"><h2 id="trouble-title">Nothing arrives</h2><ul><li>Check that the correct source app is selected and the installed shortcut’s Automation switch is on.</li><li>Test with a <strong>new</strong> notification. Previous notifications are not backfilled.</li><li>If the NotiLog shortcut was renamed or removed, reinstall it through setup. When reinstalling the shared shortcut, replace the existing copy as the setup guide instructs.</li><li>A waiting setup state means setup was marked finished; a recorded capture means one arrived previously. Neither state guarantees that the automation continues running.</li></ul><p>If the problem persists, note the setup step, device and OS version before contacting support. Avoid repeatedly changing retention or deleting history while investigating a capture problem.</p><aside class="draft-review-point"><p><strong>David’s release review:</strong> Verify the setup labels and repeat capture on the final app and supported OS versions. Locked, terminated, rebooted-device and additional-app capture still need the hardware acceptance checks in the app’s release checklist.</p></aside></section>
++  <section id="retention" aria-labelledby="retention-title"><h2 id="retention-title">Retention and deletion</h2><p>The reviewed main source offers <strong>7 Days, 30 Days, 90 Days and Forever</strong>. Finite retention uses a notification’s latest capture date. Pinned notifications are excluded from retention cleanup; Forever has no automatic age cutoff.</p><p>When a new selection would remove archived notifications, Settings previews the removal and offers Cancel, Export Backup First, or Apply. If nothing is eligible for removal, the choice can apply without that deletion confirmation. Export first if you may need the older history.</p><p>Deleting one notification removes its repeated captures across days. <strong>Delete All History</strong> removes the archive and source-app records after confirmation. These actions cannot be undone inside the app; recovery needs an earlier backup, if you have one.</p><aside class="draft-review-point"><p><strong>David’s release review:</strong> Match this text to the actual release build. A separately reviewed safety fix preserves Forever and existing retention choices during upgrades and handles unreadable preferences conservatively. It is not established as released, and cannot restore previously deleted notifications.</p></aside></section>
++  <section id="backups" aria-labelledby="backup-title"><h2 id="backup-title">Backups and App Lock</h2><h3>Export and import</h3><p>Settings can export a manual backup and import one later. Imports merge with existing notifications rather than duplicating the same captures. A backup contains readable notification text and is <strong>not encrypted by NotiLog</strong>.</p><p>Choose the destination in Files carefully. Saving to iCloud Drive or another provider sends that backup to the provider; this is separate from app sync. NotiLog has no built-in cloud sync in the reviewed source.</p><h3>Optional App Lock</h3><p>App Lock uses the device’s Face ID, Touch ID or passcode authentication. It protects the interface, not exported backup files, and does not switch off your Shortcuts automations. If authentication is unavailable, check that a device passcode is configured in system Settings.</p></section>
++  <section id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Get help</h2><p>The proposed support contact is <a href="mailto:contact@holtsdav.com?subject=NotiLog%20support">contact@holtsdav.com</a>. David still needs to confirm it for NotiLog before publication.</p><p>Include the app version, device model, OS version, the step involved and whether the issue repeats. Use synthetic examples. <strong>Do not send your full archive or private notification text.</strong> Remove private details from screenshots before sharing them.</p><div class="draft-related"><a href="/drafts/notilog-privacy/">Read the separate privacy draft →</a><a href="/">Return to the portfolio</a></div></section>
++  <section id="review" aria-labelledby="review-title"><h2 id="review-title">Before this guide is published</h2><ul><li>Confirm the exact release build, supported OS versions and the integration of the reviewed retention safety fix.</li><li>Confirm the support mailbox and the final public support/privacy URLs. The app’s public URL configuration is still unset; this local page does not configure it.</li><li>Complete the real-device capture and App Lock acceptance checks. This guide does not promise that every notification will be captured.</li></ul></section>
++</DraftDocument>
+--- copied-baseline/src/scripts/portfolio.ts
++++ portfolio/src/scripts/portfolio.ts
+@@ -0,0 +1,75 @@
++const dock = document.querySelector<HTMLElement>('.folio-dock');
++const links = [...document.querySelectorAll<HTMLAnchorElement>('.folio-dock a[data-section]')];
++const sections = [...document.querySelectorAll<HTMLElement>('[data-portfolio-section]')];
++
++// Native anchor navigation remains available without JavaScript. This only marks
++// the section currently being read; it never intercepts or locks scrolling.
++if (dock && links.length && sections.length) {
++  let scheduled = false;
++  const updateSection = () => {
++    const readingLine = window.innerHeight * 0.4;
++    let current = sections[0]?.id;
++    for (const section of sections) {
++      if (section.getBoundingClientRect().top <= readingLine) current = section.id;
++    }
++    for (const link of links) {
++      if (link.dataset.section === current) link.setAttribute('aria-current', 'location');
++      else link.removeAttribute('aria-current');
++    }
++    scheduled = false;
++  };
++  const queueUpdate = () => {
++    if (scheduled) return;
++    scheduled = true;
++    window.requestAnimationFrame(updateSection);
++  };
++  window.addEventListener('scroll', queueUpdate, { passive: true });
++  window.addEventListener('resize', queueUpdate, { passive: true });
++  updateSection();
++}
++
++const filterBar = document.querySelector<HTMLElement>('[data-project-filters]');
++const filterButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-filter]')];
++const projects = [...document.querySelectorAll<HTMLElement>('[data-project]')];
++const count = document.querySelector<HTMLElement>('[data-filter-count]');
++const showProjects = (filter: string) => {
++  let visible = 0;
++  for (const project of projects) {
++    project.hidden = filter !== 'all' && project.dataset.project !== filter;
++    if (!project.hidden) visible += 1;
++  }
++  for (const button of filterButtons) button.setAttribute('aria-pressed', String(button.dataset.filter === filter));
++  if (count) count.textContent = `${visible} ${visible === 1 ? 'project' : 'projects'}`;
++};
++if (filterBar && projects.length) {
++  filterBar.hidden = false;
++  for (const button of filterButtons) button.addEventListener('click', () => showProjects(button.dataset.filter ?? 'all'));
++  // Direct project links should still work after using a filter.
++  const revealHashTarget = () => {
++    const target = projects.find((project) => `#${project.id}` === window.location.hash);
++    if (target?.hidden) {
++      showProjects('all');
++      target.scrollIntoView({ block: 'start' });
++    }
++  };
++  document.addEventListener('click', (event) => {
++    const anchor = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('a[href^="#"]') : null;
++    if (anchor && projects.some((project) => `#${project.id}` === anchor.getAttribute('href') && project.hidden)) showProjects('all');
++  });
++  window.addEventListener('hashchange', revealHashTarget);
++  revealHashTarget();
++}
++
++const copyButton = document.querySelector<HTMLButtonElement>('[data-copy-email]');
++const copyStatus = document.querySelector<HTMLElement>('[data-copy-status]');
++if (copyButton && copyStatus && navigator.clipboard?.writeText) {
++  copyButton.hidden = false;
++  copyButton.addEventListener('click', async () => {
++    try {
++      await navigator.clipboard.writeText('contact@holtsdav.com');
++      copyStatus.textContent = 'Email copied.';
++    } catch {
++      copyStatus.textContent = 'Copy unavailable. Use the email link above.';
++    }
++  });
++}
+--- copied-baseline/src/styles/document-draft.css
++++ portfolio/src/styles/document-draft.css
+@@ -0,0 +1,43 @@
++.draft-document { width: min(1120px,calc(100% - 80px)); margin: 0 auto; padding: 70px 0 65px; color: #25272b; }
++.draft-document :where(h1,h2,h3,p) { margin: 0; }
++.draft-breadcrumb { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-bottom: 25px; font-size: 13px; color: #555d68; }
++.draft-breadcrumb a { min-height: 44px; display: inline-flex; align-items: center; font-weight: 600; }
++.draft-notice { padding: 22px 25px; border: 1px solid #b8c8e5; border-radius: 12px; background: #edf3ff; color: #273c64; }
++.draft-notice strong { display: block; font-size: 15px; }
++.draft-notice p { max-width: 860px; font-size: 14px; line-height: 1.75; margin-top: 6px; }
++.draft-heading { padding: 48px 0 45px; border-bottom: 1px solid #d9dde3; }
++.draft-kicker { font: 11px/1.5 'SFMono-Regular',Consolas,monospace; letter-spacing: .08em; color: #4f6179; }
++.draft-heading h1 { font-size: clamp(35px,4.5vw,60px); line-height: 1.1; letter-spacing: -.045em; font-weight: 600; margin-top: 17px; max-width: 850px; }
++.draft-heading > p:last-child { font-size: 17px; line-height: 1.75; max-width: 760px; margin-top: 24px; color: #555d68; }
++.draft-columns { display: grid; grid-template-columns: 220px minmax(0,1fr); gap: 60px; padding-top: 40px; }
++.draft-contents { align-self: start; position: sticky; top: 120px; }
++.draft-contents > p { font-size: 12px; font-weight: 700; margin-bottom: 12px; color: #555d68; }
++.draft-contents a { display: flex; align-items: center; min-height: 44px; padding: 8px 0; font-size: 13px; color: #345278; border-bottom: 1px solid #e1e4e9; }
++.draft-contents a:hover { color: #1747b5; text-decoration: underline; text-underline-offset: 4px; }
++.draft-copy section { padding: 0 0 36px; margin-bottom: 34px; border-bottom: 1px solid #dfe3e8; scroll-margin-top: 120px; }
++.draft-copy section:last-child { border: 0; margin-bottom: 0; }
++.draft-copy h2 { font-size: 27px; line-height: 1.25; letter-spacing: -.025em; font-weight: 600; margin-bottom: 18px; }
++.draft-copy h3 { font-size: 19px; line-height: 1.4; letter-spacing: -.01em; font-weight: 600; margin: 28px 0 12px; }
++.draft-copy p,.draft-copy li { font-size: 16px; line-height: 1.8; color: #444c57; }
++.draft-copy p + p { margin-top: 16px; }
++.draft-copy ul,.draft-copy ol { margin: 18px 0; padding-left: 24px; }
++.draft-copy li { padding-left: 4px; margin-block: 9px; }
++.draft-copy a { color: #1747b5; text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
++.draft-copy strong { color: #25272b; font-weight: 650; }
++.draft-review-point { margin-top: 22px; padding: 17px 20px; background: #f3efe5; border-left: 3px solid #9c6e25; border-radius: 0 7px 7px 0; }
++.draft-review-point p { font-size: 14px; color: #5d4826; line-height: 1.75; }
++.draft-review-point strong { color: #513b1a; }
++.draft-related { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-top: 22px; }
++.draft-related a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }
++.draft-end { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 30px; border-top: 1px solid #d9dde3; }
++.draft-end p { font-size: 12px; color: #555d68; }
++.draft-end a { display: inline-flex; align-items: center; min-height: 44px; font-size: 12px; font-weight: 600; white-space: nowrap; }
++@media(max-width:850px) { .draft-columns { grid-template-columns: 180px minmax(0,1fr); gap: 32px; } }
++@media(max-width:700px) { .draft-document { width: calc(100% - 40px); padding-top: 45px; } .draft-breadcrumb { font-size: 11px; gap: 10px; } .draft-notice { padding: 18px; } .draft-heading { padding-block: 36px; } .draft-heading > p:last-child { font-size: 16px; } .draft-columns { grid-template-columns: minmax(0,1fr); gap: 35px; padding-top: 30px; } .draft-contents { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; } .draft-contents > p { grid-column: 1/-1; } .draft-copy h2 { font-size: 25px; } .draft-copy p,.draft-copy li { font-size: 15px; } .draft-end { align-items: start; flex-direction: column; gap: 6px; } }
++@media(prefers-reduced-motion:reduce) { .draft-document * { scroll-behavior: auto !important; transition: none !important; } }
++@media print { .draft-contents { display: none; } .draft-columns { display: block; } .draft-document { width: 100%; } .draft-notice { break-inside: avoid; } }
++html:has(.draft-document) { scroll-padding-top: 112px; }
++.draft-copy section[id] { scroll-margin-top: 24px; }
++.draft-document a { scroll-margin-block: 24px; }
++.draft-copy ol { list-style: decimal; }
++.draft-copy ul { list-style: disc; }
+--- copied-baseline/src/styles/glassdays-case.css
++++ portfolio/src/styles/glassdays-case.css
+@@ -0,0 +1,75 @@
++.glass-case-hero { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 80px; padding-block: 75px 65px; }
++.glass-case-name { display: flex; align-items: center; gap: 13px; margin-top: 32px; font-size: 17px; letter-spacing: -.03em; }
++.glass-case-name img { width: 44px; height: 44px; border-radius: 12px; }
++.glass-case h1 { font-size: clamp(48px,5.2vw,74px); line-height: 1.06; margin-top: 23px; }
++.glass-case-heading > p:not(.folio-eyebrow):not(.glass-case-availability) { max-width: 400px; margin-top: 25px; font-size: 15px; color: var(--folio-muted); line-height: 1.8; }
++.glass-case-actions { display: flex; align-items: center; gap: 25px; margin-top: 30px; }
++.glass-case-availability { font-size: 10px; color: #6c7066; margin-top: 16px !important; }
++.glass-case-preview { background: #e9e6f1; padding: 28px 26px 20px; border-radius: 18px; overflow: hidden; }
++.glass-case-preview-note { display: block; text-align: center; font: 8px monospace; letter-spacing: .1em; color: #655e79; }
++.glass-case-phones { display: flex; align-items: center; justify-content: center; gap: 18px; padding-block: 28px; }
++.glass-case-phones img { display: block; width: 48%; height: auto; border-radius: 24px; border: 4px solid #25252a; box-shadow: 0 15px 25px -10px #5f52774d; }
++.glass-case-phones img:last-child { width: 41%; transform: translateY(18px); }
++.glass-case-preview-footer { display: flex; justify-content: space-between; border-top: 1px solid #d3cfdf; padding-top: 14px; font-size: 9px; color: #655e79; }
++.glass-case-preview-footer span { font: italic 11px Georgia,serif; }
++.glass-case-facts { display: grid; grid-template-columns: repeat(4,1fr); padding-block: 25px; border-block: 1px solid var(--folio-line); gap: 30px; }
++.glass-case-facts div > span { font: 9px monospace; color: #6c7065; letter-spacing: .08em; }
++.glass-case-facts p,.glass-case-facts a { display: block; font-size: 13px; margin-top: 7px; }
++.glass-case-facts a { text-decoration: underline; text-underline-offset: 5px; }
++.glass-case-overview { display: grid; grid-template-columns: 1fr 2fr; gap: 90px; padding-block: 100px; }
++.glass-case-overview h2 { font-size: 53px; }
++.glass-case-overview div > p { font-size: 15px; line-height: 1.8; color: var(--folio-muted); max-width: 580px; margin-top: 24px; }
++.glass-case-features { padding-bottom: 95px; }
++.glass-feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
++.glass-feature-image { height: 440px; display: flex; justify-content: center; overflow: hidden; border: 1px solid #dfdedf; border-radius: 16px; margin-bottom: 25px; }
++.glass-feature-create { padding: 32px 30px 0; background: #e8e7ee; }
++.glass-feature-create img { width: 260px; height: auto; align-self: start; border-radius: 28px 28px 0 0; border: 5px solid #29282d; box-shadow: 0 10px 20px #56526630; }
++.glass-feature-folders { align-items: center; padding: 34px; background: #edeedb; }
++.glass-feature-folders img { width: 100%; max-width: 390px; height: auto; border-radius: 14px; box-shadow: 0 10px 20px #56526620; }
++.glass-feature h3 { font-size: 26px; margin-top: 12px; }
++.glass-feature > p:last-child { font-size: 14px; line-height: 1.8; color: var(--folio-muted); max-width: 460px; margin-top: 13px; }
++.glass-case-small-details { padding-block: 80px; border-block: 1px solid var(--folio-line); display: grid; grid-template-columns: 1fr 1fr; gap: 90px; }
++.glass-case-small-details h2 { font-size: 51px; margin-top: 20px; }
++.glass-detail-list > div { display: flex; gap: 25px; padding-block: 22px; border-bottom: 1px solid var(--folio-line); }
++.glass-detail-list > div:first-child { padding-top: 0; }
++.glass-detail-list > div:last-child { border-bottom: 0; padding-bottom: 0; }
++.glass-detail-list > div > span { font: 10px monospace; color: #6c7065; padding-top: 7px; }
++.glass-detail-list h3 { font-size: 19px; letter-spacing: -.025em; }
++.glass-detail-list p { font-size: 13px; line-height: 1.8; color: var(--folio-muted); margin-top: 9px; }
++.glass-case-closing { text-align: center; padding-block: 90px; }
++.glass-case-closing > img { display: block; width: 60px; height: 60px; margin: 0 auto 24px; border-radius: 14px; }
++.glass-case-closing h2 { margin-block: 22px 30px; }
++.glass-case-closing-links { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 24px; }
++.glass-case-closing-links a { display: flex; align-items: center; gap: 12px; min-height: 44px; font-size: 11px; color: #62665c; }
++.glass-case-closing-links a:hover { color: var(--folio-blue); }
++.glass-case ~ .site-footer,.portfolio-page:has(.glass-case) .site-footer { padding-bottom: 10px; }
++@media (max-width: 1000px) {
++  .glass-case-hero { gap: 45px; padding-block: 55px; }
++  .glass-case h1 { font-size: 55px; }
++  .glass-case-phones { gap: 10px; }
++  .glass-case-phones img { border-radius: 20px; border-width: 3px; }
++  .glass-case-overview { gap: 50px; }
++  .glass-case-overview h2 { font-size: 44px; }
++  .glass-case-small-details { gap: 50px; }
++  .glass-case-small-details h2 { font-size: 42px; }
++  .glass-feature-image { height: 370px; }
++}
++@media (max-width: 700px) {
++  .glass-case-hero { grid-template-columns: 1fr; gap: 40px; padding-block: 45px; }
++  .glass-case h1 { font-size: clamp(47px,8vw,65px); white-space: normal; }
++  .glass-case-name { margin-top: 25px; }
++  .glass-case-heading > p:not(.folio-eyebrow):not(.glass-case-availability) { max-width: 460px; }
++  .glass-case-preview { width: 100%; max-width: 440px; margin-inline: auto; padding-inline: 24px; }
++  .glass-case-facts { grid-template-columns: 1fr 1fr; gap: 25px; }
++  .glass-case-overview { grid-template-columns: 1fr; gap: 25px; padding-block: 65px; }
++  .glass-case-overview h2 { font-size: 40px; }
++  .glass-case-overview div > p { font-size: 14px; }
++  .glass-feature-grid { grid-template-columns: 1fr; gap: 40px; }
++  .glass-feature-image { height: 380px; }
++  .glass-feature-create img { width: 235px; }
++  .glass-feature-folders img { max-width: 340px; }
++  .glass-case-features { padding-bottom: 65px; }
++  .glass-case-small-details { grid-template-columns: 1fr; gap: 35px; padding-block: 65px; }
++  .glass-case-small-details h2 { font-size: 43px; }
++  .glass-case-closing { padding-block: 65px; }
++}
+--- copied-baseline/src/styles/portfolio.css
++++ portfolio/src/styles/portfolio.css
+@@ -0,0 +1,312 @@
++/* Portfolio surface. Existing app/privacy pages retain their shared styles. */
++.portfolio-page {
++  --folio-paper: #faf9f6;
++  --folio-ink: #242521;
++  --folio-muted: #62655f;
++  --folio-line: #ddded7;
++  --folio-blue: #2559db;
++  background: var(--folio-paper);
++  color: var(--folio-ink);
++  font-family: Arial, Helvetica, sans-serif;
++  -webkit-font-smoothing: antialiased;
++}
++.portfolio-page .site-shell { overflow: clip; }
++.portfolio-page [hidden] { display: none !important; }
++.folio-shell { width: min(1240px, calc(100% - 112px)); margin-inline: auto; }
++.folio :where(p,h1,h2,h3) { margin: 0; }
++.folio :where(a,button):focus-visible, .folio-dock a:focus-visible { outline: 3px solid var(--folio-blue); outline-offset: 6px; }
++.folio :where(a,button) { -webkit-tap-highlight-color: transparent; }
++.folio :where(section,article)[id] { scroll-margin-top: 40px; }
++.folio-masthead { min-height: 112px; display: flex; align-items: center; justify-content: space-between; gap: 32px; border-bottom: 1px solid var(--folio-line); }
++.folio-logo { font-size: 29px; letter-spacing: -1.5px; font-weight: 750; line-height: 1; }
++.folio-logo span { color: var(--folio-blue); }
++.folio-logo b { color: #e0754d; }
++.folio-masthead p { font-size: 12px; color: var(--folio-muted); letter-spacing: .025em; }
++.folio-masthead p span { margin: 0 15px; color: #95978f; }
++.folio-header-contact { font-size: 13px; font-weight: 600; min-height: 44px; display: flex; align-items: center; gap: 20px; }
++.folio-header-contact:hover { color: var(--folio-blue); }
++.folio-hero { position: relative; display: grid; grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); padding-top: 104px; min-height: 730px; align-items: start; }
++.folio-eyebrow { font-family: 'SFMono-Regular',Consolas,'Liberation Mono',monospace; font-size: 10px; font-weight: 500; line-height: 1.5; letter-spacing: .09em; color: var(--folio-muted); }
++.folio-hero .folio-eyebrow { display: flex; align-items: center; gap: 10px; }
++.folio-small-star { font-size: 22px; line-height: 1; color: #bd5a36; }
++.folio h1 { font-size: clamp(60px,6.4vw,92px); font-weight: 500; line-height: 1.05; letter-spacing: -.072em; margin-top: 25px; white-space: nowrap; }
++.folio h1 em,.folio h2 em { font-family: Georgia,'Times New Roman',serif; font-weight: 400; letter-spacing: -.065em; }
++.folio-intro { font-size: 18px; line-height: 1.7; color: var(--folio-muted); max-width: 410px; margin-top: 28px !important; }
++.folio-hero-actions { display: flex; align-items: center; gap: 30px; margin-top: 32px; }
++.folio-button { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 52px; padding: 13px 23px; border-radius: 100px; background: var(--folio-ink); color: white; font-size: 13px; font-weight: 600; transition: background 180ms,transform 180ms; }
++.folio-button:hover { background: var(--folio-blue); transform: translateY(-2px); }
++.folio-button span { font-size: 20px; font-weight: 400; }
++.folio-text-link { display: inline-flex; min-height: 44px; align-items: center; gap: 17px; font-size: 13px; font-weight: 600; }
++.folio-text-link:hover { color: var(--folio-blue); }
++.folio-object-stage { position: relative; height: 402px; margin-top: -18px; isolation: isolate; }
++.folio-orbit { position: absolute; width: 330px; height: 330px; border: 1px solid #e0e2da; border-radius: 50%; top: 15px; left: 50%; transform: translateX(-50%); z-index: -1; }
++.folio-orbit-inner { width: 218px; height: 218px; top: 71px; border-style: dashed; opacity: .8; }
++.folio-app-object { position: absolute; display: grid; justify-items: center; gap: 12px; transition: transform 260ms cubic-bezier(.2,.8,.2,1); }
++.folio-app-object > img { display: block; border-radius: 26%; width: 100%; height: auto; box-shadow: 0 22px 32px -20px #3c38584d,0 1px 2px #3332; }
++.folio-app-object > span:last-child { white-space: nowrap; display: flex; gap: 14px; padding: 6px 10px; border: 1px solid #dedfd7; border-radius: 6px; background: #ffffffd9; color: #4b4c46; font-size: 10px; box-shadow: 0 3px 6px #45453504; }
++.folio-app-object b { font-weight: 400; }
++.folio-object-glass { width: 150px; left: 25%; top: 7px; transform: rotate(-9deg); z-index: 2; }
++.folio-object-glass:hover { transform: rotate(-3deg) translateY(-7px); }
++.folio-object-mute { width: 112px; right: 3%; top: 148px; transform: rotate(9deg); z-index: 3; }
++.folio-object-mute:hover { transform: rotate(3deg) translateY(-7px); }
++.folio-object-room { width: 94px; left: 5%; top: 220px; transform: rotate(-7deg); }
++.folio-object-room:hover { transform: rotate(-1deg) translateY(-7px); }
++.folio-room-icon { display: grid; place-items: center; width: 94px; height: 94px; border-radius: 25px; border: 1px solid #d2dfed; background: #e5edf6; box-shadow: 0 15px 30px -17px #42546b88, inset 0 2px 3px #fff; }
++.folio-room-icon svg { width: 60px; height: 60px; stroke: #33639a; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
++.folio-stage-cross { position: absolute; font-family: monospace; color: #b3b6ab; font-size: 21px; font-weight: 300; }
++.folio-cross-one { top: 20px; right: 9%; }
++.folio-cross-two { bottom: 21px; right: 35%; }
++.folio-stage-note { position: absolute; left: 30%; bottom: -5px; font: italic 16px Georgia,serif; color: #626a59; transform: rotate(-5deg); }
++.folio-stage-note span { display: inline-block; margin-left: 7px; font-size: 30px; }
++.folio-hero-foot { grid-column: 1 / -1; display: flex; align-items: end; justify-content: space-between; padding: 49px 0 30px; margin-top: auto; font-size: 11px; color: #6c6f65; }
++.folio-hero-foot a { display: flex; align-items: center; gap: 20px; font: 9px 'SFMono-Regular',Consolas,monospace; letter-spacing: .08em; }
++.folio-hero-foot a span { font-size: 18px; }
++.folio-work { border-top: 1px solid var(--folio-line); padding-top: 65px; }
++.folio-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 35px; }
++.folio h2 { font-size: clamp(42px,4.2vw,60px); font-weight: 500; line-height: 1.12; letter-spacing: -.055em; }
++.folio-section-heading h2 { margin-top: 18px; }
++.folio-section-heading > p { font-size: 13px; color: var(--folio-muted); line-height: 1.7; padding-bottom: 3px; }
++.folio-filter-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px; gap: 16px; }
++.folio-filters { display: flex; align-items: center; gap: 6px; }
++.folio-filters button { display: flex; align-items: center; gap: 8px; border: 1px solid transparent; background: transparent; color: var(--folio-muted); min-height: 44px; padding: 8px 17px; border-radius: 100px; font: 12px Arial, sans-serif; cursor: pointer; transition: background 160ms; }
++.folio-filters button[aria-pressed="true"] { border-color: #d8d9d1; color: var(--folio-ink); background: #eeeee7; }
++.folio-filters button:hover { background: #eeeee7; }
++.folio-filters button span { font: 9px monospace; color: #62695b; }
++.folio-filter-count { font: 10px monospace; color: #6e7168; }
++.folio-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
++.folio-project { border: 1px solid #dfdfd7; border-radius: 20px; overflow: hidden; background: #fffefa; min-width: 0; }
++.folio-featured { grid-column: 1/-1; display: grid; grid-template-columns: .85fr 1.15fr; min-height: 490px; }
++.folio-project-copy { padding: 33px; }
++.folio-project-topline { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
++.folio-project-number { font: 11px monospace; color: #6b7063; }
++.folio-status { display: flex; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 100px; background: #edf1e6; color: #4b603d; font-size: 9px; }
++.folio-status i { width: 4px; height: 4px; border-radius: 50%; background: #5b7c40; }
++.folio-project-icon { display: block; width: 52px; height: 52px; border-radius: 13px; margin-top: 25px; }
++.folio-project-type { font: 9px 'SFMono-Regular',Consolas,monospace; letter-spacing: .07em; color: #6b6e65; }
++.folio-featured .folio-project-type { margin-top: 22px; }
++.folio h3 { font-size: 29px; font-weight: 500; letter-spacing: -.05em; line-height: 1.2; }
++.folio-featured h3 { margin-top: 8px; font-size: 38px; }
++.folio-project-tagline { margin-top: 12px !important; font: italic 22px/1.3 Georgia,serif; letter-spacing: -.035em; color: #5d6157; }
++.folio-project-description { margin-top: 21px !important; font-size: 13px; line-height: 1.8; color: var(--folio-muted); max-width: 350px; }
++.folio-project-links { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 24px; margin-top: 24px; border-top: 1px solid #e0e1d8; }
++.folio-project-links a { display: inline-flex; align-items: center; min-height: 44px; gap: 16px; font-size: 12px; font-weight: 600; }
++.folio-project-links a:hover { color: var(--folio-blue); }
++.folio-project-source { color: #6b6e65; font-size: 11px !important; font-weight: 400 !important; }
++.folio-project-media { display: block; position: relative; overflow: hidden; }
++.folio-project-media img { display: block; width: 100%; height: auto; transition: transform 600ms cubic-bezier(.2,.7,.2,1); }
++.folio-project-media:hover img { transform: scale(1.025); }
++.folio-glass-media { display: flex; flex-direction: column; justify-content: center; background: #e8e6f1; padding: 37px 28px 22px; }
++.folio-glass-media > img { border-radius: 8px; mix-blend-mode: multiply; margin-block: auto; }
++.folio-media-caption { font: 9px monospace; letter-spacing: .12em; color: #655e79; text-align: center; }
++.folio-media-meta { display: flex; justify-content: space-between; color: #655e79; margin-top: 20px; padding-top: 14px; border-top: 1px solid #d3cfdf; font-size: 10px; }
++.folio-media-meta > span { font-family: Georgia,serif; font-style: italic; }
++.folio-secondary { display: flex; flex-direction: column; }
++.folio-secondary .folio-project-media { aspect-ratio: 1.6; }
++.folio-secondary .folio-project-media img { width: 100%; height: 100%; object-fit: cover; }
++.folio-mute-media { background: #e2d8cc; }
++.folio-room-media { padding: 31px 25px 0; background: #e7edf0; }
++.folio-secondary .folio-room-media img { object-fit: cover; object-position: 30% 0; height: auto; min-height: 100%; border-radius: 8px 8px 0 0; border: 1px solid #d6dce0; box-shadow: 0 12px 25px #64758420; }
++.folio-secondary .folio-project-copy { display: flex; flex-direction: column; flex: 1; padding-top: 27px; }
++.folio-secondary h3 { margin-top: 18px; }
++.folio-secondary .folio-project-tagline { font-size: 19px; margin-top: 8px !important; }
++.folio-secondary .folio-project-description { max-width: 100%; margin-top: 17px !important; flex: 1; }
++.folio-about { display: grid; grid-template-columns: .85fr 1.15fr; gap: 95px; align-items: center; padding-block: 130px; border-bottom: 1px solid var(--folio-line); }
++.folio-about-note { padding: 38px 32px 25px; background: #eef0e7; border: 1px solid #dde1d2; border-radius: 3px; transform: rotate(-3deg); width: 100%; max-width: 350px; box-shadow: 0 14px 22px -20px #4a563f60; position: relative; }
++.folio-about-note::before { content: ''; position: absolute; top: -12px; left: calc(50% - 43px); width: 86px; height: 26px; background: #dedac4a1; border-inline: 1px solid #dbd5b6b3; transform: rotate(4deg); }
++.folio-about-monogram { display: block; font: italic 112px/1 Georgia,serif; letter-spacing: -.12em; margin: 5px 0 30px -6px; color: #4d6047; position: relative; }
++.folio-about-monogram span { position: absolute; right: 18px; top: 0; font: 46px/1 Arial,sans-serif; color: #b55f3c; }
++.folio-about-note p { font-size: 19px; letter-spacing: -.025em; margin-bottom: 6px; }
++.folio-about-note > span:not(.folio-about-monogram) { display: block; font-size: 12px; line-height: 1.7; color: #626c5b; }
++.folio-note-footer { display: flex; justify-content: space-between; border-top: 1px solid #d0d6c5; margin-top: 28px; padding-top: 14px; font: 9px monospace; color: #66705f; }
++.folio-note-footer span:last-child { font: italic 12px Georgia,serif; }
++.folio-about-copy h2 { font-size: clamp(33px,3.3vw,47px); margin-block: 20px 26px; }
++.folio-about-copy > p:not(.folio-eyebrow) { font-size: 14px; color: var(--folio-muted); line-height: 1.8; max-width: 490px; margin-bottom: 14px; }
++.folio-about-links { display: flex; gap: 30px; margin-top: 16px; }
++.folio-contact { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 90px; padding-block: 105px 110px; }
++.folio-contact h2 { position: relative; margin-top: 20px; font-size: clamp(48px,5.3vw,76px); }
++.folio-contact-star { font: 75px/1 Arial,sans-serif; position: absolute; right: 0; top: 10px; color: #b85d3b; transform: rotate(14deg); }
++.folio-contact-copy > p { font-size: 14px; line-height: 1.8; color: var(--folio-muted); max-width: 350px; }
++.folio-email { display: flex; width: fit-content; align-items: center; justify-content: space-between; gap: 30px; font-size: clamp(17px,1.9vw,25px); letter-spacing: -.045em; padding-block: 15px 11px; border-bottom: 1px solid #8f9486; }
++.folio-email:hover { color: var(--folio-blue); border-color: var(--folio-blue); }
++.folio-copy-row { display: flex; align-items: center; flex-wrap: wrap; gap: 15px; margin-top: 12px; }
++.folio-copy-email { display: inline-flex; align-items: center; gap: 7px; border: 0; padding: 0 6px 0 0; background: none; color: #64685e; min-height: 44px; font: 11px Arial,sans-serif; cursor: pointer; }
++.folio-copy-email:hover { color: var(--folio-blue); }
++.folio-copy-email svg { width: 14px; height: 14px; }
++.folio-copy-status { font-size: 11px; color: #506241; }
++.folio-dock { position: fixed; z-index: 50; left: 50%; bottom: max(22px,env(safe-area-inset-bottom)); transform: translateX(-50%); display: flex; align-items: stretch; padding: 7px; gap: 4px; border: 1px solid #fff; border-radius: 24px; background: #f1f2eced; backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2); box-shadow: 0 0 0 1px #777e6925,0 12px 40px -10px #252c2338, inset 0 1px #fff; }
++.folio-dock a { position: relative; width: 80px; min-height: 57px; border-radius: 17px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 4px; color: #686d61; font-size: 9px; line-height: 1.3; transition: background 180ms,color 180ms,transform 180ms; }
++.folio-dock a svg { width: 20px; height: 20px; transition: transform 180ms; }
++.folio-dock a[aria-current] { color: #303a29; background: #fffdf8; box-shadow: 0 1px 4px #2c3c2510; }
++.folio-dock a:hover { background: #ffffffc9; color: var(--folio-blue); }
++.folio-dock a:hover svg { transform: translateY(-2px); }
++.folio-dock a i { position: absolute; bottom: 3px; width: 3px; height: 3px; border-radius: 50%; background: transparent; }
++.folio-dock a[aria-current] i { background: #60784d; }
++.portfolio-page .site-footer { background: #f2f2eb; padding-bottom: 115px; border-color: var(--folio-line); }
++.portfolio-page .site-footer .shell { width: min(1240px,calc(100% - 112px)); }
++.portfolio-page .footer-main { padding-block: 24px; min-height: 90px; }
++.portfolio-page .footer-main p,.portfolio-page .footer-legal-links a,.portfolio-page .footer-contact { font-size: 11px; }
++.portfolio-page .footer-contact { padding-left: 12px; }
++.portfolio-page .footer-legal-links { min-height: 50px; gap: 24px; }
++@media (min-width: 1500px) { .folio-hero { min-height: 760px; padding-top: 110px; } }
++@media (max-width: 1100px) {
++  .folio-shell,.portfolio-page .site-footer .shell { width: calc(100% - 72px); }
++  .folio-hero { min-height: 670px; padding-top: 90px; grid-template-columns: minmax(0,1.4fr) minmax(0,1fr); }
++  .folio h1 { font-size: 70px; }
++  .folio-object-stage { transform: scale(.86); transform-origin: center left; width: 100%; }
++  .folio-about { gap: 60px; }
++  .folio-project-copy { padding: 28px; }
++  .folio-contact { gap: 60px; }
++  .folio-contact-star { right: -5px; font-size: 56px; }
++}
++@media (max-width: 800px) {
++  .folio-masthead { min-height: 88px; }
++  .folio-masthead p { display: none; }
++  .folio-hero { min-height: 600px; padding-top: 70px; grid-template-columns: 1.3fr 1fr; }
++  .folio h1 { font-size: 57px; }
++  .folio-hero .folio-eyebrow { font-size: 8px; }
++  .folio-intro { font-size: 15px; max-width: 340px; }
++  .folio-object-stage { transform: scale(.7); margin-top: 15px; width: 330px; }
++  .folio-section-heading > p { max-width: 240px; font-size: 12px; }
++  .folio-projects { gap: 20px; }
++  .folio-featured { grid-template-columns: .95fr 1.05fr; }
++  .folio-project-copy { padding: 24px; }
++  .folio-glass-media { padding-inline: 12px; }
++  .folio-project-tagline { font-size: 20px; }
++  .folio-featured h3 { font-size: 33px; }
++  .folio-secondary .folio-project-copy { padding: 24px; }
++  .folio h3 { font-size: 25px; }
++  .folio-secondary .folio-project-tagline { font-size: 18px; }
++  .folio-project-links a { gap: 6px; font-size: 11px; }
++  .folio-project-topline { gap: 8px; }
++  .folio-project-type { font-size: 8px; }
++  .folio-room-media { padding: 20px 18px 0; }
++  .folio-about { gap: 40px; padding-block: 90px; grid-template-columns: .8fr 1.2fr; }
++  .folio-about-note { padding: 25px 22px; }
++  .folio-about-monogram { font-size: 85px; }
++  .folio-about-note p { font-size: 16px; }
++  .folio-note-footer { font-size: 8px; gap: 8px; }
++  .folio-about-copy h2 { font-size: 33px; }
++  .folio-about-links { gap: 18px; flex-wrap: wrap; }
++  .folio-about-links a { font-size: 12px; }
++  .folio-contact { gap: 50px; padding-block: 85px; }
++  .folio-contact h2 { font-size: 51px; }
++  .folio-contact-star { right: -18px; font-size: 45px; }
++  .folio-email { font-size: 19px; gap: 16px; }
++}
++@media (max-width: 620px) {
++  .folio-shell,.portfolio-page .site-footer .shell { width: calc(100% - 40px); }
++  .folio-masthead { min-height: 82px; }
++  .folio-logo { font-size: 26px; }
++  .folio-header-contact { font-size: 12px; gap: 15px; }
++  .folio-hero { display: flex; flex-direction: column; padding-top: 52px; min-height: 0; }
++  .folio-hero .folio-eyebrow { font-size: 8px; gap: 8px; }
++  .folio-small-star { font-size: 19px; }
++  .folio h1 { font-size: clamp(43px,10.5vw,65px); margin-top: 22px; }
++  .folio-intro { font-size: 15px; max-width: 345px; margin-top: 23px !important; }
++  .folio-hero-actions { margin-top: 24px; gap: 25px; }
++  .folio-button { min-height: 49px; padding-inline: 20px; font-size: 12px; gap: 25px; }
++  .folio-object-stage { width: 340px; max-width: 100%; height: 360px; transform: scale(.85); transform-origin: center; margin: 25px auto 5px; }
++  .folio-object-glass { left: 27%; top: 0; }
++  .folio-object-mute { right: 0; top: 144px; }
++  .folio-object-room { top: 200px; left: 2%; }
++  .folio-stage-note { bottom: -21px; left: 29%; }
++  .folio-orbit { top: 0; }
++  .folio-orbit-inner { top: 56px; }
++  .folio-cross-two { bottom: -5px; }
++  .folio-hero-foot { width: 100%; padding: 14px 0 26px; font-size: 9px; }
++  .folio-hero-foot > span { max-width: 170px; }
++  .folio-hero-foot a { font-size: 8px; gap: 12px; }
++  .folio-work { padding-top: 45px; }
++  .folio-section-heading { align-items: start; flex-direction: column; gap: 18px; margin-bottom: 25px; }
++  .folio h2 { font-size: 43px; }
++  .folio-section-heading h2 { margin-top: 14px; }
++  .folio-section-heading > p { max-width: 300px; font-size: 13px; }
++  .folio-desktop-break { display: none; }
++  .folio-filter-bar { margin-bottom: 20px; }
++  .folio-filter-count { display: none; }
++  .folio-filters { width: 100%; gap: 2px; }
++  .folio-filters button { padding-inline: 15px; font-size: 11px; }
++  .folio-projects { display: flex; flex-direction: column; gap: 25px; }
++  .folio-featured { display: flex; flex-direction: column-reverse; min-height: 0; }
++  .folio-project { border-radius: 16px; }
++  .folio-glass-media { padding: 24px 20px 17px; min-height: 310px; }
++  .folio-glass-media img { max-width: 420px; margin: 15px auto; }
++  .folio-media-caption { font-size: 8px; }
++  .folio-media-meta { margin-top: 0; font-size: 9px; }
++  .folio-project-copy,.folio-secondary .folio-project-copy { padding: 25px; }
++  .folio-featured .folio-project-icon { margin-top: 22px; width: 46px; height: 46px; }
++  .folio-featured .folio-project-type { margin-top: 18px; }
++  .folio-featured h3 { font-size: 36px; }
++  .folio h3 { font-size: 29px; }
++  .folio-project-tagline { font-size: 23px; }
++  .folio-secondary .folio-project-tagline { font-size: 21px; }
++  .folio-project-description { font-size: 13px; max-width: 100%; }
++  .folio-project-links { margin-top: 20px; padding-top: 15px; }
++  .folio-project-links a { font-size: 12px; gap: 14px; }
++  .folio-project-type { font-size: 9px; }
++  .folio-secondary .folio-project-media { aspect-ratio: 1.6; }
++  .folio-room-media { padding: 24px 20px 0; }
++  .folio-about { grid-template-columns: 1fr; gap: 45px; padding-block: 85px 65px; }
++  .folio-about-note { width: 255px; max-width: calc(100% - 20px); margin: 0 auto; padding: 28px 25px 20px; }
++  .folio-about-monogram { font-size: 95px; margin-bottom: 25px; }
++  .folio-about-note p { font-size: 18px; }
++  .folio-about-copy h2 { font-size: clamp(30px,7.7vw,43px); }
++  .folio-about-copy > p:not(.folio-eyebrow) { font-size: 14px; }
++  .folio-about-links { margin-top: 20px; gap: 24px; }
++  .folio-contact { grid-template-columns: 1fr; gap: 28px; padding-block: 60px 65px; }
++  .folio-contact h2 { font-size: 61px; max-width: 350px; }
++  .folio-contact-star { font-size: 60px; right: 0; top: 5px; }
++  .folio-contact-copy > p { max-width: 310px; }
++  .folio-email { font-size: 23px; width: 100%; max-width: 340px; gap: 12px; }
++  .folio-dock { bottom: max(14px,env(safe-area-inset-bottom)); border-radius: 22px; padding: 6px; gap: 2px; }
++  .folio-dock a { width: 68px; min-height: 56px; border-radius: 16px; }
++  .portfolio-page .footer-main { align-items: start; gap: 8px; padding-block: 24px 12px; }
++  .portfolio-page .footer-actions { gap: 8px; }
++  .portfolio-page .footer-socials a { width: 30px; height: 30px; }
++  .portfolio-page .footer-main p { padding-top: 6px; font-size: 10px; }
++  .portfolio-page .footer-contact { display: none; }
++  .portfolio-page .footer-legal-links { flex-wrap: wrap; gap: 8px 18px; padding-block: 10px; }
++  .portfolio-page .footer-legal-links a { font-size: 10px; min-height: 30px; display: flex; align-items: center; }
++  .portfolio-page .site-footer { padding-bottom: 110px; }
++}
++@media (max-width: 360px) {
++  .folio-shell,.portfolio-page .site-footer .shell { width: calc(100% - 32px); }
++  .folio h1 { font-size: 41px; }
++  .folio-hero .folio-eyebrow { font-size: 7px; }
++  .folio-object-stage { transform: scale(.8); margin-block: 10px 0; }
++  .folio-dock a { width: 64px; }
++  .folio-filters button { padding-inline: 13px; }
++  .folio-contact h2 { font-size: 55px; }
++  .folio-email { font-size: 21px; }
++}
++@media (prefers-reduced-motion: reduce) {
++  .folio *, .folio *::before,.folio *::after,.folio-dock * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
++  .folio-app-object:hover,.folio-button:hover,.folio-project-media:hover img,.folio-dock a:hover svg { transform: none; }
++}
++@media print {
++  .folio-dock,.folio-filter-bar,.folio-copy-email,.skip-link { display: none !important; }
++  .folio-shell { width: 100%; }
++  .folio-project { break-inside: avoid; }
++  .portfolio-page .site-footer { padding-bottom: 0; }
++}
++/* Still screenshots keep product content readable and respect reduced motion. */
++.folio-glass-phones { display: flex; align-items: center; justify-content: center; gap: 22px; padding-block: 35px; }
++.folio-glass-phones img { display: block; width: 45%; max-width: 180px; height: auto; border: 4px solid #26252c; border-radius: 24px; box-shadow: 0 16px 25px -10px #5e547b50; }
++.folio-glass-phones img:last-child { width: 40%; max-width: 160px; transform: translateY(22px); }
++@media (max-width: 800px) { .folio-glass-phones { gap: 12px; } .folio-glass-phones img { border-width: 3px; border-radius: 18px; } }
++@media (max-width: 620px) { .folio-glass-phones { padding-block: 25px 35px; gap: 18px; } .folio-glass-phones img { width: 44%; max-width: 150px; } .folio-glass-phones img:last-child { width: 40%; max-width: 135px; } .folio-contact-star { font-size: 38px; top: -22px; right: 8px; } }
++
++/* The fixed dock must never cover the browser's keyboard scroll destination. */
++html:has(.folio-dock) { scroll-padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px)); }
++.folio :where(a, button) { scroll-margin-block: 16px; }
++.folio-hero > * { min-width: 0; }
++/* Stack the hero before either narrow grid track can crop the app objects. */
++@media (min-width: 621px) and (max-width: 900px) {
++  .folio-hero { grid-template-columns: minmax(0,1fr); min-height: 0; padding-top: 65px; }
++  .folio-hero-copy { max-width: 660px; }
++  .folio h1 { font-size: clamp(57px,8.5vw,75px); }
++  .folio-hero .folio-eyebrow { font-size: 10px; }
++  .folio-intro { max-width: 440px; font-size: 17px; }
++  .folio-object-stage { width: 360px; max-width: 100%; height: 390px; transform: none; justify-self: center; margin: 45px 0 20px; }
++  .folio-hero-foot { width: 100%; padding-top: 22px; grid-column: 1 / -1; }
++}

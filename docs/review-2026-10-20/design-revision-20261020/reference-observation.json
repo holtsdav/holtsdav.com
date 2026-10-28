@@ -1,0 +1,134 @@
+{
+  "url": "https://www.cindyly.design/",
+  "title": "Cindy Ly | Product Designer",
+  "headings": [
+    {
+      "text": "About me",
+      "font": "EditorialNew, Georgia, serif",
+      "size": "42px"
+    },
+    {
+      "text": "Building to think...",
+      "font": "EditorialNew, Georgia, serif",
+      "size": "42px"
+    }
+  ],
+  "nav": [
+    {
+      "text": "    Cindy Ly Product Designer     LinkedIn Email Resume  ",
+      "links": [
+        {
+          "text": "   Cindy Ly Product Designer  ",
+          "href": "#welcome"
+        },
+        {
+          "text": "LinkedIn",
+          "href": "https://linkedin.com/in/cindy-k-ly/"
+        },
+        {
+          "text": "Email",
+          "href": "mailto:cindykimly@gmail.com"
+        },
+        {
+          "text": "Resume",
+          "href": "https://drive.google.com/file/d/1b8yyN0Z8tXkYLakjVOsYQzEKLJM31PET/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "text": "     works      quests     👩  profile   ",
+      "links": []
+    },
+    {
+      "text": "    works      quests      profile                     links    ",
+      "links": [
+        {
+          "text": "  ",
+          "href": "https://linkedin.com/in/cindy-k-ly/"
+        },
+        {
+          "text": "  ",
+          "href": "mailto:cindykimly@gmail.com"
+        },
+        {
+          "text": "  ",
+          "href": "https://drive.google.com/file/d/1b8yyN0Z8tXkYLakjVOsYQzEKLJM31PET/view?usp=sharing"
+        }
+      ]
+    }
+  ],
+  "fixed": [
+    {
+      "tag": "CANVAS",
+      "role": null,
+      "text": "",
+      "class": "sky-grid"
+    },
+    {
+      "tag": "DIV",
+      "role": null,
+      "text": "   ",
+      "class": "sky-top"
+    },
+    {
+      "tag": "DIV",
+      "role": null,
+      "text": "",
+      "class": "sky-saver"
+    },
+    {
+      "tag": "P",
+      "role": null,
+      "text": "Built with Claude & fueled by matcha",
+      "class": "colophon colophon-credit"
+    },
+    {
+      "tag": "P",
+      "role": null,
+      "text": "\nLast updated 10/26 ୨୧ ",
+      "class": "colophon"
+    },
+    {
+      "tag": "DIV",
+      "role": null,
+      "text": "          ",
+      "class": "tank-dev"
+    },
+    {
+      "tag": "DIV",
+      "role": null,
+      "text": "",
+      "class": "key-cursor"
+    },
+    {
+      "tag": "DIV",
+      "role": null,
+      "text": "              ",
+      "class": ""
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "text": "       ",
+      "class": "fish-btn"
+    },
+    {
+      "tag": "P",
+      "role": null,
+      "text": "",
+      "class": "tank-speech"
+    },
+    {
+      "tag": "DIV",
+      "role": null,
+      "text": "                    Tools        ",
+      "class": "sq-overlay"
+    },
+    {
+      "tag": "CANVAS",
+      "role": null,
+      "text": "",
+      "class": "film-grain"
+    }
+  ]
+}

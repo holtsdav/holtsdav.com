@@ -1,0 +1,119 @@
+{
+  "checked_at_utc": "2026-10-20T11:59:00.246185+00:00",
+  "worktree": "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-dock",
+  "branch": "codex/portfolio-dock-20261020",
+  "head": "b9069c2c2578d162102d416d877af5042afa33b6",
+  "original_branch": "main",
+  "original_head": "b9069c2c2578d162102d416d877af5042afa33b6",
+  "original_dirty_files": {
+    "DESIGN.md": {
+      "expected_sha256": "3f6accb525926178b9569516829c67a5ff8e22e3e080b5ab6a06b8c864c0d2d5",
+      "actual_sha256": "3f6accb525926178b9569516829c67a5ff8e22e3e080b5ab6a06b8c864c0d2d5",
+      "matches": true
+    },
+    "src/components/Header.astro": {
+      "expected_sha256": "5cde86394ec21e6c44750fdf583f80b993498364596e3437e4853636ad7a64d6",
+      "actual_sha256": "5cde86394ec21e6c44750fdf583f80b993498364596e3437e4853636ad7a64d6",
+      "matches": true
+    },
+    "src/components/ParticleWordmark.astro": {
+      "expected_sha256": "e4ff1002f42033fe137b949901c2ee48815e026f93a81acc3f50432f2e421b69",
+      "actual_sha256": "e4ff1002f42033fe137b949901c2ee48815e026f93a81acc3f50432f2e421b69",
+      "matches": true
+    },
+    "src/layouts/BaseLayout.astro": {
+      "expected_sha256": "3bf806b7a982ece8e9419b36f448541b0e3ba9850021f42e311f30d8cd762199",
+      "actual_sha256": "3bf806b7a982ece8e9419b36f448541b0e3ba9850021f42e311f30d8cd762199",
+      "matches": true
+    },
+    "src/pages/contact.astro": {
+      "expected_sha256": "1ca63aeb01170017adc5e086cdecf8c5fb0e3ef70e1e792fdf4f8649597a65b6",
+      "actual_sha256": "1ca63aeb01170017adc5e086cdecf8c5fb0e3ef70e1e792fdf4f8649597a65b6",
+      "matches": true
+    },
+    "src/scripts/particle-wordmark.ts": {
+      "expected_sha256": "50be43f53cb89e7f396f3277b1d604d6c826605667be86cb352a420baf69d7ee",
+      "actual_sha256": "50be43f53cb89e7f396f3277b1d604d6c826605667be86cb352a420baf69d7ee",
+      "matches": true
+    },
+    "src/styles/global.css": {
+      "expected_sha256": "06f9cf39fc12e23d4a81e54f6ed808fb209334acefca666189dbbeecf3e6e217",
+      "actual_sha256": "06f9cf39fc12e23d4a81e54f6ed808fb209334acefca666189dbbeecf3e6e217",
+      "matches": true
+    }
+  },
+  "original_status": [
+    " M DESIGN.md",
+    " M src/components/Header.astro",
+    " M src/components/ParticleWordmark.astro",
+    " M src/layouts/BaseLayout.astro",
+    " M src/pages/contact.astro",
+    " M src/scripts/particle-wordmark.ts",
+    " M src/styles/global.css",
+    "?? .claude/",
+    "?? .codex/"
+  ],
+  "original_status_matches_initial": true,
+  "existing_website_t3_status": [],
+  "packaged_feature_code_matches": {
+    "Assets/app-icons/room-planner.svg": true,
+    "Assets/glassdays-screenshots/create-dark.png": true,
+    "Assets/glassdays-screenshots/folders.png": true,
+    "Assets/glassdays-screenshots/home-light.png": true,
+    "Assets/glassdays-screenshots/widgets.png": true,
+    "docs/review-2026-10-20/start-preview.sh": true,
+    "public/_redirects": true,
+    "scripts/verify-portfolio.mjs": true,
+    "src/components/GlassdaysPage.astro": true,
+    "src/components/PortfolioDock.astro": true,
+    "src/components/PortfolioHome.astro": true,
+    "src/layouts/BaseLayout.astro": true,
+    "src/middleware.ts": true,
+    "src/pages/Glassdays.astro": true,
+    "src/pages/MuteOnLocation.astro": true,
+    "src/pages/NotiLog.astro": true,
+    "src/pages/RogueColor.astro": true,
+    "src/pages/apps/glassdays-countdown.astro": true,
+    "src/pages/apps/mute-on-location.astro": true,
+    "src/pages/apps/room-planner.astro": true,
+    "src/pages/index.astro": true,
+    "src/pages/project/[slug].astro": true,
+    "src/pages/project/glassdays.astro": true,
+    "src/scripts/portfolio.ts": true,
+    "src/styles/glassdays-case.css": true,
+    "src/styles/portfolio.css": true,
+    "scripts/verify-notilog-drafts.mjs": true,
+    "src/components/DraftDocument.astro": true,
+    "src/pages/drafts/notilog-privacy.astro": true,
+    "src/pages/support/notilog.astro": true,
+    "src/styles/document-draft.css": true
+  },
+  "original_screenshot_hashes_match": {
+    "docs/review-2026-10-20/screenshots/home-700-viewport.png": true,
+    "docs/review-2026-10-20/screenshots/desktop-glassdays.png": true,
+    "docs/review-2026-10-20/screenshots/keyboard-desktop-copy.png": true,
+    "docs/review-2026-10-20/screenshots/mobile-glassdays.png": true,
+    "docs/review-2026-10-20/screenshots/home-701-viewport.png": true,
+    "docs/review-2026-10-20/screenshots/desktop-home-viewport.png": true,
+    "docs/review-2026-10-20/screenshots/home-801-viewport.png": true,
+    "docs/review-2026-10-20/screenshots/keyboard-mobile-mute.png": true,
+    "docs/review-2026-10-20/screenshots/desktop-notilog-privacy-draft.png": true,
+    "docs/review-2026-10-20/screenshots/home-801.png": true,
+    "docs/review-2026-10-20/screenshots/mobile-home-viewport.png": true,
+    "docs/review-2026-10-20/screenshots/home-621.png": true,
+    "docs/review-2026-10-20/screenshots/mobile-mute.png": true,
+    "docs/review-2026-10-20/screenshots/mobile-no-javascript.png": true,
+    "docs/review-2026-10-20/screenshots/desktop-home.png": true,
+    "docs/review-2026-10-20/screenshots/home-621-viewport.png": true,
+    "docs/review-2026-10-20/screenshots/desktop-notilog-support.png": true,
+    "docs/review-2026-10-20/screenshots/mobile-home.png": true,
+    "docs/review-2026-10-20/screenshots/mobile-notilog-support.png": true,
+    "docs/review-2026-10-20/screenshots/home-700.png": true,
+    "docs/review-2026-10-20/screenshots/mobile-notilog-privacy-draft.png": true,
+    "docs/review-2026-10-20/screenshots/home-701.png": true
+  },
+  "notilog_current_main": {
+    "head": "d9d851f202c964f7f8c4610245ac48404d5b7c13",
+    "status": []
+  }
+}

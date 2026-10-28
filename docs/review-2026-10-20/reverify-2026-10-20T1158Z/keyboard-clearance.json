@@ -1,0 +1,1493 @@
+[
+  {
+    "width": 390,
+    "height": 844,
+    "index": 0,
+    "label": "Skip to content",
+    "href": "#main-content",
+    "inDock": false,
+    "rect": {
+      "left": 16,
+      "right": 167.5625,
+      "top": 16,
+      "bottom": 66.390625
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 1,
+    "label": "holtsdav — Home",
+    "href": "#home",
+    "inDock": false,
+    "rect": {
+      "left": 20,
+      "right": 120.65625,
+      "top": 27.5,
+      "bottom": 53.5
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 2,
+    "label": "Say hello ↗",
+    "href": "#contact",
+    "inDock": false,
+    "rect": {
+      "left": 290.3125,
+      "right": 370,
+      "top": 18.5,
+      "bottom": 62.5
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 3,
+    "label": "Explore my work ↓",
+    "href": "#projects",
+    "inDock": false,
+    "rect": {
+      "left": 20,
+      "right": 191.046875,
+      "top": 363.28125,
+      "bottom": 422.28125
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 4,
+    "label": "GitHub ↗",
+    "href": "https://github.com/holtsdav",
+    "inDock": false,
+    "rect": {
+      "left": 216.046875,
+      "right": 289.375,
+      "top": 370.78125,
+      "bottom": 414.78125
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 5,
+    "label": "Glassdays ↗",
+    "href": "#glassdays",
+    "inDock": false,
+    "rect": {
+      "left": 116.513916015625,
+      "right": 268.040771484375,
+      "top": 465.3157958984375,
+      "bottom": 646.8717041015625
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 6,
+    "label": "Mute On Location ↗",
+    "href": "#mute-on-location",
+    "inDock": false,
+    "rect": {
+      "left": 233.75401306152344,
+      "right": 350.0459899902344,
+      "top": 560.111083984375,
+      "bottom": 715.5733032226562
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 7,
+    "label": "Room Planner ↗",
+    "href": "#room-planner",
+    "inDock": false,
+    "rect": {
+      "left": 49.50518035888672,
+      "right": 142.94952392578125,
+      "top": 590.844970703125,
+      "bottom": 715.7425537109375
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 8,
+    "label": "SCROLL TO EXPLORE ↓",
+    "href": "#projects",
+    "inDock": false,
+    "rect": {
+      "left": 254.015625,
+      "right": 370,
+      "top": 355.96875,
+      "bottom": 376.96875
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 9,
+    "label": "All work 03",
+    "href": null,
+    "inDock": false,
+    "rect": {
+      "left": 20,
+      "right": 109.328125,
+      "top": 616.3125,
+      "bottom": 660.3125
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 10,
+    "label": "Apple apps",
+    "href": null,
+    "inDock": false,
+    "rect": {
+      "left": 111.328125,
+      "right": 198.375,
+      "top": 616.3125,
+      "bottom": 660.3125
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 11,
+    "label": "Web tools",
+    "href": null,
+    "inDock": false,
+    "rect": {
+      "left": 200.375,
+      "right": 281.09375,
+      "top": 616.3125,
+      "bottom": 660.3125
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 12,
+    "label": "Explore Glassdays ↗",
+    "href": "/apps/glassdays-countdown/",
+    "inDock": false,
+    "rect": {
+      "left": 46,
+      "right": 179.390625,
+      "top": 344.265625,
+      "bottom": 388.265625
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 13,
+    "label": "Glassdays on the App Store",
+    "href": "https://apps.apple.com/de/app/glassdays-countdown/id6785538729",
+    "inDock": false,
+    "rect": {
+      "left": 270.078125,
+      "right": 344,
+      "top": 344.265625,
+      "bottom": 388.265625
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 14,
+    "label": "Explore Glassdays",
+    "href": "/apps/glassdays-countdown/",
+    "inDock": false,
+    "rect": {
+      "left": 21,
+      "right": 369,
+      "top": 137.3125,
+      "bottom": 594.671875
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 15,
+    "label": "Explore Mute On Location",
+    "href": "/apps/mute-on-location/",
+    "inDock": false,
+    "rect": {
+      "left": 21,
+      "right": 369,
+      "top": 257.265625,
+      "bottom": 474.765625
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 16,
+    "label": "Explore the app ↗",
+    "href": "/apps/mute-on-location/",
+    "inDock": false,
+    "rect": {
+      "left": 46,
+      "right": 162.03125,
+      "top": 672.03125,
+      "bottom": 716.03125
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 17,
+    "label": "Mute On Location on the Mac App Store",
+    "href": "https://apps.apple.com/de/app/mute-on-location/id6790398791?l=en-GB&mt=12",
+    "inDock": false,
+    "rect": {
+      "left": 270.078125,
+      "right": 344,
+      "top": 672.03125,
+      "bottom": 716.03125
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 18,
+    "label": "Try Room Planner (opens in a new tab)",
+    "href": "https://holtsdav.com/RoomPlanner",
+    "inDock": false,
+    "rect": {
+      "left": 21,
+      "right": 369,
+      "top": 257.03125,
+      "bottom": 474.53125
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 19,
+    "label": "Try Room Planner ↗",
+    "href": "https://holtsdav.com/RoomPlanner",
+    "inDock": false,
+    "rect": {
+      "left": 46,
+      "right": 174.703125,
+      "top": 671.796875,
+      "bottom": 715.796875
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 20,
+    "label": "Room Planner source on GitHub",
+    "href": "https://github.com/holtsdav/RoomPlanner",
+    "inDock": false,
+    "rect": {
+      "left": 284.140625,
+      "right": 344,
+      "top": 671.796875,
+      "bottom": 715.796875
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 21,
+    "label": "Find me on GitHub ↗",
+    "href": "https://github.com/holtsdav",
+    "inDock": false,
+    "rect": {
+      "left": 20,
+      "right": 156.328125,
+      "top": 343.828125,
+      "bottom": 387.828125
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 22,
+    "label": "LinkedIn ↗",
+    "href": "https://www.linkedin.com/in/david-holtschke",
+    "inDock": false,
+    "rect": {
+      "left": 180.328125,
+      "right": 258.671875,
+      "top": 343.828125,
+      "bottom": 387.828125
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 23,
+    "label": "contact@holtsdav.com ↗",
+    "href": "mailto:contact@holtsdav.com",
+    "inDock": false,
+    "rect": {
+      "left": 20,
+      "right": 360,
+      "top": 399.828125,
+      "bottom": 464.765625
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 24,
+    "label": "Copy email",
+    "href": null,
+    "inDock": false,
+    "rect": {
+      "left": 20,
+      "right": 102.03125,
+      "top": 476.765625,
+      "bottom": 520.765625
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 25,
+    "label": "Home",
+    "href": "#home",
+    "inDock": true,
+    "rect": {
+      "left": 56,
+      "right": 124,
+      "top": 767,
+      "bottom": 823
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 26,
+    "label": "Work",
+    "href": "#projects",
+    "inDock": true,
+    "rect": {
+      "left": 126,
+      "right": 194,
+      "top": 767,
+      "bottom": 823
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 27,
+    "label": "About",
+    "href": "#about",
+    "inDock": true,
+    "rect": {
+      "left": 196,
+      "right": 264,
+      "top": 767,
+      "bottom": 823
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 28,
+    "label": "Contact",
+    "href": "#contact",
+    "inDock": true,
+    "rect": {
+      "left": 266,
+      "right": 334,
+      "top": 767,
+      "bottom": 823
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 29,
+    "label": "David Holtschke on GitHub",
+    "href": "https://github.com/holtsdav",
+    "inDock": false,
+    "rect": {
+      "left": 20,
+      "right": 50,
+      "top": 641.265625,
+      "bottom": 671.265625
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 30,
+    "label": "David Holtschke on LinkedIn",
+    "href": "https://www.linkedin.com/in/david-holtschke",
+    "inDock": false,
+    "rect": {
+      "left": 50,
+      "right": 80,
+      "top": 641.265625,
+      "bottom": 671.265625
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 31,
+    "label": "David Holtschke on X",
+    "href": "https://x.com/realholtsdav",
+    "inDock": false,
+    "rect": {
+      "left": 80,
+      "right": 110,
+      "top": 641.265625,
+      "bottom": 671.265625
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 32,
+    "label": "Contact",
+    "href": "/contact/",
+    "inDock": false,
+    "rect": {
+      "left": 63.328125,
+      "right": 100.5625,
+      "top": 694.265625,
+      "bottom": 724.265625
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 33,
+    "label": "Legal Notice (Impressum)",
+    "href": "/impressum/",
+    "inDock": false,
+    "rect": {
+      "left": 118.5625,
+      "right": 240.828125,
+      "top": 694.265625,
+      "bottom": 724.265625
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "index": 34,
+    "label": "Privacy Policy",
+    "href": "/privacy/",
+    "inDock": false,
+    "rect": {
+      "left": 258.828125,
+      "right": 326.65625,
+      "top": 694.265625,
+      "bottom": 724.265625
+    },
+    "dock": {
+      "left": 49,
+      "right": 341,
+      "top": 760,
+      "bottom": 830
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 0,
+    "label": "Skip to content",
+    "href": "#main-content",
+    "inDock": false,
+    "rect": {
+      "left": 16,
+      "right": 167.5625,
+      "top": 16,
+      "bottom": 66.390625
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 1,
+    "label": "holtsdav — Home",
+    "href": "#home",
+    "inDock": false,
+    "rect": {
+      "left": 100,
+      "right": 213.828125,
+      "top": 41,
+      "bottom": 70
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 2,
+    "label": "Say hello ↗",
+    "href": "#contact",
+    "inDock": false,
+    "rect": {
+      "left": 1249.921875,
+      "right": 1340,
+      "top": 33.5,
+      "bottom": 77.5
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 3,
+    "label": "Explore my work ↓",
+    "href": "#projects",
+    "inDock": false,
+    "rect": {
+      "left": 100,
+      "right": 290.046875,
+      "top": 577.375,
+      "bottom": 636.375
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 4,
+    "label": "GitHub ↗",
+    "href": "https://github.com/holtsdav",
+    "inDock": false,
+    "rect": {
+      "left": 320.046875,
+      "right": 393.375,
+      "top": 584.875,
+      "bottom": 628.875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 5,
+    "label": "Glassdays ↗",
+    "href": "#glassdays",
+    "inDock": false,
+    "rect": {
+      "left": 921.5072021484375,
+      "right": 1099.7740478515625,
+      "top": 194.45240783691406,
+      "bottom": 408.047607421875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 6,
+    "label": "Mute On Location ↗",
+    "href": "#mute-on-location",
+    "inDock": false,
+    "rect": {
+      "left": 1199.405517578125,
+      "right": 1336.219482421875,
+      "top": 338.2703857421875,
+      "bottom": 521.1671142578125
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 7,
+    "label": "Room Planner ↗",
+    "href": "#room-planner",
+    "inDock": false,
+    "rect": {
+      "left": 819.8452758789062,
+      "right": 929.77978515625,
+      "top": 412.7808837890625,
+      "bottom": 559.7191162109375
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 8,
+    "label": "SCROLL TO EXPLORE ↓",
+    "href": "#projects",
+    "inDock": false,
+    "rect": {
+      "left": 1204.359375,
+      "right": 1339.984375,
+      "top": 355,
+      "bottom": 376
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 9,
+    "label": "All work 03",
+    "href": null,
+    "inDock": false,
+    "rect": {
+      "left": 100,
+      "right": 196.828125,
+      "top": 607.1875,
+      "bottom": 651.1875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 10,
+    "label": "Apple apps",
+    "href": null,
+    "inDock": false,
+    "rect": {
+      "left": 202.828125,
+      "right": 298.875,
+      "top": 607.1875,
+      "bottom": 651.1875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 11,
+    "label": "Web tools",
+    "href": null,
+    "inDock": false,
+    "rect": {
+      "left": 304.875,
+      "right": 394.015625,
+      "top": 607.1875,
+      "bottom": 651.1875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 12,
+    "label": "Explore Glassdays ↗",
+    "href": "/apps/glassdays-countdown/",
+    "inDock": false,
+    "rect": {
+      "left": 134,
+      "right": 269.390625,
+      "top": 343.984375,
+      "bottom": 387.984375
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 13,
+    "label": "Glassdays on the App Store",
+    "href": "https://apps.apple.com/de/app/glassdays-countdown/id6785538729",
+    "inDock": false,
+    "rect": {
+      "left": 518.21875,
+      "right": 594.140625,
+      "top": 343.984375,
+      "bottom": 387.984375
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 14,
+    "label": "Explore Glassdays",
+    "href": "/apps/glassdays-countdown/",
+    "inDock": false,
+    "rect": {
+      "left": 627.140625,
+      "right": 1339,
+      "top": 16.1875,
+      "bottom": 588.546875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 15,
+    "label": "Explore Mute On Location",
+    "href": "/apps/mute-on-location/",
+    "inDock": false,
+    "rect": {
+      "left": 101,
+      "right": 703,
+      "top": 339.546875,
+      "bottom": 715.796875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 16,
+    "label": "Explore the app ↗",
+    "href": "/apps/mute-on-location/",
+    "inDock": false,
+    "rect": {
+      "left": 134,
+      "right": 252.03125,
+      "top": 344.0625,
+      "bottom": 388.0625
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 17,
+    "label": "Mute On Location on the Mac App Store",
+    "href": "https://apps.apple.com/de/app/mute-on-location/id6790398791?l=en-GB&mt=12",
+    "inDock": false,
+    "rect": {
+      "left": 594.078125,
+      "right": 670,
+      "top": 344.0625,
+      "bottom": 388.0625
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 18,
+    "label": "Try Room Planner (opens in a new tab)",
+    "href": "https://holtsdav.com/RoomPlanner",
+    "inDock": false,
+    "rect": {
+      "left": 737,
+      "right": 1339,
+      "top": 15.546875,
+      "bottom": 391.796875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 19,
+    "label": "Try Room Planner ↗",
+    "href": "https://holtsdav.com/RoomPlanner",
+    "inDock": false,
+    "rect": {
+      "left": 770,
+      "right": 900.703125,
+      "top": 630.0625,
+      "bottom": 674.0625
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 20,
+    "label": "Room Planner source on GitHub",
+    "href": "https://github.com/holtsdav/RoomPlanner",
+    "inDock": false,
+    "rect": {
+      "left": 1244.140625,
+      "right": 1306,
+      "top": 630.0625,
+      "bottom": 674.0625
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 21,
+    "label": "Find me on GitHub ↗",
+    "href": "https://github.com/holtsdav",
+    "inDock": false,
+    "rect": {
+      "left": 681.625,
+      "right": 827.890625,
+      "top": 344.25,
+      "bottom": 388.25
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 22,
+    "label": "LinkedIn ↗",
+    "href": "https://www.linkedin.com/in/david-holtschke",
+    "inDock": false,
+    "rect": {
+      "left": 857.890625,
+      "right": 941.34375,
+      "top": 344.25,
+      "bottom": 388.25
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 23,
+    "label": "contact@holtsdav.com ↗",
+    "href": "mailto:contact@holtsdav.com",
+    "inDock": false,
+    "rect": {
+      "left": 765,
+      "right": 1047.796875,
+      "top": 647.921875,
+      "bottom": 716.171875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 24,
+    "label": "Copy email",
+    "href": null,
+    "inDock": false,
+    "rect": {
+      "left": 765,
+      "right": 847.03125,
+      "top": 672.171875,
+      "bottom": 716.171875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 25,
+    "label": "Home",
+    "href": "#home",
+    "inDock": true,
+    "rect": {
+      "left": 554,
+      "right": 634,
+      "top": 757,
+      "bottom": 814
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": true
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 26,
+    "label": "Work",
+    "href": "#projects",
+    "inDock": true,
+    "rect": {
+      "left": 638,
+      "right": 718,
+      "top": 757,
+      "bottom": 814
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": true
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 27,
+    "label": "About",
+    "href": "#about",
+    "inDock": true,
+    "rect": {
+      "left": 722,
+      "right": 802,
+      "top": 757,
+      "bottom": 814
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": true
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 28,
+    "label": "Contact",
+    "href": "#contact",
+    "inDock": true,
+    "rect": {
+      "left": 806,
+      "right": 886,
+      "top": 757,
+      "bottom": 814
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": true
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 29,
+    "label": "David Holtschke on GitHub",
+    "href": "https://github.com/holtsdav",
+    "inDock": false,
+    "rect": {
+      "left": 1071.0625,
+      "right": 1111.0625,
+      "top": 614.46875,
+      "bottom": 654.46875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 30,
+    "label": "David Holtschke on LinkedIn",
+    "href": "https://www.linkedin.com/in/david-holtschke",
+    "inDock": false,
+    "rect": {
+      "left": 1111.0625,
+      "right": 1151.0625,
+      "top": 614.46875,
+      "bottom": 654.46875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 31,
+    "label": "David Holtschke on X",
+    "href": "https://x.com/realholtsdav",
+    "inDock": false,
+    "rect": {
+      "left": 1151.0625,
+      "right": 1191.0625,
+      "top": 614.46875,
+      "bottom": 654.46875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 32,
+    "label": "contact@holtsdav.com",
+    "href": "mailto:contact@holtsdav.com",
+    "inDock": false,
+    "rect": {
+      "left": 1207.0625,
+      "right": 1340,
+      "top": 614.46875,
+      "bottom": 654.46875
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 33,
+    "label": "Contact",
+    "href": "/contact/",
+    "inDock": false,
+    "rect": {
+      "left": 100,
+      "right": 140.953125,
+      "top": 695.890625,
+      "bottom": 714.03125
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 34,
+    "label": "Legal Notice (Impressum)",
+    "href": "/impressum/",
+    "inDock": false,
+    "rect": {
+      "left": 164.953125,
+      "right": 299.4375,
+      "top": 695.890625,
+      "bottom": 714.03125
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  },
+  {
+    "width": 1440,
+    "height": 844,
+    "index": 35,
+    "label": "Privacy Policy",
+    "href": "/privacy/",
+    "inDock": false,
+    "rect": {
+      "left": 323.4375,
+      "right": 398.046875,
+      "top": 695.890625,
+      "bottom": 714.03125
+    },
+    "dock": {
+      "left": 546,
+      "right": 894,
+      "top": 749,
+      "bottom": 822
+    },
+    "overlaps": false
+  }
+]

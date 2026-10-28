@@ -1,14 +1,14 @@
 ---
 import AppLanding from '../../components/AppLanding.astro';
 import muteOnLocationIcon from '../../../Assets/app-icons/mute-on-location.png';
-import muteOnLocationPreview from '../../../Assets/MuteOnLocation.gif';
+import muteOnLocationPreview from '../../../Assets/MuteOnLocation-preview.png';
 ---
 
 <AppLanding
 	name="Mute On Location"
 	slug="mute-on-location"
 	icon={muteOnLocationIcon}
-	status="In development"
+	status="Available on the Mac App Store"
 	kicker="macOS · Location-based muting"
 	headline="Automatically mute at saved locations."
 	description="Mute On Location mutes your Mac’s current audio output when you arrive at a saved location. Manage locations, radii, and automation directly from the menu bar app."
@@ -31,11 +31,13 @@ import muteOnLocationPreview from '../../../Assets/MuteOnLocation.gif';
 		},
 	]}
 	closingHeadline="Stay muted without having to remember."
-	closingDescription="Mute On Location is currently in development and is not yet available on the App Store."
+	closingDescription="Mute On Location is available for Mac on the App Store. Set up your saved places and choose how the app checks for arrivals."
+	primaryLabel="View on the Mac App Store"
+	primaryHref="https://apps.apple.com/de/app/mute-on-location/id6790398791?l=en-GB&mt=12"
 	privacyHref="/privacy/muteonlocation/"
 	mediaSrc={muteOnLocationPreview}
 	mediaAlt="Mute On Location showing the current location status and saved places in a macOS menu bar app"
-	mediaWidth={900}
-	mediaHeight={600}
+	mediaWidth={1200}
+	mediaHeight={750}
 	mediaCaption="Mute On Location · macOS"
 />

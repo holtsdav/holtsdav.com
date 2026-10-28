@@ -1,0 +1,59 @@
+{
+  "base": "http://127.0.0.1:4327",
+  "date": "2026-10-20T12:33:42.760Z",
+  "results": [
+    {
+      "name": "Homepage semantics, still imagery, local links",
+      "passed": true
+    },
+    {
+      "name": "Responsive painted hero bounds at 320, 390, 620, 621, 700, 701, 768, 800, 801, 900, 901, 1024 and 1440 pixels",
+      "passed": true
+    },
+    {
+      "name": "Project filtering and direct project navigation",
+      "passed": true
+    },
+    {
+      "name": "Dock navigation, active section and reduced motion",
+      "passed": true
+    },
+    {
+      "name": "Keyboard skip link and visible focus",
+      "passed": true
+    },
+    {
+      "name": "Sequential keyboard targets clear the dock at mobile and desktop heights",
+      "passed": true
+    },
+    {
+      "name": "Copy email feedback",
+      "passed": true
+    },
+    {
+      "name": "New project pages, privacy and legal links resolve locally",
+      "passed": true
+    },
+    {
+      "name": "Public destinations, truthful Mute release copy and legacy aliases",
+      "passed": true
+    },
+    {
+      "name": "Images decode and desktop/mobile screenshots",
+      "passed": true
+    },
+    {
+      "name": "Text contrast on homepage and Glassdays page",
+      "passed": true
+    },
+    {
+      "name": "Readable portfolio with JavaScript disabled",
+      "passed": true
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,30 @@
+{
+  "source": "/Users/holtsdav/Documents/Dev/GlassdaysScreenshots/Assets",
+  "note": "Existing owner app screenshots, copied unchanged. No inspiration-site assets downloaded. These are existing repository captures, not new screenshots of the current binary.",
+  "files": [
+    {
+      "source": "/Users/holtsdav/Documents/Dev/GlassdaysScreenshots/Assets/HomeScreen_LightMode.png",
+      "copy": "Assets/glassdays-screenshots/home-light.png",
+      "source_sha256": "d17352567616b67f820af7908ebe212a503bab8724cc658fd563a29528020cef",
+      "copy_sha256": "d17352567616b67f820af7908ebe212a503bab8724cc658fd563a29528020cef"
+    },
+    {
+      "source": "/Users/holtsdav/Documents/Dev/GlassdaysScreenshots/Assets/CreateEvent_DarkMode.png",
+      "copy": "Assets/glassdays-screenshots/create-dark.png",
+      "source_sha256": "303356d1087dd0f6b22267ff92b97a1f6b79b9aff5aab82537915d6bbea02b54",
+      "copy_sha256": "303356d1087dd0f6b22267ff92b97a1f6b79b9aff5aab82537915d6bbea02b54"
+    },
+    {
+      "source": "/Users/holtsdav/Documents/Dev/GlassdaysScreenshots/Assets/Widgets.png",
+      "copy": "Assets/glassdays-screenshots/widgets.png",
+      "source_sha256": "3492d95b4f18cf54c71b1c0f40a2b2408f1912b6978540842f76816b524bf74b",
+      "copy_sha256": "3492d95b4f18cf54c71b1c0f40a2b2408f1912b6978540842f76816b524bf74b"
+    },
+    {
+      "source": "/Users/holtsdav/Documents/Dev/GlassdaysScreenshots/Assets/Folders_Cropped.png",
+      "copy": "Assets/glassdays-screenshots/folders.png",
+      "source_sha256": "3dae41a92ce39dc89eb4d7202fda79f6c79d31582634eea9c527d1f718863ed9",
+      "copy_sha256": "3dae41a92ce39dc89eb4d7202fda79f6c79d31582634eea9c527d1f718863ed9"
+    }
+  ]
+}

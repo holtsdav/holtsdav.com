@@ -1,0 +1,94 @@
+{
+  "captured_at_utc": "2026-10-20T00:34:41.876412+00:00",
+  "source": "/Users/holtsdav/Documents/Dev/holtsdav.com",
+  "worktree": "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-dock",
+  "head": "b9069c2c2578d162102d416d877af5042afa33b6",
+  "source_status": [
+    " M DESIGN.md",
+    " M src/components/Header.astro",
+    " M src/components/ParticleWordmark.astro",
+    " M src/layouts/BaseLayout.astro",
+    " M src/pages/contact.astro",
+    " M src/scripts/particle-wordmark.ts",
+    " M src/styles/global.css",
+    "?? .claude/",
+    "?? .codex/"
+  ],
+  "copied_files": {
+    "DESIGN.md": "3f6accb525926178b9569516829c67a5ff8e22e3e080b5ab6a06b8c864c0d2d5",
+    "src/components/Header.astro": "5cde86394ec21e6c44750fdf583f80b993498364596e3437e4853636ad7a64d6",
+    "src/components/ParticleWordmark.astro": "e4ff1002f42033fe137b949901c2ee48815e026f93a81acc3f50432f2e421b69",
+    "src/layouts/BaseLayout.astro": "3bf806b7a982ece8e9419b36f448541b0e3ba9850021f42e311f30d8cd762199",
+    "src/pages/contact.astro": "1ca63aeb01170017adc5e086cdecf8c5fb0e3ef70e1e792fdf4f8649597a65b6",
+    "src/scripts/particle-wordmark.ts": "50be43f53cb89e7f396f3277b1d604d6c826605667be86cb352a420baf69d7ee",
+    "src/styles/global.css": "06f9cf39fc12e23d4a81e54f6ed808fb209334acefca666189dbbeecf3e6e217"
+  },
+  "untracked_settings_copied": false,
+  "t3_worktrees": [
+    {
+      "path": "/Users/holtsdav/.t3/worktrees/NotiLog/t3-a333228e",
+      "head": "d9d851f202c964f7f8c4610245ac48404d5b7c13",
+      "status": [
+        " M NotiLog/Features/History/HistoryFetchRequest.swift",
+        " M NotiLog/Features/History/HistoryListPresentation.swift",
+        " M NotiLog/Features/History/NotificationSectionExpansionState.swift",
+        " M NotiLog/Features/Settings/SettingsHistorySection.swift",
+        " M NotiLog/Features/Setup/OnboardingPageView.swift",
+        " M NotiLog/Features/Setup/OnboardingView.swift",
+        " M NotiLog/Features/Setup/ShortcutsOnboardingPage.swift",
+        " M NotiLog/Services/Retention/RetentionPeriod.swift",
+        " M NotiLog/Services/Retention/RetentionSettings.swift",
+        " M NotiLogTests/History/HistoryListPresentationTests.swift",
+        " M NotiLogTests/History/HistoryListProjectionTests.swift",
+        " M NotiLogTests/History/NotificationSectionExpansionStateTests.swift",
+        " M NotiLogTests/Persistence/RetentionTests.swift",
+        " M NotiLogTests/Services/AppStoreMetadataServiceTests.swift",
+        " M NotiLogTests/TestEnvironment.swift",
+        " M README.md",
+        " M docs/RELEASE_VALIDATION.md"
+      ]
+    },
+    {
+      "path": "/Users/holtsdav/.t3/worktrees/PDF_Editor/t3-44a29e92",
+      "head": "237cd1f4bb9899bf301b4084f4daa79522494992",
+      "status": []
+    },
+    {
+      "path": "/Users/holtsdav/.t3/worktrees/PDF_Editor/t3-69a77feb",
+      "head": "991b1f59911ed112423fb3ed2a3be4e6174ebaee",
+      "status": []
+    },
+    {
+      "path": "/Users/holtsdav/.t3/worktrees/PDF_Editor/t3-7ccbffe1",
+      "head": "f2ead4a88e34c1b4801e292859f97b9313b6d2ca",
+      "status": []
+    },
+    {
+      "path": "/Users/holtsdav/.t3/worktrees/SaveShelf/t3-724a683d",
+      "head": "44c693dc8ce6de708a9c1996609b3d3f02c9aa39",
+      "status": [
+        " M SaveShelf/LibraryView.swift",
+        " M SaveShelf/MainTabView.swift",
+        " M SaveShelf/OnboardingView.swift",
+        " M SaveShelf/SteamImportView.swift",
+        "?? SaveShelf/LibraryPlatformsRow.swift",
+        "?? SaveShelf/OnboardingPlatformsView.swift",
+        "?? SaveShelf/OwnedPlatform.swift",
+        "?? SaveShelf/OwnedPlatformEmblem.swift",
+        "?? SaveShelf/OwnedPlatformsStore.swift",
+        "?? SaveShelf/PlatformConnectionBadge.swift",
+        "?? SaveShelf/PlatformSettingsSheet.swift"
+      ]
+    },
+    {
+      "path": "/Users/holtsdav/.t3/worktrees/SaveShelf/t3-aff27a28",
+      "head": "5f615ef99a28a247f3dbea3d01ce2992c53c822f",
+      "status": []
+    },
+    {
+      "path": "/Users/holtsdav/.t3/worktrees/holtsdav.com/t3-18579d59",
+      "head": "b9069c2c2578d162102d416d877af5042afa33b6",
+      "status": []
+    }
+  ]
+}

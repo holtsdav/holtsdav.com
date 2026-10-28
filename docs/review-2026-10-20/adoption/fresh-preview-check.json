@@ -1,0 +1,147 @@
+{
+  "base": "http://127.0.0.1:4348",
+  "checked_at_utc": "2026-10-20T02:03:56.696198+00:00",
+  "source_state": "Only archive of documented baseline plus the two delivered patches; no previous dist/.astro. Existing local dependencies copied; no network installation.",
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "David Holtschke \u2014 Apps & useful software",
+      "sha256": "ab2a81dae1f05e2ccb273837f69185656eebc7f96f5758155c0457cdf0923263"
+    },
+    {
+      "route": "/project/glassdays/",
+      "status": 200,
+      "title": "Glassdays \u2014 Personal countdowns | David Holtschke",
+      "sha256": "a43a3d238ff8b9087c067c631d1d0c16f744542732c4cabc66f43942afaa6bcb"
+    },
+    {
+      "route": "/apps/mute-on-location/",
+      "status": 200,
+      "title": "Mute On Location | holtsdav",
+      "sha256": "48f84ef8a625e1c13bc0bed977c3386e14debd525b290eda1c611acc4b5e5560"
+    },
+    {
+      "route": "/support/notilog/",
+      "status": 200,
+      "title": "NotiLog support \u2014 Review draft | holtsdav",
+      "sha256": "547247bb8f997f99c80a160d8a80dc9e642e6315a272c25f2469b10fcec41168"
+    },
+    {
+      "route": "/drafts/notilog-privacy/",
+      "status": 200,
+      "title": "NotiLog privacy policy draft \u2014 Review draft | holtsdav",
+      "sha256": "2653ec8a8aec88e89ea74d4340d6ddc0db56294e665d220786fd7d484e6e4728"
+    }
+  ],
+  "assets": [
+    {
+      "path": "/_astro/BaseLayout.C0GC1S4d.css",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 55133
+    },
+    {
+      "path": "/_astro/GlassdaysPage.DaN9PMoy.css",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 5408
+    },
+    {
+      "path": "/_astro/MuteOnLocation-preview.CyPFFT6t_1E1XTN.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 17824
+    },
+    {
+      "path": "/_astro/MuteOnLocation-preview.CyPFFT6t_Z10b8OR.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 17898
+    },
+    {
+      "path": "/_astro/RoomPlaner.DTD4x_LV_Z1l64DK.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 31234
+    },
+    {
+      "path": "/_astro/create-dark.DkpEappN_Q6U8S.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 28720
+    },
+    {
+      "path": "/_astro/folders.QWY8x-Yq_Y3r61.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 38168
+    },
+    {
+      "path": "/_astro/glassdays.YmXm626k_1ckpLR.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 1994
+    },
+    {
+      "path": "/_astro/glassdays.YmXm626k_Z2pdl05.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 798
+    },
+    {
+      "path": "/_astro/glassdays.YmXm626k_ZH7Flc.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 616
+    },
+    {
+      "path": "/_astro/glassdays.YmXm626k_sSqoi.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 822
+    },
+    {
+      "path": "/_astro/home-light.DdE15i6D_Z1TqVoh.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 66430
+    },
+    {
+      "path": "/_astro/home-light.DdE15i6D_Z1VhTdX.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 47750
+    },
+    {
+      "path": "/_astro/mute-on-location.Dj6zSrOz_1czS2Q.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 2012
+    },
+    {
+      "path": "/_astro/mute-on-location.Dj6zSrOz_ZflPP8.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 8574
+    },
+    {
+      "path": "/_astro/portfolio.FUITkL0h.css",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 21308
+    },
+    {
+      "path": "/_astro/widgets.CWkoa1p9_NWXTi.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 24538
+    },
+    {
+      "path": "/_astro/widgets.CWkoa1p9_VPuHm.webp",
+      "status": 200,
+      "matches_fresh_build": true,
+      "bytes": 19502
+    }
+  ]
+}

@@ -1,0 +1,397 @@
+{
+  "checks": [
+    {
+      "path": "ADOPTION_MANIFEST.md",
+      "matches": true
+    },
+    {
+      "path": "Assets/app-icons/room-planner.svg",
+      "matches": true
+    },
+    {
+      "path": "Assets/glassdays-screenshots/create-dark.png",
+      "matches": true
+    },
+    {
+      "path": "Assets/glassdays-screenshots/folders.png",
+      "matches": true
+    },
+    {
+      "path": "Assets/glassdays-screenshots/home-light.png",
+      "matches": true
+    },
+    {
+      "path": "Assets/glassdays-screenshots/widgets.png",
+      "matches": true
+    },
+    {
+      "path": "DESIGN.md",
+      "matches": true
+    },
+    {
+      "path": "NOTILOG_DRAFT_REVIEW.md",
+      "matches": true
+    },
+    {
+      "path": "PORTFOLIO_FIXES.md",
+      "matches": true
+    },
+    {
+      "path": "PORTFOLIO_REVIEW.md",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/adoption/adoption-manifest.json",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/adoption/build-patches.py",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/adoption/changed-code-files.txt",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/adoption/changed-files.json",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/adoption/fresh-preview-check.json",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/adoption/fresh-startup.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/adoption/git-status-porcelain.txt",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/adoption/notilog-drafts.patch",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/adoption/portfolio-fixes.patch",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/adoption/screenshots-sha256.txt",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/baseline-build.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/baseline-inventory.json",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/browser-qa.json",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/browser-qa.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/contact-tests.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/copied-local-baseline.patch",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/diff-check.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/frontend-types.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/implementation-only.diff",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/keyboard-clearance.json",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/notilog-draft-build.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/notilog-draft-diff-check.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/notilog-draft-qa.json",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/notilog-draft-qa.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/notilog-draft-types.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/notilog-preview.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/notilog-source-evidence.json",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/portfolio-build.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/preservation-check.json",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshot-provenance.json",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/desktop-glassdays.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/desktop-home-viewport.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/desktop-home.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/desktop-notilog-privacy-draft.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/desktop-notilog-support.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/home-621-viewport.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/home-621.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/home-700-viewport.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/home-700.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/home-701-viewport.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/home-701.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/home-801-viewport.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/home-801.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/keyboard-desktop-copy.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/keyboard-mobile-mute.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/mobile-glassdays.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/mobile-home-viewport.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/mobile-home.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/mobile-mute.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/mobile-no-javascript.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/mobile-notilog-privacy-draft.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/screenshots/mobile-notilog-support.png",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/served-content-scan.json",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/start-preview.sh",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/startup-preview.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/typecheck.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/worker-types.log",
+      "matches": true
+    },
+    {
+      "path": "docs/review-2026-10-20/wrangler.log",
+      "matches": true
+    },
+    {
+      "path": "public/_redirects",
+      "matches": true
+    },
+    {
+      "path": "scripts/verify-notilog-drafts.mjs",
+      "matches": true
+    },
+    {
+      "path": "scripts/verify-portfolio.mjs",
+      "matches": true
+    },
+    {
+      "path": "src/components/DraftDocument.astro",
+      "matches": true
+    },
+    {
+      "path": "src/components/GlassdaysPage.astro",
+      "matches": true
+    },
+    {
+      "path": "src/components/Header.astro",
+      "matches": true
+    },
+    {
+      "path": "src/components/ParticleWordmark.astro",
+      "matches": true
+    },
+    {
+      "path": "src/components/PortfolioDock.astro",
+      "matches": true
+    },
+    {
+      "path": "src/components/PortfolioHome.astro",
+      "matches": true
+    },
+    {
+      "path": "src/layouts/BaseLayout.astro",
+      "matches": true
+    },
+    {
+      "path": "src/middleware.ts",
+      "matches": true
+    },
+    {
+      "path": "src/pages/Glassdays.astro",
+      "matches": true
+    },
+    {
+      "path": "src/pages/MuteOnLocation.astro",
+      "matches": true
+    },
+    {
+      "path": "src/pages/NotiLog.astro",
+      "matches": true
+    },
+    {
+      "path": "src/pages/RogueColor.astro",
+      "matches": true
+    },
+    {
+      "path": "src/pages/apps/glassdays-countdown.astro",
+      "matches": true
+    },
+    {
+      "path": "src/pages/apps/mute-on-location.astro",
+      "matches": true
+    },
+    {
+      "path": "src/pages/apps/room-planner.astro",
+      "matches": true
+    },
+    {
+      "path": "src/pages/contact.astro",
+      "matches": true
+    },
+    {
+      "path": "src/pages/drafts/notilog-privacy.astro",
+      "matches": true
+    },
+    {
+      "path": "src/pages/index.astro",
+      "matches": true
+    },
+    {
+      "path": "src/pages/project/[slug].astro",
+      "matches": true
+    },
+    {
+      "path": "src/pages/project/glassdays.astro",
+      "matches": true
+    },
+    {
+      "path": "src/pages/support/notilog.astro",
+      "matches": true
+    },
+    {
+      "path": "src/scripts/particle-wordmark.ts",
+      "matches": true
+    },
+    {
+      "path": "src/scripts/portfolio.ts",
+      "matches": true
+    },
+    {
+      "path": "src/styles/document-draft.css",
+      "matches": true
+    },
+    {
+      "path": "src/styles/glassdays-case.css",
+      "matches": true
+    },
+    {
+      "path": "src/styles/global.css",
+      "matches": true
+    },
+    {
+      "path": "src/styles/portfolio.css",
+      "matches": true
+    }
+  ],
+  "all_match": true
+}

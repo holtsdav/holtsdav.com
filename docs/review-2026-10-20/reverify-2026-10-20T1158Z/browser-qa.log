@@ -1,0 +1,13 @@
+PASS Homepage semantics, still imagery, local links
+PASS Responsive painted hero bounds at 320, 390, 620, 621, 700, 701, 768, 800, 801, 900, 901, 1024 and 1440 pixels
+PASS Project filtering and direct project navigation
+PASS Dock navigation, active section and reduced motion
+PASS Keyboard skip link and visible focus
+PASS Sequential keyboard targets clear the dock at mobile and desktop heights
+PASS Copy email feedback
+PASS New project pages, privacy and legal links resolve locally
+PASS Public destinations, truthful Mute release copy and legacy aliases
+PASS Images decode and desktop/mobile screenshots
+PASS Text contrast on homepage and Glassdays page
+PASS Readable portfolio with JavaScript disabled
+PASS No browser JavaScript exceptions

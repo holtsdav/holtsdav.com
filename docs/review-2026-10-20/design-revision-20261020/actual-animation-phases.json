@@ -1,0 +1,72 @@
+[
+  {
+    "label": "desktop",
+    "time": 100,
+    "phase": "static"
+  },
+  {
+    "label": "desktop",
+    "time": 1500,
+    "phase": "extract"
+  },
+  {
+    "label": "desktop",
+    "time": 2200,
+    "phase": "move"
+  },
+  {
+    "label": "desktop",
+    "time": 2450,
+    "phase": "move"
+  },
+  {
+    "label": "desktop",
+    "time": 2700,
+    "phase": "move"
+  },
+  {
+    "label": "desktop",
+    "time": 3000,
+    "phase": "move"
+  },
+  {
+    "label": "desktop",
+    "time": 3700,
+    "phase": "joined"
+  },
+  {
+    "label": "mobile",
+    "time": 100,
+    "phase": "static"
+  },
+  {
+    "label": "mobile",
+    "time": 1500,
+    "phase": "extract"
+  },
+  {
+    "label": "mobile",
+    "time": 2200,
+    "phase": "move"
+  },
+  {
+    "label": "mobile",
+    "time": 2450,
+    "phase": "move"
+  },
+  {
+    "label": "mobile",
+    "time": 2700,
+    "phase": "move"
+  },
+  {
+    "label": "mobile",
+    "time": 3000,
+    "phase": "move"
+  },
+  {
+    "label": "mobile",
+    "time": 3700,
+    "phase": "joined"
+  }
+]

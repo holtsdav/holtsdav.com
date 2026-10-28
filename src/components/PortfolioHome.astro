@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import NameReveal from './NameReveal.astro';
+import PortfolioDock from './PortfolioDock.astro';
+import davidMark from '../../Assets/holtsdav-logo.png';
+import glassdaysIcon from '../../Assets/app-icons/glassdays.png';
+import muteIcon from '../../Assets/app-icons/mute-on-location.png';
+import roomIcon from '../../Assets/app-icons/room-planner.svg';
+import glassdaysHome from '../../Assets/glassdays-screenshots/home-light.png';
+import glassdaysWidgets from '../../Assets/glassdays-screenshots/widgets.png';
+import mutePreview from '../../Assets/MuteOnLocation-preview.png';
+import roomPreview from '../../Assets/RoomPlaner.png';
+import '../styles/portfolio-v2.css';
+---
+<div class="studio folio" id="home" data-portfolio-section>
+  <header class="studio-header studio-shell"><a class="studio-brand" href="#home" aria-label="holtsdav — Home"><Image src={davidMark} alt="" width={30} height={30} format="webp" /><span>holtsdav</span></a><nav aria-label="Quick links"><a href="#projects">Work</a><a href="#about">About</a><a href="mailto:contact@holtsdav.com">Email ↗</a></nav></header>
+  <section class="studio-intro studio-shell folio-hero" aria-label="David Holtschke, software developer">
+    <div class="studio-meta"><span>Software developer</span><span>Munich, Germany</span></div>
+    <NameReveal />
+    <p class="studio-introduction">I make apps for Apple platforms<br class="intro-break" /> and tools for the web.</p>
+    <a class="studio-work-link" href="#projects">Selected work <span aria-hidden="true">↓</span></a>
+  </section>
+  <section class="studio-work studio-shell" id="projects" data-portfolio-section aria-labelledby="work-title">
+    <header class="studio-section-heading"><h2 id="work-title">Work <span>03</span></h2><div class="studio-filters" data-project-filters hidden><div class="folio-filters" role="group" aria-label="Filter projects"><button type="button" data-filter="all" aria-pressed="true">All work</button><button type="button" data-filter="apple" aria-pressed="false">Apple apps</button><button type="button" data-filter="web" aria-pressed="false">Web tools</button></div><span class="studio-filter-count" data-filter-count aria-live="polite" aria-atomic="true">3 projects</span></div></header>
+    <div class="studio-workspace">
+      <aside class="studio-index" aria-label="Project index"><a href="#glassdays"><span>01</span> Glassdays</a><a href="#mute-on-location"><span>02</span> Mute On Location</a><a href="#room-planner"><span>03</span> Room Planner</a><p>Apps & tools<br />by David Holtschke.</p></aside>
+      <div class="studio-projects">
+        <article class="studio-project" id="glassdays" data-project="apple" aria-labelledby="glassdays-title">
+          <div class="studio-project-head"><Image src={glassdaysIcon} alt="" width={40} height={40} format="webp" /><div><h3 id="glassdays-title">Glassdays</h3><p>iPhone & iPad <span>·</span> Swift</p></div><span class="studio-project-number" aria-hidden="true">01</span></div>
+          <a class="studio-media studio-glass" href="/apps/glassdays-countdown/" aria-label="Explore Glassdays"><div class="studio-phone-pair"><Image src={glassdaysHome} alt="Glassdays countdown list with pinned dates, photos and emoji" width={480} height={1044} format="webp" quality={90} loading="eager" /><Image src={glassdaysWidgets} alt="Glassdays widgets showing upcoming events on an iPhone home screen" width={400} height={870} format="webp" quality={90} loading="lazy" /></div><span class="studio-media-note">Countdowns <span>+ widgets</span></span></a>
+          <div class="studio-project-caption"><p>Photo countdowns, collections and Home Screen widgets.</p><div><a class="studio-detail" href="/apps/glassdays-countdown/">Details ↗</a><a href="https://apps.apple.com/de/app/glassdays-countdown/id6785538729" target="_blank" rel="noreferrer" aria-label="Glassdays on the App Store">App Store ↗</a></div></div>
+        </article>
+        <article class="studio-project" id="mute-on-location" data-project="apple" aria-labelledby="mute-title">
+          <div class="studio-project-head"><Image src={muteIcon} alt="" width={40} height={40} format="webp" /><div><h3 id="mute-title">Mute On Location</h3><p>macOS <span>·</span> Swift</p></div><span class="studio-project-number" aria-hidden="true">02</span></div>
+          <a class="studio-media studio-mute" href="/apps/mute-on-location/" aria-label="Explore Mute On Location"><Image src={mutePreview} alt="Mute On Location’s Mac menu bar window with saved places and the current mute status" width={1200} height={750} format="webp" quality={90} loading="lazy" /></a>
+          <div class="studio-project-caption"><p>Mute your Mac automatically when you reach a saved place.</p><div><a class="studio-detail" href="/apps/mute-on-location/">Details ↗</a><a href="https://apps.apple.com/de/app/mute-on-location/id6790398791?l=en-GB&amp;mt=12" target="_blank" rel="noreferrer" aria-label="Mute On Location on the Mac App Store">App Store ↗</a></div></div>
+        </article>
+        <article class="studio-project" id="room-planner" data-project="web" aria-labelledby="room-title">
+          <div class="studio-project-head"><Image src={roomIcon} alt="" width={40} height={40} /><div><h3 id="room-title">Room Planner</h3><p>Web tool</p></div><span class="studio-project-number" aria-hidden="true">03</span></div>
+          <a class="studio-media studio-room" href="/apps/room-planner/" aria-label="Explore Room Planner"><Image src={roomPreview} alt="Room Planner’s furnished floor plan, measurements, and object library" width={1200} height={792} format="webp" quality={90} loading="lazy" /></a>
+          <div class="studio-project-caption"><p>A measured canvas for arranging rooms and furniture.</p><div><a class="studio-detail" href="/apps/room-planner/">Details ↗</a><a href="https://holtsdav.com/RoomPlanner" target="_blank" rel="noreferrer">Open tool ↗</a><a href="https://github.com/holtsdav/RoomPlanner" target="_blank" rel="noreferrer" aria-label="Room Planner source on GitHub">Source ↗</a></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="studio-about studio-shell" id="about" data-portfolio-section aria-labelledby="about-title"><h2 id="about-title">About</h2><div><p class="studio-about-lead">David Holtschke.<br />Software developer in Munich.</p><p>I work on native Apple apps and interactive web tools. The projects above are a few of the things I’ve built.</p><div class="studio-elsewhere"><a href="https://github.com/holtsdav" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/david-holtschke" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></div></section>
+  <section class="studio-contact studio-shell" id="contact" data-portfolio-section aria-labelledby="contact-title"><h2 id="contact-title">Contact</h2><div><a class="studio-email" href="mailto:contact@holtsdav.com">contact@holtsdav.com <span aria-hidden="true">↗</span></a><p>App questions, project ideas, or a hello.</p><div class="studio-copy"><button type="button" data-copy-email hidden>Copy email</button><span data-copy-status role="status"></span></div></div></section>
+</div>
+<PortfolioDock />
+<script>
+  import '../scripts/portfolio';
+</script>

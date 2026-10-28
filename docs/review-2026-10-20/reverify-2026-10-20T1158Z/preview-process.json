@@ -1,0 +1,14 @@
+{
+  "checked_at_utc": "2026-10-20T12:02:29.253365+00:00",
+  "url": "http://127.0.0.1:4326/",
+  "bind": "127.0.0.1",
+  "port": 4326,
+  "listener_pid": 8053,
+  "lsof_process_and_cwd": "COMMAND  PID PPID     USER   FD   TYPE DEVICE SIZE/OFF     NODE NAME\nnode    8053 7952 holtsdav  cwd    DIR   1,16      896 58211349 /Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-dock\n",
+  "cwd": "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-dock",
+  "owned_exec_session": 74988,
+  "owner": "This portfolio review task; launched via docs/review-2026-10-20/start-preview.sh",
+  "foreground_browser_opened": true,
+  "lifecycle": "Kept available for David as explicitly requested; no automatic teardown at task end.",
+  "foreground_opening_evidence": "safari-opening.json"
+}

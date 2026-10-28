@@ -1,0 +1,53 @@
+{
+  "checked_at_utc": "2026-10-20T12:02:33.467556+00:00",
+  "routes": [
+    {
+      "url": "http://127.0.0.1:4326/",
+      "status": 200,
+      "title": "David Holtschke \u2014 Apps & useful software",
+      "unpublished_draft": false
+    },
+    {
+      "url": "http://127.0.0.1:4326/apps/glassdays-countdown/",
+      "status": 200,
+      "title": "Glassdays \u2014 Personal countdowns | David Holtschke",
+      "unpublished_draft": false
+    },
+    {
+      "url": "http://127.0.0.1:4326/project/glassdays/",
+      "status": 200,
+      "title": "Glassdays \u2014 Personal countdowns | David Holtschke",
+      "unpublished_draft": false
+    },
+    {
+      "url": "http://127.0.0.1:4326/apps/mute-on-location/",
+      "status": 200,
+      "title": "Mute On Location | holtsdav",
+      "unpublished_draft": false
+    },
+    {
+      "url": "http://127.0.0.1:4326/apps/room-planner/",
+      "status": 200,
+      "title": "Room Planner | holtsdav",
+      "unpublished_draft": false
+    },
+    {
+      "url": "http://127.0.0.1:4326/support/notilog/",
+      "status": 200,
+      "title": "NotiLog support \u2014 Review draft | holtsdav",
+      "unpublished_draft": true
+    },
+    {
+      "url": "http://127.0.0.1:4326/drafts/notilog-privacy/",
+      "status": 200,
+      "title": "NotiLog privacy policy draft \u2014 Review draft | holtsdav",
+      "unpublished_draft": true
+    },
+    {
+      "url": "http://127.0.0.1:4326/contact/",
+      "status": 200,
+      "title": "Contact | holtsdav",
+      "unpublished_draft": false
+    }
+  ]
+}

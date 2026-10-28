@@ -1,0 +1,32 @@
+---
+import AppLanding from '../../components/AppLanding.astro';
+import roomIcon from '../../../Assets/app-icons/room-planner.svg';
+import roomPreview from '../../../Assets/RoomPlaner.png';
+---
+<AppLanding
+  name="Room Planner"
+  slug="room-planner"
+  icon={roomIcon}
+  status="Interactive web tool"
+  kicker="In your browser · Room layouts"
+  headline="Plan a room before moving the furniture."
+  description="Arrange furniture and objects on a measured floor plan. Explore a layout, adjust the room, and keep your plan on your device."
+  accent="#cbdce9"
+  features={[
+    { number: '01', title: 'Work with room dimensions', description: 'Use the measured canvas to see the room and its dimensions while you arrange the layout.' },
+    { number: '02', title: 'Arrange objects', description: 'Choose from the object library, place items in the room, and move them into position.' },
+    { number: '03', title: 'Keep the plan on your device', description: 'The tool saves the plan locally so you can return to the layout in your browser.' },
+  ]}
+  closingHeadline="Make room for a better layout."
+  closingDescription="Try the existing Room Planner web tool to explore your own arrangement."
+  primaryLabel="Open Room Planner"
+  primaryHref="https://holtsdav.com/RoomPlanner"
+  secondaryLabel="View public source"
+  secondaryHref="https://github.com/holtsdav/RoomPlanner"
+  privacyHref="/privacy/roomplanner/"
+  mediaSrc={roomPreview}
+  mediaAlt="Room Planner with a furnished floor plan, room measurements, and an object library"
+  mediaWidth={1200}
+  mediaHeight={792}
+  mediaCaption="Room Planner · Browser interface"
+/>

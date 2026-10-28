@@ -1,0 +1,99 @@
+ M DESIGN.md
+ M public/_redirects
+ M src/components/Header.astro
+ M src/components/ParticleWordmark.astro
+ M src/layouts/BaseLayout.astro
+ M src/middleware.ts
+ M src/pages/Glassdays.astro
+ M src/pages/MuteOnLocation.astro
+ M src/pages/NotiLog.astro
+ M src/pages/RogueColor.astro
+ M src/pages/apps/glassdays-countdown.astro
+ M src/pages/apps/mute-on-location.astro
+ M src/pages/contact.astro
+ M src/pages/index.astro
+ M src/pages/project/[slug].astro
+ M src/scripts/particle-wordmark.ts
+ M src/styles/global.css
+?? ADOPTION_MANIFEST.md
+?? Assets/app-icons/room-planner.svg
+?? Assets/glassdays-screenshots/create-dark.png
+?? Assets/glassdays-screenshots/folders.png
+?? Assets/glassdays-screenshots/home-light.png
+?? Assets/glassdays-screenshots/widgets.png
+?? NOTILOG_DRAFT_REVIEW.md
+?? PORTFOLIO_FIXES.md
+?? PORTFOLIO_REVIEW.md
+?? docs/review-2026-10-20/adoption/adoption-manifest.json
+?? docs/review-2026-10-20/adoption/build-patches.py
+?? docs/review-2026-10-20/adoption/changed-code-files.txt
+?? docs/review-2026-10-20/adoption/changed-files.json
+?? docs/review-2026-10-20/adoption/fresh-preview-check.json
+?? docs/review-2026-10-20/adoption/fresh-startup.log
+?? docs/review-2026-10-20/adoption/git-status-porcelain.txt
+?? docs/review-2026-10-20/adoption/notilog-drafts.patch
+?? docs/review-2026-10-20/adoption/package-sha256.txt
+?? docs/review-2026-10-20/adoption/portfolio-fixes.patch
+?? docs/review-2026-10-20/adoption/screenshots-sha256.txt
+?? docs/review-2026-10-20/baseline-build.log
+?? docs/review-2026-10-20/baseline-inventory.json
+?? docs/review-2026-10-20/browser-qa.json
+?? docs/review-2026-10-20/browser-qa.log
+?? docs/review-2026-10-20/contact-tests.log
+?? docs/review-2026-10-20/copied-local-baseline.patch
+?? docs/review-2026-10-20/diff-check.log
+?? docs/review-2026-10-20/frontend-types.log
+?? docs/review-2026-10-20/implementation-only.diff
+?? docs/review-2026-10-20/keyboard-clearance.json
+?? docs/review-2026-10-20/notilog-draft-build.log
+?? docs/review-2026-10-20/notilog-draft-diff-check.log
+?? docs/review-2026-10-20/notilog-draft-qa.json
+?? docs/review-2026-10-20/notilog-draft-qa.log
+?? docs/review-2026-10-20/notilog-draft-types.log
+?? docs/review-2026-10-20/notilog-preview.log
+?? docs/review-2026-10-20/notilog-source-evidence.json
+?? docs/review-2026-10-20/portfolio-build.log
+?? docs/review-2026-10-20/preservation-check.json
+?? docs/review-2026-10-20/screenshot-provenance.json
+?? docs/review-2026-10-20/screenshots/desktop-glassdays.png
+?? docs/review-2026-10-20/screenshots/desktop-home-viewport.png
+?? docs/review-2026-10-20/screenshots/desktop-home.png
+?? docs/review-2026-10-20/screenshots/desktop-notilog-privacy-draft.png
+?? docs/review-2026-10-20/screenshots/desktop-notilog-support.png
+?? docs/review-2026-10-20/screenshots/home-621-viewport.png
+?? docs/review-2026-10-20/screenshots/home-621.png
+?? docs/review-2026-10-20/screenshots/home-700-viewport.png
+?? docs/review-2026-10-20/screenshots/home-700.png
+?? docs/review-2026-10-20/screenshots/home-701-viewport.png
+?? docs/review-2026-10-20/screenshots/home-701.png
+?? docs/review-2026-10-20/screenshots/home-801-viewport.png
+?? docs/review-2026-10-20/screenshots/home-801.png
+?? docs/review-2026-10-20/screenshots/keyboard-desktop-copy.png
+?? docs/review-2026-10-20/screenshots/keyboard-mobile-mute.png
+?? docs/review-2026-10-20/screenshots/mobile-glassdays.png
+?? docs/review-2026-10-20/screenshots/mobile-home-viewport.png
+?? docs/review-2026-10-20/screenshots/mobile-home.png
+?? docs/review-2026-10-20/screenshots/mobile-mute.png
+?? docs/review-2026-10-20/screenshots/mobile-no-javascript.png
+?? docs/review-2026-10-20/screenshots/mobile-notilog-privacy-draft.png
+?? docs/review-2026-10-20/screenshots/mobile-notilog-support.png
+?? docs/review-2026-10-20/served-content-scan.json
+?? docs/review-2026-10-20/start-preview.sh
+?? docs/review-2026-10-20/startup-preview.log
+?? docs/review-2026-10-20/typecheck.log
+?? docs/review-2026-10-20/worker-types.log
+?? docs/review-2026-10-20/wrangler.log
+?? scripts/verify-notilog-drafts.mjs
+?? scripts/verify-portfolio.mjs
+?? src/components/DraftDocument.astro
+?? src/components/GlassdaysPage.astro
+?? src/components/PortfolioDock.astro
+?? src/components/PortfolioHome.astro
+?? src/pages/apps/room-planner.astro
+?? src/pages/drafts/notilog-privacy.astro
+?? src/pages/project/glassdays.astro
+?? src/pages/support/notilog.astro
+?? src/scripts/portfolio.ts
+?? src/styles/document-draft.css
+?? src/styles/glassdays-case.css
+?? src/styles/portfolio.css

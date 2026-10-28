@@ -1,0 +1,17 @@
+{
+  "captured_at_utc": "2026-10-20T12:17:36.303212+00:00",
+  "source_archive": "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-dock/docs/review-2026-10-20/design-revision-20261020/v1-rejected-source.tar.gz",
+  "archive_sha256": "67c2c6fe79096e87af9c3abf19b01b90fead378a2b1207b1db6ecca51a307d7a",
+  "code_hashes": {
+    "src/components/PortfolioHome.astro": "fd8e81a78bf042c3412695fec3317eca533005090912d42f19e885d9e33630e5",
+    "src/components/PortfolioDock.astro": "1debde58dbc06460b7d3ca119bd10f0295af521647e3f4a01891153e8f7eb141",
+    "src/scripts/portfolio.ts": "7c6d8cc4a6f8916e208475b1dc80e950b3456a8e71e85b2dd7533a76afe657db",
+    "src/styles/portfolio.css": "209836b570286980b18fe8f149cb2223ef5628e54d7638fcf2fbdf1232b147c4",
+    "src/pages/index.astro": "9bff5df23bb235d9da42d57720eab78b1daccc785faf6572e9aa0f0838774eac",
+    "src/components/GlassdaysPage.astro": "965d2195eb61e8f37a289f047e59f4eccd6aafc94089b698069f504d57b566dd",
+    "src/styles/glassdays-case.css": "ea71393e8f0fa8112901fc451be7b303cb9079cd693e0368724ef5d83caaef28"
+  },
+  "branch": "codex/portfolio-dock-20261020",
+  "head": "b9069c2c2578d162102d416d877af5042afa33b6",
+  "original_checkout_not_modified": true
+}

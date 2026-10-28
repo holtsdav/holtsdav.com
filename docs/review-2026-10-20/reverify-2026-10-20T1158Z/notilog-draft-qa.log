@@ -1,0 +1,9 @@
+PASS notilog-support: draft markers, semantics, privacy and links
+PASS notilog-support: responsive text bounds at 320, 390, 621, 768, 1024 and 1440 px
+PASS notilog-support: text contrast
+PASS notilog-support: keyboard, anchor clearance, no-JavaScript content and screenshots
+PASS notilog-privacy-draft: draft markers, semantics, privacy and links
+PASS notilog-privacy-draft: responsive text bounds at 320, 390, 621, 768, 1024 and 1440 px
+PASS notilog-privacy-draft: text contrast
+PASS notilog-privacy-draft: keyboard, anchor clearance, no-JavaScript content and screenshots
+PASS No JavaScript exceptions

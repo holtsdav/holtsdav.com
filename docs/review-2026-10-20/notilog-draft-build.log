@@ -1,0 +1,74 @@
+
+> holtsdav.com@0.0.1 build
+> astro build
+
+03:37:07 [types] Generated 16ms
+03:37:07 [build] output: "static"
+03:37:07 [build] mode: "static"
+03:37:07 [build] directory: /Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-dock/dist/
+03:37:07 [build] Collecting build info...
+03:37:07 [build] ✓ Completed in 31ms.
+03:37:07 [build] Building static entrypoints...
+03:37:08 [vite] ✓ built in 137ms
+03:37:08 [vite] ✓ built in 10ms
+03:37:08 [build] Rearranging server assets...
+
+ generating static routes 
+03:37:08   ├─ /404.html (+5ms) 
+03:37:08   ├─ /apps/glassdays-countdown/privacy/en/index.html (+2ms) 
+03:37:08   ├─ /apps/glassdays-countdown/privacy/es/index.html (+1ms) 
+03:37:08   ├─ /apps/glassdays-countdown/privacy/index.html (+1ms) 
+03:37:08   ├─ /apps/glassdays-countdown/index.html (+5ms) 
+03:37:08   ├─ /apps/mute-on-location/privacy/index.html (+1ms) 
+03:37:08   ├─ /apps/mute-on-location/index.html (+2ms) 
+03:37:08   ├─ /apps/rogue-color/index.html (+2ms) 
+03:37:08   ├─ /apps/room-planner/index.html (+2ms) 
+03:37:08   ├─ /contact/index.html (+1ms) 
+03:37:08   ├─ /drafts/notilog-privacy/index.html (+1ms) 
+03:37:08   ├─ /Glassdays/index.html (+1ms) 
+03:37:08   ├─ /impressum/index.html (+1ms) 
+03:37:08   ├─ /MuteOnLocation/index.html (+0ms) 
+03:37:08   ├─ /NotiLog/index.html (+0ms) 
+03:37:08   ├─ /privacy/index.html (+1ms) 
+03:37:08   ├─ /privacy/glassdays/index.html (+1ms) 
+03:37:08   ├─ /privacy/glassdays/de/index.html (+1ms) 
+03:37:08   ├─ /privacy/glassdays/es/index.html (+0ms) 
+03:37:08   ├─ /privacy/muteonlocation/index.html (+0ms) 
+03:37:08   ├─ /privacy/notilog/index.html (+0ms) 
+03:37:08   ├─ /privacy/roomplanner/index.html (+0ms) 
+03:37:08   ├─ /privacy/roguecolor/index.html (+0ms) 
+03:37:08   ├─ /project/glassdays/index.html (+1ms) 
+03:37:08   ├─ /project/mute-on-location/index.html (+0ms) 
+03:37:08   ├─ /project/rogue-color/index.html (+0ms) 
+03:37:08   ├─ /project/RoomPlanner/index.html (+0ms) 
+03:37:08   ├─ /project/notilog/index.html (+0ms) 
+03:37:08   ├─ /RogueColor/index.html (+1ms) 
+03:37:08   ├─ /support/notilog/index.html (+1ms) 
+03:37:08   ├─ /index.html (+7ms) 
+03:37:08 ✓ Completed in 49ms.
+
+ generating optimized images 
+03:37:08   ▶ /_astro/glassdays.YmXm626k_sSqoi.webp (reused cache entry) (+1ms) (1/19)
+03:37:08   ▶ /_astro/widgets.CWkoa1p9_NWXTi.webp (reused cache entry) (+1ms) (2/19)
+03:37:08   ▶ /_astro/folders.QWY8x-Yq_Y3r61.webp (reused cache entry) (+1ms) (3/19)
+03:37:08   ▶ /_astro/home-light.DdE15i6D_Z1TqVoh.webp (reused cache entry) (+1ms) (4/19)
+03:37:08   ▶ /_astro/MuteOnLocation-preview.CyPFFT6t_1E1XTN.webp (reused cache entry) (+1ms) (5/19)
+03:37:08   ▶ /_astro/room-planner.BVdjUzWm_LQeXu.svg (reused cache entry) (+1ms) (6/19)
+03:37:08   ▶ /_astro/mute-on-location.Dj6zSrOz_ZflPP8.webp (reused cache entry) (+1ms) (7/19)
+03:37:08   ▶ /_astro/rogue-color.BesqzYZv_zAr5w.webp (reused cache entry) (+1ms) (8/19)
+03:37:08   ▶ /_astro/RoomPlaner.DTD4x_LV_2r74Gk.webp (reused cache entry) (+1ms) (9/19)
+03:37:08   ▶ /_astro/create-dark.DkpEappN_Q6U8S.webp (reused cache entry) (+1ms) (10/19)
+03:37:08   ▶ /_astro/glassdays.YmXm626k_Z2pdl05.webp (reused cache entry) (+1ms) (11/19)
+03:37:08   ▶ /_astro/widgets.CWkoa1p9_VPuHm.webp (reused cache entry) (+1ms) (12/19)
+03:37:08   ▶ /_astro/MuteOnLocation-preview.CyPFFT6t_Z10b8OR.webp (reused cache entry) (+1ms) (13/19)
+03:37:08   ▶ /_astro/rogue-color-gameplay.pwhkFR4F_1LJ4zs.webp (reused cache entry) (+2ms) (14/19)
+03:37:08   ▶ /_astro/home-light.DdE15i6D_Z1VhTdX.webp (reused cache entry) (+1ms) (15/19)
+03:37:08   ▶ /_astro/mute-on-location.Dj6zSrOz_1czS2Q.webp (reused cache entry) (+1ms) (16/19)
+03:37:08   ▶ /_astro/RoomPlaner.DTD4x_LV_Z1l64DK.webp (reused cache entry) (+1ms) (17/19)
+03:37:08   ▶ /_astro/glassdays.YmXm626k_1ckpLR.webp (reused cache entry) (+1ms) (18/19)
+03:37:08   ▶ /_astro/glassdays.YmXm626k_ZH7Flc.webp (reused cache entry) (+0ms) (19/19)
+03:37:08 ✓ Completed in 3ms.
+
+03:37:08 [build] ✓ Completed in 217ms.
+03:37:08 [build] 31 page(s) built in 255ms
+03:37:08 [build] Complete!

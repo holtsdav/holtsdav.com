@@ -1,0 +1,9 @@
+---
+import { Image } from 'astro:assets';
+import davidMark from '../../Assets/holtsdav-logo.png';
+---
+<nav class="folio-dock studio-dock" aria-label="Portfolio sections">
+  <a href="#projects" data-section="projects"><svg class="dock-object dock-folder" viewBox="0 0 56 48" aria-hidden="true"><path d="M5 8a4 4 0 0 1 4-4h14l5 6h18a5 5 0 0 1 5 5v25H5Z" fill="#568ab8"/><path d="M5 14h46l-4 27a4 4 0 0 1-4 3H9a4 4 0 0 1-4-4Z" fill="#a6cbe7"/><path d="M7 16h42" stroke="#d9ecfb" stroke-width="2"/></svg><span>Work</span><i aria-hidden="true"></i></a>
+  <a href="#about" data-section="about"><Image class="dock-object dock-portrait" src={davidMark} alt="" width={48} height={48} format="webp" /><span>About</span><i aria-hidden="true"></i></a>
+  <a href="#contact" data-section="contact"><svg class="dock-object dock-mail" viewBox="0 0 56 48" aria-hidden="true"><rect x="5" y="6" width="46" height="36" rx="5" fill="#ecf0e7" stroke="#8f9b83"/><path d="m7 10 21 16 21-16M7 39l14-14M49 39 35 25" fill="none" stroke="#667c58" stroke-width="2" stroke-linejoin="round"/></svg><span>Contact</span><i aria-hidden="true"></i></a>
+</nav>

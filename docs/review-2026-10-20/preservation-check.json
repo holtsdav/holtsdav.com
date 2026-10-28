@@ -1,0 +1,14 @@
+{
+  "original_tracked_files_match_initial_hashes": {
+    "DESIGN.md": true,
+    "src/components/Header.astro": true,
+    "src/components/ParticleWordmark.astro": true,
+    "src/layouts/BaseLayout.astro": true,
+    "src/pages/contact.astro": true,
+    "src/scripts/particle-wordmark.ts": true,
+    "src/styles/global.css": true
+  },
+  "original_status_matches_initial": true,
+  "existing_website_t3_status": [],
+  "new_worktree": "worktree /Users/holtsdav/Documents/Dev/holtsdav.com\nHEAD b9069c2c2578d162102d416d877af5042afa33b6\nbranch refs/heads/main\n\nworktree /Users/holtsdav/.t3/worktrees/holtsdav.com/t3-18579d59\nHEAD b9069c2c2578d162102d416d877af5042afa33b6\nbranch refs/heads/t3/trim-site-development\n\nworktree /Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-dock\nHEAD b9069c2c2578d162102d416d877af5042afa33b6\nbranch refs/heads/codex/portfolio-dock-20261020\n\n"
+}

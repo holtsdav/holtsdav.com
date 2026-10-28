@@ -1,0 +1,45 @@
+
+> holtsdav.com@0.0.1 check
+> tsc --noEmit && npm run contact:types && tsc -p workers/contact/tsconfig.json
+
+
+> holtsdav.com@0.0.1 contact:types
+> wrangler types --config workers/contact/wrangler.jsonc workers/contact/worker-configuration.d.ts --env-interface ContactEnv
+
+
+ ⛅️ wrangler 4.129.0 (update available 4.151.2)
+───────────────────────────────────────────────
+Generating project types...
+
+interface __BaseEnv_ContactEnv {
+	CONTACT_EMAIL: SendEmail;
+	CONTACT_RATE_LIMIT: RateLimit;
+	ALLOWED_ORIGINS: "https://holtsdav.com,https://www.holtsdav.com";
+	TURNSTILE_SITE_KEY: "0x4AAAAAAErhKY3UFv7LcXz4";
+	TURNSTILE_SECRET: string;
+}
+declare namespace Cloudflare {
+	interface GlobalProps {
+		mainModule: typeof import("./index");
+	}
+	interface Env extends __BaseEnv_ContactEnv {}
+}
+interface ContactEnv extends __BaseEnv_ContactEnv {}
+type StringifyValues<EnvType extends Record<string, unknown>> = {
+	[Binding in keyof EnvType]: EnvType[Binding] extends string ? EnvType[Binding] : string;
+};
+declare namespace NodeJS {
+	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "ALLOWED_ORIGINS" | "TURNSTILE_SITE_KEY" | "TURNSTILE_SECRET">> {}
+}
+
+Generating runtime types...
+
+Runtime types generated.
+
+
+✨ Types written to workers/contact/worker-configuration.d.ts
+
+📖 Read about runtime types
+https://developers.cloudflare.com/workers/languages/typescript/#generate-types
+📣 Remember to rerun 'wrangler types' after you change your wrangler.jsonc file.
+

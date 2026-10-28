@@ -2,25 +2,61 @@
 import SocialLinks from './SocialLinks.astro';
 ---
 
-<header class="site-header">
-	<div class="shell header-inner">
-		<a class="wordmark" href="/" aria-label="holtsdav – Home">
-			holts<span class="wordmark-dav">dav</span>
-		</a>
-
-		<div class="header-actions">
-			<SocialLinks class="header-socials" />
-			<a
-				class="header-contact"
-				href={import.meta.env.DEV ? 'mailto:contact@holtsdav.com' : '/contact/'}
-				aria-label="Contact David Holtschke"
-				title="Contact"
-			>
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M3 5.5h18v13H3z" />
-					<path d="m3.5 6 8.5 7 8.5-7" />
-				</svg>
+<header class="site-header" id="site-header">
+	<div class="header-floating-wrap">
+		<nav class="header-inner" aria-label="Main navigation">
+			<a class="wordmark" href="/" aria-label="holtsdav – Home">
+				holts<span class="wordmark-dav">dav</span>
 			</a>
-		</div>
+
+			<div class="header-nav-center">
+				<a href="/#projects" class="header-nav-pill">Projects</a>
+				<a href="/#about" class="header-nav-pill">About</a>
+			</div>
+
+			<div class="header-actions">
+				<SocialLinks class="header-socials" />
+				<a
+					class="header-contact-btn"
+					href={import.meta.env.DEV ? 'mailto:contact@holtsdav.com' : '/contact/'}
+					aria-label="Contact David Holtschke"
+					title="Contact"
+				>
+					<span>Contact</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true">
+						<path d="M3 5.5h18v13H3z" />
+						<path d="m3.5 6 8.5 7 8.5-7" />
+					</svg>
+				</a>
+			</div>
+		</nav>
 	</div>
 </header>
+
+<script is:inline>
+	(() => {
+		const header = document.getElementById('site-header');
+		if (!header) return;
+
+		let ticking = false;
+		const updateScrollState = () => {
+			const isScrolled = window.scrollY > 16;
+			if (isScrolled) {
+				header.setAttribute('data-scrolled', 'true');
+			} else {
+				header.removeAttribute('data-scrolled');
+			}
+			ticking = false;
+		};
+
+		const onScroll = () => {
+			if (!ticking) {
+				window.requestAnimationFrame(updateScrollState);
+				ticking = true;
+			}
+		};
+
+		window.addEventListener('scroll', onScroll, { passive: true });
+		updateScrollState();
+	})();
+</script>

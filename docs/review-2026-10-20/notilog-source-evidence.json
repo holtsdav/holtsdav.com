@@ -1,0 +1,100 @@
+{
+  "main_source": {
+    "path": "/Users/holtsdav/Documents/Dev/NotiLog",
+    "head": "d9d851f202c964f7f8c4610245ac48404d5b7c13",
+    "status": "",
+    "note": "Reviewed source, not proof of a current public release."
+  },
+  "retention_candidate": {
+    "path": "/Users/holtsdav/Documents/Codex/2026-10-20/task/worktrees/notilog-history",
+    "head": "ad651a1c4d54196f2973acb511f67ea4a637a322",
+    "status": "",
+    "note": "Separate proposed/reviewed safety fix; integration and release not established."
+  },
+  "source_files": {
+    "/Users/holtsdav/Documents/Dev/NotiLog/README.md": "ebbea7e416dbd013e8c10fc384b73635a98f1a63f9803850d8eee6920bb426fc",
+    "/Users/holtsdav/Documents/Dev/NotiLog/docs/PRIVACY.md": "c0f23921ae42ea9aa8f8c3f5346b5650353ac9ed3fac2587689d1c74bda96630",
+    "/Users/holtsdav/Documents/Dev/NotiLog/docs/SUPPORT.md": "aeba40bd09fdc44e5996cd58e677f52d483d113bc627b547bf35009f1f209399",
+    "/Users/holtsdav/Documents/Dev/NotiLog/docs/SHORTCUTS_SETUP.md": "a909b7c768163d3b790ccb9103f45ec8c72de281a7683f2f88e349b73739ddd6",
+    "/Users/holtsdav/Documents/Dev/NotiLog/docs/RELEASE_CHECKLIST.md": "0683733d1adb13ef12aa73b6f25197667cc266145e64cfca5c77555a4f883eae",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Persistence/NotiLogPersistence.swift": "aed12537cc53a65d99b3e446fb54073daff314a899a698c9c57a665b41ee4bcf",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Persistence/NotificationStore.swift": "f63a576ac619ba31488094b780855c3391644f3f96fbbecd6dc988c817ef8f2d",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Intents/ArchiveNotificationIntent.swift": "3db0b8268e2a3957b1d0ab71755fcf0909d17a9897f0fe57dea160f045dd704a",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Services/Retention/RetentionPeriod.swift": "04335be78324c2fc26f198d915117802ec652a86a766f505be9c06e9c6dead0b",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Services/Retention/RetentionSettings.swift": "bf3d69454dbb2ee5e3ff5c4e50f8f00bd93052ff1882dd83204fcfe6d40d6bd0",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Services/AppIcons/AppStoreMetadataService.swift": "a686e745dfd593a5e140c9b691ff73d3de141e918a417b8073fa4aa581018053",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Services/AppIcons/AppIconService.swift": "71133ce619f310ffc7b022bdb56311c32e2ff2e7ea90ba6b8cc423c9058c928b",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Services/Backup/BackupService.swift": "3d081e5153f35b1dd6e62177350e7c95406401e49de151c9d9d5a187a86d58f7",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Services/Backup/ArchivedNotificationDTO.swift": "db8be6a62ca0e0e1ffd5edb759f5ce1805f87de24dfb6eeb48554cd7284a48ba",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Services/Backup/NotiLogBackupDocument.swift": "438385f2bc073227aa64e13018dfd79fbfb8db4114397d6c35560a762cc6272d",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Services/Authentication/AuthenticationService.swift": "acffd45a23030e3fe0683f5220a204c71d729258412fae5fa6b4da86d58faeca",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Features/Settings/SettingsView.swift": "ed83962fc1b606894431363593a259d9525e3bf795089f433a18b80afd30c859",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Resources/Info.plist": "48a23ead4423f968babe973fa05b85af6663b7df0d365c1157fdf73ea81eb20e",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Resources/PrivacyInfo.xcprivacy": "b267716076963c159b3c25394b6a58aba0e620fe1e81aab51dc078d4a48f7f23",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Resources/NotiLog.entitlements": "97704a8960b4facceef54397a08fb5d0a456247c3627359215aa2a27df22656c",
+    "/Users/holtsdav/Documents/Dev/NotiLog/NotiLog/Utilities/SupportDestinations.swift": "c899d8a64122c555a5d2e2a5ed69bb38469f651211afdca4be469723fb9e6772",
+    "/Users/holtsdav/Documents/Dev/NotiLog/project.yml": "21d624227cac94e7e94aa7fabd40857dcd40e095c85931e04d31f65a7b45e126"
+  },
+  "reviewed_reports": [
+    "/Users/holtsdav/Documents/Codex/2026-10-20/task/SECOND_PASS_REPORT.md",
+    "/Users/holtsdav/Documents/Codex/2026-10-20/task-6/INDEPENDENT_SAFETY_REVIEW.md"
+  ],
+  "existing_policy_files": {
+    "src/pages/privacy.astro": {
+      "worktree_sha256": "ddaad60862d157fc046e4470d0fd14f928cd049a638e3b110de3c1b1fb0b9740",
+      "original_sha256": "ddaad60862d157fc046e4470d0fd14f928cd049a638e3b110de3c1b1fb0b9740",
+      "unchanged": true
+    },
+    "src/pages/privacy/[...slug].astro": {
+      "worktree_sha256": "a80c8fa14a89e4c1aea818a2902ccba008366315c8af64b5514a3345843749f0",
+      "original_sha256": "a80c8fa14a89e4c1aea818a2902ccba008366315c8af64b5514a3345843749f0",
+      "unchanged": true
+    },
+    "src/pages/apps/mute-on-location/privacy.astro": {
+      "worktree_sha256": "8d584be6c0fe2405964756775881acb3baad924eb60eeca269f48c4cc0048cd7",
+      "original_sha256": "8d584be6c0fe2405964756775881acb3baad924eb60eeca269f48c4cc0048cd7",
+      "unchanged": true
+    },
+    "src/pages/apps/glassdays-countdown/privacy/index.astro": {
+      "worktree_sha256": "70f5c6e7b232ec5495b63af908a67a284d2ff9ec17021f7a9da87be58d26239b",
+      "original_sha256": "70f5c6e7b232ec5495b63af908a67a284d2ff9ec17021f7a9da87be58d26239b",
+      "unchanged": true
+    },
+    "src/pages/apps/glassdays-countdown/privacy/es.astro": {
+      "worktree_sha256": "c9a5da6b25883eacfc55f54ce8050bbd07dcd243642a94dda24279b49bad9261",
+      "original_sha256": "c9a5da6b25883eacfc55f54ce8050bbd07dcd243642a94dda24279b49bad9261",
+      "unchanged": true
+    },
+    "src/pages/apps/glassdays-countdown/privacy/en.astro": {
+      "worktree_sha256": "5719fed635c54f39a459495f4e322ef3fa05e33f2a765dbba90a953074f95fc7",
+      "original_sha256": "5719fed635c54f39a459495f4e322ef3fa05e33f2a765dbba90a953074f95fc7",
+      "unchanged": true
+    },
+    "src/components/AppPrivacyLayout.astro": {
+      "worktree_sha256": "1963f4180ae3e2a766a02275cbcc0a923f595edecc9b0ab388cac653661bde44",
+      "original_sha256": "1963f4180ae3e2a766a02275cbcc0a923f595edecc9b0ab388cac653661bde44",
+      "unchanged": true
+    }
+  },
+  "routes": {
+    "local_support": "/support/notilog/",
+    "local_privacy_draft": "/drafts/notilog-privacy/",
+    "proposed_final_support": "https://holtsdav.com/support/notilog/",
+    "proposed_final_privacy": "https://holtsdav.com/privacy/notilog/",
+    "published": false,
+    "app_urls_configured": false
+  },
+  "app_module_imports": [
+    "AppIntents",
+    "CryptoKit",
+    "Foundation",
+    "ImageIO",
+    "LocalAuthentication",
+    "OSLog",
+    "Observation",
+    "SwiftData",
+    "SwiftUI",
+    "UIKit",
+    "UniformTypeIdentifiers"
+  ]
+}

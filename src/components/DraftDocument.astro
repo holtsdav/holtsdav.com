@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/document-draft.css';
+interface Props {
+  title: string;
+  description: string;
+  kind: string;
+  contents: { id: string; label: string }[];
+}
+const { title, description, kind, contents } = Astro.props;
+---
+<BaseLayout title={`${title} — Review draft | holtsdav`} description={description} robots="noindex, nofollow">
+  <article class="draft-document">
+    <div class="draft-breadcrumb"><a href="/">← Portfolio</a><span>NotiLog / {kind}</span></div>
+    <aside class="draft-notice" aria-labelledby="draft-status">
+      <strong id="draft-status">Local draft · Not published</strong>
+      <p>Prepared for David’s review on 20 October 2026. This is not a release announcement or an approved privacy policy. Confirm the final app build and the marked review points before using this content publicly.</p>
+    </aside>
+    <header class="draft-heading"><p class="draft-kicker">NOTILOG / {kind.toUpperCase()}</p><h1>{title}</h1><p>{description}</p></header>
+    <div class="draft-columns">
+      <nav class="draft-contents" aria-label="On this page"><p>On this page</p>{contents.map(item => <a href={`#${item.id}`}>{item.label}</a>)}</nav>
+      <div class="draft-copy"><slot /></div>
+    </div>
+    <footer class="draft-end"><p>Review draft only. Nothing has been published or configured in the app.</p><a href="#main-content">Back to top ↑</a></footer>
+  </article>
+</BaseLayout>

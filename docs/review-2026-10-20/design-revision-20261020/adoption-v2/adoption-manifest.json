@@ -1,0 +1,473 @@
+{
+  "created_at_utc": "2026-10-20T12:32:58.256709+00:00",
+  "worktree": "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-dock",
+  "branch": "codex/portfolio-dock-20261020",
+  "head": "b9069c2c2578d162102d416d877af5042afa33b6",
+  "implementation_state": "Uncommitted; no feature commit exists on this branch. Fixture commits are disposable and unrelated to the original repository history.",
+  "intended_baseline": {
+    "repository": "/Users/holtsdav/Documents/Dev/holtsdav.com",
+    "head": "b9069c2c2578d162102d416d877af5042afa33b6",
+    "owner_dirty_files": {
+      "DESIGN.md": "3f6accb525926178b9569516829c67a5ff8e22e3e080b5ab6a06b8c864c0d2d5",
+      "src/components/Header.astro": "5cde86394ec21e6c44750fdf583f80b993498364596e3437e4853636ad7a64d6",
+      "src/components/ParticleWordmark.astro": "e4ff1002f42033fe137b949901c2ee48815e026f93a81acc3f50432f2e421b69",
+      "src/layouts/BaseLayout.astro": "3bf806b7a982ece8e9419b36f448541b0e3ba9850021f42e311f30d8cd762199",
+      "src/pages/contact.astro": "1ca63aeb01170017adc5e086cdecf8c5fb0e3ef70e1e792fdf4f8649597a65b6",
+      "src/scripts/particle-wordmark.ts": "50be43f53cb89e7f396f3277b1d604d6c826605667be86cb352a420baf69d7ee",
+      "src/styles/global.css": "06f9cf39fc12e23d4a81e54f6ed808fb209334acefca666189dbbeecf3e6e217"
+    },
+    "do_not_reapply_copied_baseline_to_current_original": true,
+    "untracked_tool_settings_copied": false
+  },
+  "ownership": {
+    "copied_owner_baseline": [
+      "DESIGN.md",
+      "src/components/Header.astro",
+      "src/components/ParticleWordmark.astro",
+      "src/layouts/BaseLayout.astro",
+      "src/pages/contact.astro",
+      "src/scripts/particle-wordmark.ts",
+      "src/styles/global.css"
+    ],
+    "portfolio_changes": [
+      "Assets/app-icons/room-planner.svg",
+      "Assets/glassdays-screenshots/create-dark.png",
+      "Assets/glassdays-screenshots/folders.png",
+      "Assets/glassdays-screenshots/home-light.png",
+      "Assets/glassdays-screenshots/widgets.png",
+      "docs/review-2026-10-20/start-preview.sh",
+      "public/_redirects",
+      "scripts/verify-name-reveal-v2.mjs",
+      "scripts/verify-portfolio-v2.mjs",
+      "scripts/verify-portfolio.mjs",
+      "src/components/GlassdaysPage.astro",
+      "src/components/NameReveal.astro",
+      "src/components/PortfolioDock.astro",
+      "src/components/PortfolioHome.astro",
+      "src/layouts/BaseLayout.astro",
+      "src/middleware.ts",
+      "src/pages/Glassdays.astro",
+      "src/pages/MuteOnLocation.astro",
+      "src/pages/NotiLog.astro",
+      "src/pages/RogueColor.astro",
+      "src/pages/apps/glassdays-countdown.astro",
+      "src/pages/apps/mute-on-location.astro",
+      "src/pages/apps/room-planner.astro",
+      "src/pages/index.astro",
+      "src/pages/project/[slug].astro",
+      "src/pages/project/glassdays.astro",
+      "src/scripts/name-reveal.ts",
+      "src/scripts/portfolio.ts",
+      "src/styles/glassdays-case.css",
+      "src/styles/portfolio-v2.css",
+      "src/styles/portfolio.css"
+    ],
+    "notilog_drafts": [
+      "scripts/verify-notilog-drafts.mjs",
+      "src/components/DraftDocument.astro",
+      "src/pages/drafts/notilog-privacy.astro",
+      "src/pages/support/notilog.astro",
+      "src/styles/document-draft.css"
+    ],
+    "overlap": [
+      "src/layouts/BaseLayout.astro"
+    ],
+    "note": "BaseLayout has both copied owner changes and additional portfolio changes. The portfolio patch records only the delta after the copied baseline."
+  },
+  "patches": {
+    "portfolio-fixes.patch": {
+      "sha256": "fe6356906b0eac6f7d5b70742fb4e756af93b21687bd8e58462324499c59f94a",
+      "bytes": 20040595,
+      "files": [
+        "Assets/app-icons/room-planner.svg",
+        "Assets/glassdays-screenshots/create-dark.png",
+        "Assets/glassdays-screenshots/folders.png",
+        "Assets/glassdays-screenshots/home-light.png",
+        "Assets/glassdays-screenshots/widgets.png",
+        "docs/review-2026-10-20/start-preview.sh",
+        "public/_redirects",
+        "scripts/verify-name-reveal-v2.mjs",
+        "scripts/verify-portfolio-v2.mjs",
+        "scripts/verify-portfolio.mjs",
+        "src/components/GlassdaysPage.astro",
+        "src/components/NameReveal.astro",
+        "src/components/PortfolioDock.astro",
+        "src/components/PortfolioHome.astro",
+        "src/layouts/BaseLayout.astro",
+        "src/middleware.ts",
+        "src/pages/Glassdays.astro",
+        "src/pages/MuteOnLocation.astro",
+        "src/pages/NotiLog.astro",
+        "src/pages/RogueColor.astro",
+        "src/pages/apps/glassdays-countdown.astro",
+        "src/pages/apps/mute-on-location.astro",
+        "src/pages/apps/room-planner.astro",
+        "src/pages/index.astro",
+        "src/pages/project/[slug].astro",
+        "src/pages/project/glassdays.astro",
+        "src/scripts/name-reveal.ts",
+        "src/scripts/portfolio.ts",
+        "src/styles/glassdays-case.css",
+        "src/styles/portfolio-v2.css",
+        "src/styles/portfolio.css"
+      ]
+    },
+    "notilog-drafts.patch": {
+      "sha256": "96319ad3b9c88bd9e6a1ef7db2d188c8e3c1654600a6e5dd17f0eca6b070e1ed",
+      "bytes": 30709,
+      "files": [
+        "scripts/verify-notilog-drafts.mjs",
+        "src/components/DraftDocument.astro",
+        "src/pages/drafts/notilog-privacy.astro",
+        "src/pages/support/notilog.astro",
+        "src/styles/document-draft.css"
+      ]
+    }
+  },
+  "copied_baseline_patch": {
+    "path": "../copied-local-baseline.patch",
+    "sha256": "f4fccbd61c650d5c4f0f0964a9f1aa7f82b4be6d44877ec0d142fefd0fd5940d",
+    "ownership": "Pre-existing owner edits, not newly authored portfolio work."
+  },
+  "apply_checks": {
+    "copied_baseline_on_clean_head": {
+      "directory": "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-dock/docs/review-2026-10-20/design-revision-20261020/adoption-v2/.fixture-generator",
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "copied-local-baseline.patch"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "check_only": true,
+      "files_written": false,
+      "original_mutated": false
+    },
+    "portfolio_on_actual_original_dirty_baseline": {
+      "directory": "/Users/holtsdav/Documents/Dev/holtsdav.com",
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "portfolio-fixes.patch"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "check_only": true,
+      "files_written": false,
+      "original_mutated": false
+    },
+    "portfolio_on_reconstructed_dirty_baseline": {
+      "directory": "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-dock/docs/review-2026-10-20/design-revision-20261020/adoption-v2/.fixture-check",
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "portfolio-fixes.patch"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "check_only": true,
+      "files_written": false,
+      "original_mutated": false
+    },
+    "notilog_after_portfolio_on_disposable_copy": {
+      "directory": "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-dock/docs/review-2026-10-20/design-revision-20261020/adoption-v2/.fixture-check",
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "notilog-drafts.patch"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "check_only": true,
+      "files_written": false,
+      "original_mutated": false
+    }
+  },
+  "reconstructed_feature_files": {
+    "Assets/app-icons/room-planner.svg": {
+      "sha256": "74da025e72ebdde665cd13ba975e3528afd0a690ddda7de9ea38b461b9974599",
+      "reconstructed_sha256": "74da025e72ebdde665cd13ba975e3528afd0a690ddda7de9ea38b461b9974599",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "Assets/glassdays-screenshots/create-dark.png": {
+      "sha256": "303356d1087dd0f6b22267ff92b97a1f6b79b9aff5aab82537915d6bbea02b54",
+      "reconstructed_sha256": "303356d1087dd0f6b22267ff92b97a1f6b79b9aff5aab82537915d6bbea02b54",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "Assets/glassdays-screenshots/folders.png": {
+      "sha256": "3dae41a92ce39dc89eb4d7202fda79f6c79d31582634eea9c527d1f718863ed9",
+      "reconstructed_sha256": "3dae41a92ce39dc89eb4d7202fda79f6c79d31582634eea9c527d1f718863ed9",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "Assets/glassdays-screenshots/home-light.png": {
+      "sha256": "d17352567616b67f820af7908ebe212a503bab8724cc658fd563a29528020cef",
+      "reconstructed_sha256": "d17352567616b67f820af7908ebe212a503bab8724cc658fd563a29528020cef",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "Assets/glassdays-screenshots/widgets.png": {
+      "sha256": "3492d95b4f18cf54c71b1c0f40a2b2408f1912b6978540842f76816b524bf74b",
+      "reconstructed_sha256": "3492d95b4f18cf54c71b1c0f40a2b2408f1912b6978540842f76816b524bf74b",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "docs/review-2026-10-20/start-preview.sh": {
+      "sha256": "73213ca4380e518aa015d7efa31ea65d3d9afbfccf4c033540f91a4f6340c650",
+      "reconstructed_sha256": "73213ca4380e518aa015d7efa31ea65d3d9afbfccf4c033540f91a4f6340c650",
+      "matches": true,
+      "mode": "0o755"
+    },
+    "public/_redirects": {
+      "sha256": "7f16c9f845e2863091cafc9fa1b8bde36cbb3cc6141c9f4c01bd7d6dff8d4bcf",
+      "reconstructed_sha256": "7f16c9f845e2863091cafc9fa1b8bde36cbb3cc6141c9f4c01bd7d6dff8d4bcf",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "scripts/verify-name-reveal-v2.mjs": {
+      "sha256": "76ecc76986bbe3a19b1dadd80048c5f6c812ca39e423640db36256a936244d3c",
+      "reconstructed_sha256": "76ecc76986bbe3a19b1dadd80048c5f6c812ca39e423640db36256a936244d3c",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "scripts/verify-portfolio-v2.mjs": {
+      "sha256": "9c5d001e1ae3d520c33111a6a19c7ef607648fe57d4254637d774427c930bb79",
+      "reconstructed_sha256": "9c5d001e1ae3d520c33111a6a19c7ef607648fe57d4254637d774427c930bb79",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "scripts/verify-portfolio.mjs": {
+      "sha256": "3277b25f5a7cf76b22d9d6137390ef71937f5fbbbed0a940bf639e102f37ed32",
+      "reconstructed_sha256": "3277b25f5a7cf76b22d9d6137390ef71937f5fbbbed0a940bf639e102f37ed32",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/components/GlassdaysPage.astro": {
+      "sha256": "965d2195eb61e8f37a289f047e59f4eccd6aafc94089b698069f504d57b566dd",
+      "reconstructed_sha256": "965d2195eb61e8f37a289f047e59f4eccd6aafc94089b698069f504d57b566dd",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/components/NameReveal.astro": {
+      "sha256": "5345b142a5ef28a9dbe38c56cae5ca7d954fdd806d8572cd3bd0a8ad3463ddaa",
+      "reconstructed_sha256": "5345b142a5ef28a9dbe38c56cae5ca7d954fdd806d8572cd3bd0a8ad3463ddaa",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/components/PortfolioDock.astro": {
+      "sha256": "6458545aef17f7527d95e135912d2cb5193d0ec08065ab995398f934a65bbea0",
+      "reconstructed_sha256": "6458545aef17f7527d95e135912d2cb5193d0ec08065ab995398f934a65bbea0",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/components/PortfolioHome.astro": {
+      "sha256": "ac9e4ac186c5eedf54aa05054ba061c6b3ef7ba38c3ba27d8ff5bee45b209e2e",
+      "reconstructed_sha256": "ac9e4ac186c5eedf54aa05054ba061c6b3ef7ba38c3ba27d8ff5bee45b209e2e",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/layouts/BaseLayout.astro": {
+      "sha256": "2fdc86d14530c06473a1ba1f58f5ba1d094515ba1b154eaf59e04883fff054d6",
+      "reconstructed_sha256": "2fdc86d14530c06473a1ba1f58f5ba1d094515ba1b154eaf59e04883fff054d6",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/middleware.ts": {
+      "sha256": "6a53e6be55184a7af9b3907c07bb870a63a43331cdb7c00c0c08f2bcc2b1214b",
+      "reconstructed_sha256": "6a53e6be55184a7af9b3907c07bb870a63a43331cdb7c00c0c08f2bcc2b1214b",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/pages/Glassdays.astro": {
+      "sha256": "169a3b347b5f3360d2fe60a1edec1bcbe863afc03e8de7499d54b6583ca76435",
+      "reconstructed_sha256": "169a3b347b5f3360d2fe60a1edec1bcbe863afc03e8de7499d54b6583ca76435",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/pages/MuteOnLocation.astro": {
+      "sha256": "d021266a15ae05c6341da8bacba70c1ac9a24de649e9d38356398b673624732d",
+      "reconstructed_sha256": "d021266a15ae05c6341da8bacba70c1ac9a24de649e9d38356398b673624732d",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/pages/NotiLog.astro": {
+      "sha256": "49fe0ddde0990da5275479486458bc0e7da07a0c83bae757db5d5dd9221f13a9",
+      "reconstructed_sha256": "49fe0ddde0990da5275479486458bc0e7da07a0c83bae757db5d5dd9221f13a9",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/pages/RogueColor.astro": {
+      "sha256": "8676cc1d68ef56d2e301d905bbbb7578aa06b532b938a9c5111dfa5a215ff92c",
+      "reconstructed_sha256": "8676cc1d68ef56d2e301d905bbbb7578aa06b532b938a9c5111dfa5a215ff92c",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/pages/apps/glassdays-countdown.astro": {
+      "sha256": "96b7f730fdc7d9da4d7c69a4ff4f0605993e1ef92d4468a595a08f32ab1d95cc",
+      "reconstructed_sha256": "96b7f730fdc7d9da4d7c69a4ff4f0605993e1ef92d4468a595a08f32ab1d95cc",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/pages/apps/mute-on-location.astro": {
+      "sha256": "b7f3159cebd0b093e261edf247f43c0083cd99b29ff06cd74cc01ef9fd148148",
+      "reconstructed_sha256": "b7f3159cebd0b093e261edf247f43c0083cd99b29ff06cd74cc01ef9fd148148",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/pages/apps/room-planner.astro": {
+      "sha256": "1ab9ba2a048e642f8835cb4538b9ad7bddfd7fc79f598566d6a8d738bf63082f",
+      "reconstructed_sha256": "1ab9ba2a048e642f8835cb4538b9ad7bddfd7fc79f598566d6a8d738bf63082f",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/pages/index.astro": {
+      "sha256": "264cd0b5cb1e43c3e738d6b2dbbe54544804037d236d2b8addd2690a38e6d155",
+      "reconstructed_sha256": "264cd0b5cb1e43c3e738d6b2dbbe54544804037d236d2b8addd2690a38e6d155",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/pages/project/[slug].astro": {
+      "sha256": "e6ea6241cabc26e6d70974d57a5276700a517b50a969fd100ce9f830c0306246",
+      "reconstructed_sha256": "e6ea6241cabc26e6d70974d57a5276700a517b50a969fd100ce9f830c0306246",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/pages/project/glassdays.astro": {
+      "sha256": "96b7f730fdc7d9da4d7c69a4ff4f0605993e1ef92d4468a595a08f32ab1d95cc",
+      "reconstructed_sha256": "96b7f730fdc7d9da4d7c69a4ff4f0605993e1ef92d4468a595a08f32ab1d95cc",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/scripts/name-reveal.ts": {
+      "sha256": "34737fd67dd7cfa84ca63dcd8d495a7780856ffabd9bb558ee4e2c66de985ff8",
+      "reconstructed_sha256": "34737fd67dd7cfa84ca63dcd8d495a7780856ffabd9bb558ee4e2c66de985ff8",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/scripts/portfolio.ts": {
+      "sha256": "fbdf6cb8b943975c373596fde354813e918c0a79f6875745a97e90894e38cc1e",
+      "reconstructed_sha256": "fbdf6cb8b943975c373596fde354813e918c0a79f6875745a97e90894e38cc1e",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/styles/glassdays-case.css": {
+      "sha256": "ea71393e8f0fa8112901fc451be7b303cb9079cd693e0368724ef5d83caaef28",
+      "reconstructed_sha256": "ea71393e8f0fa8112901fc451be7b303cb9079cd693e0368724ef5d83caaef28",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/styles/portfolio-v2.css": {
+      "sha256": "f3d8b6766be9eef88e66d00072544f621d2e55949a34dca45f120653705a92d1",
+      "reconstructed_sha256": "f3d8b6766be9eef88e66d00072544f621d2e55949a34dca45f120653705a92d1",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/styles/portfolio.css": {
+      "sha256": "209836b570286980b18fe8f149cb2223ef5628e54d7638fcf2fbdf1232b147c4",
+      "reconstructed_sha256": "209836b570286980b18fe8f149cb2223ef5628e54d7638fcf2fbdf1232b147c4",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "scripts/verify-notilog-drafts.mjs": {
+      "sha256": "37b86fca4b0b6fdb5662801415550418ca00ebf88d752c9810b4245e3e199a61",
+      "reconstructed_sha256": "37b86fca4b0b6fdb5662801415550418ca00ebf88d752c9810b4245e3e199a61",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/components/DraftDocument.astro": {
+      "sha256": "4918a01b7117c10986bb1da26dd1bb2e5701bee44cd4bff300db01b7e3138eb4",
+      "reconstructed_sha256": "4918a01b7117c10986bb1da26dd1bb2e5701bee44cd4bff300db01b7e3138eb4",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/pages/drafts/notilog-privacy.astro": {
+      "sha256": "d2de6fae3655f91a764333b54d34af131387a9830dd00ce42960474b7a816588",
+      "reconstructed_sha256": "d2de6fae3655f91a764333b54d34af131387a9830dd00ce42960474b7a816588",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/pages/support/notilog.astro": {
+      "sha256": "6491b75401f31d319ffc458326a5b7a79b15dfad1b20181344c66ab979eee78d",
+      "reconstructed_sha256": "6491b75401f31d319ffc458326a5b7a79b15dfad1b20181344c66ab979eee78d",
+      "matches": true,
+      "mode": "0o644"
+    },
+    "src/styles/document-draft.css": {
+      "sha256": "bcf9bd012a6bbf99a924adaebaf958876e8cff9cfa94cbaea56cf111b01de1d2",
+      "reconstructed_sha256": "bcf9bd012a6bbf99a924adaebaf958876e8cff9cfa94cbaea56cf111b01de1d2",
+      "matches": true,
+      "mode": "0o644"
+    }
+  },
+  "preservation": {
+    "original_before": {
+      "head": "b9069c2c2578d162102d416d877af5042afa33b6",
+      "status": " M DESIGN.md\n M src/components/Header.astro\n M src/components/ParticleWordmark.astro\n M src/layouts/BaseLayout.astro\n M src/pages/contact.astro\n M src/scripts/particle-wordmark.ts\n M src/styles/global.css\n?? .claude/settings.local.json\n?? .codex/hooks.json\n",
+      "hashes": {
+        "DESIGN.md": "3f6accb525926178b9569516829c67a5ff8e22e3e080b5ab6a06b8c864c0d2d5",
+        "src/components/Header.astro": "5cde86394ec21e6c44750fdf583f80b993498364596e3437e4853636ad7a64d6",
+        "src/components/ParticleWordmark.astro": "e4ff1002f42033fe137b949901c2ee48815e026f93a81acc3f50432f2e421b69",
+        "src/layouts/BaseLayout.astro": "3bf806b7a982ece8e9419b36f448541b0e3ba9850021f42e311f30d8cd762199",
+        "src/pages/contact.astro": "1ca63aeb01170017adc5e086cdecf8c5fb0e3ef70e1e792fdf4f8649597a65b6",
+        "src/scripts/particle-wordmark.ts": "50be43f53cb89e7f396f3277b1d604d6c826605667be86cb352a420baf69d7ee",
+        "src/styles/global.css": "06f9cf39fc12e23d4a81e54f6ed808fb209334acefca666189dbbeecf3e6e217"
+      }
+    },
+    "original_after": {
+      "head": "b9069c2c2578d162102d416d877af5042afa33b6",
+      "status": " M DESIGN.md\n M src/components/Header.astro\n M src/components/ParticleWordmark.astro\n M src/layouts/BaseLayout.astro\n M src/pages/contact.astro\n M src/scripts/particle-wordmark.ts\n M src/styles/global.css\n?? .claude/settings.local.json\n?? .codex/hooks.json\n",
+      "hashes": {
+        "DESIGN.md": "3f6accb525926178b9569516829c67a5ff8e22e3e080b5ab6a06b8c864c0d2d5",
+        "src/components/Header.astro": "5cde86394ec21e6c44750fdf583f80b993498364596e3437e4853636ad7a64d6",
+        "src/components/ParticleWordmark.astro": "e4ff1002f42033fe137b949901c2ee48815e026f93a81acc3f50432f2e421b69",
+        "src/layouts/BaseLayout.astro": "3bf806b7a982ece8e9419b36f448541b0e3ba9850021f42e311f30d8cd762199",
+        "src/pages/contact.astro": "1ca63aeb01170017adc5e086cdecf8c5fb0e3ef70e1e792fdf4f8649597a65b6",
+        "src/scripts/particle-wordmark.ts": "50be43f53cb89e7f396f3277b1d604d6c826605667be86cb352a420baf69d7ee",
+        "src/styles/global.css": "06f9cf39fc12e23d4a81e54f6ed808fb209334acefca666189dbbeecf3e6e217"
+      }
+    },
+    "unchanged": true,
+    "screenshots": {
+      "docs/review-2026-10-20/screenshots/home-700-viewport.png": "1d81e1ab0d41be53facd86be15bae92d431c495e5231c1b3bd111515a8fdd4a1",
+      "docs/review-2026-10-20/screenshots/desktop-glassdays.png": "d8954850bfb6523e7314f02118bba168e4af0d1dbba8dbacec988c284d0ba2f7",
+      "docs/review-2026-10-20/screenshots/keyboard-desktop-copy.png": "8c58c0c0b814fbe7b05d6c186e9fcdc5eeee5a7dfee37d1dce3c7426bd67362c",
+      "docs/review-2026-10-20/screenshots/mobile-glassdays.png": "baa234ebce398f6898ef2734cc80e3b6e058d352493ddbe0c12e5557b94b1948",
+      "docs/review-2026-10-20/screenshots/home-701-viewport.png": "9132296d4bebac7041427222a1987e51d189fe1696d9eb86634621b49e01c6dc",
+      "docs/review-2026-10-20/screenshots/desktop-home-viewport.png": "72bf2868fde42dc4a2170568a523de552fd1feb7758ec00171da64b9611686c5",
+      "docs/review-2026-10-20/screenshots/home-801-viewport.png": "eb7d43fbab315d387e045fde84f8bfe29ca8f7c1a0e9d44d29c840733857c584",
+      "docs/review-2026-10-20/screenshots/keyboard-mobile-mute.png": "f150319ea3585ff7f6caaef187dec9456cd3ec0088ef16e44ea5340ced1ce1f1",
+      "docs/review-2026-10-20/screenshots/desktop-notilog-privacy-draft.png": "7d9397460a53e925ac3d9d2bc09c51ff96410b2a06c0ce58716faeca35f8ca09",
+      "docs/review-2026-10-20/screenshots/home-801.png": "45fae325ca744470be12bf7e299a10bc93946aa877e392875a3a68febf52187c",
+      "docs/review-2026-10-20/screenshots/mobile-home-viewport.png": "b3b51ecaaa5d729a9fcadbfec627e562ee30b198d46bec2d252d8c10c792d585",
+      "docs/review-2026-10-20/screenshots/home-621.png": "91a4056b48261530a6ae53eda91e64af7343c6ecb8b62ea4ad353c06cb700607",
+      "docs/review-2026-10-20/screenshots/mobile-mute.png": "e11f6df13f88ad99d445e723b9ee0d00e858c8385ab9e183e0cfad2e6b6b74f1",
+      "docs/review-2026-10-20/screenshots/mobile-no-javascript.png": "fedc305d55541da85a84a840f9ed52db5a6b59d5cdbcba327d3b4d78c79ddd92",
+      "docs/review-2026-10-20/screenshots/desktop-home.png": "8e80be62116dbccd673dbab28cb463db7fcd3a8e104c1b0f88590aed2a91f3f1",
+      "docs/review-2026-10-20/screenshots/home-621-viewport.png": "7921699dc31b326711dcba312c3e80ae9233864fc6f0cfacc3e0962e31bfce0c",
+      "docs/review-2026-10-20/screenshots/desktop-notilog-support.png": "9cb216fc1c683344587a84541762ae81ea72208deaf94c879e332b9cca3ff160",
+      "docs/review-2026-10-20/screenshots/mobile-home.png": "ef96d7cde12977657aba250c6c56dc452f8c0f5507f4097047b148faa3a693fc",
+      "docs/review-2026-10-20/screenshots/mobile-notilog-support.png": "ca61c9d2596fe98f60cc98eaef0ebd237dc392828d8936b3f2c3533b95583742",
+      "docs/review-2026-10-20/screenshots/home-700.png": "2e140a45420c037119f0341d8faa0f05687e1c5aa6554faeeafea5bb11444a0c",
+      "docs/review-2026-10-20/screenshots/mobile-notilog-privacy-draft.png": "a2b44f97418e641e4eb84ddf889af16ae62e6933338fa9a8d27d98ac67143c53",
+      "docs/review-2026-10-20/screenshots/home-701.png": "938c2aa41c1328b704a165680c42172fbcf11412093da051709372bb562d8222"
+    },
+    "screenshot_hashes_unchanged": true
+  },
+  "fixture": {
+    "generator": "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-dock/docs/review-2026-10-20/design-revision-20261020/adoption-v2/.fixture-generator",
+    "preview_checkout": "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-dock/docs/review-2026-10-20/design-revision-20261020/adoption-v2/.fixture-check",
+    "dependencies_copied": false,
+    "archive_contains_no_untracked_settings_or_ignored_secrets": true,
+    "note": "Owned temporary directories; remove only these after startup validation. No patch was applied to an original checkout."
+  }
+}

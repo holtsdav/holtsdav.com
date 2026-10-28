@@ -1,0 +1,696 @@
+[
+  {
+    "status": " M",
+    "path": "DESIGN.md",
+    "ownership": [
+      "copied-owner-baseline"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "public/_redirects",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/components/Header.astro",
+    "ownership": [
+      "copied-owner-baseline"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/components/ParticleWordmark.astro",
+    "ownership": [
+      "copied-owner-baseline"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/layouts/BaseLayout.astro",
+    "ownership": [
+      "copied-owner-baseline",
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/middleware.ts",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/pages/Glassdays.astro",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/pages/MuteOnLocation.astro",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/pages/NotiLog.astro",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/pages/RogueColor.astro",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/pages/apps/glassdays-countdown.astro",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/pages/apps/mute-on-location.astro",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/pages/contact.astro",
+    "ownership": [
+      "copied-owner-baseline"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/pages/index.astro",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/pages/project/[slug].astro",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/scripts/particle-wordmark.ts",
+    "ownership": [
+      "copied-owner-baseline"
+    ]
+  },
+  {
+    "status": " M",
+    "path": "src/styles/global.css",
+    "ownership": [
+      "copied-owner-baseline"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "ADOPTION_MANIFEST.md",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "Assets/app-icons/room-planner.svg",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "Assets/glassdays-screenshots/create-dark.png",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "Assets/glassdays-screenshots/folders.png",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "Assets/glassdays-screenshots/home-light.png",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "Assets/glassdays-screenshots/widgets.png",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "NOTILOG_DRAFT_REVIEW.md",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "PORTFOLIO_FIXES.md",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "PORTFOLIO_REVIEW.md",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/adoption/adoption-manifest.json",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/adoption/build-patches.py",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/adoption/changed-code-files.txt",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/adoption/changed-files.json",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/adoption/fresh-preview-check.json",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/adoption/fresh-startup.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/adoption/git-status-porcelain.txt",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/adoption/notilog-drafts.patch",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/adoption/package-sha256.txt",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/adoption/portfolio-fixes.patch",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/adoption/screenshots-sha256.txt",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/baseline-build.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/baseline-inventory.json",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/browser-qa.json",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/browser-qa.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/contact-tests.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/copied-local-baseline.patch",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/diff-check.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/frontend-types.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/implementation-only.diff",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/keyboard-clearance.json",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/notilog-draft-build.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/notilog-draft-diff-check.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/notilog-draft-qa.json",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/notilog-draft-qa.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/notilog-draft-types.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/notilog-preview.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/notilog-source-evidence.json",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/portfolio-build.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/preservation-check.json",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshot-provenance.json",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/desktop-glassdays.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/desktop-home-viewport.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/desktop-home.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/desktop-notilog-privacy-draft.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/desktop-notilog-support.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/home-621-viewport.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/home-621.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/home-700-viewport.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/home-700.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/home-701-viewport.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/home-701.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/home-801-viewport.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/home-801.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/keyboard-desktop-copy.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/keyboard-mobile-mute.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/mobile-glassdays.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/mobile-home-viewport.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/mobile-home.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/mobile-mute.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/mobile-no-javascript.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/mobile-notilog-privacy-draft.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/screenshots/mobile-notilog-support.png",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/served-content-scan.json",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/start-preview.sh",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/startup-preview.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/typecheck.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/worker-types.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "docs/review-2026-10-20/wrangler.log",
+    "ownership": [
+      "review-packaging-evidence"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "scripts/verify-notilog-drafts.mjs",
+    "ownership": [
+      "notilog-draft"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "scripts/verify-portfolio.mjs",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "src/components/DraftDocument.astro",
+    "ownership": [
+      "notilog-draft"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "src/components/GlassdaysPage.astro",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "src/components/PortfolioDock.astro",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "src/components/PortfolioHome.astro",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "src/pages/apps/room-planner.astro",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "src/pages/drafts/notilog-privacy.astro",
+    "ownership": [
+      "notilog-draft"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "src/pages/project/glassdays.astro",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "src/pages/support/notilog.astro",
+    "ownership": [
+      "notilog-draft"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "src/scripts/portfolio.ts",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "src/styles/document-draft.css",
+    "ownership": [
+      "notilog-draft"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "src/styles/glassdays-case.css",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  },
+  {
+    "status": "??",
+    "path": "src/styles/portfolio.css",
+    "ownership": [
+      "portfolio-fix"
+    ]
+  }
+]

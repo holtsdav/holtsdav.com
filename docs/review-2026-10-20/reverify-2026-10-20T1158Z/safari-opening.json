@@ -1,0 +1,19 @@
+{
+  "confirmed_at_utc": "2026-10-20T12:05:04.524798+00:00",
+  "app": "Safari",
+  "window_uuid": "D7490954-5C37-428A-8F53-1D7F9068261B",
+  "previous_review_url": "http://127.0.0.1:49294/START-HERE.html",
+  "opened_url": "http://127.0.0.1:4326/",
+  "confirmed_document_title": "David Holtschke \u2014 Apps & useful software",
+  "tab_count_before": 5,
+  "tab_count_after": 6,
+  "original_tabs_preserved": [
+    "Local overnight review",
+    "Recorded snapshot \u00b7 David\u2019s breakfast briefing \u00b7 20 October 2026",
+    "Worktree Lens \u00b7 SYNTHETIC DEMO",
+    "Recorded visual evidence",
+    "SaveShelf full-product acceptance \u2014 20 October 2026"
+  ],
+  "method": "cua_repl Safari New Tab, address paste, Return; confirmed fresh accessibility state in the same window UUID",
+  "authorization": "Parent relayed David\u2019s request and confirmed foreground AllKeyShop work finished."
+}

@@ -1,0 +1,43 @@
+{
+  "base": "http://127.0.0.1:4326",
+  "date": "2026-10-20T12:00:19.051Z",
+  "results": [
+    {
+      "name": "notilog-support: draft markers, semantics, privacy and links",
+      "passed": true
+    },
+    {
+      "name": "notilog-support: responsive text bounds at 320, 390, 621, 768, 1024 and 1440 px",
+      "passed": true
+    },
+    {
+      "name": "notilog-support: text contrast",
+      "passed": true
+    },
+    {
+      "name": "notilog-support: keyboard, anchor clearance, no-JavaScript content and screenshots",
+      "passed": true
+    },
+    {
+      "name": "notilog-privacy-draft: draft markers, semantics, privacy and links",
+      "passed": true
+    },
+    {
+      "name": "notilog-privacy-draft: responsive text bounds at 320, 390, 621, 768, 1024 and 1440 px",
+      "passed": true
+    },
+    {
+      "name": "notilog-privacy-draft: text contrast",
+      "passed": true
+    },
+    {
+      "name": "notilog-privacy-draft: keyboard, anchor clearance, no-JavaScript content and screenshots",
+      "passed": true
+    },
+    {
+      "name": "No JavaScript exceptions",
+      "passed": true
+    }
+  ],
+  "errors": []
+}
