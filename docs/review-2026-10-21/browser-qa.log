@@ -1,0 +1,14 @@
+PASS Complete ten-project inventory and home semantics
+PASS Folder contains every project in three rows, closes with Escape and returns focus
+PASS Folder keyboard uses visual row/column navigation and native focus containment
+PASS Opening two projects adds unique dock icons; switching and Home retain them
+PASS Every project has a useful complete page and decoded genuine artwork
+PASS Ten-open dock retains Home, Projects and More at 320–1440px
+PASS More anchors to its button, keyboard exits and all utility destinations work
+PASS Closing inactive and active projects preserves coherent state and focus
+PASS Rendered bounds for all project types, utilities and folder across narrow and intermediate widths
+PASS Sequential focus and focus rings clear the dock at mobile/desktop heights
+PASS NotiLog privacy remains a visible unpublished noindex draft
+PASS No-JavaScript identity, all-project index and native More remain usable
+PASS Text contrast on every project, utility, folder and More
+PASS No browser JavaScript exceptions

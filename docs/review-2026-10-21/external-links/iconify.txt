@@ -1,0 +1,5 @@
+Browser tab: 2, Title: "api.iconify.design/solar/hourglass-bold.svg", URL: "https://api.iconify.design/solar/hourglass-bold.svg".
+1 AXWebArea api.iconify.design/solar/hourglass-bold.svg
+	2 image
+
+The focused UI element is 1 AXWebArea api.iconify.design/solar/hourglass-bold.svg

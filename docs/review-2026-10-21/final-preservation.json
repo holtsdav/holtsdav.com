@@ -1,0 +1,59 @@
+{
+  "original": "/Users/holtsdav/Documents/Dev/holtsdav.com",
+  "head": "b9069c2c2578d162102d416d877af5042afa33b6",
+  "status": [
+    " M DESIGN.md",
+    " M src/components/Header.astro",
+    " M src/components/ParticleWordmark.astro",
+    " M src/layouts/BaseLayout.astro",
+    " M src/pages/contact.astro",
+    " M src/scripts/particle-wordmark.ts",
+    " M src/styles/global.css",
+    "?? .claude/settings.local.json",
+    "?? .codex/hooks.json"
+  ],
+  "seven_copied_files_unchanged": {
+    "DESIGN.md": {
+      "expected": "3f6accb525926178b9569516829c67a5ff8e22e3e080b5ab6a06b8c864c0d2d5",
+      "actual": "3f6accb525926178b9569516829c67a5ff8e22e3e080b5ab6a06b8c864c0d2d5"
+    },
+    "src/components/Header.astro": {
+      "expected": "5cde86394ec21e6c44750fdf583f80b993498364596e3437e4853636ad7a64d6",
+      "actual": "5cde86394ec21e6c44750fdf583f80b993498364596e3437e4853636ad7a64d6"
+    },
+    "src/components/ParticleWordmark.astro": {
+      "expected": "e4ff1002f42033fe137b949901c2ee48815e026f93a81acc3f50432f2e421b69",
+      "actual": "e4ff1002f42033fe137b949901c2ee48815e026f93a81acc3f50432f2e421b69"
+    },
+    "src/layouts/BaseLayout.astro": {
+      "expected": "3bf806b7a982ece8e9419b36f448541b0e3ba9850021f42e311f30d8cd762199",
+      "actual": "3bf806b7a982ece8e9419b36f448541b0e3ba9850021f42e311f30d8cd762199"
+    },
+    "src/pages/contact.astro": {
+      "expected": "1ca63aeb01170017adc5e086cdecf8c5fb0e3ef70e1e792fdf4f8649597a65b6",
+      "actual": "1ca63aeb01170017adc5e086cdecf8c5fb0e3ef70e1e792fdf4f8649597a65b6"
+    },
+    "src/scripts/particle-wordmark.ts": {
+      "expected": "50be43f53cb89e7f396f3277b1d604d6c826605667be86cb352a420baf69d7ee",
+      "actual": "50be43f53cb89e7f396f3277b1d604d6c826605667be86cb352a420baf69d7ee"
+    },
+    "src/styles/global.css": {
+      "expected": "06f9cf39fc12e23d4a81e54f6ed808fb209334acefca666189dbbeecf3e6e217",
+      "actual": "06f9cf39fc12e23d4a81e54f6ed808fb209334acefca666189dbbeecf3e6e217"
+    }
+  },
+  "website_t3_clean": true,
+  "new_worktree": "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-workspace",
+  "branch": "codex/portfolio-workspace-20261021",
+  "new_worktree_staged_paths": [],
+  "original_untracked_settings_copied": false,
+  "implementation_head": "e984f63e23c785e45110edd2c99783952bf63e9b",
+  "copied_owner_only_paths_left_unstaged": [
+    "DESIGN.md",
+    "src/components/Header.astro",
+    "src/components/ParticleWordmark.astro",
+    "src/scripts/particle-wordmark.ts",
+    "src/styles/global.css"
+  ],
+  "scope": "Website checkout and website T3 only; native projects are owned by parallel work."
+}

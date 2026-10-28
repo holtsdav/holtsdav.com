@@ -1,0 +1,116 @@
+[
+  {
+    "file": "reverification-resumed-saveshelf-component-ui/6E48691C-5B48-4C23-A76A-D53E63E78810.png",
+    "sha256": "41103c016067861f2256ab16ed4c8ff2a2b78aeb3d111948f0ae48a520fd6fb2",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "reverification-resumed-saveshelf-component-ui/CD2EBA18-9E24-48F2-80A2-FC83B6EE2D22.png",
+    "sha256": "42db9157729c508de932b7d3dfefdeae69623e9de5ff3bf9d64b4352ddb8edbf",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "reverification-resumed-saveshelf-component-ui/8DC69E7F-C23B-4E46-B2BF-9B94FD5AF417.png",
+    "sha256": "1dbb677b7e3cc0accde0fe1d06a1bc0810473cf4655aa76afe3602a3a8f1b4d1",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "reverification-resumed-saveshelf-component-ui/46477931-A109-49F5-9D88-89133543C28E.png",
+    "sha256": "1a438bb1bbb30358b2d11e6a78661bfddeb3aa3cb506df37f95690d159ed8e39",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "reverification-resumed-saveshelf-component-ui/C8F36171-BCFB-432F-825A-B2A38F0D4CBF.png",
+    "sha256": "a85f8bccd37aed997aa7e17b4e1d7e26f1f16c7177a9f24fedcc71ef3d6179ae",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "reverification-resumed-saveshelf-component-ui/C77C7770-4F5C-4820-87FE-294D2FBB3A93.png",
+    "sha256": "2b83adf87b001afa67e47fafca81cb572ac2cdfc322efd94b6fc90811b73f17f",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "reverification-resumed-saveshelf-component-ui/EADB83B5-44A7-4C9C-A7B8-7F8363A43354.png",
+    "sha256": "d7287c148f01a568e943ee2fb52d401a7b3c2501affcc0f85d358fd0477d3ac8",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "reverification-resumed-saveshelf-component-ui/01DD96E9-9568-41CB-B83E-E06BD6496C7E.png",
+    "sha256": "00bd1b0023871c7af04196329bf9a5bf5574ed1aedc93b0983dc071ae2c5b81e",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "reverification-resumed-saveshelf-component-ui/E36DA42E-1831-4C31-A8E9-C37C9F1AF8FF.png",
+    "sha256": "7746e746cec6fd8527ed85a61efbd11ab748112b28547d0c00ad8d8e1ab72117",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "reverification-resumed-saveshelf-component-ui/0735F0BC-03F7-4822-AFB4-4D251E2D0E45.png",
+    "sha256": "f29b728fc24dddc1bd20513ed8c2d18b8acd6585a398d3fcc1d0e472e8a94d62",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "reverification-resumed-saveshelf-component-ui/FCAC30E3-C2B9-4775-98BD-75E8E734DF2B.png",
+    "sha256": "1a438bb1bbb30358b2d11e6a78661bfddeb3aa3cb506df37f95690d159ed8e39",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "reverification-resumed-saveshelf-component-ui/B8CCC0A5-1615-45C5-9130-46CB0BB3EEF6.png",
+    "sha256": "d757255ac91d9219cf7422e84e37150631e1f09af7e9e5d62d697a41e3532ca3",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "reverification-resumed-saveshelf-component-ui/5A54F246-0E38-4CB7-9D28-512F58093738.png",
+    "sha256": "5fce90f32cd0894aeda054b130694953e552186a2614842593c7161218ed6443",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "saveshelf-platform-final-visual/CE4C5532-2261-4EC4-B78E-48C78AEC24B6.png",
+    "sha256": "318861f727941f432201ed28c1a4245d3639fa491171fba2ee0bd0eb8af3da22",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "saveshelf-platform-final-visual/38DDA132-FC42-46FD-98B5-D9E9B59BDC97.png",
+    "sha256": "84d8a05affbf7bafd6a5971c1d19404614c1d09c0ab38be3ded701a9f0377d4c",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "saveshelf-platform-final-visual/F9A0C6B9-A301-46FA-B735-34EA06492275.png",
+    "sha256": "d5723dc6a62ebf8bc60197613be1a43791f4d1d60292fa52ffa51cde250eba13",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "saveshelf-platform-final-visual/DE3BB215-D2D5-4DA7-B8A1-3FD05816A969.png",
+    "sha256": "7bce0fcf0b6da15fb8df3432bd7c001a3af1c74a6b1c6afee3f77b7ad5c573d1",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "saveshelf-platform-final-visual/A2CA5A04-7324-43A2-B1B8-7F36BD4C9B2E.png",
+    "sha256": "82c4f3b05efb431e454cd3943c73a3c9bcd2fefac64a4a968c165a06679c4986",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  },
+  {
+    "file": "saveshelf-platform-final-visual/94F92450-1310-4479-A271-66CD67E7D9BA.png",
+    "sha256": "5956f648b8673dc11ef3f848a2e6ebe6b70272a82a66f1d65e7d9d8cf70ce9c1",
+    "candidate_for_portfolio": false,
+    "reason": "PlatformReviewUITests component-review fixture; not full app"
+  }
+]

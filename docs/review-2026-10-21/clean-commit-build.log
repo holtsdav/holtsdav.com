@@ -1,0 +1,146 @@
+
+> holtsdav.com@0.0.1 build
+> astro build
+
+04:02:16 [vite] Re-optimizing dependencies because vite config has changed
+04:02:16 [types] Generated 129ms
+04:02:16 [build] output: "static"
+04:02:16 [build] mode: "static"
+04:02:16 [build] directory: /private/var/folders/xf/xg8lngr14l71fvgspf7n02kh0000gn/T/portfolio-commit-candidate-oaosntjc/dist/
+04:02:16 [build] Collecting build info...
+04:02:16 [build] ✓ Completed in 150ms.
+04:02:16 [build] Building static entrypoints...
+04:02:16 [vite] ✓ built in 315ms
+04:02:16 [WARN] [vite] [plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+04:02:16 [vite] ✓ built in 131ms
+04:02:16 [build] Rearranging server assets...
+
+ generating static routes 
+04:02:16   ├─ /404.html (+15ms) 
+04:02:16   ├─ /about/index.html (+4ms) 
+04:02:16   ├─ /apps/glassdays-countdown/privacy/en/index.html (+7ms) 
+04:02:16   ├─ /apps/glassdays-countdown/privacy/es/index.html (+3ms) 
+04:02:16   ├─ /apps/glassdays-countdown/privacy/index.html (+2ms) 
+04:02:16   ├─ /apps/glassdays-countdown/index.html (+1ms) 
+04:02:16   ├─ /apps/mute-on-location/privacy/index.html (+2ms) 
+04:02:16   ├─ /apps/mute-on-location/index.html (+2ms) 
+04:02:16   ├─ /apps/rogue-color/index.html (+4ms) 
+04:02:16   ├─ /apps/room-planner/index.html (+5ms) 
+04:02:16   ├─ /contact/index.html (+3ms) 
+04:02:16   ├─ /directions/index.html (+13ms) 
+04:02:16   ├─ /drafts/notilog-privacy/index.html (+5ms) 
+04:02:16   ├─ /Glassdays/index.html (+2ms) 
+04:02:16   ├─ /impressum/index.html (+2ms) 
+04:02:16   ├─ /MuteOnLocation/index.html (+1ms) 
+04:02:16   ├─ /NotiLog/index.html (+1ms) 
+04:02:16   ├─ /privacy/index.html (+2ms) 
+04:02:16   ├─ /privacy/glassdays/index.html (+3ms) 
+04:02:16   ├─ /privacy/glassdays/de/index.html (+4ms) 
+04:02:16   ├─ /privacy/glassdays/es/index.html (+7ms) 
+04:02:16   ├─ /privacy/muteonlocation/index.html (+2ms) 
+04:02:16   ├─ /privacy/notilog/index.html (+1ms) 
+04:02:16   ├─ /privacy/roomplanner/index.html (+1ms) 
+04:02:16   ├─ /privacy/roguecolor/index.html (+2ms) 
+04:02:16   ├─ /project/glassdays/index.html (+3ms) 
+04:02:16   ├─ /project/mute-on-location/index.html (+2ms) 
+04:02:16   ├─ /project/rogue-color/index.html (+1ms) 
+04:02:16   ├─ /project/RoomPlanner/index.html (+4ms) 
+04:02:16   ├─ /project/RoomPlaner/index.html (+1ms) 
+04:02:16   ├─ /project/notilog/index.html (+1ms) 
+04:02:16   ├─ /projects/glassdays/index.html (+2ms) 
+04:02:16   ├─ /projects/notilog/index.html (+1ms) 
+04:02:16   ├─ /projects/saveshelf/index.html (+2ms) 
+04:02:16   ├─ /projects/mute-on-location/index.html (+2ms) 
+04:02:16   ├─ /projects/reviewbar/index.html (+5ms) 
+04:02:16   ├─ /projects/pdf-editor/index.html (+3ms) 
+04:02:16   ├─ /projects/room-planner/index.html (+3ms) 
+04:02:16   ├─ /projects/auxjam/index.html (+2ms) 
+04:02:16   ├─ /projects/rogue-color/index.html (+2ms) 
+04:02:16   ├─ /projects/glassdays-catalog/index.html (+2ms) 
+04:02:16   ├─ /projects/index.html (+3ms) 
+04:02:16   ├─ /review/original-animation/index.html (+4ms) 
+04:02:16   ├─ /RogueColor/index.html (+2ms) 
+04:02:16   ├─ /support/notilog/index.html (+3ms) 
+04:02:16   ├─ /support/index.html (+2ms) 
+04:02:16   ├─ /index.html (+3ms) 
+04:02:16 ✓ Completed in 169ms.
+
+ generating optimized images 
+04:02:16   ▶ /_astro/saveshelf.Zdxpg-5g_Z1bC9e5.svg (reused cache entry) (+2ms) (1/69)
+04:02:16   ▶ /_astro/reviewbar.CYzsQRzQ_1zxTte.webp (reused cache entry) (+2ms) (2/69)
+04:02:16   ▶ /_astro/mute-on-location.Dj6zSrOz_Z1D2an7.webp (reused cache entry) (+2ms) (3/69)
+04:02:16   ▶ /_astro/notilog.BmtUM64u_Z2jbnys.webp (reused cache entry) (+2ms) (4/69)
+04:02:16   ▶ /_astro/pdf-editor.CRbLGFn-_Z1bC9e5.svg (reused cache entry) (+2ms) (5/69)
+04:02:16   ▶ /_astro/room-planner.BVdjUzWm_Z1bC9e5.svg (reused cache entry) (+3ms) (6/69)
+04:02:16   ▶ /_astro/glassdays.YmXm626k_Z1KfYHp.webp (reused cache entry) (+3ms) (7/69)
+04:02:16   ▶ /_astro/rogue-color.BesqzYZv_Z16B5sg.webp (reused cache entry) (+3ms) (8/69)
+04:02:16   ▶ /_astro/catalog.XCBD-kq1_Z1bC9e5.svg (reused cache entry) (+3ms) (9/69)
+04:02:16   ▶ /_astro/auxjam.CGAQnMcl_Z1bC9e5.svg (reused cache entry) (+3ms) (10/69)
+04:02:16   ▶ /_astro/create-dark.DkpEappN_1H0qRm.webp (reused cache entry) (+4ms) (11/69)
+04:02:16   ▶ /_astro/home-light.DdE15i6D_Z1l4AOP.webp (reused cache entry) (+4ms) (12/69)
+04:02:16   ▶ /_astro/widgets.CWkoa1p9_Z2kMB9D.webp (reused cache entry) (+4ms) (13/69)
+04:02:16   ▶ /_astro/folders.QWY8x-Yq_Z2qHfcf.webp (reused cache entry) (+4ms) (14/69)
+04:02:16   ▶ /_astro/saveshelf.Zdxpg-5g_1Wwfw0.svg (reused cache entry) (+3ms) (15/69)
+04:02:16   ▶ /_astro/reviewbar.CYzsQRzQ_DuoEu.webp (reused cache entry) (+3ms) (16/69)
+04:02:16   ▶ /_astro/pdf-editor.CRbLGFn-_1Wwfw0.svg (reused cache entry) (+3ms) (17/69)
+04:02:16   ▶ /_astro/notilog.BmtUM64u_Z6TeKc.webp (reused cache entry) (+3ms) (18/69)
+04:02:16   ▶ /_astro/glassdays.YmXm626k_2nRDhM.webp (reused cache entry) (+3ms) (19/69)
+04:02:16   ▶ /_astro/rogue-color.BesqzYZv_ZQU5uS.webp (reused cache entry) (+3ms) (20/69)
+04:02:16   ▶ /_astro/auxjam.CGAQnMcl_1Wwfw0.svg (reused cache entry) (+3ms) (21/69)
+04:02:16   ▶ /_astro/catalog.XCBD-kq1_1Wwfw0.svg (reused cache entry) (+3ms) (22/69)
+04:02:16   ▶ /_astro/room-planner.BVdjUzWm_1Wwfw0.svg (reused cache entry) (+3ms) (23/69)
+04:02:16   ▶ /_astro/mute-on-location.Dj6zSrOz_Z2hEa4X.webp (reused cache entry) (+4ms) (24/69)
+04:02:16   ▶ /_astro/MuteOnLocation-preview.CyPFFT6t_Z1Mc5TA.webp (reused cache entry) (+2ms) (25/69)
+04:02:16   ▶ /_astro/home-light.DdE15i6D_ZgTadc.webp (reused cache entry) (+2ms) (26/69)
+04:02:16   ▶ /_astro/reviewbar.CYzsQRzQ_Z1t6jEa.webp (reused cache entry) (+2ms) (27/69)
+04:02:16   ▶ /_astro/saveshelf.Zdxpg-5g_Z4Idyz.svg (reused cache entry) (+2ms) (28/69)
+04:02:16   ▶ /_astro/pdf-editor.CRbLGFn-_Z4Idyz.svg (reused cache entry) (+2ms) (29/69)
+04:02:16   ▶ /_astro/glassdays.YmXm626k_ggTX8.webp (reused cache entry) (+2ms) (30/69)
+04:02:16   ▶ /_astro/RoomPlaner.DTD4x_LV_79JPt.webp (reused cache entry) (+2ms) (31/69)
+04:02:16   ▶ /_astro/notilog.BmtUM64u_Z1pWOH0.webp (reused cache entry) (+2ms) (32/69)
+04:02:16   ▶ /_astro/rogue-color.BesqzYZv_ZmTtLQ.webp (reused cache entry) (+2ms) (33/69)
+04:02:16   ▶ /_astro/auxjam.CGAQnMcl_Z4Idyz.svg (reused cache entry) (+2ms) (34/69)
+04:02:16   ▶ /_astro/room-planner.BVdjUzWm_Z4Idyz.svg (reused cache entry) (+2ms) (35/69)
+04:02:16   ▶ /_astro/pdf-demo.BirPzVXY_2rfBFy.webp (reused cache entry) (+3ms) (36/69)
+04:02:16   ▶ /_astro/catalog.XCBD-kq1_Z4Idyz.svg (reused cache entry) (+2ms) (37/69)
+04:02:16   ▶ /_astro/reviewbar.CYzsQRzQ_1CGx9U.webp (reused cache entry) (+1ms) (38/69)
+04:02:16   ▶ /_astro/mute-on-location.Dj6zSrOz_Z1owgyF.webp (reused cache entry) (+2ms) (39/69)
+04:02:16   ▶ /_astro/saveshelf.Zdxpg-5g_Z26G039.svg (reused cache entry) (+1ms) (40/69)
+04:02:16   ▶ /_astro/MuteOnLocation-preview.CyPFFT6t_2ii6l2.webp (reused cache entry) (+2ms) (41/69)
+04:02:16   ▶ /_astro/glassdays.YmXm626k_Z1H7m1I.webp (reused cache entry) (+1ms) (42/69)
+04:02:16   ▶ /_astro/pdf-editor.CRbLGFn-_Z26G039.svg (reused cache entry) (+1ms) (43/69)
+04:02:16   ▶ /_astro/auxjam.CGAQnMcl_Z26G039.svg (reused cache entry) (+1ms) (44/69)
+04:02:16   ▶ /_astro/RoomPlaner.DTD4x_LV_Z1wqCgj.webp (reused cache entry) (+1ms) (45/69)
+04:02:16   ▶ /_astro/rogue-color.BesqzYZv_Z2ojgwQ.webp (reused cache entry) (+1ms) (46/69)
+04:02:16   ▶ /_astro/room-planner.BVdjUzWm_Z26G039.svg (reused cache entry) (+1ms) (47/69)
+04:02:16   ▶ /_astro/notilog.BmtUM64u_Z2eYtFr.webp (reused cache entry) (+2ms) (48/69)
+04:02:16   ▶ /_astro/rogue-color-gameplay.pwhkFR4F_1Mtrv2.webp (reused cache entry) (+2ms) (49/69)
+04:02:16   ▶ /_astro/catalog.XCBD-kq1_Z26G039.svg (reused cache entry) (+1ms) (50/69)
+04:02:16   ▶ /_astro/mute-on-location.Dj6zSrOz_Zid9iy.webp (reused cache entry) (+1ms) (51/69)
+04:02:16   ▶ /_astro/saveshelf.Zdxpg-5g_2p4wwp.svg (reused cache entry) (+1ms) (52/69)
+04:02:16   ▶ /_astro/pdf-demo.BirPzVXY_Z1JEelt.webp (reused cache entry) (+2ms) (53/69)
+04:02:16   ▶ /_astro/pdf-editor.CRbLGFn-_2p4wwp.svg (reused cache entry) (+2ms) (54/69)
+04:02:16   ▶ /_astro/glassdays.YmXm626k_2kUW7B.webp (reused cache entry) (+2ms) (55/69)
+04:02:16   ▶ /_astro/auxjam.CGAQnMcl_2p4wwp.svg (reused cache entry) (+2ms) (56/69)
+04:02:16   ▶ /_astro/reviewbar.CYzsQRzQ_1Ct3nx.webp (reused cache entry) (+3ms) (57/69)
+04:02:16   ▶ /_astro/rogue-color.BesqzYZv_Z1AVllp.webp (reused cache entry) (+2ms) (58/69)
+04:02:16   ▶ /_astro/room-planner.BVdjUzWm_2p4wwp.svg (reused cache entry) (+2ms) (59/69)
+04:02:16   ▶ /_astro/notilog.BmtUM64u_2g0zGo.webp (reused cache entry) (+2ms) (60/69)
+04:02:16   ▶ /_astro/mute-on-location.Dj6zSrOz_ZNoYpW.webp (reused cache entry) (+2ms) (61/69)
+04:02:16   ▶ /_astro/catalog.XCBD-kq1_2p4wwp.svg (reused cache entry) (+2ms) (62/69)
+04:02:16   ▶ /_astro/rogue-color-gameplay.pwhkFR4F_201Nx7.webp (reused cache entry) (+2ms) (63/69)
+04:02:16   ▶ /_astro/saveshelf.Zdxpg-5g_Z1tEX6f.svg (reused cache entry) (+1ms) (64/69)
+04:02:16   ▶ /_astro/pdf-editor.CRbLGFn-_Z1tEX6f.svg (reused cache entry) (+1ms) (65/69)
+04:02:16   ▶ /_astro/glassdays.YmXm626k_3Hnen.webp (reused cache entry) (+1ms) (66/69)
+04:02:16   ▶ /_astro/reviewbar.CYzsQRzQ_Z1FEQnU.webp (reused cache entry) (+1ms) (67/69)
+04:02:16   ▶ /_astro/notilog.BmtUM64u_Z1GJqf4.webp (reused cache entry) (+1ms) (68/69)
+04:02:16   ▶ /_astro/mute-on-location.Dj6zSrOz_Z1FBc2X.webp (reused cache entry) (+1ms) (69/69)
+04:02:16 ✓ Completed in 12ms.
+
+04:02:16 [build] ✓ Completed in 653ms.
+04:02:16 [build] 47 page(s) built in 805ms
+04:02:16 [build] Complete!

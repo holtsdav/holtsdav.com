@@ -1,0 +1,9 @@
+{
+  "commit": "e984f63e23c785e45110edd2c99783952bf63e9b",
+  "implementation_commit_patch_apply_check": "passed against clean original starting HEAD in disposable fixture",
+  "committed_archive_legacy_global_equals_original_committed_baseline": true,
+  "all_four_export_hashes_verified": true,
+  "original_hashes_preserved": true,
+  "preview_http_status": 200,
+  "further_builds_deferred_for_saveshelf": true
+}

@@ -1,0 +1,77 @@
+Window: "Glassdays JSON Editor — holtsdav", App: Safari.
+0 standard window Glassdays JSON Editor — holtsdav, ID: SafariWindow?IsSecure=false&UUID=F9B30771-B004-4C5E-95C2-C6492FB9F435, Secondary Actions: Raise
+	1 split group
+		2 splitter (disabled, settable, float) -1
+		3 tab group
+			4 scroll area
+				5 HTML content Description: Glassdays JSON Editor — holtsdav, URL: 127.0.0.1:4330/projects/glassdays-catalog/
+					6 link Skip to content, Value: 127.0.0.1:4330/projects/glassdays-catalog/#main-content
+					7 container
+						8 link holtsdav — Home, Value: 127.0.0.1:4330/
+						9 container Contact links
+							10 link GitHub, Value: github.com/holtsdav
+							11 link Email, Value: mailto:contact@holtsdav.com
+					12 container Glassdays JSON Editor
+						13 link ← Home, Value: 127.0.0.1:4330/
+						14 link Close Glassdays JSON Editor, Value: 127.0.0.1:4330/
+						15 container
+							16 heading Glassdays JSON Editor, Value: 1
+								17 text Glassdays JSON Editor
+							18 text Web Private tool
+						19 text Edit Glassdays events and countdown dates. Import and export JSON.
+						20 container
+							21 link Ask about Glassdays JSON Editor, Value: mailto:contact@holtsdav.com?subject=Glassdays%20JSON%20Editor
+							22 link (collapsed) All projects, Value: 127.0.0.1:4330/projects/, Secondary Actions: Expand
+					23 container Workspace
+						24 link Home, Value: 127.0.0.1:4330/
+						25 container Opened projects
+							26 link Glassdays, Value: 127.0.0.1:4330/projects/glassdays/
+							27 button Close Glassdays
+							28 link SaveShelf, Value: 127.0.0.1:4330/projects/saveshelf/
+							29 button Close SaveShelf
+							30 link Mute On Location, Value: 127.0.0.1:4330/projects/mute-on-location/
+							31 button Close Mute On Location
+							32 link ReviewBar, Value: 127.0.0.1:4330/projects/reviewbar/
+							33 button Close ReviewBar
+							34 link PDF Editor, Value: 127.0.0.1:4330/projects/pdf-editor/
+							35 button Close PDF Editor
+							36 link Room Planner, Value: 127.0.0.1:4330/projects/room-planner/
+							37 button Close Room Planner
+							38 link AuxJam, Value: 127.0.0.1:4330/projects/auxjam/
+							39 button Close AuxJam
+							40 link Rogue Color, Value: 127.0.0.1:4330/projects/rogue-color/
+							41 button Close Rogue Color
+							42 link Glassdays JSON Editor, Value: 127.0.0.1:4330/projects/glassdays-catalog/
+							43 button Close Glassdays JSON Editor
+						44 link (collapsed) Projects, Value: 127.0.0.1:4330/projects/, Secondary Actions: Expand
+						45 button (collapsed) More: About, Support, Privacy and Impressum, Secondary Actions: Expand
+	46 toolbar
+		47 container Secondary Actions: Move previous, Move next, Remove from toolbar
+			48 button Description: show sidebar, Help: Show sidebar, ID: SidebarButton
+			49 menu button Description: Tab Group picker, ID: TabGroupPickerButton?TabGroup=
+		50 container BackForwardSegmentedControl
+			51 button Description: Go back, Help: Show the previous page, ID: BackButton
+			52 button (disabled) Description: Go forward, Help: Show the next page, ID: ForwardButton
+		53 container Secondary Actions: Move previous, Move next, Remove from toolbar
+			54 button Page Menu, ID: AssistantButton
+			55 button Add page to Reading List, ID: OneStepBookmarkingButton
+			56 text field (settable) Description: smart search field, Value: 127.0.0.1:4330/projects/glassdays-catalog/, ID: WEB_BROWSER_ADDRESS_AND_SEARCH_FIELD
+			57 button Translation Available, ID: TranslationButton
+			58 button Reload this page, ID: ReloadButton
+		59 button Description: Share, ID: ShareButton, Secondary Actions: Move previous, Move next, Remove from toolbar
+		60 button Description: New Tab, ID: NewTabButton, Secondary Actions: Move previous, Move next, Remove from toolbar
+		61 button Description: Tab Overview, ID: TabOverviewButton, Secondary Actions: Move previous, Remove from toolbar
+	62 close button
+	63 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	64 minimize button
+65 menu bar
+	66 Safari
+	67 File
+	68 Edit
+	69 View, ID: SafariViewMenu
+	70 History
+	71 Bookmarks, ID: SafariBookmarksMenu
+	72 Window, ID: SafariWindowMenu
+	73 Help, ID: SafariHelpMenu
+
+The focused UI element is 24 link Home, Value: 127.0.0.1:4330/

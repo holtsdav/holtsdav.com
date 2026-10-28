@@ -1,0 +1,20 @@
+The following is a diff from the previous accessibility tree for Window: "About — David Holtschke" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 72-81, 89-93
+~0 standard window About — David Holtschke, ID: SafariWindow?IsSecure=false&UUID=F9B30771-B004-4C5E-95C2-C6492FB9F435, Secondary Actions: Raise
+~				62 HTML content Description: About — David Holtschke, URL: 127.0.0.1:4330/about/
+~					63 link Skip to content, Value: 127.0.0.1:4330/about/#main-content
+~						70 heading David Holtschke., Value: 1
+~							71 text David Holtschke.
++						72 text Software developer in Munich. I build apps for Apple platforms, web tools and Obsidian.
++						73 link contact@holtsdav.com ↗, Value: mailto:contact@holtsdav.com
++						74 container David’s profiles
++							75 link GitHub ↗, Value: github.com/holtsdav
++							76 link LinkedIn ↗, Value: linkedin.com/in/david-holtschke
++						77 text Glassdays icon adapted from 
++						78 link Hourglass Bold, Value: api.iconify.design/solar/hourglass-bold.svg
++						79 text , Solar Icon Set by 480 Design. 
++						80 link CC BY 4.0, Value: creativecommons.org/licenses/by/4.0/
++						81 text .
+~						88 button (collapsed) More: About, Support, Privacy and Impressum, Secondary Actions: Expand
+~			43 text field (settable) Description: smart search field, Value: 127.0.0.1:4330/about/, ID: WEB_BROWSER_ADDRESS_AND_SEARCH_FIELD
+The focused UI element is 62 HTML content Description: About — David Holtschke, URL: 127.0.0.1:4330/about/

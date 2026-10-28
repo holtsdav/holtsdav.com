@@ -1,0 +1,137 @@
+{
+  "checked_utc": "2026-10-21T04:58:21.222227+00:00",
+  "reviewed_head": "e984f63e23c785e45110edd2c99783952bf63e9b",
+  "preserved_e984f63": true,
+  "rendered_route_count": 47,
+  "unique_outbound_anchors": 38,
+  "public_http_destinations": 16,
+  "identity_verified": 15,
+  "login_gated_identity_unverified": 1,
+  "confirmed_wrong_or_broken": 0,
+  "mailto_destinations": 22,
+  "mailto_syntax_checks_pass": true,
+  "product_edits": false,
+  "staged_paths": [],
+  "tracked_modifications_still_owner_only": [
+    "DESIGN.md",
+    "src/components/Header.astro",
+    "src/components/ParticleWordmark.astro",
+    "src/scripts/particle-wordmark.ts",
+    "src/styles/global.css"
+  ],
+  "scope": "Exact rendered outbound anchors only, no external crawl, logins, forms, messages, installs, downloads, production writes or Library actions. Read-only content retrieval can use web-reader cache; not a guarantee of all network conditions or destination functionality. No numericHTTP status invented where tool does not expose it.",
+  "results": [
+    {
+      "href": "https://apps.apple.com/de/app/glassdays-countdown/id6785538729",
+      "status": "verified_redirect",
+      "identity_evidence": "Countdown - Glassdays; developer David Holtschke; countdowns/widgets",
+      "observed_redirect": "https://apps.apple.com/de/app/countdown-glassdays/id6785538729",
+      "method": "web reader"
+    },
+    {
+      "href": "https://apps.apple.com/de/app/mute-on-location/id6790398791?l=en-GB&mt=12",
+      "status": "verified",
+      "identity_evidence": "Mute On Location; developer David Holtschke; Only for Mac; location-triggered audio muting",
+      "observed_redirect": null,
+      "method": "background browser; web reader unavailable"
+    },
+    {
+      "href": "https://github.com/holtsdav",
+      "status": "verified",
+      "identity_evidence": "holtsdav (David Holtschke) public profile",
+      "observed_redirect": null,
+      "method": "web reader"
+    },
+    {
+      "href": "https://github.com/holtsdav/PDF-Editor",
+      "status": "verified",
+      "identity_evidence": "Public holtsdav/PDF-Editor repository; Obsidian PDF forms/ink plugin",
+      "observed_redirect": null,
+      "method": "web reader"
+    },
+    {
+      "href": "https://github.com/holtsdav/RoomPlanner",
+      "status": "verified",
+      "identity_evidence": "Public holtsdav/RoomPlanner repository; precise 2D room planner",
+      "observed_redirect": null,
+      "method": "web reader"
+    },
+    {
+      "href": "https://holtsdav.com/RoomPlanner",
+      "status": "verified",
+      "identity_evidence": "Room Planner page; room dimensions, objects and plan canvas",
+      "observed_redirect": null,
+      "method": "web reader; destination only, no interactions"
+    },
+    {
+      "href": "https://holtsdav.itch.io/rouge-color",
+      "status": "verified",
+      "identity_evidence": "Rogue Color by holtsdav; color switching survival game. URL intentionally spells rouge-color.",
+      "observed_redirect": null,
+      "method": "web reader; no run/download"
+    },
+    {
+      "href": "https://www.linkedin.com/in/david-holtschke",
+      "status": "login_gated_identity_unverified",
+      "identity_evidence": "Redirects to LinkedIn authwall/Join LinkedIn with original profile URL in sessionRedirect; profile content hidden",
+      "observed_redirect": "https://www.linkedin.com/authwall",
+      "method": "background browser; reader returned999"
+    },
+    {
+      "href": "https://www.icloud.com/shortcuts/150326e49cfb495dbd292fc1c7ab2f07",
+      "status": "verified",
+      "identity_evidence": "Public Shortcuts page heading NotiLog; no shortcut installation, running or action-body review",
+      "observed_redirect": null,
+      "method": "background browser; reader unavailable"
+    },
+    {
+      "href": "https://www.cloudflare.com/privacypolicy/",
+      "status": "verified",
+      "identity_evidence": "Cloudflare Privacy Policy",
+      "observed_redirect": null,
+      "method": "web reader"
+    },
+    {
+      "href": "https://api.iconify.design/solar/hourglass-bold.svg",
+      "status": "verified",
+      "identity_evidence": "SVG renders a bold hourglass at exact Solar icon path; also named in official Glassdays listing attribution",
+      "observed_redirect": null,
+      "method": "background browser; SVG unavailable to reader"
+    },
+    {
+      "href": "https://creativecommons.org/licenses/by/4.0/",
+      "status": "verified",
+      "identity_evidence": "Attribution 4.0 International / CC BY4.0 deed",
+      "observed_redirect": null,
+      "method": "web reader"
+    },
+    {
+      "href": "https://www.apple.com/legal/privacy/",
+      "status": "verified",
+      "identity_evidence": "Apple Customer Privacy Policy destination and topic selector; JavaScript-loaded body not comprehensively audited",
+      "observed_redirect": null,
+      "method": "web reader plus background browser"
+    },
+    {
+      "href": "https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy/",
+      "status": "verified",
+      "identity_evidence": "Apple Developer: Manage app privacy, App Store Connect Help",
+      "observed_redirect": null,
+      "method": "web reader"
+    },
+    {
+      "href": "https://telemetrydeck.com/privacy/",
+      "status": "verified",
+      "identity_evidence": "TelemetryDeck Privacy Policy",
+      "observed_redirect": null,
+      "method": "web reader"
+    },
+    {
+      "href": "https://www.revenuecat.com/privacy/",
+      "status": "verified_redirect",
+      "identity_evidence": "RevenueCat Privacy Policy",
+      "observed_redirect": "https://www.revenuecat.com/privacy",
+      "method": "web reader"
+    }
+  ]
+}

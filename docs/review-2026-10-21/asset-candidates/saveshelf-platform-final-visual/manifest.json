@@ -1,0 +1,62 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "49830B32-AE2B-43D4-9E08-C5C11D4E0012",
+        "deviceName" : "SaveShelf price UI compact QA",
+        "exportedFileName" : "F9A0C6B9-A301-46FA-B735-34EA06492275.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Accessibility filter scrolled_0_2E25665B-0983-4685-8D8D-FCB0478B7B51.png",
+        "timestamp" : 1792461515.08
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "49830B32-AE2B-43D4-9E08-C5C11D4E0012",
+        "deviceName" : "SaveShelf price UI compact QA",
+        "exportedFileName" : "94F92450-1310-4479-A271-66CD67E7D9BA.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Accessibility filter top_0_D7DFFAE2-849E-4F96-967F-D57225CF7077.png",
+        "timestamp" : 1792461513.494
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "49830B32-AE2B-43D4-9E08-C5C11D4E0012",
+        "deviceName" : "SaveShelf price UI compact QA",
+        "exportedFileName" : "CE4C5532-2261-4EC4-B78E-48C78AEC24B6.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Accessibility platform disabled_0_20F69AC6-9B03-4CC4-B510-6567BBA83C81.png",
+        "timestamp" : 1792461505.09
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "49830B32-AE2B-43D4-9E08-C5C11D4E0012",
+        "deviceName" : "SaveShelf price UI compact QA",
+        "exportedFileName" : "DE3BB215-D2D5-4DA7-B8A1-3FD05816A969.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Accessibility shelf platform row_0_08C0C31D-783E-453C-8EFE-D558ED3023DD.png",
+        "timestamp" : 1792461498.479
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "49830B32-AE2B-43D4-9E08-C5C11D4E0012",
+        "deviceName" : "SaveShelf price UI compact QA",
+        "exportedFileName" : "38DDA132-FC42-46FD-98B5-D9E9B59BDC97.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Accessibility lower platform names_0_2836DDF7-CC0B-4CB3-B2C2-05FEFC597007.png",
+        "timestamp" : 1792461496.651
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "49830B32-AE2B-43D4-9E08-C5C11D4E0012",
+        "deviceName" : "SaveShelf price UI compact QA",
+        "exportedFileName" : "A2CA5A04-7324-43A2-B1B8-7F36BD4C9B2E.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Accessibility dark platform setup_0_C1C6DE16-9F6B-4A18-B7BA-07991A310B45.png",
+        "timestamp" : 1792461495.278
+      }
+    ],
+    "testIdentifier" : "PlatformReviewUITests/testPlatformSetupAndAccessibilityLayout()",
+    "testIdentifierURL" : "test://com.apple.xcode/SaveShelfPlatformReview/SaveShelfPlatformReviewUITests/PlatformReviewUITests/testPlatformSetupAndAccessibilityLayout"
+  }
+]

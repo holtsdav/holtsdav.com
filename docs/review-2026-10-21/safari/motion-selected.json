@@ -1,0 +1,50 @@
+[
+  {
+    "file": "motion-00-73ms.png",
+    "elapsedMs": 73
+  },
+  {
+    "file": "motion-25-1805ms.png",
+    "elapsedMs": 1805
+  },
+  {
+    "file": "motion-51-3522ms.png",
+    "elapsedMs": 3522
+  },
+  {
+    "file": "motion-60-4124ms.png",
+    "elapsedMs": 4124
+  },
+  {
+    "file": "motion-69-4716ms.png",
+    "elapsedMs": 4716
+  },
+  {
+    "file": "motion-76-5171ms.png",
+    "elapsedMs": 5171
+  },
+  {
+    "file": "motion-103-6987ms.png",
+    "elapsedMs": 6987
+  },
+  {
+    "file": "motion-126-8496ms.png",
+    "elapsedMs": 8496
+  },
+  {
+    "file": "motion-136-9163ms.png",
+    "elapsedMs": 9163
+  },
+  {
+    "file": "motion-145-9772ms.png",
+    "elapsedMs": 9772
+  },
+  {
+    "file": "motion-156-10524ms.png",
+    "elapsedMs": 10524
+  },
+  {
+    "file": "motion-178-11983ms.png",
+    "elapsedMs": 11983
+  }
+]

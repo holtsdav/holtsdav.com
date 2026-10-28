@@ -1,0 +1,29 @@
+The following is a diff from the previous accessibility tree for Window: "Support — holtsdav" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 75-76, 82-92
+~0 standard window Support — holtsdav, ID: SafariWindow?IsSecure=false&UUID=F9B30771-B004-4C5E-95C2-C6492FB9F435, Secondary Actions: Raise
+~				62 HTML content Description: Support — holtsdav, URL: 127.0.0.1:4330/support/
+~					63 link Skip to content, Value: 127.0.0.1:4330/support/#main-content
+~						70 heading Support., Value: 1
+~							71 text Support.
+~						72 text Choose a project to email me. Include your device, app version and what happened.
+~						74 link Glassdays, Value: mailto:contact@holtsdav.com?subject=Glassdays%20support
++						75 link NotiLog, Value: mailto:contact@holtsdav.com?subject=NotiLog%20support
++						76 link SaveShelf, Value: mailto:contact@holtsdav.com?subject=SaveShelf%20support
+~						77 link Mute On Location, Value: mailto:contact@holtsdav.com?subject=Mute%20On%20Location%20support
+~						78 link ReviewBar, Value: mailto:contact@holtsdav.com?subject=ReviewBar%20support
+~						79 link PDF Editor, Value: mailto:contact@holtsdav.com?subject=PDF%20Editor%20support
+~						80 link Room Planner, Value: mailto:contact@holtsdav.com?subject=Room%20Planner%20support
+~						81 link AuxJam, Value: mailto:contact@holtsdav.com?subject=AuxJam%20support
++						82 link Rogue Color, Value: mailto:contact@holtsdav.com?subject=Rogue%20Color%20support
++						83 link Glassdays JSON Editor, Value: mailto:contact@holtsdav.com?subject=Glassdays%20JSON%20Editor%20support
++					84 container Workspace
++						85 link Home, Value: 127.0.0.1:4330/
++						86 container Opened projects
++							87 link NotiLog, Value: 127.0.0.1:4330/projects/notilog/
++							88 button Close NotiLog
++						89 link (collapsed) Projects, Value: 127.0.0.1:4330/projects/, Secondary Actions: Expand
++						90 button (collapsed) More: About, Support, Privacy and Impressum, Secondary Actions: Expand
++				91 scroll bar (settable, float) 0
+~			43 text field (settable) Description: smart search field, Value: 127.0.0.1:4330/support/, ID: WEB_BROWSER_ADDRESS_AND_SEARCH_FIELD
+~			45 button Stop loading this page, ID: ReloadButton
+The focused UI element is 62 HTML content Description: Support — holtsdav, URL: 127.0.0.1:4330/support/

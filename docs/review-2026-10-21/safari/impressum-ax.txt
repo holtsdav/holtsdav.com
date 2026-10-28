@@ -1,0 +1,32 @@
+The following is a diff from the previous accessibility tree for Window: "Legal Notice (Impressum) | holtsdav" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 75-76, 82-84, 86, 88-150
+~0 standard window Legal Notice (Impressum) | holtsdav, ID: SafariWindow?IsSecure=false&UUID=F9B30771-B004-4C5E-95C2-C6492FB9F435, Secondary Actions: Raise
+~				62 HTML content Description: Legal Notice (Impressum) | holtsdav, URL: 127.0.0.1:4330/impressum/
+~					63 link Skip to content, Value: 127.0.0.1:4330/impressum/#main-content
+~					69 container Legal Notice (Impressum)
+~							71 heading Legal Notice (Impressum), Value: 1
+~								72 text Legal Notice (Impressum)
+~							73 text Provider information pursuant to Section 5 of the German Digital Services Act (Digitale-Dienste-Gesetz, DDG).
+~						74 heading Provider, Value: 2
++							75 text Provider
++						76 text Business name: holtsdav
+~						77 text Website operator and responsible person:
+~							79 text David Holtschke Arcisstraße 50 80799 München Germany
+~						80 heading Contact, Value: 2
+~							81 text Contact
++						82 container
++							83 text Email: 
++							84 link contact@holtsdav.com, Value: mailto:contact@holtsdav.com
+~						85 heading Tax and business identification, Value: 2
++							86 text Tax and business identification
+~						87 text Business identification number (W-IdNr.): Not yet received
++					88 container Workspace
++						89 link Home, Value: 127.0.0.1:4330/
++						90 container Opened projects
++							91 link NotiLog, Value: 127.0.0.1:4330/projects/notilog/
++							92 button Close NotiLog
++						93 link (collapsed) Projects, Value: 127.0.0.1:4330/projects/, Secondary Actions: Expand
++						94 button (collapsed) More: About, Support, Privacy and Impressum, Secondary Actions: Expand
++				95 scroll bar (settable, float) 0
+~			43 text field (settable) Description: smart search field, Value: 127.0.0.1:4330/impressum/, ID: WEB_BROWSER_ADDRESS_AND_SEARCH_FIELD
+The focused UI element is 62 HTML content Description: Legal Notice (Impressum) | holtsdav, URL: 127.0.0.1:4330/impressum/

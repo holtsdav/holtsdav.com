@@ -1,12 +1,12 @@
 ---
 name: holtsdav.com
-description: Existing developer portfolio shell and contact controls
+description: Refined lightmode portfolio design system inspired by Cindy Ly and Mac Stats
 colors:
-  page: "#090a0d"
-  elevated: "#111319"
-  primary: "#f5f7fa"
-  secondary: "#c0c4cd"
-  accent: "#91a2ff"
+  page: "#f8f8f6"
+  elevated: "#ffffff"
+  primary: "#18181b"
+  secondary: "#52525b"
+  accent: "#2563eb"
 typography:
   body:
     fontFamily: "Arial, Helvetica, sans-serif"
@@ -14,24 +14,25 @@ typography:
     lineHeight: 1.65
   control:
     fontFamily: "Arial, Helvetica, sans-serif"
-    fontSize: "16px"
-    fontWeight: 700
+    fontSize: "15px"
+    fontWeight: 600
 rounded:
   control: "10px"
-  button: "12px"
+  button: "9999px"
+  card: "22px"
 spacing:
   compact: "8px"
   related: "16px"
   group: "24px"
 components:
   button-primary:
-    backgroundColor: "{colors.accent}"
-    textColor: "{colors.page}"
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.elevated}"
     rounded: "{rounded.button}"
     padding: "13px 20px"
   contact-submit:
     backgroundColor: "{colors.accent}"
-    textColor: "{colors.page}"
+    textColor: "{colors.elevated}"
     rounded: "{rounded.control}"
     padding: "12px 20px"
   contact-input:
@@ -45,57 +46,54 @@ components:
 
 ## Overview
 
-The existing portfolio uses a near-black canvas, pale text, and a blue accent. Contact inherits this restrained shell and keeps the email link and form easy to find.
-
-This is a code-based record of the incumbent global styles and contact addition, not a new brand direction or visual approval. Browser screenshot verification was unavailable.
+The portfolio features a warm, refined **Lightmode Design** inspired by [cindyly.design](https://www.cindyly.design/) paired with a **floating island header** inspired by [Mac Stats](https://mac-stats.com/).
 
 **Key Characteristics:**
-- Dark tonal surfaces and pale readable text.
-- Blue links and primary actions.
-- Rounded controls with visible keyboard focus.
+- Warm paper/sand canvas (`#f8f8f6`) with an ultra-delicate 32px technical line grid.
+- Crisp porcelain elevated surfaces (`#ffffff`) with diffused elevation drop shadows.
+- High-contrast obsidian typography (`#18181b`) and royal cobalt accent (`#2563eb`).
+- Floating frosted glass island header that transitions seamlessly from transparent at top to a blurred capsule pill on scroll.
+- High-definition Three.js particle wordmark with crisp circular discs and no noise artifacts.
+- Translucent pill tags and badges with subtle hairline borders.
 
 ## Colors
 
-The accent is a cool blue; primary and secondary retain their incumbent names for text roles.
+- **Page Canvas (`#f8f8f6`):** Warm off-white sand foundation.
+- **Elevated Surfaces (`#ffffff`):** Pure white for cards, hero app squircles, inputs, and modal panels.
+- **Primary Text (`#18181b`):** Deep charcoal ink for headings, prominent actions, and high-contrast labels.
+- **Secondary Text (`#52525b`):** Muted neutral slate for body copy, descriptions, and metadata.
+- **Brand Accent (`#2563eb`):** Royal cobalt for interactive links, focus rings, and the `dav` wordmark accent.
+- **Muted Borders (`rgba(0, 0, 0, 0.08)`):** Hairline structural dividing lines.
 
-- **Primary accent:** accent colors links, primary actions, selection, and keyboard outlines.
-- **Neutrals:** page provides the canvas; elevated distinguishes fields; primary carries headings and control text; secondary carries supporting copy.
+## Header Architecture (Mac Stats Floating Island)
 
-**The Shared Palette Rule.** Reuse the global color variables for the shell and contact controls.
+The header uses a sticky wrapper with a fixed floating container (`.header-floating-wrap`):
+- **Base State (Top of page):** Transparent background, no borders, natural blend into the hero canvas.
+- **Scrolled State (`data-scrolled="true"` on `scrollY > 16`):**
+  - Background: `rgba(255, 255, 255, 0.82)`
+  - Backdrop Filter: `blur(20px) saturate(180%)`
+  - Border: `1px solid rgba(0, 0, 0, 0.08)`
+  - Shape: Fully rounded capsule pill (`border-radius: 9999px`)
+  - Shadow: Multi-tier diffused shadow (`0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 4px 10px -4px rgba(0, 0, 0, 0.03)`)
+- **Wordmark Logo (Top-left):**
+  - Two-tone styling: `holts` in deep dark slate (`#0f172a`), `dav` in radiant cobalt (`#2563eb`).
+- **Navigation Items:**
+  - Center pill links (`Projects`, `About`) with subtle hover backgrounds.
+  - Social link circular buttons (GitHub, LinkedIn, X).
+  - High-contrast dark pill `Contact` action button (`#18181b` background, `#ffffff` text, rounded-full).
 
-## Typography
+## Particle Wordmark Polish
 
-The incumbent body stack is recorded above. Contact uses a compact hierarchy: a fluid heading (42–64px), section titles (24px), body copy, labels (15px), and feedback (14px). Heading tracking is tighter than body copy. These contact sizes are local composition values, not a universal type scale.
+- **Shaders:**
+  - Vertex shader palettes updated for light canvas contrast: `holts` in deep slate (`#0f172a`), `dav` in royal cobalt (`#2563eb`).
+  - Fragment shader uses tight anti-aliasing (`smoothstep(0.72, 1.0, dist)`) to produce crisp circular discs without television-static alpha noise.
+- **Density & Physics:**
+  - Increased sample density and optimized particle sizes for solid glyph legibility in bright environments.
+  - Interactive spring physics, mouse avoidance, and morph mechanics between `holtsdav` and `David Holtschke` are fully preserved.
 
-The build also uses Arial as its display face. This is an incumbent compatibility fact, not a newly endorsed display-font rule.
+## Cards & Components
 
-## Layout
-
-The shared container is centered with a maximum width of 1180px and desktop side gutters of 40px. At 760px and below, gutters become 24px. The header spans the viewport and remains sticky.
-
-Contact narrows the shared container to 1000px, placing email beside the form. At 760px it stacks; name and email stack at 460px. These local breakpoints and dimensions describe the current contact surface. Footer content stacks on mobile.
-
-## Elevation & Depth
-
-Contact uses tonal separation and borders rather than elevated cards or shadows. The shared body carries a faint blue radial background wash. Other portfolio surfaces contain project-specific glow and shadow treatments; this narrow record does not promote those into contact rules.
-
-## Shapes
-
-Controls have gently rounded corners. Shared buttons use the button radius; contact fields, submit, and header icon links use the control radius. Thin borders separate the shared header and footer from content.
-
-## Components
-
-- **Buttons:** shared primary buttons use accent fill, dark text, and a small hover lift; secondary buttons use translucent fill and a light border. Contact submit changes fill on hover and dims while disabled, without a hover lift.
-- **Fields:** elevated fill, visible border, persistent label, and a blue keyboard outline. Invalid fields and nearby errors use pale red. Success feedback uses pale green. Textareas resize vertically.
-- **Navigation:** the wordmark leads home; the envelope leads to contact. Icon links have rounded hover backgrounds and accessible names. Footer links use secondary text and brighten on hover.
-- **Focus and motion:** links use a 3px accent outline with a 4px offset; form controls use a 3px offset. Short state transitions use 160ms ease. The shared reduced-motion rule suppresses animation and transition durations.
-
-**The Visible Feedback Rule.** Keep validation and delivery status adjacent to the form, and preserve entered content when submission fails.
-
-## Do's and Don'ts
-
-- Do reuse the shared palette, header, and footer.
-- Do keep form labels visible and feedback beside the form.
-- Do respect the existing reduced-motion override.
-- Don't turn contact into a promotional landing page.
-- Don't treat page-specific measurements as universal layout tokens.
+- **Project Gallery Cards:** Porcelain white cards with subtle borders (`rgba(0, 0, 0, 0.07)`), preview image headers, and Cindy Ly translucent pill tags (Platform, Language/Tool, Monetization, AI disclosure).
+- **Floating App Constellation:** Hero app icons rendered as white porcelain squircles with multi-tier elevation drop shadows and gentle floating keyframe animations.
+- **Buttons & Pills:** Pill shapes (`border-radius: 9999px` or `12px`), dark primary button, translucent secondary badges.
+- **Contact Form:** High-contrast white input containers with subtle borders and cobalt focus rings (`#2563eb`).

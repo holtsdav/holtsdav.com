@@ -1,0 +1,39 @@
+{
+  "finished_utc": "2026-10-21T02:28:00.125912+00:00",
+  "implementation_head": "e984f63e23c785e45110edd2c99783952bf63e9b",
+  "implementation_commit_preserved": true,
+  "staged_paths": [],
+  "original_head_unchanged": true,
+  "original_status_unchanged": true,
+  "original_seven_hashes_unchanged": {
+    "DESIGN.md": true,
+    "src/components/Header.astro": true,
+    "src/components/ParticleWordmark.astro": true,
+    "src/layouts/BaseLayout.astro": true,
+    "src/pages/contact.astro": true,
+    "src/scripts/particle-wordmark.ts": true,
+    "src/styles/global.css": true
+  },
+  "five_owner_only_baseline_hashes_unchanged": {
+    "DESIGN.md": true,
+    "src/components/Header.astro": true,
+    "src/components/ParticleWordmark.astro": true,
+    "src/scripts/particle-wordmark.ts": true,
+    "src/styles/global.css": true
+  },
+  "preview_last_verified": "Actual Safari loaded all ten project routes plus Home/About/Support/Privacy/Impressum at 127.0.0.1:4330; shell HTTP spot check unavailable in restricted network sandbox. Existing server not stopped.",
+  "product_code_changed_for_safari": false,
+  "foreground_released": true,
+  "original_status": [
+    " M DESIGN.md",
+    " M src/components/Header.astro",
+    " M src/components/ParticleWordmark.astro",
+    " M src/layouts/BaseLayout.astro",
+    " M src/pages/contact.astro",
+    " M src/scripts/particle-wordmark.ts",
+    " M src/styles/global.css",
+    "?? .claude/settings.local.json",
+    "?? .codex/hooks.json"
+  ],
+  "status_comparison_mode": "--short --untracked-files=all"
+}

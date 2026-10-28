@@ -1,0 +1,18 @@
+[
+  {
+    "bundle": "reverification-resumed-reviewbar-inert-ui",
+    "exit": 0,
+    "export_log": "Skipped export for ReviewBarUITests/testServiceFreeHost(): no matching attachments\n\nGenerated manifest file with attachment details: /Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-workspace/docs/review-2026-10-21/asset-candidates/reverification-resumed-reviewbar-inert-ui/all-attachments/manifest.json\n",
+    "files": [
+      "manifest.json"
+    ]
+  },
+  {
+    "bundle": "reviewbar-startup-ui",
+    "exit": 0,
+    "export_log": "Skipped export for ReviewBarUITests/testServiceFreeHost(): no matching attachments\n\nGenerated manifest file with attachment details: /Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-workspace/docs/review-2026-10-21/asset-candidates/reviewbar-startup-ui/all-attachments/manifest.json\n",
+    "files": [
+      "manifest.json"
+    ]
+  }
+]

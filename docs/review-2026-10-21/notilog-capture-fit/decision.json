@@ -1,0 +1,33 @@
+{
+  "date_utc": "2026-10-21T03:10:06.270801+00:00",
+  "decision": "retain compact existing NotiLog page; no product increment",
+  "reviewed_commit": "e984f63e23c785e45110edd2c99783952bf63e9b",
+  "source_commit": "164f3308438abbebbf0f532bde92466b24285355",
+  "source_capture": "/Users/holtsdav/Documents/Codex/2026-10-21/task-3/evidence/contrast/raw-png/14-fixed-sample-passed-waiting-light.png",
+  "source_sha256": "3e390706d8fbdf4f303e54e890688c3e9859264c5ffc6efd6ceb7273ab9ff7f0",
+  "matches_native_manifest": true,
+  "candidate": "Unlinked static copy of compiled NotiLog page, one unchanged native PNG at max330px, accurate development/synthetic/automation-not-tested caption; no cropping or reconstruction.",
+  "rendered_viewports": [
+    [
+      1440,
+      900
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "browser": "Hidden IAB browser; no foreground/native apps/simulator/build use",
+  "product_source_changed": false,
+  "candidate_removed_from_preview": true,
+  "temporary_browser_closed_and_viewport_reset": true,
+  "build_or_tests": "No product changes, so no rebuild or test rerun required; browser comparison performed.",
+  "limits": "Real capture of shared native components on isolated review route, not validation of Shortcuts dispatch/automation or standard-phone geometry.",
+  "reasons": [
+    "Capture Check/setup screen does not illustrate History/search/pinning value",
+    "At a restrained desktop width its text becomes too small; larger treatment overemphasizes setup",
+    "Duo side-mounted clock/status area looks awkward as a normal phone product screenshot",
+    "Mobile adds a long text-heavy panel and explanatory caption to an intentionally minimal page"
+  ],
+  "future_asset": "Prefer an accurately labelled native History/search screen with safe synthetic demo notifications in standard-phone geometry when a safe runtime is available; do not force a capture tonight."
+}

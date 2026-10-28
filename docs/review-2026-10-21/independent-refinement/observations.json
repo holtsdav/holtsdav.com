@@ -1,0 +1,1412 @@
+{
+  "home": [
+    {
+      "width": 1440,
+      "height": 900,
+      "opened": false,
+      "scroll": 0,
+      "bodyWidth": 1440,
+      "viewport": 1440,
+      "dock": {
+        "left": 601,
+        "top": 786,
+        "right": 839,
+        "bottom": 882
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 345.421875,
+          "right": 778.203125,
+          "top": 87.5,
+          "bottom": 305.5
+        },
+        {
+          "text": "dav",
+          "left": 778.203125,
+          "right": 1094.5625,
+          "top": 87.5,
+          "bottom": 305.5
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 621.15625,
+          "right": 818.828125,
+          "top": 314,
+          "bottom": 331
+        },
+        {
+          "text": "Projects",
+          "left": 679.765625,
+          "right": 726.046875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "↗",
+          "left": 751.046875,
+          "right": 760.21875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "Glassdays",
+          "left": 180,
+          "right": 245.671875,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 632.4375,
+          "right": 705,
+          "top": 431.6875,
+          "bottom": 444.6875
+        },
+        {
+          "text": "Mute On Location",
+          "left": 735,
+          "right": 849.25,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "Mac",
+          "left": 1237.953125,
+          "right": 1260,
+          "top": 431.6875,
+          "bottom": 444.6875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "opened": true,
+      "scroll": 0,
+      "bodyWidth": 1440,
+      "viewport": 1440,
+      "dock": {
+        "left": 221,
+        "top": 786,
+        "right": 1219,
+        "bottom": 882
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 345.421875,
+          "right": 778.203125,
+          "top": 87.5,
+          "bottom": 305.5
+        },
+        {
+          "text": "dav",
+          "left": 778.203125,
+          "right": 1094.5625,
+          "top": 87.5,
+          "bottom": 305.5
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 621.15625,
+          "right": 818.828125,
+          "top": 314,
+          "bottom": 331
+        },
+        {
+          "text": "Projects",
+          "left": 679.765625,
+          "right": 726.046875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "↗",
+          "left": 751.046875,
+          "right": 760.21875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "Glassdays",
+          "left": 180,
+          "right": 245.671875,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 632.4375,
+          "right": 705,
+          "top": 431.6875,
+          "bottom": 444.6875
+        },
+        {
+          "text": "Mute On Location",
+          "left": 735,
+          "right": 849.25,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "Mac",
+          "left": 1237.953125,
+          "right": 1260,
+          "top": 431.6875,
+          "bottom": 444.6875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "opened": false,
+      "scroll": 0,
+      "bodyWidth": 1280,
+      "viewport": 1280,
+      "dock": {
+        "left": 521,
+        "top": 606,
+        "right": 759,
+        "bottom": 702
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 265.421875,
+          "right": 698.203125,
+          "top": 87.5,
+          "bottom": 305.5
+        },
+        {
+          "text": "dav",
+          "left": 698.203125,
+          "right": 1014.5625,
+          "top": 87.5,
+          "bottom": 305.5
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 541.15625,
+          "right": 738.828125,
+          "top": 314,
+          "bottom": 331
+        },
+        {
+          "text": "Projects",
+          "left": 599.765625,
+          "right": 646.046875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "↗",
+          "left": 671.046875,
+          "right": 680.21875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "Glassdays",
+          "left": 100,
+          "right": 165.671875,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 552.4375,
+          "right": 625,
+          "top": 431.6875,
+          "bottom": 444.6875
+        },
+        {
+          "text": "Mute On Location",
+          "left": 655,
+          "right": 769.25,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "Mac",
+          "left": 1157.953125,
+          "right": 1180,
+          "top": 431.6875,
+          "bottom": 444.6875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "opened": true,
+      "scroll": 0,
+      "bodyWidth": 1280,
+      "viewport": 1280,
+      "dock": {
+        "left": 141,
+        "top": 606,
+        "right": 1139,
+        "bottom": 702
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 265.421875,
+          "right": 698.203125,
+          "top": 87.5,
+          "bottom": 305.5
+        },
+        {
+          "text": "dav",
+          "left": 698.203125,
+          "right": 1014.5625,
+          "top": 87.5,
+          "bottom": 305.5
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 541.15625,
+          "right": 738.828125,
+          "top": 314,
+          "bottom": 331
+        },
+        {
+          "text": "Projects",
+          "left": 599.765625,
+          "right": 646.046875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "↗",
+          "left": 671.046875,
+          "right": 680.21875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "Glassdays",
+          "left": 100,
+          "right": 165.671875,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 552.4375,
+          "right": 625,
+          "top": 431.6875,
+          "bottom": 444.6875
+        },
+        {
+          "text": "Mute On Location",
+          "left": 655,
+          "right": 769.25,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "Mac",
+          "left": 1157.953125,
+          "right": 1180,
+          "top": 431.6875,
+          "bottom": 444.6875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "opened": false,
+      "scroll": 0,
+      "bodyWidth": 1024,
+      "viewport": 1024,
+      "dock": {
+        "left": 393,
+        "top": 654,
+        "right": 631,
+        "bottom": 750
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 137.421875,
+          "right": 570.203125,
+          "top": 87.5,
+          "bottom": 305.5
+        },
+        {
+          "text": "dav",
+          "left": 570.203125,
+          "right": 886.5625,
+          "top": 87.5,
+          "bottom": 305.5
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 413.15625,
+          "right": 610.828125,
+          "top": 314,
+          "bottom": 331
+        },
+        {
+          "text": "Projects",
+          "left": 471.765625,
+          "right": 518.046875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "↗",
+          "left": 543.046875,
+          "right": 552.21875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "Glassdays",
+          "left": 36,
+          "right": 101.671875,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 424.4375,
+          "right": 497,
+          "top": 431.6875,
+          "bottom": 444.6875
+        },
+        {
+          "text": "Mute On Location",
+          "left": 527,
+          "right": 641.25,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "Mac",
+          "left": 965.953125,
+          "right": 988,
+          "top": 431.6875,
+          "bottom": 444.6875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "opened": true,
+      "scroll": 0,
+      "bodyWidth": 1024,
+      "viewport": 1024,
+      "dock": {
+        "left": 13,
+        "top": 654,
+        "right": 1011,
+        "bottom": 750
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 137.421875,
+          "right": 570.203125,
+          "top": 87.5,
+          "bottom": 305.5
+        },
+        {
+          "text": "dav",
+          "left": 570.203125,
+          "right": 886.5625,
+          "top": 87.5,
+          "bottom": 305.5
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 413.15625,
+          "right": 610.828125,
+          "top": 314,
+          "bottom": 331
+        },
+        {
+          "text": "Projects",
+          "left": 471.765625,
+          "right": 518.046875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "↗",
+          "left": 543.046875,
+          "right": 552.21875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "Glassdays",
+          "left": 36,
+          "right": 101.671875,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 424.4375,
+          "right": 497,
+          "top": 431.6875,
+          "bottom": 444.6875
+        },
+        {
+          "text": "Mute On Location",
+          "left": 527,
+          "right": 641.25,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "Mac",
+          "left": 965.953125,
+          "right": 988,
+          "top": 431.6875,
+          "bottom": 444.6875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "opened": false,
+      "scroll": 0,
+      "bodyWidth": 768,
+      "viewport": 768,
+      "dock": {
+        "left": 265,
+        "top": 910,
+        "right": 503,
+        "bottom": 1006
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 96.328125,
+          "right": 428.703125,
+          "top": 112.65625,
+          "bottom": 280.65625
+        },
+        {
+          "text": "dav",
+          "left": 428.703125,
+          "right": 671.65625,
+          "top": 112.65625,
+          "bottom": 280.65625
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 285.15625,
+          "right": 482.828125,
+          "top": 314,
+          "bottom": 331
+        },
+        {
+          "text": "Projects",
+          "left": 343.765625,
+          "right": 390.046875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "↗",
+          "left": 415.046875,
+          "right": 424.21875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "Glassdays",
+          "left": 36,
+          "right": 101.671875,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 296.4375,
+          "right": 369,
+          "top": 431.6875,
+          "bottom": 444.6875
+        },
+        {
+          "text": "Mute On Location",
+          "left": 399,
+          "right": 513.25,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "Mac",
+          "left": 709.953125,
+          "right": 732,
+          "top": 431.6875,
+          "bottom": 444.6875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "opened": true,
+      "scroll": 0,
+      "bodyWidth": 768,
+      "viewport": 768,
+      "dock": {
+        "left": 12,
+        "top": 910,
+        "right": 756,
+        "bottom": 1006
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 96.328125,
+          "right": 428.703125,
+          "top": 112.65625,
+          "bottom": 280.65625
+        },
+        {
+          "text": "dav",
+          "left": 428.703125,
+          "right": 671.65625,
+          "top": 112.65625,
+          "bottom": 280.65625
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 285.15625,
+          "right": 482.828125,
+          "top": 314,
+          "bottom": 331
+        },
+        {
+          "text": "Projects",
+          "left": 343.765625,
+          "right": 390.046875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "↗",
+          "left": 415.046875,
+          "right": 424.21875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "Glassdays",
+          "left": 36,
+          "right": 101.671875,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 296.4375,
+          "right": 369,
+          "top": 431.6875,
+          "bottom": 444.6875
+        },
+        {
+          "text": "Mute On Location",
+          "left": 399,
+          "right": 513.25,
+          "top": 431.6875,
+          "bottom": 448.6875
+        },
+        {
+          "text": "Mac",
+          "left": 709.953125,
+          "right": 732,
+          "top": 431.6875,
+          "bottom": 444.6875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "opened": false,
+      "scroll": 0,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "dock": {
+        "left": 96.5,
+        "top": 741,
+        "right": 293.5,
+        "bottom": 830
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 8.1875,
+          "right": 224.03125,
+          "top": 134.4375,
+          "bottom": 243.4375
+        },
+        {
+          "text": "dav",
+          "left": 224.03125,
+          "right": 381.8125,
+          "top": 134.4375,
+          "bottom": 243.4375
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 108.40625,
+          "right": 281.578125,
+          "top": 305,
+          "bottom": 320
+        },
+        {
+          "text": "Projects",
+          "left": 159.28125,
+          "right": 202.21875,
+          "top": 352.0625,
+          "bottom": 365.0625
+        },
+        {
+          "text": "↗",
+          "left": 222.21875,
+          "right": 230.703125,
+          "top": 352.0625,
+          "bottom": 365.0625
+        },
+        {
+          "text": "Glassdays",
+          "left": 20,
+          "right": 77.453125,
+          "top": 416.59375,
+          "bottom": 431.59375
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 20,
+          "right": 86.71875,
+          "top": 438.1875,
+          "bottom": 450.1875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "opened": true,
+      "scroll": 0,
+      "bodyWidth": 390,
+      "viewport": 390,
+      "dock": {
+        "left": 10,
+        "top": 741,
+        "right": 380,
+        "bottom": 830
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 8.1875,
+          "right": 224.03125,
+          "top": 134.4375,
+          "bottom": 243.4375
+        },
+        {
+          "text": "dav",
+          "left": 224.03125,
+          "right": 381.8125,
+          "top": 134.4375,
+          "bottom": 243.4375
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 108.40625,
+          "right": 281.578125,
+          "top": 305,
+          "bottom": 320
+        },
+        {
+          "text": "Projects",
+          "left": 159.28125,
+          "right": 202.21875,
+          "top": 352.0625,
+          "bottom": 365.0625
+        },
+        {
+          "text": "↗",
+          "left": 222.21875,
+          "right": 230.703125,
+          "top": 352.0625,
+          "bottom": 365.0625
+        },
+        {
+          "text": "Glassdays",
+          "left": 20,
+          "right": 77.453125,
+          "top": 416.59375,
+          "bottom": 431.59375
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 20,
+          "right": 86.71875,
+          "top": 438.1875,
+          "bottom": 450.1875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "opened": false,
+      "scroll": 0,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "dock": {
+        "left": 61.5,
+        "top": 741,
+        "right": 258.5,
+        "bottom": 830
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 6.71875,
+          "right": 183.828125,
+          "top": 144,
+          "bottom": 233
+        },
+        {
+          "text": "dav",
+          "left": 183.828125,
+          "right": 313.28125,
+          "top": 144,
+          "bottom": 233
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 73.40625,
+          "right": 246.578125,
+          "top": 305,
+          "bottom": 320
+        },
+        {
+          "text": "Projects",
+          "left": 124.28125,
+          "right": 167.21875,
+          "top": 352.0625,
+          "bottom": 365.0625
+        },
+        {
+          "text": "↗",
+          "left": 187.21875,
+          "right": 195.703125,
+          "top": 352.0625,
+          "bottom": 365.0625
+        },
+        {
+          "text": "Glassdays",
+          "left": 20,
+          "right": 77.453125,
+          "top": 416.59375,
+          "bottom": 431.59375
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 20,
+          "right": 86.71875,
+          "top": 438.1875,
+          "bottom": 450.1875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "opened": true,
+      "scroll": 0,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "dock": {
+        "left": 10,
+        "top": 741,
+        "right": 310,
+        "bottom": 830
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 6.71875,
+          "right": 183.828125,
+          "top": 144,
+          "bottom": 233
+        },
+        {
+          "text": "dav",
+          "left": 183.828125,
+          "right": 313.28125,
+          "top": 144,
+          "bottom": 233
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 73.40625,
+          "right": 246.578125,
+          "top": 305,
+          "bottom": 320
+        },
+        {
+          "text": "Projects",
+          "left": 124.28125,
+          "right": 167.21875,
+          "top": 352.0625,
+          "bottom": 365.0625
+        },
+        {
+          "text": "↗",
+          "left": 187.21875,
+          "right": 195.703125,
+          "top": 352.0625,
+          "bottom": 365.0625
+        },
+        {
+          "text": "Glassdays",
+          "left": 20,
+          "right": 77.453125,
+          "top": 416.59375,
+          "bottom": 431.59375
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 20,
+          "right": 86.71875,
+          "top": 438.1875,
+          "bottom": 450.1875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "opened": false,
+      "scroll": 0,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "dock": {
+        "left": 61.5,
+        "top": 465,
+        "right": 258.5,
+        "bottom": 554
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 6.71875,
+          "right": 183.828125,
+          "top": 144,
+          "bottom": 233
+        },
+        {
+          "text": "dav",
+          "left": 183.828125,
+          "right": 313.28125,
+          "top": 144,
+          "bottom": 233
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 73.40625,
+          "right": 246.578125,
+          "top": 305,
+          "bottom": 320
+        },
+        {
+          "text": "Projects",
+          "left": 124.28125,
+          "right": 167.21875,
+          "top": 352.0625,
+          "bottom": 365.0625
+        },
+        {
+          "text": "↗",
+          "left": 187.21875,
+          "right": 195.703125,
+          "top": 352.0625,
+          "bottom": 365.0625
+        },
+        {
+          "text": "Glassdays",
+          "left": 20,
+          "right": 77.453125,
+          "top": 416.59375,
+          "bottom": 431.59375
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 20,
+          "right": 86.71875,
+          "top": 438.1875,
+          "bottom": 450.1875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "opened": true,
+      "scroll": 0,
+      "bodyWidth": 320,
+      "viewport": 320,
+      "dock": {
+        "left": 10,
+        "top": 465,
+        "right": 310,
+        "bottom": 554
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 6.71875,
+          "right": 183.828125,
+          "top": 144,
+          "bottom": 233
+        },
+        {
+          "text": "dav",
+          "left": 183.828125,
+          "right": 313.28125,
+          "top": 144,
+          "bottom": 233
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 73.40625,
+          "right": 246.578125,
+          "top": 305,
+          "bottom": 320
+        },
+        {
+          "text": "Projects",
+          "left": 124.28125,
+          "right": 167.21875,
+          "top": 352.0625,
+          "bottom": 365.0625
+        },
+        {
+          "text": "↗",
+          "left": 187.21875,
+          "right": 195.703125,
+          "top": 352.0625,
+          "bottom": 365.0625
+        },
+        {
+          "text": "Glassdays",
+          "left": 20,
+          "right": 77.453125,
+          "top": 416.59375,
+          "bottom": 431.59375
+        },
+        {
+          "text": "iPhone & iPad",
+          "left": 20,
+          "right": 86.71875,
+          "top": 438.1875,
+          "bottom": 450.1875
+        }
+      ],
+      "bad": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "opened": false,
+      "scroll": 0,
+      "bodyWidth": 844,
+      "viewport": 844,
+      "dock": {
+        "left": 303,
+        "top": 276,
+        "right": 541,
+        "bottom": 372
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 105.875,
+          "right": 471.109375,
+          "top": 104.125,
+          "bottom": 288.125
+        },
+        {
+          "text": "dav",
+          "left": 471.109375,
+          "right": 738.09375,
+          "top": 104.125,
+          "bottom": 288.125
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 323.15625,
+          "right": 520.828125,
+          "top": 314,
+          "bottom": 331
+        },
+        {
+          "text": "Projects",
+          "left": 381.765625,
+          "right": 428.046875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "↗",
+          "left": 453.046875,
+          "right": 462.21875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        }
+      ],
+      "bad": [
+        {
+          "text": "holts",
+          "left": 105.875,
+          "right": 471.109375,
+          "top": 104.125,
+          "bottom": 288.125
+        },
+        {
+          "text": "dav",
+          "left": 471.109375,
+          "right": 738.09375,
+          "top": 104.125,
+          "bottom": 288.125
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 323.15625,
+          "right": 520.828125,
+          "top": 314,
+          "bottom": 331
+        },
+        {
+          "text": "Projects",
+          "left": 381.765625,
+          "right": 428.046875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "↗",
+          "left": 453.046875,
+          "right": 462.21875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "opened": true,
+      "scroll": 0,
+      "bodyWidth": 844,
+      "viewport": 844,
+      "dock": {
+        "left": 12,
+        "top": 276,
+        "right": 832,
+        "bottom": 372
+      },
+      "visible": [
+        {
+          "text": "holts",
+          "left": 105.875,
+          "right": 471.109375,
+          "top": 104.125,
+          "bottom": 288.125
+        },
+        {
+          "text": "dav",
+          "left": 471.109375,
+          "right": 738.09375,
+          "top": 104.125,
+          "bottom": 288.125
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 323.15625,
+          "right": 520.828125,
+          "top": 314,
+          "bottom": 331
+        },
+        {
+          "text": "Projects",
+          "left": 381.765625,
+          "right": 428.046875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "↗",
+          "left": 453.046875,
+          "right": 462.21875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        }
+      ],
+      "bad": [
+        {
+          "text": "holts",
+          "left": 105.875,
+          "right": 471.109375,
+          "top": 104.125,
+          "bottom": 288.125
+        },
+        {
+          "text": "dav",
+          "left": 471.109375,
+          "right": 738.09375,
+          "top": 104.125,
+          "bottom": 288.125
+        },
+        {
+          "text": "Software developer in Munich.",
+          "left": 323.15625,
+          "right": 520.828125,
+          "top": 314,
+          "bottom": 331
+        },
+        {
+          "text": "Projects",
+          "left": 381.765625,
+          "right": 428.046875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        },
+        {
+          "text": "↗",
+          "left": 453.046875,
+          "right": 462.21875,
+          "top": 367.390625,
+          "bottom": 382.390625
+        }
+      ]
+    }
+  ],
+  "folder": {
+    "count": 10,
+    "rows": [
+      362,
+      493,
+      621
+    ],
+    "columns": [
+      421,
+      574,
+      726,
+      879
+    ]
+  },
+  "compact": [
+    {
+      "id": "notilog",
+      "width": 320,
+      "heading": "NotiLog",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "Save notifications through Shortcuts. Search and pin them on your device.",
+      "bodyWidth": 320,
+      "viewport": 320,
+      "hasCompactClass": true
+    },
+    {
+      "id": "notilog",
+      "width": 390,
+      "heading": "NotiLog",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "Save notifications through Shortcuts. Search and pin them on your device.",
+      "bodyWidth": 390,
+      "viewport": 390,
+      "hasCompactClass": true
+    },
+    {
+      "id": "notilog",
+      "width": 1440,
+      "heading": "NotiLog",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "Save notifications through Shortcuts. Search and pin them on your device.",
+      "bodyWidth": 1440,
+      "viewport": 1440,
+      "hasCompactClass": true
+    },
+    {
+      "id": "saveshelf",
+      "width": 320,
+      "heading": "SaveShelf",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "A home for your games, with Steam imports and a wishlist.",
+      "bodyWidth": 320,
+      "viewport": 320,
+      "hasCompactClass": true
+    },
+    {
+      "id": "saveshelf",
+      "width": 390,
+      "heading": "SaveShelf",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "A home for your games, with Steam imports and a wishlist.",
+      "bodyWidth": 390,
+      "viewport": 390,
+      "hasCompactClass": true
+    },
+    {
+      "id": "saveshelf",
+      "width": 1440,
+      "heading": "SaveShelf",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "A home for your games, with Steam imports and a wishlist.",
+      "bodyWidth": 1440,
+      "viewport": 1440,
+      "hasCompactClass": true
+    },
+    {
+      "id": "reviewbar",
+      "width": 320,
+      "heading": "ReviewBar",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "App Store releases, reviews and analytics, together on your iPhone.",
+      "bodyWidth": 320,
+      "viewport": 320,
+      "hasCompactClass": true
+    },
+    {
+      "id": "reviewbar",
+      "width": 390,
+      "heading": "ReviewBar",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "App Store releases, reviews and analytics, together on your iPhone.",
+      "bodyWidth": 390,
+      "viewport": 390,
+      "hasCompactClass": true
+    },
+    {
+      "id": "reviewbar",
+      "width": 1440,
+      "heading": "ReviewBar",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "App Store releases, reviews and analytics, together on your iPhone.",
+      "bodyWidth": 1440,
+      "viewport": 1440,
+      "hasCompactClass": true
+    },
+    {
+      "id": "auxjam",
+      "width": 320,
+      "heading": "AuxJam",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "Start a room, invite friends and queue music from Spotify or Apple Music.",
+      "bodyWidth": 320,
+      "viewport": 320,
+      "hasCompactClass": true
+    },
+    {
+      "id": "auxjam",
+      "width": 390,
+      "heading": "AuxJam",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "Start a room, invite friends and queue music from Spotify or Apple Music.",
+      "bodyWidth": 390,
+      "viewport": 390,
+      "hasCompactClass": true
+    },
+    {
+      "id": "auxjam",
+      "width": 1440,
+      "heading": "AuxJam",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "Start a room, invite friends and queue music from Spotify or Apple Music.",
+      "bodyWidth": 1440,
+      "viewport": 1440,
+      "hasCompactClass": true
+    },
+    {
+      "id": "glassdays-catalog",
+      "width": 320,
+      "heading": "Glassdays JSON Editor",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "Edit Glassdays events and countdown dates. Import and export JSON.",
+      "bodyWidth": 320,
+      "viewport": 320,
+      "hasCompactClass": true
+    },
+    {
+      "id": "glassdays-catalog",
+      "width": 390,
+      "heading": "Glassdays JSON Editor",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "Edit Glassdays events and countdown dates. Import and export JSON.",
+      "bodyWidth": 390,
+      "viewport": 390,
+      "hasCompactClass": true
+    },
+    {
+      "id": "glassdays-catalog",
+      "width": 1440,
+      "heading": "Glassdays JSON Editor",
+      "icons": 1,
+      "panels": 0,
+      "featureLabels": 0,
+      "description": "Edit Glassdays events and countdown dates. Import and export JSON.",
+      "bodyWidth": 1440,
+      "viewport": 1440,
+      "hasCompactClass": true
+    }
+  ]
+}

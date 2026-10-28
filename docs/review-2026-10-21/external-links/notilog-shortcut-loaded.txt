@@ -1,0 +1,14 @@
+- banner:
+  - heading "Shortcuts" [level=1]
+- main:
+  - heading "NotiLog" [level=1]
+  - heading [level=3]
+- contentinfo:
+  - link "Get Shortcut":
+    - /url: https://itunes.apple.com/app/shortcuts/id915249334
+  - generic: Copyright © 2026 Apple Inc.
+  - text: All rights reserved.
+  - link "Terms and Conditions":
+    - /url: http://www.apple.com/legal/icloud/ww/
+  - link "Privacy Policy":
+    - /url: http://www.apple.com/privacy/

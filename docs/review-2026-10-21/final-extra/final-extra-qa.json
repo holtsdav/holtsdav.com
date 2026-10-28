@@ -1,0 +1,299 @@
+{
+  "date": "2026-10-21T01:22:35.321Z",
+  "routes": [
+    {
+      "route": "/404.html",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/Glassdays/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/MuteOnLocation/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/NotiLog/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/RogueColor/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/about/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/apps/glassdays-countdown/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/apps/glassdays-countdown/privacy/en/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/apps/glassdays-countdown/privacy/es/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/apps/glassdays-countdown/privacy/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/apps/mute-on-location/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/apps/mute-on-location/privacy/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/apps/rogue-color/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/apps/room-planner/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/contact/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/directions/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/drafts/notilog-privacy/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/impressum/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/privacy/glassdays/de/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/privacy/glassdays/es/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/privacy/glassdays/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/privacy/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/privacy/muteonlocation/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/privacy/notilog/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/privacy/roguecolor/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/privacy/roomplanner/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/project/RoomPlaner/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/project/RoomPlanner/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/project/glassdays/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/project/mute-on-location/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/project/notilog/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/project/rogue-color/",
+      "status": 200,
+      "redirect": true
+    },
+    {
+      "route": "/projects/auxjam/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/projects/glassdays/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/projects/glassdays-catalog/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/projects/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/projects/mute-on-location/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/projects/notilog/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/projects/pdf-editor/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/projects/reviewbar/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/projects/rogue-color/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/projects/room-planner/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/projects/saveshelf/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/review/original-animation/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/support/",
+      "status": 200,
+      "redirect": false
+    },
+    {
+      "route": "/support/notilog/",
+      "status": 200,
+      "redirect": false
+    }
+  ],
+  "touch": [
+    {
+      "name": "real touch gesture over canvas scrolls page",
+      "scrollY": 110,
+      "passed": true
+    },
+    {
+      "name": "single-tap folder/open project/close",
+      "passed": true
+    },
+    {
+      "name": "short viewport folder last target reachable",
+      "width": 320,
+      "height": 568,
+      "geometry": {
+        "top": 94,
+        "bottom": 209,
+        "dialogTop": 26,
+        "dialogBottom": 445
+      },
+      "passed": true
+    },
+    {
+      "name": "short viewport folder last target reachable",
+      "width": 844,
+      "height": 390,
+      "geometry": {
+        "top": 109,
+        "bottom": 227.6875,
+        "dialogTop": 28,
+        "dialogBottom": 253
+      },
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "resize": [
+    {
+      "width": 390,
+      "layout": "split",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "layout": "single",
+      "passed": true
+    }
+  ],
+  "background": [
+    {
+      "stage": "other tab brought forward",
+      "visibility": "visible"
+    },
+    {
+      "stage": "returned to app",
+      "visibility": "visible",
+      "readable": true
+    }
+  ]
+}

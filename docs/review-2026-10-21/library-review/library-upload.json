@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "operation": "create_library_file",
+      "status": "succeeded",
+      "path": "/Portfolio_Gallery_Home_Original_Particles_1440x900.png",
+      "file_id": "file_000000007ca08230b4f950c3838cfbf1",
+      "library_file_id": "libfile_dad6f57a87208191ba35fab36f9f57d1",
+      "file_name": "Portfolio_Gallery_Home_Original_Particles_1440x900.png",
+      "current_version_number": 0,
+      "restored_from_version_number": null,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "directory_id": "libdir_ad3a7f0219ac819191bfe9522e7d87e8",
+      "mime_type": "image/png",
+      "library_artifact_type": "image",
+      "file_size_bytes": 365250
+    },
+    {
+      "operation": "create_library_file",
+      "status": "succeeded",
+      "path": "/Portfolio_Projects_Folder_Ten_Projects_390x844.png",
+      "file_id": "file_0000000033608230a1fedf1e6bf22b3c",
+      "library_file_id": "libfile_5fd261f161488191929473dd092a1869",
+      "file_name": "Portfolio_Projects_Folder_Ten_Projects_390x844.png",
+      "current_version_number": 0,
+      "restored_from_version_number": null,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "directory_id": "libdir_ad3a7f0219ac819191bfe9522e7d87e8",
+      "mime_type": "image/png",
+      "library_artifact_type": "image",
+      "file_size_bytes": 95579
+    },
+    {
+      "operation": "create_library_file",
+      "status": "succeeded",
+      "path": "/Portfolio_NotiLog_Project_Three_Opened_Dock_1440x900.png",
+      "file_id": "file_000000006a6c8230a599cf4b5cca74a1",
+      "library_file_id": "libfile_5e11455a4cd08191bec1230c9d9a9146",
+      "file_name": "Portfolio_NotiLog_Project_Three_Opened_Dock_1440x900.png",
+      "current_version_number": 0,
+      "restored_from_version_number": null,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "directory_id": "libdir_ad3a7f0219ac819191bfe9522e7d87e8",
+      "mime_type": "image/png",
+      "library_artifact_type": "image",
+      "file_size_bytes": 119379
+    }
+  ],
+  "warnings": [],
+  "external_connectors_accessed": false
+}

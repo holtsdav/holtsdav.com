@@ -1,0 +1,262 @@
+[
+  {
+    "width": 600,
+    "height": 390,
+    "reduced": true,
+    "opened": true,
+    "target": 0,
+    "actual": 3,
+    "scroll": 0,
+    "bodyWidth": 600,
+    "viewport": 600,
+    "controls": [
+      {
+        "text": "Software developer in Munich.",
+        "left": 346,
+        "right": 576,
+        "top": 146.703125,
+        "bottom": 177.296875,
+        "intersectsDock": false,
+        "outsideViewport": false
+      },
+      {
+        "text": "Projects ↗",
+        "left": 346,
+        "right": 457.421875,
+        "top": 177.296875,
+        "bottom": 221.296875,
+        "intersectsDock": false,
+        "outsideViewport": false
+      }
+    ],
+    "visibleCaptions": [],
+    "wordmark": {
+      "left": 24,
+      "right": 326,
+      "top": 74,
+      "bottom": 294
+    },
+    "dock": {
+      "left": 10,
+      "right": 590,
+      "top": 287,
+      "bottom": 376
+    },
+    "ready": false,
+    "errors": []
+  },
+  {
+    "width": 844,
+    "height": 320,
+    "reduced": true,
+    "opened": true,
+    "target": 0,
+    "actual": 3,
+    "scroll": 0,
+    "bodyWidth": 844,
+    "viewport": 844,
+    "controls": [
+      {
+        "text": "Software developer in Munich.",
+        "left": 590,
+        "right": 820,
+        "top": 118.15625,
+        "bottom": 151.84375,
+        "intersectsDock": false,
+        "outsideViewport": false
+      },
+      {
+        "text": "Projects ↗",
+        "left": 590,
+        "right": 710.453125,
+        "top": 151.84375,
+        "bottom": 195.84375,
+        "intersectsDock": false,
+        "outsideViewport": false
+      }
+    ],
+    "visibleCaptions": [],
+    "wordmark": {
+      "left": 24,
+      "right": 570,
+      "top": 82,
+      "bottom": 232
+    },
+    "dock": {
+      "left": 12,
+      "right": 832,
+      "top": 206,
+      "bottom": 302
+    },
+    "ready": false,
+    "errors": []
+  },
+  {
+    "width": 844,
+    "height": 320,
+    "reduced": false,
+    "opened": true,
+    "target": 400,
+    "actual": 404,
+    "scroll": 0,
+    "bodyWidth": 844,
+    "viewport": 844,
+    "controls": [
+      {
+        "text": "Software developer in Munich.",
+        "left": 590,
+        "right": 820,
+        "top": 118.15625,
+        "bottom": 151.84375,
+        "intersectsDock": false,
+        "outsideViewport": false
+      },
+      {
+        "text": "Projects ↗",
+        "left": 590,
+        "right": 710.453125,
+        "top": 151.84375,
+        "bottom": 195.84375,
+        "intersectsDock": false,
+        "outsideViewport": false
+      },
+      {
+        "text": "Pause animation",
+        "left": 720.453125,
+        "right": 799.375,
+        "top": 151.84375,
+        "bottom": 195.84375,
+        "intersectsDock": false,
+        "outsideViewport": false
+      }
+    ],
+    "visibleCaptions": [],
+    "wordmark": {
+      "left": 24,
+      "right": 570,
+      "top": 82,
+      "bottom": 232
+    },
+    "dock": {
+      "left": 12,
+      "right": 832,
+      "top": 206,
+      "bottom": 302
+    },
+    "ready": "true",
+    "nameLayout": "single",
+    "errors": []
+  },
+  {
+    "width": 844,
+    "height": 320,
+    "reduced": false,
+    "opened": true,
+    "target": 3800,
+    "actual": 3803,
+    "scroll": 0,
+    "bodyWidth": 844,
+    "viewport": 844,
+    "controls": [
+      {
+        "text": "Software developer in Munich.",
+        "left": 590,
+        "right": 820,
+        "top": 118.15625,
+        "bottom": 151.84375,
+        "intersectsDock": false,
+        "outsideViewport": false
+      },
+      {
+        "text": "Projects ↗",
+        "left": 590,
+        "right": 710.453125,
+        "top": 151.84375,
+        "bottom": 195.84375,
+        "intersectsDock": false,
+        "outsideViewport": false
+      },
+      {
+        "text": "Pause animation",
+        "left": 720.453125,
+        "right": 799.375,
+        "top": 151.84375,
+        "bottom": 195.84375,
+        "intersectsDock": false,
+        "outsideViewport": false
+      }
+    ],
+    "visibleCaptions": [],
+    "wordmark": {
+      "left": 24,
+      "right": 570,
+      "top": 82,
+      "bottom": 232
+    },
+    "dock": {
+      "left": 12,
+      "right": 832,
+      "top": 206,
+      "bottom": 302
+    },
+    "ready": "true",
+    "nameLayout": "single",
+    "errors": []
+  },
+  {
+    "width": 844,
+    "height": 320,
+    "reduced": false,
+    "opened": true,
+    "target": 6500,
+    "actual": 6501,
+    "scroll": 0,
+    "bodyWidth": 844,
+    "viewport": 844,
+    "controls": [
+      {
+        "text": "Software developer in Munich.",
+        "left": 590,
+        "right": 820,
+        "top": 118.15625,
+        "bottom": 151.84375,
+        "intersectsDock": false,
+        "outsideViewport": false
+      },
+      {
+        "text": "Projects ↗",
+        "left": 590,
+        "right": 710.453125,
+        "top": 151.84375,
+        "bottom": 195.84375,
+        "intersectsDock": false,
+        "outsideViewport": false
+      },
+      {
+        "text": "Pause animation",
+        "left": 720.453125,
+        "right": 799.375,
+        "top": 151.84375,
+        "bottom": 195.84375,
+        "intersectsDock": false,
+        "outsideViewport": false
+      }
+    ],
+    "visibleCaptions": [],
+    "wordmark": {
+      "left": 24,
+      "right": 570,
+      "top": 82,
+      "bottom": 232
+    },
+    "dock": {
+      "left": 12,
+      "right": 832,
+      "top": 206,
+      "bottom": 302
+    },
+    "ready": "true",
+    "nameLayout": "single",
+    "errors": []
+  }
+]

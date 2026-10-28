@@ -1,0 +1,1382 @@
+[
+  {
+    "width": 320,
+    "index": 0,
+    "label": "Glassdays",
+    "inStrip": true,
+    "rect": {
+      "left": 87,
+      "top": 749,
+      "right": 146,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 1,
+    "label": "Close Glassdays",
+    "inStrip": true,
+    "rect": {
+      "left": 120,
+      "top": 749,
+      "right": 146,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 2,
+    "label": "NotiLog",
+    "inStrip": true,
+    "rect": {
+      "left": 96,
+      "top": 749,
+      "right": 155,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 51,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 3,
+    "label": "Close NotiLog",
+    "inStrip": true,
+    "rect": {
+      "left": 129,
+      "top": 749,
+      "right": 155,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 51,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 4,
+    "label": "SaveShelf",
+    "inStrip": true,
+    "rect": {
+      "left": 96,
+      "top": 749,
+      "right": 155,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 111,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 5,
+    "label": "Close SaveShelf",
+    "inStrip": true,
+    "rect": {
+      "left": 129,
+      "top": 749,
+      "right": 155,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 111,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 6,
+    "label": "Mute On Location",
+    "inStrip": true,
+    "rect": {
+      "left": 96,
+      "top": 749,
+      "right": 155,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 171,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 7,
+    "label": "Close Mute On Location",
+    "inStrip": true,
+    "rect": {
+      "left": 129,
+      "top": 749,
+      "right": 155,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 171,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 8,
+    "label": "ReviewBar",
+    "inStrip": true,
+    "rect": {
+      "left": 96,
+      "top": 749,
+      "right": 155,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 231,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 9,
+    "label": "Close ReviewBar",
+    "inStrip": true,
+    "rect": {
+      "left": 129,
+      "top": 749,
+      "right": 155,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 231,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 10,
+    "label": "PDF Editor",
+    "inStrip": true,
+    "rect": {
+      "left": 96,
+      "top": 749,
+      "right": 155,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 291,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 11,
+    "label": "Close PDF Editor",
+    "inStrip": true,
+    "rect": {
+      "left": 129,
+      "top": 749,
+      "right": 155,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 291,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 12,
+    "label": "Room Planner",
+    "inStrip": true,
+    "rect": {
+      "left": 96,
+      "top": 749,
+      "right": 155,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 351,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 13,
+    "label": "Close Room Planner",
+    "inStrip": true,
+    "rect": {
+      "left": 129,
+      "top": 749,
+      "right": 155,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 351,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 14,
+    "label": "AuxJam",
+    "inStrip": true,
+    "rect": {
+      "left": 96,
+      "top": 749,
+      "right": 155,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 411,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 15,
+    "label": "Close AuxJam",
+    "inStrip": true,
+    "rect": {
+      "left": 129,
+      "top": 749,
+      "right": 155,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 411,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 16,
+    "label": "Rogue Color",
+    "inStrip": true,
+    "rect": {
+      "left": 96,
+      "top": 749,
+      "right": 155,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 471,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 17,
+    "label": "Close Rogue Color",
+    "inStrip": true,
+    "rect": {
+      "left": 129,
+      "top": 749,
+      "right": 155,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 471,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 18,
+    "label": "Glassdays JSON Editor",
+    "inStrip": true,
+    "rect": {
+      "left": 106,
+      "top": 749,
+      "right": 165,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 521,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 320,
+    "index": 19,
+    "label": "Close Glassdays JSON Editor",
+    "inStrip": true,
+    "rect": {
+      "left": 139,
+      "top": 749,
+      "right": 165,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 173,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 521,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 182
+  },
+  {
+    "width": 390,
+    "index": 0,
+    "label": "Glassdays",
+    "inStrip": true,
+    "rect": {
+      "left": 87,
+      "top": 749,
+      "right": 146,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 1,
+    "label": "Close Glassdays",
+    "inStrip": true,
+    "rect": {
+      "left": 120,
+      "top": 749,
+      "right": 146,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 2,
+    "label": "NotiLog",
+    "inStrip": true,
+    "rect": {
+      "left": 131,
+      "top": 749,
+      "right": 190,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 16,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 3,
+    "label": "Close NotiLog",
+    "inStrip": true,
+    "rect": {
+      "left": 164,
+      "top": 749,
+      "right": 190,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 16,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 4,
+    "label": "SaveShelf",
+    "inStrip": true,
+    "rect": {
+      "left": 131,
+      "top": 749,
+      "right": 190,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 76,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 5,
+    "label": "Close SaveShelf",
+    "inStrip": true,
+    "rect": {
+      "left": 164,
+      "top": 749,
+      "right": 190,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 76,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 6,
+    "label": "Mute On Location",
+    "inStrip": true,
+    "rect": {
+      "left": 131,
+      "top": 749,
+      "right": 190,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 136,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 7,
+    "label": "Close Mute On Location",
+    "inStrip": true,
+    "rect": {
+      "left": 164,
+      "top": 749,
+      "right": 190,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 136,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 8,
+    "label": "ReviewBar",
+    "inStrip": true,
+    "rect": {
+      "left": 131,
+      "top": 749,
+      "right": 190,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 196,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 9,
+    "label": "Close ReviewBar",
+    "inStrip": true,
+    "rect": {
+      "left": 164,
+      "top": 749,
+      "right": 190,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 196,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 10,
+    "label": "PDF Editor",
+    "inStrip": true,
+    "rect": {
+      "left": 131,
+      "top": 749,
+      "right": 190,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 256,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 11,
+    "label": "Close PDF Editor",
+    "inStrip": true,
+    "rect": {
+      "left": 164,
+      "top": 749,
+      "right": 190,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 256,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 12,
+    "label": "Room Planner",
+    "inStrip": true,
+    "rect": {
+      "left": 131,
+      "top": 749,
+      "right": 190,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 316,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 13,
+    "label": "Close Room Planner",
+    "inStrip": true,
+    "rect": {
+      "left": 164,
+      "top": 749,
+      "right": 190,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 316,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 14,
+    "label": "AuxJam",
+    "inStrip": true,
+    "rect": {
+      "left": 131,
+      "top": 749,
+      "right": 190,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 376,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 15,
+    "label": "Close AuxJam",
+    "inStrip": true,
+    "rect": {
+      "left": 164,
+      "top": 749,
+      "right": 190,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 376,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 16,
+    "label": "Rogue Color",
+    "inStrip": true,
+    "rect": {
+      "left": 131,
+      "top": 749,
+      "right": 190,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 436,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 17,
+    "label": "Close Rogue Color",
+    "inStrip": true,
+    "rect": {
+      "left": 164,
+      "top": 749,
+      "right": 190,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 436,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 18,
+    "label": "Glassdays JSON Editor",
+    "inStrip": true,
+    "rect": {
+      "left": 176,
+      "top": 749,
+      "right": 235,
+      "bottom": 822
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 451,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 390,
+    "index": 19,
+    "label": "Close Glassdays JSON Editor",
+    "inStrip": true,
+    "rect": {
+      "left": 209,
+      "top": 749,
+      "right": 235,
+      "bottom": 775
+    },
+    "strip": {
+      "left": 79,
+      "top": 741,
+      "right": 243,
+      "bottom": 830
+    },
+    "spread": 8,
+    "scroll": 451,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 252
+  },
+  {
+    "width": 1440,
+    "index": 0,
+    "label": "Glassdays",
+    "inStrip": true,
+    "rect": {
+      "left": 313,
+      "top": 739,
+      "right": 383,
+      "bottom": 817
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 1,
+    "label": "Close Glassdays",
+    "inStrip": true,
+    "rect": {
+      "left": 357,
+      "top": 739,
+      "right": 381,
+      "bottom": 763
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 2,
+    "label": "NotiLog",
+    "inStrip": true,
+    "rect": {
+      "left": 386,
+      "top": 739,
+      "right": 456,
+      "bottom": 817
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 3,
+    "label": "Close NotiLog",
+    "inStrip": true,
+    "rect": {
+      "left": 430,
+      "top": 739,
+      "right": 454,
+      "bottom": 763
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 4,
+    "label": "SaveShelf",
+    "inStrip": true,
+    "rect": {
+      "left": 459,
+      "top": 739,
+      "right": 529,
+      "bottom": 817
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 5,
+    "label": "Close SaveShelf",
+    "inStrip": true,
+    "rect": {
+      "left": 503,
+      "top": 739,
+      "right": 527,
+      "bottom": 763
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 6,
+    "label": "Mute On Location",
+    "inStrip": true,
+    "rect": {
+      "left": 532,
+      "top": 739,
+      "right": 602,
+      "bottom": 817
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 7,
+    "label": "Close Mute On Location",
+    "inStrip": true,
+    "rect": {
+      "left": 576,
+      "top": 739,
+      "right": 600,
+      "bottom": 763
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 8,
+    "label": "ReviewBar",
+    "inStrip": true,
+    "rect": {
+      "left": 605,
+      "top": 739,
+      "right": 675,
+      "bottom": 817
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 9,
+    "label": "Close ReviewBar",
+    "inStrip": true,
+    "rect": {
+      "left": 649,
+      "top": 739,
+      "right": 673,
+      "bottom": 763
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 10,
+    "label": "PDF Editor",
+    "inStrip": true,
+    "rect": {
+      "left": 678,
+      "top": 739,
+      "right": 748,
+      "bottom": 817
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 11,
+    "label": "Close PDF Editor",
+    "inStrip": true,
+    "rect": {
+      "left": 722,
+      "top": 739,
+      "right": 746,
+      "bottom": 763
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 12,
+    "label": "Room Planner",
+    "inStrip": true,
+    "rect": {
+      "left": 751,
+      "top": 739,
+      "right": 821,
+      "bottom": 817
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 13,
+    "label": "Close Room Planner",
+    "inStrip": true,
+    "rect": {
+      "left": 795,
+      "top": 739,
+      "right": 819,
+      "bottom": 763
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 14,
+    "label": "AuxJam",
+    "inStrip": true,
+    "rect": {
+      "left": 824,
+      "top": 739,
+      "right": 894,
+      "bottom": 817
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 15,
+    "label": "Close AuxJam",
+    "inStrip": true,
+    "rect": {
+      "left": 868,
+      "top": 739,
+      "right": 892,
+      "bottom": 763
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 16,
+    "label": "Rogue Color",
+    "inStrip": true,
+    "rect": {
+      "left": 897,
+      "top": 739,
+      "right": 967,
+      "bottom": 817
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 17,
+    "label": "Close Rogue Color",
+    "inStrip": true,
+    "rect": {
+      "left": 941,
+      "top": 739,
+      "right": 965,
+      "bottom": 763
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 18,
+    "label": "Glassdays JSON Editor",
+    "inStrip": true,
+    "rect": {
+      "left": 970,
+      "top": 739,
+      "right": 1040,
+      "bottom": 817
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  },
+  {
+    "width": 1440,
+    "index": 19,
+    "label": "Close Glassdays JSON Editor",
+    "inStrip": true,
+    "rect": {
+      "left": 1014,
+      "top": 739,
+      "right": 1038,
+      "bottom": 763
+    },
+    "strip": {
+      "left": 305,
+      "top": 731,
+      "right": 1048,
+      "bottom": 825
+    },
+    "spread": 8,
+    "scroll": 0,
+    "ringClipped": false,
+    "inViewport": true,
+    "projectsLeft": 1065
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "width": 320,
+    "passed": true,
+    "checks": [
+      "Tab/Enter switch",
+      "active close returns Home",
+      "closed project reopens once",
+      "inactive close returns focus",
+      "More Escape focus",
+      "switch leaves page at top",
+      "no exceptions"
+    ]
+  },
+  {
+    "width": 390,
+    "passed": true,
+    "checks": [
+      "Tab/Enter switch",
+      "active close returns Home",
+      "closed project reopens once",
+      "inactive close returns focus",
+      "More Escape focus",
+      "switch leaves page at top",
+      "no exceptions"
+    ]
+  }
+]

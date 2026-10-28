@@ -1,0 +1,26 @@
+{
+  "commit": "e984f63e23c785e45110edd2c99783952bf63e9b",
+  "subject": "feat(portfolio): save reviewed light workspace prototype",
+  "branch": "codex/portfolio-workspace-20261021",
+  "tree": "b785a5399aec0084ece38c1eb83f733ba43a696c",
+  "parent": "b9069c2c2578d162102d416d877af5042afa33b6",
+  "committed_path_count": 92,
+  "committed_paths_equal_allowlist": true,
+  "committed_tree_equals_reviewed_staged_tree": true,
+  "all_commit_blobs_preverified_against_reviewed_working_files": true,
+  "staged_paths_after_commit": [],
+  "remaining_tracked_modifications": [
+    "DESIGN.md",
+    "src/components/Header.astro",
+    "src/components/ParticleWordmark.astro",
+    "src/scripts/particle-wordmark.ts",
+    "src/styles/global.css"
+  ],
+  "remaining_tracked_modifications_equal_copied_owner_baseline": true,
+  "original_preservation_report": "final-preservation.json",
+  "staged_review": "staged-scope-review.json",
+  "staged_review_patch_sha256": "e01bbdb7bd6235cefba2e85f24f62ce7ca8d598b40a5cb6c0a756aba2ecb6229",
+  "no_remote_operation": true,
+  "david_aesthetic_acceptance": "open",
+  "preview": "http://127.0.0.1:4330/"
+}

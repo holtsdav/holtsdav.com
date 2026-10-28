@@ -1,0 +1,84 @@
+
+--- 2026-10-21T01:04:29.605Z debug
+🪵  Writing logs to "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-workspace/docs/review-2026-10-21/wrangler-types.log"
+---
+
+--- 2026-10-21T01:04:29.605Z debug
+.env file not found at "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-workspace/.env". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-10-21T01:04:29.605Z debug
+.env file not found at "/Users/holtsdav/Documents/Codex/2026-10-20/task-2/holtsdav-portfolio-workspace/.env.local". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-10-21T01:04:29.708Z log
+
+ ⛅️ wrangler 4.129.0
+────────────────────
+---
+
+--- 2026-10-21T01:04:29.717Z debug
+Metrics dispatcher: Dispatching disabled - would have sent {"deviceId":"094e8d37-2483-4786-afc1-554040dddefd","event":"wrangler command started","timestamp":1792544669717,"properties":{"amplitude_session_id":1792544669709,"amplitude_event_id":0,"wranglerVersion":"4.129.0","wranglerMajorVersion":4,"wranglerMinorVersion":129,"wranglerPatchVersion":0,"osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 27.0.0: Tue Aug 11 21:05:48 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6041","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"none","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"agent":"codex","argsUsed":["config","envInterface"],"argsCombination":"config, envInterface","sanitizedCommand":"types","sanitizedArgs":{},"currentAgentSkillsInstalled":null}}.
+---
+
+--- 2026-10-21T01:04:29.746Z log
+Generating project types...
+
+---
+
+--- 2026-10-21T01:04:29.749Z log
+interface __BaseEnv_ContactEnv {
+	CONTACT_EMAIL: SendEmail;
+	CONTACT_RATE_LIMIT: RateLimit;
+	ALLOWED_ORIGINS: "https://holtsdav.com,https://www.holtsdav.com";
+	TURNSTILE_SITE_KEY: "0x4AAAAAAErhKY3UFv7LcXz4";
+	TURNSTILE_SECRET: string;
+}
+declare namespace Cloudflare {
+	interface GlobalProps {
+		mainModule: typeof import("./index");
+	}
+	interface Env extends __BaseEnv_ContactEnv {}
+}
+interface ContactEnv extends __BaseEnv_ContactEnv {}
+type StringifyValues<EnvType extends Record<string, unknown>> = {
+	[Binding in keyof EnvType]: EnvType[Binding] extends string ? EnvType[Binding] : string;
+};
+declare namespace NodeJS {
+	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "ALLOWED_ORIGINS" | "TURNSTILE_SITE_KEY" | "TURNSTILE_SECRET">> {}
+}
+
+---
+
+--- 2026-10-21T01:04:29.749Z log
+Generating runtime types...
+
+---
+
+--- 2026-10-21T01:04:31.936Z log
+Runtime types generated.
+
+---
+
+--- 2026-10-21T01:04:31.937Z log
+
+---
+
+--- 2026-10-21T01:04:31.938Z log
+✨ Types written to workers/contact/worker-configuration.d.ts
+
+---
+
+--- 2026-10-21T01:04:31.938Z log
+📖 Read about runtime types
+https://developers.cloudflare.com/workers/languages/typescript/#generate-types
+---
+
+--- 2026-10-21T01:04:31.938Z log
+📣 Remember to rerun 'wrangler types' after you change your wrangler.jsonc file.
+
+---
+
+--- 2026-10-21T01:04:31.939Z debug
+Metrics dispatcher: Dispatching disabled - would have sent {"deviceId":"094e8d37-2483-4786-afc1-554040dddefd","event":"wrangler command completed","timestamp":1792544671939,"properties":{"amplitude_session_id":1792544669709,"amplitude_event_id":1,"wranglerVersion":"4.129.0","wranglerMajorVersion":4,"wranglerMinorVersion":129,"wranglerPatchVersion":0,"osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 27.0.0: Tue Aug 11 21:05:48 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6041","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"none","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"agent":"codex","argsUsed":["config","envInterface"],"argsCombination":"config, envInterface","sanitizedCommand":"types","sanitizedArgs":{},"durationMs":2333,"currentAgentSkillsInstalled":null}}.
+---

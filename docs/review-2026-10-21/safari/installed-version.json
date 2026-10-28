@@ -1,0 +1,8 @@
+{
+  "bundle": "com.apple.Safari",
+  "version": "27.0.1",
+  "build": "22625.1.29.11.28",
+  "source": "/Applications/Safari.app/Contents/Info.plist",
+  "native_ui_control_attempted": true,
+  "native_ui_control_succeeded": true
+}

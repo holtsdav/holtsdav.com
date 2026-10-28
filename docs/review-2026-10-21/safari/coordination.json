@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-10-21T02:15:05.789974+00:00",
+  "reviewed_commit_to_preserve": "e984f63e23c785e45110edd2c99783952bf63e9b",
+  "requested_foreground_holds": [
+    "Audit and improve local apps",
+    "Publish PDF Editor update",
+    "Prototype private countdown sharing",
+    "Verify NotiLog first capture"
+  ],
+  "confirmed_holds": [
+    "Audit and improve local apps",
+    "Publish PDF Editor update",
+    "Verify NotiLog first capture"
+  ],
+  "foreground_actions_started": true,
+  "constraints": [
+    "ordinary Safari UI only",
+    "no security or automation setting changes",
+    "no permission acceptance",
+    "no Simulator use",
+    "no emails/forms/publication/Library writes"
+  ],
+  "finished_utc": "2026-10-21T02:27:24.048754+00:00",
+  "foreground_hold_released": true,
+  "test_window_closed": true,
+  "original_start_page_preserved": true,
+  "all_four_workers_release_messages_sent": true,
+  "glassdays_clearance": "Parent directly confirmed released all UI/runtime/build; worker status also offline-only."
+}

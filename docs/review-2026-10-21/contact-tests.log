@@ -1,0 +1,36 @@
+
+> holtsdav.com@0.0.1 test:contact
+> node --test workers/contact/contact.test.mjs
+
+{"event":"contact_delivery_failed"}
+{"event":"contact_delivery_failed"}
+✔ valid message sends only to the owner with safe content and visitor Reply-To (13.422417ms)
+✔ replayed verification token cannot trigger a second notification (0.9495ms)
+✔ rejects invalid verification {"success":false} (0.285042ms)
+✔ rejects invalid verification {"success":"true"} (0.254292ms)
+✔ rejects invalid verification {"action":"login"} (0.197667ms)
+✔ rejects invalid verification {"hostname":"attacker.example"} (0.163416ms)
+✔ rejects invalid name before verification (0.128084ms)
+✔ rejects invalid name before verification (0.11ms)
+✔ rejects invalid email before verification (0.131375ms)
+✔ rejects invalid email before verification (0.14275ms)
+✔ rejects invalid message before verification (0.099458ms)
+✔ rejects invalid message before verification (0.110541ms)
+✔ rejects invalid website before verification (0.07375ms)
+✔ rejects cross-origin requests and missing tokens (0.129208ms)
+✔ proxy hostname can differ while the verified frontend origin remains required (0.359417ms)
+✔ rejects oversized bodies even without a Content-Length header (0.155208ms)
+✔ rate limit returns a retry delay without sending or verifying (0.100208ms)
+✔ fails honestly when emailFails (0.679791ms)
+✔ fails honestly when verifyThrows (0.226ms)
+✔ fails honestly when verifyStatus (0.511667ms)
+✔ public configuration never exposes secrets and fails closed before setup (0.182583ms)
+✔ rejects unsupported routes, methods, and malformed bodies (0.243958ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 100.34275

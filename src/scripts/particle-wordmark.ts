@@ -35,28 +35,50 @@ const vertexShader = /* glsl */ `
 	varying vec3 vColor;
 
 	void main() {
-		float stagger = (aSeed - 0.5) * 0.16;
-		float localMorph = smoothstep(0.0, 1.0, clamp(uMorph + stagger, 0.0, 1.0));
 		vec2 from = aTargetA.xy * uCanvasWidth;
 		vec2 to = aTargetB.xy * uCanvasWidth;
+
+		// Strictly lock hold states so particles NEVER bleed outside their shape at rest
+		float localMorph = 0.0;
+		float transitionEnvelope = 0.0;
+
+		if (uMorph <= 0.0) {
+			localMorph = 0.0;
+			transitionEnvelope = 0.0;
+		} else if (uMorph >= 1.0) {
+			localMorph = 1.0;
+			transitionEnvelope = 0.0;
+		} else {
+			float staggerRange = 0.28;
+			float pStart = aSeed * staggerRange;
+			float pDuration = 1.0 - staggerRange;
+			float localT = clamp((uMorph - pStart) / pDuration, 0.0, 1.0);
+			localMorph = smoothstep(0.0, 1.0, localT);
+			transitionEnvelope = sin(localMorph * 3.14159265);
+		}
+
 		vec2 travel = to - from;
 		float travelLength = length(travel);
 		vec2 travelDirection = travelLength > 0.001
 			? travel / travelLength
 			: vec2(1.0, 0.0);
 		vec2 travelNormal = vec2(-travelDirection.y, travelDirection.x);
-		float transitionEnvelope = sin(localMorph * 3.14159265);
-		float flowWave = sin(
-			localMorph * 6.2831853 +
-			aFlow * 6.2831853 +
-			from.x * 0.012
-		);
-		vec2 transitionFlow =
-			travelNormal * flowWave * min(18.0, 3.5 + travelLength * 0.075) *
-			transitionEnvelope;
-		transitionFlow += travelDirection *
-			sin(localMorph * 3.14159265 + aFlow * 4.0) *
-			2.5 * transitionEnvelope;
+
+		vec2 transitionFlow = vec2(0.0);
+		if (transitionEnvelope > 0.0001) {
+			float flowWave = sin(
+				localMorph * 6.2831853 +
+				aFlow * 6.2831853 +
+				from.x * 0.012
+			);
+			transitionFlow =
+				travelNormal * flowWave * min(18.0, 3.5 + travelLength * 0.075) *
+				transitionEnvelope;
+			transitionFlow += travelDirection *
+				sin(localMorph * 3.14159265 + aFlow * 4.0) *
+				2.5 * transitionEnvelope;
+		}
+
 		vec2 base = mix(from, to, localMorph) + transitionFlow;
 
 		vec2 delta = base - uPointer;
@@ -90,8 +112,9 @@ const vertexShader = /* glsl */ `
 		gl_Position = projectionMatrix * modelViewMatrix * vec4(displaced, 0.0, 1.0);
 		gl_PointSize = aSize * uPixelRatio;
 		vSeed = aSeed;
-		vec3 holtsColor = vec3(0.8941176, 0.9215686, 1.0);
-		vec3 davColor = vec3(0.5058824, 0.5921569, 1.0);
+		// Premium light-mode palette: rich deep obsidian slate (#0f172a) and electric royal cobalt (#2563eb)
+		vec3 holtsColor = vec3(0.0588235, 0.0901961, 0.1647059);
+		vec3 davColor = vec3(0.145098, 0.3882353, 0.9215686);
 		vColor = mix(holtsColor, davColor, aColorGroup);
 	}
 `;
@@ -105,8 +128,9 @@ const fragmentShader = /* glsl */ `
 	void main() {
 		vec2 centeredPoint = gl_PointCoord - 0.5;
 		float distanceFromCenter = length(centeredPoint) * 2.0;
-		float particle = 1.0 - smoothstep(0.45, 1.0, distanceFromCenter);
-		float alpha = particle * uOpacity * (0.88 + vSeed * 0.12);
+		// Crisp, sharp circular particle disc without fuzzy noisy blur
+		float particle = 1.0 - smoothstep(0.82, 1.0, distanceFromCenter);
+		float alpha = particle * uOpacity;
 
 		if (alpha < 0.01) discard;
 		gl_FragColor = vec4(vColor, alpha);
@@ -316,28 +340,37 @@ function sampleTextMask(
 	for (let y = 0; y < SAMPLE_HEIGHT; y += sampleStep) {
 		const rowOffset = Math.floor(random() * sampleStep);
 		for (let x = rowOffset; x < SAMPLE_WIDTH; x += sampleStep) {
-			const alpha = image.data[(y * SAMPLE_WIDTH + x) * 4 + 3];
-			if (alpha < 104) continue;
+			const pixelIndex = (y * SAMPLE_WIDTH + x) * 4 + 3;
+			const alpha = image.data[pixelIndex];
+			// Only accept solid interior and crisp boundary pixels (>= 175)
+			if (alpha < 175) continue;
 
-			const jitteredX = x + (random() - 0.5) * jitterAmount;
-			const jitteredY = y + (random() - 0.5) * jitterAmount;
+			// Safe jitter: verify that jittered coordinate stays well within glyph boundary
+			const jx = x + (random() - 0.5) * jitterAmount;
+			const jy = y + (random() - 0.5) * jitterAmount;
+			const targetPixelIndex =
+				(Math.round(jy) * SAMPLE_WIDTH + Math.round(jx)) * 4 + 3;
+			const targetAlpha = image.data[targetPixelIndex] ?? 0;
+
+			const finalX = targetAlpha >= 175 ? jx : x;
+			const finalY = targetAlpha >= 175 ? jy : y;
+
 			points.push({
-				x: jitteredX,
-				y: jitteredY,
-				order: mortonOrder(jitteredX, jitteredY),
+				x: finalX,
+				y: finalY,
+				order: 0,
 				colorGroup:
 					isMobileName
-						? jitteredY < SAMPLE_HEIGHT / 2
+						? finalY < SAMPLE_HEIGHT / 2
 							? 1
 							: 0
-						: jitteredX < splitX
+						: finalX < splitX
 						? firstSegmentColorGroup
 						: 1 - firstSegmentColorGroup,
 			});
 		}
 	}
 
-	points.sort((first, second) => first.order - second.order);
 	return points;
 }
 
@@ -360,15 +393,40 @@ function getTargetCenter(points: SpatialPoint[]) {
 	};
 }
 
-function selectSpatialPoints(points: SpatialPoint[], count: number) {
-	const selected: SpatialPoint[] = [];
-	for (let index = 0; index < count; index += 1) {
-		const sourceIndex = Math.min(
-			points.length - 1,
-			Math.floor(((index + 0.5) * points.length) / count),
-		);
-		selected.push(points[sourceIndex]);
+function selectSpatialPoints(
+	points: SpatialPoint[],
+	count: number,
+	seed: number,
+) {
+	if (points.length <= count) {
+		const result = points.slice();
+		for (let i = 0; i < result.length; i += 1) {
+			result[i].order = mortonOrder(result[i].x, result[i].y);
+		}
+		result.sort((first, second) => first.order - second.order);
+		return result;
 	}
+
+	// Deterministic Fisher-Yates sample to achieve completely uniform spatial density
+	// without Z-order curve decimation bands or clustering artifacts
+	const pool = points.slice();
+	const random = createRandom(seed);
+	const selected: SpatialPoint[] = [];
+
+	for (let index = 0; index < count; index += 1) {
+		const pickIndex =
+			index + Math.floor(random() * (pool.length - index));
+		const chosen = pool[pickIndex];
+		pool[pickIndex] = pool[index];
+		pool[index] = chosen;
+		selected.push(chosen);
+	}
+
+	// Sort the chosen points by Morton order AFTER selection to establish smooth morph pairing
+	for (let i = 0; i < selected.length; i += 1) {
+		selected[i].order = mortonOrder(selected[i].x, selected[i].y);
+	}
+	selected.sort((first, second) => first.order - second.order);
 
 	return selected;
 }
@@ -424,8 +482,16 @@ function createColorMatchedTargets(
 
 	for (let colorGroup = 0; colorGroup <= 1; colorGroup += 1) {
 		const count = groupCounts[colorGroup];
-		const selectedA = selectSpatialPoints(groupsA[colorGroup], count);
-		const selectedB = selectSpatialPoints(groupsB[colorGroup], count);
+		const selectedA = selectSpatialPoints(
+			groupsA[colorGroup],
+			count,
+			0x616c7068 + colorGroup * 0x1337,
+		);
+		const selectedB = selectSpatialPoints(
+			groupsB[colorGroup],
+			count,
+			0x62657461 + colorGroup * 0x1337,
+		);
 
 		for (let groupIndex = 0; groupIndex < count; groupIndex += 1) {
 			const pointA = selectedA[groupIndex];
@@ -473,7 +539,7 @@ function createMorphParticleData(width: number): MorphParticleData | null {
 	for (let index = 0; index < matchedTargets.count; index += 1) {
 		const seed = random();
 		seeds[index] = seed;
-		sizes[index] = isMobile ? 0.9 + seed * 0.3 : 1.1 + seed * 0.4;
+		sizes[index] = isMobile ? 1.15 + seed * 0.15 : 1.35 + seed * 0.15;
 		flows[index] = random();
 	}
 

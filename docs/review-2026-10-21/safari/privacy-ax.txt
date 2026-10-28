@@ -1,0 +1,86 @@
+The following is a diff from the previous accessibility tree for Window: "Privacy Policy | holtsdav" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 72-73, 76, 79, 81-82, 84-95
+~0 standard window Privacy Policy | holtsdav, ID: SafariWindow?IsSecure=false&UUID=F9B30771-B004-4C5E-95C2-C6492FB9F435, Secondary Actions: Raise
+~				62 HTML content Description: Privacy Policy | holtsdav, URL: 127.0.0.1:4330/privacy/
+~					63 link Skip to content, Value: 127.0.0.1:4330/privacy/#main-content
+~					69 container Privacy Policy
+~						70 container
+~							71 heading Privacy Policy, Value: 1
++								72 text Privacy Policy
++							73 text Last updated: September 2026
+~						74 text This Privacy Policy explains how personal data is handled when you visit holtsdav.com.
+~						75 heading 1. Data Controller, Value: 2
++							76 text 1. Data Controller
+~						77 text The person responsible for processing personal data on this website is:
+~						78 container
++							79 text David Holtschke Arcisstraße 50 80799 Munich Germany
+~						80 container
++							81 text Email: 
++							82 link contact@holtsdav.com, Value: mailto:contact@holtsdav.com
+~						83 heading 2. Website Hosting and Content Delivery Network (Cloudflare), Value: 2
++							84 text 2. Website Hosting and Content Delivery Network (Cloudflare)
++						85 text This website is hosted using Cloudflare Pages, a service provided by Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, USA.
++						86 text When you access this website, Cloudflare processes technical connection data required to deliver and secure the site. This may include:
++						87 content list
++							88 container IP address
++								89 text • IP address
++							90 container Requested URL / page
++								91 text • Requested URL / page
++							92 container Date and time of the server request
++								93 text • Date and time of the server request
++							94 container Browser type, version, and operating system
++								95 text • Browser type, version, and operating system
++							96 container Technical request and security headers
++								97 text • Technical request and security headers
++						98 text The processing of this data is based on Article 6(1)(f) GDPR. I have a legitimate interest in ensuring the technically error-free, secure, and performant delivery of my website.
++						99 text I have concluded a Data Processing Agreement (DPA) with Cloudflare. To the extent personal data is transferred to the United States, Cloudflare relies on the EU-U.S. Data Privacy Framework (DPF) and the Standard Contractual Clauses (SCCs) of the European Commission.
++						100 container
++							101 text For further details, consult 
++							102 link Cloudflare's Privacy Policy, Value: cloudflare.com/privacypolicy/
++							103 text .
++						104 heading 3. Cookies, Analytics, and Tracking, Value: 2
++							105 text 3. Cookies, Analytics, and Tracking
++						106 text This website does not use advertising cookies, tracking pixels, or advertising frameworks.
++						107 text No web analytics services are enabled (including Cloudflare Web Analytics).
++						108 text Your opened projects, visual direction and animation preference are kept in browser session storage for the current browsing session. These preferences are not sent to a server.
++						109 heading 4. Contact, Value: 2
++							110 text 4. Contact
++						111 text If you contact me by email, the information you send, such as your name, email address and message, is used to respond to your inquiry.
++						112 text The legal basis for this processing is:
++						113 content list
++							114 container Article 6(1)(b) GDPR, if your inquiry relates to fulfilling a contract or pre-contractual measures.
++								115 text • Article 6(1)(b) GDPR, if your inquiry relates to fulfilling a contract or pre-contractual measures.
++							116 container Article 6(1)(f) GDPR, based on my legitimate interest in answering inquiries directed to me.
++								117 text • Article 6(1)(f) GDPR, based on my legitimate interest in answering inquiries directed to me.
++						118 text Your data will be deleted once your inquiry has been resolved, provided no statutory retention obligations (e.g., commercial or tax law) apply.
++						119 heading 5. External Links, Value: 2
++							120 text 5. External Links
++						121 text This website contains external links to third-party platforms (such as the Apple App Store, itch.io, GitHub, LinkedIn, X, and Steam). These are standard outbound hyperlinks, not embedded third-party widgets. When clicking an external link, you leave this website, and the data processing practices of the destination platform apply.
++						122 heading 6. Your Rights, Value: 2
++							123 text 6. Your Rights
++						124 text Under Chapter III of the GDPR, you have the following rights regarding your personal data:
++						125 content list
++							126 container Right of access (Art. 15 GDPR)
++								127 text • Right of access (Art. 15 GDPR)
++							128 container Right to rectification (Art. 16 GDPR)
++								129 text • Right to rectification (Art. 16 GDPR)
++							130 container Right to erasure (Art. 17 GDPR)
++								131 text • Right to erasure (Art. 17 GDPR)
++							132 container Right to restriction of processing (Art. 18 GDPR)
++								133 text • Right to restriction of processing (Art. 18 GDPR)
++							134 container Right to data portability (Art. 20 GDPR)
++								135 text • Right to data portability (Art. 20 GDPR)
++							136 container Right to object to processing based on legitimate interests (Art. 21 GDPR)
++								137 text • Right to object to processing based on legitimate interests (Art. 21 GDPR)
++						138 text You also have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR). The competent supervisory authority for Bavaria is the Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach, Germany.
++					139 container Workspace
++						140 link Home, Value: 127.0.0.1:4330/
++						141 container Opened projects
++							142 link NotiLog, Value: 127.0.0.1:4330/projects/notilog/
++							143 button Close NotiLog
++						144 link (collapsed) Projects, Value: 127.0.0.1:4330/projects/, Secondary Actions: Expand
++						145 button (collapsed) More: About, Support, Privacy and Impressum, Secondary Actions: Expand
++				146 scroll bar (settable, float) 0
+~			41 button Show Reader, ID: AssistantButton
+~			43 text field (settable) Description: smart search field, Value: 127.0.0.1:4330/privacy/, ID: WEB_BROWSER_ADDRESS_AND_SEARCH_FIELD
+The focused UI element is 62 HTML content Description: Privacy Policy | holtsdav, URL: 127.0.0.1:4330/privacy/

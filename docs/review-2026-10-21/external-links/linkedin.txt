@@ -1,0 +1,41 @@
+Browser tab: 2, Title: "Sign Up | LinkedIn", URL: "https://www.linkedin.com/authwall?trk=bf&trkInfo=AQEDUegOhBO4XwAAAaFc0gRwZbs-w6IA4v8VttullUCRqFUX2-hpqmRafDeQe384RlNac8Ncp82lHo__R6lK-SOeiFB6dAsiJOQ4qriGx70NgI010makq7lVbfl_ea3bi20F5cc=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fdavid-holtschke".
+1 AXWebArea Sign Up | LinkedIn, URL: linkedin.com/authwall?trk=bf&trkInfo=AQEDUegOhBO4XwAAAaFc0gRwZbs-w6IA4v8VttullUCRqFUX2-hpqmRafDeQe384RlNac8Ncp82lHo__R6lK-SOeiFB6dAsiJOQ4qriGx70NgI010makq7lVbfl_ea3bi20F5cc=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fdavid-holtschke
+	2 link Description: Skip to main content, Value: linkedin.com/authwall?trk=bf&trkInfo=AQEDUegOhBO4XwAAAaFc0gRwZbs-w6IA4v8VttullUCRqFUX2-hpqmRafDeQe384RlNac8Ncp82lHo__R6lK-SOeiFB6dAsiJOQ4qriGx70NgI010makq7lVbfl_ea3bi20F5cc=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fdavid-holtschke#main-content
+	3 container Primary
+		4 link Description: LinkedIn, Value: linkedin.com/?trk=seo-authwall-base_nav-header-logo
+	5 container main-content
+		6 container
+			7 heading Join LinkedIn, Value: 1
+				8 text Join LinkedIn
+			9 container
+				10 text field (settable) Email
+				11 text Email
+				12 text field (settable) Password (6+ characters)
+				13 text Password (6+ characters)
+			14 container
+				15 text By clicking Agree & Join, you agree to the LinkedIn 
+				16 link Description: User Agreement, Value: linkedin.com/legal/user-agreement?trk=seo-authwall-base_join-form-user-agreement
+				17 text , 
+				18 link Description: Privacy Policy, Value: linkedin.com/legal/privacy-policy?trk=seo-authwall-base_join-form-privacy-policy
+				19 text , and 
+				20 link Description: Cookie Policy, Value: linkedin.com/legal/cookie-policy?trk=seo-authwall-base_join-form-cookie-policy
+				21 text .
+			22 button Agree & Join, ID: join-form-submit
+			23 text Already on Linkedin? 
+			24 button Sign in
+	25 content list
+		26 text LinkedIn © 2026
+		27 link Description: About, Value: about.linkedin.com/?trk=seo-authwall-base_footer-about
+		28 link Description: Accessibility, Value: linkedin.com/accessibility?trk=seo-authwall-base_footer-accessibility
+		29 link Description: User Agreement, Value: linkedin.com/legal/user-agreement?trk=seo-authwall-base_footer-user-agreement
+		30 link Description: Privacy Policy, Value: linkedin.com/legal/privacy-policy?trk=seo-authwall-base_footer-privacy-policy
+		31 link Description: Your California Privacy Choices, Value: linkedin.com/legal/california-privacy-disclosure?trk=seo-authwall-base_footer-california-privacy-rights-act
+		32 link Description: Cookie Policy, Value: linkedin.com/legal/cookie-policy?trk=seo-authwall-base_footer-cookie-policy
+		33 link Description: Copyright Policy, Value: linkedin.com/legal/copyright-policy?trk=seo-authwall-base_footer-copyright-policy
+		34 link Description: Brand Policy, Value: brand.linkedin.com/policies?trk=seo-authwall-base_footer-brand-policy
+		35 link Description: Guest Controls, Value: linkedin.com/psettings/guest-controls?trk=seo-authwall-base_footer-guest-controls
+		36 link Description: Community Guidelines, Value: linkedin.com/legal/professional-community-policies?trk=seo-authwall-base_footer-community-guide
+		37 button (collapsed) Language, Secondary Actions: Expand
+			38 text Language
+
+The focused UI element is 1 AXWebArea Sign Up | LinkedIn, URL: linkedin.com/authwall?trk=bf&trkInfo=AQEDUegOhBO4XwAAAaFc0gRwZbs-w6IA4v8VttullUCRqFUX2-hpqmRafDeQe384RlNac8Ncp82lHo__R6lK-SOeiFB6dAsiJOQ4qriGx70NgI010makq7lVbfl_ea3bi20F5cc=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fdavid-holtschke

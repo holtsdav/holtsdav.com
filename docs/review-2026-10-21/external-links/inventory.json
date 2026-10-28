@@ -1,0 +1,415 @@
+[
+  {
+    "href": "https://github.com/holtsdav",
+    "labels": [
+      "GitHub ↗"
+    ],
+    "routes": [
+      "/",
+      "/404.html",
+      "/about/",
+      "/contact/",
+      "/directions/",
+      "/drafts/notilog-privacy/",
+      "/impressum/",
+      "/privacy/",
+      "/privacy/glassdays/",
+      "/privacy/glassdays/de/",
+      "/privacy/glassdays/es/",
+      "/privacy/muteonlocation/",
+      "/privacy/notilog/",
+      "/privacy/roguecolor/",
+      "/privacy/roomplanner/",
+      "/projects/",
+      "/projects/auxjam/",
+      "/projects/glassdays-catalog/",
+      "/projects/glassdays/",
+      "/projects/mute-on-location/",
+      "/projects/notilog/",
+      "/projects/pdf-editor/",
+      "/projects/reviewbar/",
+      "/projects/rogue-color/",
+      "/projects/room-planner/",
+      "/projects/saveshelf/",
+      "/support/",
+      "/support/notilog/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com",
+    "labels": [
+      "Contact David about NotiLog",
+      "Contact David about Rogue Color",
+      "Contact David about Room Planner",
+      "Email ↗",
+      "contact@holtsdav.com",
+      "contact@holtsdav.com ↗"
+    ],
+    "routes": [
+      "/",
+      "/404.html",
+      "/about/",
+      "/contact/",
+      "/directions/",
+      "/drafts/notilog-privacy/",
+      "/impressum/",
+      "/privacy/",
+      "/privacy/glassdays/",
+      "/privacy/glassdays/de/",
+      "/privacy/glassdays/es/",
+      "/privacy/muteonlocation/",
+      "/privacy/notilog/",
+      "/privacy/roguecolor/",
+      "/privacy/roomplanner/",
+      "/projects/",
+      "/projects/auxjam/",
+      "/projects/glassdays-catalog/",
+      "/projects/glassdays/",
+      "/projects/mute-on-location/",
+      "/projects/notilog/",
+      "/projects/pdf-editor/",
+      "/projects/reviewbar/",
+      "/projects/rogue-color/",
+      "/projects/room-planner/",
+      "/projects/saveshelf/",
+      "/support/",
+      "/support/notilog/"
+    ]
+  },
+  {
+    "href": "https://www.cloudflare.com/privacypolicy/",
+    "labels": [
+      "Cloudflare's Privacy Policy"
+    ],
+    "routes": [
+      "/privacy/"
+    ]
+  },
+  {
+    "href": "https://www.linkedin.com/in/david-holtschke",
+    "labels": [
+      "LinkedIn ↗"
+    ],
+    "routes": [
+      "/about/"
+    ]
+  },
+  {
+    "href": "https://api.iconify.design/solar/hourglass-bold.svg",
+    "labels": [
+      "Hourglass Bold"
+    ],
+    "routes": [
+      "/about/"
+    ]
+  },
+  {
+    "href": "https://creativecommons.org/licenses/by/4.0/",
+    "labels": [
+      "CC BY 4.0"
+    ],
+    "routes": [
+      "/about/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Glassdays%20support",
+    "labels": [
+      "Glassdays↗"
+    ],
+    "routes": [
+      "/support/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=NotiLog%20support",
+    "labels": [
+      "NotiLog↗",
+      "contact@holtsdav.com"
+    ],
+    "routes": [
+      "/support/",
+      "/support/notilog/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=SaveShelf%20support",
+    "labels": [
+      "SaveShelf↗"
+    ],
+    "routes": [
+      "/support/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Mute%20On%20Location%20support",
+    "labels": [
+      "Mute On Location↗"
+    ],
+    "routes": [
+      "/support/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=ReviewBar%20support",
+    "labels": [
+      "ReviewBar↗"
+    ],
+    "routes": [
+      "/support/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=PDF%20Editor%20support",
+    "labels": [
+      "PDF Editor↗"
+    ],
+    "routes": [
+      "/support/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Room%20Planner%20support",
+    "labels": [
+      "Room Planner↗"
+    ],
+    "routes": [
+      "/support/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=AuxJam%20support",
+    "labels": [
+      "AuxJam↗"
+    ],
+    "routes": [
+      "/support/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Rogue%20Color%20support",
+    "labels": [
+      "Rogue Color↗"
+    ],
+    "routes": [
+      "/support/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Glassdays%20JSON%20Editor%20support",
+    "labels": [
+      "Glassdays JSON Editor↗"
+    ],
+    "routes": [
+      "/support/"
+    ]
+  },
+  {
+    "href": "https://www.icloud.com/shortcuts/150326e49cfb495dbd292fc1c7ab2f07",
+    "labels": [
+      "existing shared NotiLog shortcut"
+    ],
+    "routes": [
+      "/support/notilog/"
+    ]
+  },
+  {
+    "href": "https://apps.apple.com/de/app/glassdays-countdown/id6785538729",
+    "labels": [
+      "App Store↗"
+    ],
+    "routes": [
+      "/projects/glassdays/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Glassdays",
+    "labels": [
+      "Ask about Glassdays ↗"
+    ],
+    "routes": [
+      "/projects/glassdays/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=SaveShelf",
+    "labels": [
+      "Ask about SaveShelf ↗"
+    ],
+    "routes": [
+      "/projects/saveshelf/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=AuxJam",
+    "labels": [
+      "Ask about AuxJam ↗"
+    ],
+    "routes": [
+      "/projects/auxjam/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Glassdays%20JSON%20Editor",
+    "labels": [
+      "Ask about Glassdays JSON Editor ↗"
+    ],
+    "routes": [
+      "/projects/glassdays-catalog/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=NotiLog",
+    "labels": [
+      "Ask about NotiLog ↗"
+    ],
+    "routes": [
+      "/projects/notilog/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=ReviewBar",
+    "labels": [
+      "Ask about ReviewBar ↗"
+    ],
+    "routes": [
+      "/projects/reviewbar/"
+    ]
+  },
+  {
+    "href": "https://holtsdav.com/RoomPlanner",
+    "labels": [
+      "Open tool↗"
+    ],
+    "routes": [
+      "/projects/room-planner/"
+    ]
+  },
+  {
+    "href": "https://github.com/holtsdav/RoomPlanner",
+    "labels": [
+      "GitHub↗"
+    ],
+    "routes": [
+      "/projects/room-planner/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Room%20Planner",
+    "labels": [
+      "Ask about Room Planner ↗"
+    ],
+    "routes": [
+      "/projects/room-planner/"
+    ]
+  },
+  {
+    "href": "https://github.com/holtsdav/PDF-Editor",
+    "labels": [
+      "GitHub↗"
+    ],
+    "routes": [
+      "/projects/pdf-editor/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=PDF%20Editor",
+    "labels": [
+      "Ask about PDF Editor ↗"
+    ],
+    "routes": [
+      "/projects/pdf-editor/"
+    ]
+  },
+  {
+    "href": "https://holtsdav.itch.io/rouge-color",
+    "labels": [
+      "itch.io↗"
+    ],
+    "routes": [
+      "/projects/rogue-color/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Rogue%20Color",
+    "labels": [
+      "Ask about Rogue Color ↗"
+    ],
+    "routes": [
+      "/projects/rogue-color/"
+    ]
+  },
+  {
+    "href": "https://apps.apple.com/de/app/mute-on-location/id6790398791?l=en-GB&mt=12",
+    "labels": [
+      "Mac App Store↗"
+    ],
+    "routes": [
+      "/projects/mute-on-location/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Mute%20On%20Location",
+    "labels": [
+      "Ask about Mute On Location ↗"
+    ],
+    "routes": [
+      "/projects/mute-on-location/"
+    ]
+  },
+  {
+    "href": "https://www.apple.com/legal/privacy/",
+    "labels": [
+      "Apple’s Privacy Policy",
+      "Apple’s privacy information"
+    ],
+    "routes": [
+      "/drafts/notilog-privacy/",
+      "/privacy/muteonlocation/"
+    ]
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=NotiLog%20privacy%20question",
+    "labels": [
+      "contact@holtsdav.com"
+    ],
+    "routes": [
+      "/drafts/notilog-privacy/"
+    ]
+  },
+  {
+    "href": "https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy/",
+    "labels": [
+      "Apple’s current App Privacy guidance"
+    ],
+    "routes": [
+      "/drafts/notilog-privacy/"
+    ]
+  },
+  {
+    "href": "https://telemetrydeck.com/privacy/",
+    "labels": [
+      "Datenschutzerklärung von TelemetryDeck",
+      "Política de privacidad de TelemetryDeck",
+      "TelemetryDeck Privacy Policy"
+    ],
+    "routes": [
+      "/privacy/glassdays/",
+      "/privacy/glassdays/de/",
+      "/privacy/glassdays/es/"
+    ]
+  },
+  {
+    "href": "https://www.revenuecat.com/privacy/",
+    "labels": [
+      "Datenschutzerklärung von RevenueCat",
+      "Política de privacidad de RevenueCat",
+      "RevenueCat Privacy Policy"
+    ],
+    "routes": [
+      "/privacy/glassdays/",
+      "/privacy/glassdays/de/",
+      "/privacy/glassdays/es/"
+    ]
+  }
+]

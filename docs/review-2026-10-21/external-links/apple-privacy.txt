@@ -1,0 +1,176 @@
+Browser tab: 2, Title: "Legal - Privacy Policy - Apple", URL: "https://www.apple.com/legal/privacy/".
+1 AXWebArea Legal - Privacy Policy - Apple, URL: apple.com/legal/privacy/
+	2 container
+		3 container Choose country or region
+			4 pop up button
+			5 button
+			6 button
+				7 image
+		8 container globalheader
+			9 container Description: Global, ID: globalnav
+				10 content list globalnav-list
+					11 link Description: Apple, Value: apple.com/
+					12 container
+						13 content list
+							14 link Description: Store, Value: apple.com/us/shop/goto/store
+							15 button (collapsed) Description: Store menu, ID: globalnav-menubutton-link-store, Secondary Actions: Expand
+						16 content list
+							17 link Description: Mac, Value: apple.com/mac/
+							18 button (collapsed) Description: Mac menu, ID: globalnav-menubutton-link-mac, Secondary Actions: Expand
+						19 content list
+							20 link Description: iPad, Value: apple.com/ipad/
+							21 button (collapsed) Description: iPad menu, ID: globalnav-menubutton-link-ipad, Secondary Actions: Expand
+						22 content list
+							23 link Description: iPhone, Value: apple.com/iphone/
+							24 button (collapsed) Description: iPhone menu, ID: globalnav-menubutton-link-iphone, Secondary Actions: Expand
+						25 content list
+							26 link Description: Watch, Value: apple.com/watch/
+							27 button (collapsed) Description: Watch menu, ID: globalnav-menubutton-link-watch, Secondary Actions: Expand
+						28 content list
+							29 link Description: Vision, Value: apple.com/apple-vision-pro/
+							30 button (collapsed) Description: Vision menu, ID: globalnav-menubutton-link-vision, Secondary Actions: Expand
+						31 content list
+							32 link Description: AirPods, Value: apple.com/airpods/
+							33 button (collapsed) Description: AirPods menu, ID: globalnav-menubutton-link-airpods, Secondary Actions: Expand
+						34 content list
+							35 link Description: TV and Home, Value: apple.com/tv-home/
+							36 button (collapsed) Description: TV and Home menu, ID: globalnav-menubutton-link-tv-home, Secondary Actions: Expand
+						37 content list
+							38 link Description: Entertainment, Value: apple.com/entertainment/
+							39 button (collapsed) Description: Entertainment menu, ID: globalnav-menubutton-link-entertainment, Secondary Actions: Expand
+						40 content list
+							41 link Description: Accessories, Value: apple.com/us/shop/goto/buy_accessories
+							42 button (collapsed) Description: Accessories menu, ID: globalnav-menubutton-link-accessories, Secondary Actions: Expand
+						43 content list
+							44 link Description: Support, Value: support.apple.com/?cid=gn-ols-home-hp-tab
+							45 button (collapsed) Description: Support menu, ID: globalnav-menubutton-link-support, Secondary Actions: Expand
+					46 button Description: Search apple.com, ID: globalnav-menubutton-link-search
+						47 image
+					48 button Description: Shopping Bag, ID: globalnav-menubutton-link-bag
+						49 image
+		50 container
+			51 link Description: Legal, Value: apple.com/legal/
+			52 content list
+				53 link Description: Hardware, Value: apple.com/legal/warranty/
+				54 link Description: Software, Value: apple.com/legal/sla/
+				55 link Description: Sales & Support, Value: apple.com/legal/sales-support/
+				56 link Description: Internet Services, Value: apple.com/legal/internet-services/
+				57 link Description: Intellectual Property, Value: apple.com/legal/intellectual-property/
+				58 link Description: More Resources, Value: apple.com/legal/more-resources/
+		59 container
+			60 heading Apple Customer Privacy Policy, Value: 1
+				61 text Apple Customer Privacy Policy
+			62 text Apple is committed to your privacy. Read our customer Privacy Policy for a clear explanation of how we collect, use, disclose, transfer, and store your information. To access and manage your Apple data please visit 
+			63 link Description: Manage your Apple account, Value: appleid.apple.com/choose-your-country
+			64 text . For corrections or general enquiries, please 
+			65 link Description: Contact Privacy, Value: apple.com/legal/privacy/contact/
+			66 text .
+		67 container
+			68 heading Choose a Topic, Value: 2
+				69 text Choose a Topic
+			70 button
+			71 container
+				72 text Privacy Policy
+			73 button
+			74 container
+				75 text Apple ID and Family Sharing Disclosure
+			76 button
+			77 container
+				78 text Privacy Governance
+			79 button
+			80 container
+				81 text Government Information Requests
+			82 button
+			83 container
+				84 text Manage Your Account
+		85 container Apple Footer, ID: ac-globalfooter
+			86 heading Apple Footer, Value: 2, ID: ac-gf-label
+				87 text Apple Footer
+			88 container Breadcrumbs
+				89 link Description: Apple, Value: apple.com/
+				90 content list
+					91 container
+						92 link Description: Legal, Value: apple.com/legal/
+					93 container
+						94 text Privacy Policy
+			95 container Apple Directory
+				96 heading Hardware and Software, Value: 3
+					97 text Hardware and Software
+				98 content list
+					99 link Description: Hardware Warranties, Value: apple.com/legal/warranty/
+					100 link Description: Software License Agreements, Value: apple.com/legal/sla/
+					101 link Description: RF Exposure, Value: apple.com/legal/rfexposure/
+				102 heading More Resources, Value: 3
+					103 text More Resources
+				104 content list
+					105 link Description: Overview, Value: apple.com/legal/more-resources/
+					106 link Description: Government Information Requests, Value: apple.com/privacy/government-information-requests/
+					107 link Description: Contact Apple Legal, Value: apple.com/legal/contact/
+					108 link Description: Global Trade Compliance, Value: apple.com/legal/more-resources/gtc.html
+					109 link Description: Supplier Provisions, Value: apple.com/legal/more-resources/supplier-provisions.html
+					110 link Description: Filemaker Legal Information, Value: filemaker.com/company/legal/trademark_guidelines.html
+					111 link Description: Apple Bag Check Class Action Settlement, Value: apple.com/legal/more-resources/settlement/apple-bag-check-settlement.html
+					112 link Description: Foreman Class Action Settlement, Value: apple.com/legal/more-resources/settlement/foreman.html
+				113 heading Sales & Support, Value: 3
+					114 text Sales & Support
+				115 content list
+					116 link Description: Overview, Value: apple.com/legal/sales-support/
+					117 link Description: AppleCare, Value: apple.com/legal/sales-support/
+					118 link Description: Repair Terms and Conditions, Value: apple.com/legal/sales-support/terms/repair/
+					119 link Description: Express Replacement Service, Value: apple.com/legal/sales-support/terms/iphonears/
+					120 link Description: Remote Support Terms and Conditions (PDF), Value: images.apple.com/legal/sales-support/applecare/docs/remotesupport_terms.pdf
+					121 link Description: Sales Policies, Value: apple.com/legal/sales-support/
+					122 link Description: Certification Agreements and Policies, Value: apple.com/legal/sales-support/certification/
+					123 link Description: Apple Gift Card Terms and Conditions, Value: apple.com/legal/internet-services/itunes/giftcards/
+					124 link Description: Training Service Terms and Conditions, Value: apple.com/legal/sales-support/terms/training/trainingservice.html
+					125 link Description: Support Communities Terms of Use, Value: discussions.apple.com/terms
+				126 heading Internet Services, Value: 3
+					127 text Internet Services
+				128 content list
+					129 link Description: Overview, Value: apple.com/legal/internet-services/
+					130 link Description: Apple Media Services Terms and Conditions, Value: apple.com/legal/internet-services/itunes/
+					131 link Description: Apple Gift Card Terms and Conditions, Value: apple.com/legal/internet-services/itunes/giftcards/
+					132 link Description: iCloud Terms of Service, Value: apple.com/legal/internet-services/icloud/
+					133 link Description: TestFlight Terms and Conditions, Value: apple.com/legal/internet-services/testflight/
+					134 link Description: Privacy Policy, Value: apple.com/legal/privacy/
+					135 link Description: Website Terms of Use, Value: apple.com/legal/internet-services/terms/site.html
+				136 heading Intellectual Property, Value: 3
+					137 text Intellectual Property
+				138 content list
+					139 link Description: Overview, Value: apple.com/legal/intellectual-property/
+					140 link Description: Guidelines for Using Apple Trademarks and Copyrights, Value: apple.com/legal/intellectual-property/guidelinesfor3rdparties.html
+					141 link Description: Trademarks, Value: apple.com/legal/intellectual-property/trademark/appletmlist.html
+					142 link Description: Rights and Permissions, Value: apple.com/legal/contact/rights-permissions.html
+					143 link Description: Piracy Prevention, Value: apple.com/legal/intellectual-property/piracy.html
+					144 link Description: Unsolicited Idea Submission Policy, Value: apple.com/legal/intellectual-property/policies/ideas.html
+				145 heading Platform Services, Value: 3
+					146 text Platform Services
+				147 content list
+					148 link Description: Apple Business Terms of Service, Value: apple.com/legal/platform-services/apple-business/
+					149 link Description: Apple School Manager, Value: apple.com/legal/platform-services/apple-school/
+					150 link Description: Data Transfer Agreements, Value: apple.com/legal/platform-services/datatransfer/
+			151 container
+				152 text More ways to shop: 
+				153 link Description: Find an Apple Store, Value: apple.com/retail/
+				154 text  or 
+				155 link Description: other retailer, Value: locate.apple.com/
+				156 text  near you. 
+				157 container
+					158 text Or call 
+					159 link Description: 1-800-MY-APPLE, Value: tel:1-800-692-7753
+					160 text  (1-800-692-7753).
+				161 link Description: United States. Choose your country or region, Help: Choose your country or region, Value: apple.com/choose-country-region/
+				162 text Copyright © 2026 Apple Inc. All rights reserved.
+				163 content list
+					164 container
+						165 link Description: Privacy Policy, Value: apple.com/legal/privacy/
+					166 container
+						167 link Description: Terms of Use, Value: apple.com/legal/internet-services/terms/site.html
+					168 container
+						169 link Description: Sales and Refunds, Value: apple.com/us/shop/goto/help/sales_refunds
+					170 container
+						171 link Description: Legal, Value: apple.com/legal/
+					172 container
+						173 link Description: Site Map, Value: apple.com/sitemap/
+
+The focused UI element is 1 AXWebArea Legal - Privacy Policy - Apple, URL: apple.com/legal/privacy/

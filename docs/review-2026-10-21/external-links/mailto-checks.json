@@ -1,0 +1,200 @@
+[
+  {
+    "href": "mailto:contact@holtsdav.com",
+    "recipient": "contact@holtsdav.com",
+    "subject": "",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Glassdays%20support",
+    "recipient": "contact@holtsdav.com",
+    "subject": "Glassdays support",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=NotiLog%20support",
+    "recipient": "contact@holtsdav.com",
+    "subject": "NotiLog support",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=SaveShelf%20support",
+    "recipient": "contact@holtsdav.com",
+    "subject": "SaveShelf support",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Mute%20On%20Location%20support",
+    "recipient": "contact@holtsdav.com",
+    "subject": "Mute On Location support",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=ReviewBar%20support",
+    "recipient": "contact@holtsdav.com",
+    "subject": "ReviewBar support",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=PDF%20Editor%20support",
+    "recipient": "contact@holtsdav.com",
+    "subject": "PDF Editor support",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Room%20Planner%20support",
+    "recipient": "contact@holtsdav.com",
+    "subject": "Room Planner support",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=AuxJam%20support",
+    "recipient": "contact@holtsdav.com",
+    "subject": "AuxJam support",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Rogue%20Color%20support",
+    "recipient": "contact@holtsdav.com",
+    "subject": "Rogue Color support",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Glassdays%20JSON%20Editor%20support",
+    "recipient": "contact@holtsdav.com",
+    "subject": "Glassdays JSON Editor support",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Glassdays",
+    "recipient": "contact@holtsdav.com",
+    "subject": "Glassdays",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=SaveShelf",
+    "recipient": "contact@holtsdav.com",
+    "subject": "SaveShelf",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=AuxJam",
+    "recipient": "contact@holtsdav.com",
+    "subject": "AuxJam",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Glassdays%20JSON%20Editor",
+    "recipient": "contact@holtsdav.com",
+    "subject": "Glassdays JSON Editor",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=NotiLog",
+    "recipient": "contact@holtsdav.com",
+    "subject": "NotiLog",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=ReviewBar",
+    "recipient": "contact@holtsdav.com",
+    "subject": "ReviewBar",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Room%20Planner",
+    "recipient": "contact@holtsdav.com",
+    "subject": "Room Planner",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=PDF%20Editor",
+    "recipient": "contact@holtsdav.com",
+    "subject": "PDF Editor",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Rogue%20Color",
+    "recipient": "contact@holtsdav.com",
+    "subject": "Rogue Color",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=Mute%20On%20Location",
+    "recipient": "contact@holtsdav.com",
+    "subject": "Mute On Location",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  },
+  {
+    "href": "mailto:contact@holtsdav.com?subject=NotiLog%20privacy%20question",
+    "recipient": "contact@holtsdav.com",
+    "subject": "NotiLog privacy question",
+    "one_correct_recipient": true,
+    "only_expected_subject_parameter": true,
+    "no_crlf": true,
+    "no_send_attempted": true
+  }
+]

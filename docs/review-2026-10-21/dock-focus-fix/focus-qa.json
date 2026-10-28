@@ -1,0 +1,1205 @@
+{
+  "date": "2026-10-21T01:11:38.432Z",
+  "observations": [
+    {
+      "width": 320,
+      "index": 0,
+      "label": "Glassdays",
+      "inStrip": true,
+      "rect": {
+        "left": 87,
+        "right": 146,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 320,
+      "index": 1,
+      "label": "Close Glassdays",
+      "inStrip": true,
+      "rect": {
+        "left": 120,
+        "right": 146,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 320,
+      "index": 2,
+      "label": "NotiLog",
+      "inStrip": true,
+      "rect": {
+        "left": 96,
+        "right": 155,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 51
+    },
+    {
+      "width": 320,
+      "index": 3,
+      "label": "Close NotiLog",
+      "inStrip": true,
+      "rect": {
+        "left": 129,
+        "right": 155,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 51
+    },
+    {
+      "width": 320,
+      "index": 4,
+      "label": "SaveShelf",
+      "inStrip": true,
+      "rect": {
+        "left": 96,
+        "right": 155,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 111
+    },
+    {
+      "width": 320,
+      "index": 5,
+      "label": "Close SaveShelf",
+      "inStrip": true,
+      "rect": {
+        "left": 129,
+        "right": 155,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 111
+    },
+    {
+      "width": 320,
+      "index": 6,
+      "label": "Mute On Location",
+      "inStrip": true,
+      "rect": {
+        "left": 96,
+        "right": 155,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 171
+    },
+    {
+      "width": 320,
+      "index": 7,
+      "label": "Close Mute On Location",
+      "inStrip": true,
+      "rect": {
+        "left": 129,
+        "right": 155,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 171
+    },
+    {
+      "width": 320,
+      "index": 8,
+      "label": "ReviewBar",
+      "inStrip": true,
+      "rect": {
+        "left": 96,
+        "right": 155,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 231
+    },
+    {
+      "width": 320,
+      "index": 9,
+      "label": "Close ReviewBar",
+      "inStrip": true,
+      "rect": {
+        "left": 129,
+        "right": 155,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 231
+    },
+    {
+      "width": 320,
+      "index": 10,
+      "label": "PDF Editor",
+      "inStrip": true,
+      "rect": {
+        "left": 96,
+        "right": 155,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 291
+    },
+    {
+      "width": 320,
+      "index": 11,
+      "label": "Close PDF Editor",
+      "inStrip": true,
+      "rect": {
+        "left": 129,
+        "right": 155,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 291
+    },
+    {
+      "width": 320,
+      "index": 12,
+      "label": "Room Planner",
+      "inStrip": true,
+      "rect": {
+        "left": 96,
+        "right": 155,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 351
+    },
+    {
+      "width": 320,
+      "index": 13,
+      "label": "Close Room Planner",
+      "inStrip": true,
+      "rect": {
+        "left": 129,
+        "right": 155,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 351
+    },
+    {
+      "width": 320,
+      "index": 14,
+      "label": "AuxJam",
+      "inStrip": true,
+      "rect": {
+        "left": 96,
+        "right": 155,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 411
+    },
+    {
+      "width": 320,
+      "index": 15,
+      "label": "Close AuxJam",
+      "inStrip": true,
+      "rect": {
+        "left": 129,
+        "right": 155,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 411
+    },
+    {
+      "width": 320,
+      "index": 16,
+      "label": "Rogue Color",
+      "inStrip": true,
+      "rect": {
+        "left": 96,
+        "right": 155,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 471
+    },
+    {
+      "width": 320,
+      "index": 17,
+      "label": "Close Rogue Color",
+      "inStrip": true,
+      "rect": {
+        "left": 129,
+        "right": 155,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 471
+    },
+    {
+      "width": 320,
+      "index": 18,
+      "label": "Glassdays JSON Editor",
+      "inStrip": true,
+      "rect": {
+        "left": 106,
+        "right": 165,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 521
+    },
+    {
+      "width": 320,
+      "index": 19,
+      "label": "Close Glassdays JSON Editor",
+      "inStrip": true,
+      "rect": {
+        "left": 139,
+        "right": 165,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 173,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 521
+    },
+    {
+      "width": 390,
+      "index": 0,
+      "label": "Glassdays",
+      "inStrip": true,
+      "rect": {
+        "left": 87,
+        "right": 146,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 390,
+      "index": 1,
+      "label": "Close Glassdays",
+      "inStrip": true,
+      "rect": {
+        "left": 120,
+        "right": 146,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 390,
+      "index": 2,
+      "label": "NotiLog",
+      "inStrip": true,
+      "rect": {
+        "left": 131,
+        "right": 190,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 16
+    },
+    {
+      "width": 390,
+      "index": 3,
+      "label": "Close NotiLog",
+      "inStrip": true,
+      "rect": {
+        "left": 164,
+        "right": 190,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 16
+    },
+    {
+      "width": 390,
+      "index": 4,
+      "label": "SaveShelf",
+      "inStrip": true,
+      "rect": {
+        "left": 131,
+        "right": 190,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 76
+    },
+    {
+      "width": 390,
+      "index": 5,
+      "label": "Close SaveShelf",
+      "inStrip": true,
+      "rect": {
+        "left": 164,
+        "right": 190,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 76
+    },
+    {
+      "width": 390,
+      "index": 6,
+      "label": "Mute On Location",
+      "inStrip": true,
+      "rect": {
+        "left": 131,
+        "right": 190,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 136
+    },
+    {
+      "width": 390,
+      "index": 7,
+      "label": "Close Mute On Location",
+      "inStrip": true,
+      "rect": {
+        "left": 164,
+        "right": 190,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 136
+    },
+    {
+      "width": 390,
+      "index": 8,
+      "label": "ReviewBar",
+      "inStrip": true,
+      "rect": {
+        "left": 131,
+        "right": 190,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 196
+    },
+    {
+      "width": 390,
+      "index": 9,
+      "label": "Close ReviewBar",
+      "inStrip": true,
+      "rect": {
+        "left": 164,
+        "right": 190,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 196
+    },
+    {
+      "width": 390,
+      "index": 10,
+      "label": "PDF Editor",
+      "inStrip": true,
+      "rect": {
+        "left": 131,
+        "right": 190,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 256
+    },
+    {
+      "width": 390,
+      "index": 11,
+      "label": "Close PDF Editor",
+      "inStrip": true,
+      "rect": {
+        "left": 164,
+        "right": 190,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 256
+    },
+    {
+      "width": 390,
+      "index": 12,
+      "label": "Room Planner",
+      "inStrip": true,
+      "rect": {
+        "left": 131,
+        "right": 190,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 316
+    },
+    {
+      "width": 390,
+      "index": 13,
+      "label": "Close Room Planner",
+      "inStrip": true,
+      "rect": {
+        "left": 164,
+        "right": 190,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 316
+    },
+    {
+      "width": 390,
+      "index": 14,
+      "label": "AuxJam",
+      "inStrip": true,
+      "rect": {
+        "left": 131,
+        "right": 190,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 376
+    },
+    {
+      "width": 390,
+      "index": 15,
+      "label": "Close AuxJam",
+      "inStrip": true,
+      "rect": {
+        "left": 164,
+        "right": 190,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 376
+    },
+    {
+      "width": 390,
+      "index": 16,
+      "label": "Rogue Color",
+      "inStrip": true,
+      "rect": {
+        "left": 131,
+        "right": 190,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 436
+    },
+    {
+      "width": 390,
+      "index": 17,
+      "label": "Close Rogue Color",
+      "inStrip": true,
+      "rect": {
+        "left": 164,
+        "right": 190,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 436
+    },
+    {
+      "width": 390,
+      "index": 18,
+      "label": "Glassdays JSON Editor",
+      "inStrip": true,
+      "rect": {
+        "left": 176,
+        "right": 235,
+        "top": 749,
+        "bottom": 822
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 451
+    },
+    {
+      "width": 390,
+      "index": 19,
+      "label": "Close Glassdays JSON Editor",
+      "inStrip": true,
+      "rect": {
+        "left": 209,
+        "right": 235,
+        "top": 749,
+        "bottom": 775
+      },
+      "strip": {
+        "left": 79,
+        "right": 243,
+        "top": 741,
+        "bottom": 830
+      },
+      "spread": 8,
+      "scroll": 451
+    },
+    {
+      "width": 1440,
+      "index": 0,
+      "label": "Glassdays",
+      "inStrip": true,
+      "rect": {
+        "left": 313,
+        "right": 383,
+        "top": 739,
+        "bottom": 817
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 1,
+      "label": "Close Glassdays",
+      "inStrip": true,
+      "rect": {
+        "left": 357,
+        "right": 381,
+        "top": 739,
+        "bottom": 763
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 2,
+      "label": "NotiLog",
+      "inStrip": true,
+      "rect": {
+        "left": 386,
+        "right": 456,
+        "top": 739,
+        "bottom": 817
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 3,
+      "label": "Close NotiLog",
+      "inStrip": true,
+      "rect": {
+        "left": 430,
+        "right": 454,
+        "top": 739,
+        "bottom": 763
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 4,
+      "label": "SaveShelf",
+      "inStrip": true,
+      "rect": {
+        "left": 459,
+        "right": 529,
+        "top": 739,
+        "bottom": 817
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 5,
+      "label": "Close SaveShelf",
+      "inStrip": true,
+      "rect": {
+        "left": 503,
+        "right": 527,
+        "top": 739,
+        "bottom": 763
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 6,
+      "label": "Mute On Location",
+      "inStrip": true,
+      "rect": {
+        "left": 532,
+        "right": 602,
+        "top": 739,
+        "bottom": 817
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 7,
+      "label": "Close Mute On Location",
+      "inStrip": true,
+      "rect": {
+        "left": 576,
+        "right": 600,
+        "top": 739,
+        "bottom": 763
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 8,
+      "label": "ReviewBar",
+      "inStrip": true,
+      "rect": {
+        "left": 605,
+        "right": 675,
+        "top": 739,
+        "bottom": 817
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 9,
+      "label": "Close ReviewBar",
+      "inStrip": true,
+      "rect": {
+        "left": 649,
+        "right": 673,
+        "top": 739,
+        "bottom": 763
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 10,
+      "label": "PDF Editor",
+      "inStrip": true,
+      "rect": {
+        "left": 678,
+        "right": 748,
+        "top": 739,
+        "bottom": 817
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 11,
+      "label": "Close PDF Editor",
+      "inStrip": true,
+      "rect": {
+        "left": 722,
+        "right": 746,
+        "top": 739,
+        "bottom": 763
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 12,
+      "label": "Room Planner",
+      "inStrip": true,
+      "rect": {
+        "left": 751,
+        "right": 821,
+        "top": 739,
+        "bottom": 817
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 13,
+      "label": "Close Room Planner",
+      "inStrip": true,
+      "rect": {
+        "left": 795,
+        "right": 819,
+        "top": 739,
+        "bottom": 763
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 14,
+      "label": "AuxJam",
+      "inStrip": true,
+      "rect": {
+        "left": 824,
+        "right": 894,
+        "top": 739,
+        "bottom": 817
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 15,
+      "label": "Close AuxJam",
+      "inStrip": true,
+      "rect": {
+        "left": 868,
+        "right": 892,
+        "top": 739,
+        "bottom": 763
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 16,
+      "label": "Rogue Color",
+      "inStrip": true,
+      "rect": {
+        "left": 897,
+        "right": 967,
+        "top": 739,
+        "bottom": 817
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 17,
+      "label": "Close Rogue Color",
+      "inStrip": true,
+      "rect": {
+        "left": 941,
+        "right": 965,
+        "top": 739,
+        "bottom": 763
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 18,
+      "label": "Glassdays JSON Editor",
+      "inStrip": true,
+      "rect": {
+        "left": 970,
+        "right": 1040,
+        "top": 739,
+        "bottom": 817
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    },
+    {
+      "width": 1440,
+      "index": 19,
+      "label": "Close Glassdays JSON Editor",
+      "inStrip": true,
+      "rect": {
+        "left": 1014,
+        "right": 1038,
+        "top": 739,
+        "bottom": 763
+      },
+      "strip": {
+        "left": 305,
+        "right": 1048,
+        "top": 731,
+        "bottom": 825
+      },
+      "spread": 8,
+      "scroll": 0
+    }
+  ]
+}
