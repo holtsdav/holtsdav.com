@@ -1,0 +1,31 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|apply_patch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ ! -f '/Users/holtsdav/.agents/skills/impeccable/scripts/impeccable' ] || '/Users/holtsdav/.agents/skills/impeccable/scripts/impeccable' hook",
+            "commandWindows": "if exist \"/Users/holtsdav/.agents/skills/impeccable/scripts/impeccable.cmd\" (\"/Users/holtsdav/.agents/skills/impeccable/scripts/impeccable.cmd\" hook & exit /b)",
+            "timeout": 5,
+            "statusMessage": "Checking UI changes"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ ! -f '/Users/holtsdav/.agents/skills/impeccable/scripts/impeccable' ] || '/Users/holtsdav/.agents/skills/impeccable/scripts/impeccable' hook",
+            "commandWindows": "if exist \"/Users/holtsdav/.agents/skills/impeccable/scripts/impeccable.cmd\" (\"/Users/holtsdav/.agents/skills/impeccable/scripts/impeccable.cmd\" hook & exit /b)",
+            "timeout": 30,
+            "statusMessage": "Design deep pass"
+          }
+        ]
+      }
+    ]
+  }
+}
